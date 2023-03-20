@@ -1,0 +1,37 @@
+# Basic Information 
+title: Yiwei Wang
+position: Applied Scientist
+affiliation: Amazon Inc.
+affiliation_link: https://www.amazon.science/
+email: wangyw_seu (at) foxmail.com
+
+# Search Engine Optimization (SEO)
+keywords: yiwei wang, wang yiwei, nus, amazon, natural language processing, graph neural networks
+canonical: https://wangywust.github.io/
+description: Yiwei Wang is an Applied Scientist at Amazon Inc. His research lies in natural language processing and graph neural networks.
+
+# The option is used to enable the Johns Hopkins template.
+enable_hopkins_logo: false
+
+# The option is used to show the last update time.
+enable_last_update: true
+
+# Links
+google_scholar: https://scholar.google.com.hk/citations?user=Sh9QvBkAAAAJ&hl=en
+cv_link: Yiwei_CV.pdf
+# github_link: https://github.com/yaoyao-liu/
+linkedin: https://www.linkedin.com/in/yiwei-wang-b632a5118/
+# twitter: https://twitter.com/YaoyaoLiu1/
+
+# Images 
+avatar: ./photo.jpg
+favicon: ./assets/img/450.png
+favicon_dark: ./assets/img/450.png
+
+# The following files will be removed from the generated website.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - CNAME
