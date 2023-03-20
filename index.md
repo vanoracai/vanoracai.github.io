@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I am currently a Research Scientist at [Amazon Inc.](https://www.amazon.science/). I received my Ph.D. in Computer Science at [National University of Singapore](https://nus.edu.sg/), where I was fortunate to be advised by [Prof. Bryan Hooi](http://bhooi.github.io/). Prior to this, I obtained my Master of Philosophy (MPhil) degree from [The Hong Kong University of Science and Technology](https://hkust.edu.hk/) and Bachelor degree from [Southeast University](https://www.seu.edu.cn/english/_t1875/main.htm).
+I am currently a Research Scientist at [Meta Inc.](https://about.meta.com/). I received my Ph.D. in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), where I was fortunate to be advised by [Prof. Tat Jen Cham](), [Prof. Jianfei Cai](), Prof. Junsong Yuan and Prof. Nadia Magnenat Thalmann[Prof. Bryan Hooi](http://bhooi.github.io/). Prior to this, I obtained my Bachelor degree from [Southeast University](https://www.seu.edu.cn/english/_t1875/main.htm).
 
 My work at [Amazon Inc.](https://www.amazon.science/) detect and block the fraud sellers at an early stage to prevent the customers from bearing the losses of purchasing fake products from fraud sellers.
 I design and implement the fraud seller detection pipelines empowered the cutting-edge graph neural network and natural language processing algorithms.
