@@ -2,12 +2,12 @@
 title: Yujun Cai
 position: Research Scientist
 affiliation: Meta Reality Lab
-affiliation_link: https://cs.jhu.edu/
+affiliation_link: https://about.meta.com/realitylabs/
 email: yujun001 (at) e.ntu.edu.sg
 
 # Search Engine Optimization (SEO)
 keywords: yujun cai, cai yujun, yujuncai, caiyujun
-canonical: https://www.cs.jhu.edu/~yyliu/
+canonical: https://vanoracai.github.io/
 description: Yujun Cai is a Research Scientist in Meta Reality Lab. Her research lies in computer vision, graph learning and natural language processing.
 
 # The option is used to enable the Johns Hopkins template.
@@ -24,7 +24,7 @@ linkedin: https://www.linkedin.com/in/yujuncai/
 # twitter: https://twitter.com/YaoyaoLiu1/
 
 # Images
-avatar: https://img.yliu.me/avatar.jpg
+avatar: ./photo_yujun.png
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
