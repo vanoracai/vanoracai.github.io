@@ -11,7 +11,7 @@ canonical: https://vanoracai.github.io/
 description: Yujun Cai is a Research Scientist in Meta Reality Lab. Her research lies in computer vision, graph learning and natural language processing.
 
 # The option is used to enable the Johns Hopkins template.
-enable_hopkins_logo: true
+enable_hopkins_logo: false
 
 # The option is used to show the last update time.
 enable_last_update: false
