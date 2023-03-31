@@ -15,27 +15,26 @@ enable_hopkins_logo: false
 
 # The option is used to show the last update time.
 enable_last_update: false
-
 # Links
 google_scholar: https://scholar.google.com.sg/citations?user=TE7lbQwAAAAJ&hl=en
-cv_link: https://files.yliu.me/Yaoyao_Liu_Curriculum_Vitae.pdf
+cv_link: ./yujun_cv.pdf
 # github_link: https://github.com/yaoyao-liu/
 linkedin: https://www.linkedin.com/in/yujuncai/
 # twitter: https://twitter.com/YaoyaoLiu1/
 
 # Images
 avatar: ./photo_yujun.png
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
+favicon: ./assets/img/450.png
+favicon_dark: ./assets/img/450.png
 
 # Footnotes
-footnote: Feel free to use my website's source code.
-footnote_link: https://github.com/yaoyao-liu/minimal-light
+# footnote: Feel free to use my website's source code.
+# footnote_link: https://github.com/yaoyao-liu/minimal-light
 
 # Analytics
 # Please remove the following lines about analytics services if you fork my project.
 # Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-clustrmaps_id: l3lesztPwCz-uXlzFI1Lt9SB3Ctz-pBQuMdYqnD0Ul8
+# clustrmaps_id: l3lesztPwCz-uXlzFI1Lt9SB3Ctz-pBQuMdYqnD0Ul8
 
 # The following files will be removed from the generated website.
 exclude:
