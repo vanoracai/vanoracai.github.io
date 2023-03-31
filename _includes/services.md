@@ -46,7 +46,7 @@
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83"><autocolor>IEEE Transactions on Image Processing（TIP)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6046"><autocolor>IEEE Transactions on Multimedia (TMM)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76"><autocolor>IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT)</autocolor></a></li>
-  <li><a href="https://dl.acm.org/journal/tomm"><autocolor>ACM Transactions on Multimedia Computing, Communications, and Applications（TOMM)</autocolor></a></li>
+  <li><a href="https://dl.acm.org/journal/tomm"><autocolor>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</autocolor></a></li>
   <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>Neurocomputing</autocolor></a></li>
   <li><a href="https://www.springer.com/journal/11263"><autocolor>Pattern Recognition</autocolor></a></li>
 

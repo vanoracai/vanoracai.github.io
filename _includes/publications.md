@@ -45,6 +45,26 @@
 </div>
 </li>
 
+<br>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="papers/2020TPAMI/diagram.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">TPAMI</abbr>
+  </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Cai_A_Unified_3D_Human_Motion_Synthesis_Model_via_Conditional_Variational_ICCV_2021_paper.pdf">3D Hand Pose Estimation Using Synthetic Data and Weakly Labeled RGB Images</a></div>
+      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</div>
+      <div class="periodical"><em>IEEE transactions on pattern analysis and machine intelligence <strong>(TPAMI)</strong>, 2020.</em>
+      </div>
+    <div class="links">
+      <a src="papers/2020TPAMI/2020TPAMI.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+    </div>
+  </div>
+</div>
+</li>
+
 
 
 </ol>

@@ -6,7 +6,7 @@ layout: homepage
 
 I am currently a Research Scientist in [Meta Inc.](https://about.meta.com/). I received my Ph.D. in Computer Science from [Nanyang Technological University](https://www.ntu.edu.sg/), where I was fortunate to be advised by [Prof. Tat Jen Cham](https://personal.ntu.edu.sg/astjcham/index.html), [Prof. Jianfei Cai](https://jianfei-cai.github.io/), [Prof. Junsong Yuan](https://cse.buffalo.edu/~jsyuan/) and [Prof. Nadia Magnenat Thalmann](http://www.miralab.ch/index.php/rushmore_teams/n-thalmann/). Prior to this, I obtained my Bachelor degree from [Southeast University](https://www.seu.edu.cn/).
 
-My research interests include **computer vision**, especially on vision-based human behavior analysis. I'm also intersted in **graph neural networks** and **natural language understanding**.
+My research interests include **computer vision**, especially on vision-based human behavior analysis such as pose estimation, motion synthesis and action recognition. I'm also intersted in **graph neural networks** and **natural language understanding**.
 
 
 <!-- <strong style="color:#e74d3c; font-weight:600">I am looking for a postdoc or research scientist position in the US and EU. I would appreciate a ping if you see a job I might fit.</strong> -->
