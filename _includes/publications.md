@@ -6,7 +6,7 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="papers/2022NAACL" class="teaser img-fluid z-depth-1">
+    <img src="papers/2022NAACL/2022_sho.png" class="teaser img-fluid z-depth-1">
             <abbr class="badge">NAACL</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
@@ -37,7 +37,7 @@
       </div>
     <div class="links">
       <a href="http://openaccess.thecvf.com/content/ICCV2021/papers/Cai_A_Unified_3D_Human_Motion_Synthesis_Model_via_Conditional_Variational_ICCV_2021_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <a src="papers/2021ICCV/2021ICCV-supp.zip" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">supplimentary</a>
+      <a href="https://openaccess.thecvf.com/content/ICCV2021/supplemental/Cai_A_Unified_3D_ICCV_2021_supplemental.zip" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">supplimentary</a>
       <a href="https://github.com/vanoracai/A-unified-3d-human-motion-synthesis-model-via-conditional-variational-auto-encoder" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
 <!--       <a href="https://bib.yliu.me/CVPR23a.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>  -->
     </div>
