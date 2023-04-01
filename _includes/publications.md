@@ -106,7 +106,25 @@
 </div>
 </li>
 
+<br>
 
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="papers/2018ECCV/diagram.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">ECCV</abbr>
+  </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Yujun_Cai_Weakly-supervised_3D_Hand_ECCV_2018_paper.pdf">Weakly-supervised 3D Hand Pose Estimation from Monocular RGB Images</a></div>
+      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jianfei Cai, Junsong Yuan</div>
+      <div class="periodical"><em>IEEE/CVF European Conference on Computer Vision <strong>(ECCV)</strong>, 2018.</em>
+      </div>
+    <div class="links">
+      <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Yujun_Cai_Weakly-supervised_3D_Hand_ECCV_2018_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+    </div>
+  </div>
+</div>
+</li>
 
 
 </ol>
