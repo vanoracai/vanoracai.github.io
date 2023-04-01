@@ -42,7 +42,7 @@ My research interests include **computer vision**, especially on vision-based hu
 ## Teaching
 
 - Teaching Assistant：
-**Special Topic: Recent Advance on Image Segmentation and Its Applications** at [Nanyang Technological University](https://www.ntu.edu.sg/) 2019
+**Recent Advance on Image Segmentation and Its Applications** and
 **Digital Image Processing** at [Nanyang Technological University](https://www.ntu.edu.sg/), 2019-2020
 
 {% include_relative _includes/services.md %}
