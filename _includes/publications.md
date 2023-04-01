@@ -50,16 +50,16 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="papers/2020TPAMI/diagram.png" class="teaser img-fluid z-depth-1">
-            <abbr class="badge">TPAMI</abbr>
+    <img src="papers/2020ECCV/diagram.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">ECCV</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf">Exploiting Spatial-temporal Relationships for 3D Pose Estimation via Graph Convolutional Networks</a></div>
-      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</div>
-      <div class="periodical"><em>IEEE/CVF International Conference on Computer Vision <strong>(ICCV)</strong>, 2019.</em>
+      <div class="title"><a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123520222.pdf">Learning progressive joint propagation for human motion prediction</a></div>
+      <div class="author"><strong>Yujun Cai</strong>, Lin Huang, Yiwei Wang et al.</div>
+      <div class="periodical"><em>IEEE/CVF European Conference on Computer Vision <strong>(ECCV)</strong>, 2020.</em>
       </div>
     <div class="links">
-      <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123520222.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
   </div>
 </div>
@@ -74,12 +74,34 @@
             <abbr class="badge">ICCV</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a src="papers/2020TPAMI/2020TPAMI.pdf">3D Hand Pose Estimation Using Synthetic Data and Weakly Labeled RGB Images</a></div>
-      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jun Liu, Jianfei Cai, Tat-Jen Cham, Junsong Yuan, Nadia Magnenat Thalmann</div>
-      <div class="periodical"><em>IEEE transactions on pattern analysis and machine intelligence <strong>(TPAMI)</strong>, 2020.</em>
+      <div class="title"><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf">Exploiting Spatial-temporal Relationships for 3D Pose Estimation via Graph Convolutional Networks</a></div>
+      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</div>
+      <div class="periodical"><em>IEEE/CVF International Conference on Computer Vision <strong>(ICCV)</strong>, 2019.</em>
       </div>
     <div class="links">
-      <a src="papers/2020TPAMI/2020TPAMI.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="https://github.com/vanoracai/Exploiting-Spatial-temporal-Relationships-for-3D-Pose-Estimation-via-Graph-Convolutional-Networks" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+    </div>
+  </div>
+</div>
+</li>
+
+
+<br>
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="papers/2019ICCV/diagram.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">ICCV</abbr>
+  </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf">Exploiting Spatial-temporal Relationships for 3D Pose Estimation via Graph Convolutional Networks</a></div>
+      <div class="author"><strong>Yujun Cai</strong>, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</div>
+      <div class="periodical"><em>IEEE/CVF International Conference on Computer Vision <strong>(ICCV)</strong>, 2019.</em>
+      </div>
+    <div class="links">
+      <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Cai_Exploiting_Spatial-Temporal_Relationships_for_3D_Pose_Estimation_via_Graph_Convolutional_ICCV_2019_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
   </div>
 </div>
