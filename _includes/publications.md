@@ -11,7 +11,7 @@
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="https://arxiv.org/pdf/2310.13206.pdf">Primacy Effect of ChatGPT</a></div>
-      <div class="author"> Yiwei Wang^*, <strong>Yujun Cai^*</strong>, Muhao Chen, Yuxuan Liang, Bryan Hooi.</div>
+      <div class="author"> Yiwei Wang*, <strong>Yujun Cai*</strong>, Muhao Chen, Yuxuan Liang, Bryan Hooi.</div>
       <div class="periodical"><em>Empirical Methods in Natural Language Processing <strong>(EMNLP)</strong>, 2023.</em>
       </div>
     <div class="links">
