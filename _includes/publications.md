@@ -11,7 +11,7 @@
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_LLMs_are_Good_Action_Recognizers_CVPR_2024_paper.pdf">LLMs are Good Action Recognizers</a></div>
-      <div class="author"> Haoxuan Qu, <strong>Yujun Cai*</strong>, Jun Liu.</div>
+      <div class="author"> Haoxuan Qu, <strong>Yujun Cai</strong>, Jun Liu.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2024.</em>
       </div>
     <div class="links">
