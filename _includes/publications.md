@@ -26,8 +26,8 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="papers/neurips/fig.png" class="teaser img-fluid z-depth-1">
-            <abbr class="badge">CVPR</abbr>
+    <img src="papers/2023neurips/fig.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">NeurIPS</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/91813e5ddd9658b99be4c532e274b49c-Paper-Conference.pdf">Lmc: Large model collaboration with cross-assessment for training-free open-set object recognition</a></div>
