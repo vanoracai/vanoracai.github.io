@@ -26,6 +26,27 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="papers/neurips/fig.png" class="teaser img-fluid z-depth-1">
+            <abbr class="badge">CVPR</abbr>
+  </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/91813e5ddd9658b99be4c532e274b49c-Paper-Conference.pdf">Lmc: Large model collaboration with cross-assessment for training-free open-set object recognition</a></div>
+      <div class="author"> Haoxuan Qu, Xiaofei Hui, <strong>Yujun Cai</strong>, Jun Liu.</div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems <strong>(NeurIPS)</strong>, 2023.</em>
+      </div>
+    <div class="links">
+      <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/91813e5ddd9658b99be4c532e274b49c-Paper-Conference.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <!-- <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_LLMs_are_Good_Action_Recognizers_CVPR_2024_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a> -->
+<!--       <a href="https://bib.yliu.me/CVPR23a.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>  -->
+    </div>
+  </div>
+</div>
+</li>
+
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
     <img src="papers/2023EMNLP/EMNLP.png" class="teaser img-fluid z-depth-1">
             <abbr class="badge">EMNLP</abbr>
   </div>
