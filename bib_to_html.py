@@ -167,9 +167,13 @@ def generate_html(entry):
 
 # Load the .bib file
 def load_bib_file(file_path):
-    with open(file_path, 'r') as bib_file:
+    with open(file_path, 'r', encoding='utf-8') as bib_file:
         bib_database = bibtexparser.load(bib_file, parser=BibTexParser(customization=homogenize_latex_encoding))
     return bib_database.entries
+# def load_bib_file(file_path):
+#     with open(file_path, 'r') as bib_file:
+#         bib_database = bibtexparser.load(bib_file, parser=BibTexParser(customization=homogenize_latex_encoding))
+#     return bib_database.entries
 
 # 会议时间排序列表，基于缩写
 CONFERENCE_TIME_ORDER = [
