@@ -170,10 +170,6 @@ def load_bib_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as bib_file:
         bib_database = bibtexparser.load(bib_file, parser=BibTexParser(customization=homogenize_latex_encoding))
     return bib_database.entries
-# def load_bib_file(file_path):
-#     with open(file_path, 'r') as bib_file:
-#         bib_database = bibtexparser.load(bib_file, parser=BibTexParser(customization=homogenize_latex_encoding))
-#     return bib_database.entries
 
 # 会议时间排序列表，基于缩写
 CONFERENCE_TIME_ORDER = [
@@ -267,7 +263,7 @@ def convert_bib_to_html(bib_file_path, output_html_path):
     html_content = generate_bibliography_html(entries)
     
     # Write the HTML to the output file
-    with open(output_html_path, 'w') as html_file:
+    with open(output_html_path, 'w', encoding='utf-8') as html_file:
         html_file.write(html_content)
     
     print(f"HTML file successfully written to {output_html_path}")

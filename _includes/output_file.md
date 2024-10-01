@@ -470,7 +470,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">ChunhuaShen,\textquotedblleft </a></div>
       <div class="author"><strong>Chi Zhang, Yujun Cai, Guosheng Lin</strong>.</div>
-      <div class="periodical"><em>Deepemd: Few-shot image classification withdifferentiable earth mover¡¯s distance and structuredclassifiers,textquotedblright  inCVPR, 2020.</em></div>
+      <div class="periodical"><em>Deepemd: Few-shot image classification withdifferentiable earth moverâ€™s distance and structuredclassifiers,textquotedblright  inCVPR, 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
