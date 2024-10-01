@@ -1,40 +1,32 @@
-# Basic Information
-title: Yujun Cai
-position: Research Scientist
-affiliation: Meta Reality Lab
-affiliation_link: https://about.meta.com/realitylabs/
-email: vanora.caiyj (at) gmail.com / yujun001 (at) e.ntu.edu.sg
+# Basic Information 
+title: Yiwei Wang
+position: Postdoc
+affiliation: UCLA
+affiliation_link: https://web.cs.ucla.edu/~kwchang/members/
+email: wangyw.evan@gmail.com
 
 # Search Engine Optimization (SEO)
-keywords: yujun cai, cai yujun, yujuncai, caiyujun
-canonical: https://vanoracai.github.io/
-description: Yujun Cai is a Research Scientist in Meta Reality Lab. Her research lies in computer vision, graph learning and natural language processing.
+keywords: yiwei wang, wang yiwei, nus, ucla, amazon, natural language processing, graph neural networks
+canonical: https://wangywust.github.io/
+description: Yiwei Wang is a Postdoc at UCLA. His research lies in natural language processing and graph neural networks.
 
 # The option is used to enable the Johns Hopkins template.
-enable_hopkins_logo: false
+enable_hopkins_logo: true
 
 # The option is used to show the last update time.
-enable_last_update: false
-# Links
-google_scholar: https://scholar.google.com.sg/citations?user=TE7lbQwAAAAJ&hl=en
-cv_link: ./yujun_cv_202405.pdf
-# github_link: https://github.com/yaoyao-liu/
-linkedin: https://www.linkedin.com/in/yujuncai/
-# twitter: https://twitter.com/YaoyaoLiu1/
+enable_last_update: true
 
-# Images
-avatar: ./photo.png
+# Links
+google_scholar: https://scholar.google.com.hk/citations?user=Sh9QvBkAAAAJ&hl=en
+cv_link: Yiwei_CV.pdf
+# github_link: https://github.com/yaoyao-liu/
+linkedin: https://www.linkedin.com/in/yiwei-wang-b632a5118/
+twitter: https://twitter.com/wangyiw33973985
+
+# Images 
+avatar: ./photo.jpg
 favicon: ./assets/img/450.png
 favicon_dark: ./assets/img/450.png
-
-# Footnotes
-# footnote: Feel free to use my website's source code.
-# footnote_link: https://github.com/yaoyao-liu/minimal-light
-
-# Analytics
-# Please remove the following lines about analytics services if you fork my project.
-# Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-# clustrmaps_id: l3lesztPwCz-uXlzFI1Lt9SB3Ctz-pBQuMdYqnD0Ul8
 
 # The following files will be removed from the generated website.
 exclude:
