@@ -6,20 +6,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">Lmc: Large model collaboration with cross-assessment for training-free open-set object recognition</a></div>
-      <div class="author"><strong>Haoxuan Qu, Xiaofei Hui, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr52733.2024.01741">Llms are good action recognizers</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024.</em></div>
@@ -39,6 +25,34 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr52733.2024.00924" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1145/3613904.3642702">STMG: A Machine Learning Microgesture Recognition System for Supporting Thumb-Based VR/AR Input</a></div>
+      <div class="author"><strong>Kenrick Kin, Chengde Wan, Ken Koh, Andrei Marin, Necati Cihan Camg{\"o}z, Yubo Zhang, Yujun Cai, Fedor Kovalev, Moshe Ben-Zacharia, Shannon Hoople, others</strong>.</div>
+      <div class="periodical"><em>Proceedings of the CHI Conference on Human Factors in Computing Systems, 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1145/3613904.3642702" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Lmc: Large model collaboration with cross-assessment for training-free open-set object recognition</a></div>
+      <div class="author"><strong>Haoxuan Qu, Xiaofei Hui, Yujun Cai, Jun Liu</strong>.</div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems, 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -81,20 +95,6 @@
       <div class="periodical"><em>arXiv preprint arXiv:2409.03363, 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1145/3613904.3642702">STMG: A Machine Learning Microgesture Recognition System for Supporting Thumb-Based VR/AR Input</a></div>
-      <div class="author"><strong>Kenrick Kin, Chengde Wan, Ken Koh, Andrei Marin, Necati Cihan Camg{\"o}z, Yubo Zhang, Yujun Cai, Fedor Kovalev, Moshe Ben-Zacharia, Shannon Hoople, others</strong>.</div>
-      <div class="periodical"><em>Proceedings of the CHI Conference on Human Factors in Computing Systems, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1145/3613904.3642702" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -188,6 +188,48 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2\_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
+      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
+      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1007/978-3-031-20050-2\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1145/3550469.3555378">UmeTrack: Unified multi-view end-to-end hand tracking for VR</a></div>
+      <div class="author"><strong>Shangchen Han, Po-chen Wu, Yubo Zhang, Beibei Liu, Linguang Zhang, Zheng Wang, Weiguang Si, Peizhao Zhang, Yujun Cai, Tomas Hodan, others</strong>.</div>
+      <div class="periodical"><em>SIGGRAPH Asia 2022 conference papers, 2022.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1145/3550469.3555378" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1109/ijcnn55064.2022.9892942">Time-Aware Neighbor Sampling on Temporal Graphs</a></div>
+      <div class="author"><strong>Yiwei Wang, Yujun Cai, Yuxuan Liang, Henghui Ding, Changhu Wang, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>2022 International Joint Conference on Neural Networks (IJCNN), 2022.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1109/ijcnn55064.2022.9892942" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">Heatmap distribution matching for human pose estimation</a></div>
       <div class="author"><strong>Haoxuan Qu, Li Xu, Yujun Cai, Lin Geng Foo, Jun Liu</strong>.</div>
       <div class="periodical"><em>Advances in Neural Information Processing Systems, 2022.</em></div>
@@ -254,49 +296,63 @@
   </div>
 </div>
 </li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2\_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
-      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
-      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-031-20050-2\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1145/3550469.3555378">UmeTrack: Unified multi-view end-to-end hand tracking for VR</a></div>
-      <div class="author"><strong>Shangchen Han, Po-chen Wu, Yubo Zhang, Beibei Liu, Linguang Zhang, Zheng Wang, Weiguang Si, Peizhao Zhang, Yujun Cai, Tomas Hodan, others</strong>.</div>
-      <div class="periodical"><em>SIGGRAPH Asia 2022 conference papers, 2022.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1145/3550469.3555378" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/ijcnn55064.2022.9892942">Time-Aware Neighbor Sampling on Temporal Graphs</a></div>
-      <div class="author"><strong>Yiwei Wang, Yujun Cai, Yuxuan Liang, Henghui Ding, Changhu Wang, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>2022 International Joint Conference on Neural Networks (IJCNN), 2022.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/ijcnn55064.2022.9892942" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2021</h3><hr style="margin-bottom: 5px;">
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1109/iccv48922.2021.01144">A unified 3d human motion synthesis model via conditional variational auto-encoder</a></div>
+      <div class="author"><strong>Yujun Cai, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others</strong>.</div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1109/iccv48922.2021.01144" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1145/3442381.3450025">Curgraph: Curriculum learning for graph classification</a></div>
+      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the Web Conference 2021, 2021.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1145/3442381.3450025" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1145/3442381.3449796">Mixup for node and graph classification</a></div>
+      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the Web Conference 2021, 2021.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1145/3442381.3449796" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1007/978-3-030-67658-2\_16">Progressive supervision for node classification</a></div>
+      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Machine Learning and Knowledge Discovery in Databases: European Conference, ECML PKDD 2020, Ghent, Belgium, September 14--18, 2020, Proceedings, Part I, 2021.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1007/978-3-030-67658-2\_16" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -319,20 +375,6 @@
       <div class="periodical"><em>Advances in Neural Information Processing Systems, 2021.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/iccv48922.2021.01144">A unified 3d human motion synthesis model via conditional variational auto-encoder</a></div>
-      <div class="author"><strong>Yujun Cai, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/iccv48922.2021.01144" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -394,91 +436,7 @@
   </div>
 </div>
 </li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1145/3442381.3450025">Curgraph: Curriculum learning for graph classification</a></div>
-      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the Web Conference 2021, 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1145/3442381.3450025" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1145/3442381.3449796">Mixup for node and graph classification</a></div>
-      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the Web Conference 2021, 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1145/3442381.3449796" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-030-67658-2\_16">Progressive supervision for node classification</a></div>
-      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Machine Learning and Knowledge Discovery in Databases: European Conference, ECML PKDD 2020, Ghent, Belgium, September 14--18, 2020, Proceedings, Part I, 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-030-67658-2\_16" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2020</h3><hr style="margin-bottom: 5px;">
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/tpami.2020.2993627">3D hand pose estimation using synthetic data and weakly labeled RGB images</a></div>
-      <div class="author"><strong>Yujun Cai, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</strong>.</div>
-      <div class="periodical"><em>IEEE transactions on pattern analysis and machine intelligence, 2020.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/tpami.2020.2993627" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2009.10564">Graphcrop: Subgraph cropping for graph classification</a></div>
-      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>arXiv preprint arXiv:2009.10564, 2020.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2009.10564" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">ChunhuaShen,\textquotedblleft </a></div>
-      <div class="author"><strong>Chi Zhang, Yujun Cai, Guosheng Lin</strong>.</div>
-      <div class="periodical"><em>Deepemd: Few-shot image classification withdifferentiable earth mover’s distance and structuredclassifiers,textquotedblright  inCVPR, 2020.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -533,6 +491,48 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr42600.2020.01222" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1109/tpami.2020.2993627">3D hand pose estimation using synthetic data and weakly labeled RGB images</a></div>
+      <div class="author"><strong>Yujun Cai, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</strong>.</div>
+      <div class="periodical"><em>IEEE transactions on pattern analysis and machine intelligence, 2020.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1109/tpami.2020.2993627" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2009.10564">Graphcrop: Subgraph cropping for graph classification</a></div>
+      <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>arXiv preprint arXiv:2009.10564, 2020.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2009.10564" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">ChunhuaShen,\textquotedblleft </a></div>
+      <div class="author"><strong>Chi Zhang, Yujun Cai, Guosheng Lin</strong>.</div>
+      <div class="periodical"><em>Deepemd: Few-shot image classification withdifferentiable earth mover’s distance and structuredclassifiers,textquotedblright  inCVPR, 2020.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
