@@ -45,15 +45,14 @@ graph learning.
 
 
 ## Teaching
-- Teaching Assistant, [Knowledge Discovery and Data Mining](https://nusmods.com/modules/CS5228/knowledge-discovery-and-data-mining) at [National University of Singapore](https://nus.edu.sg/), 2020 and 2021
-- Teaching Assistant, [Big Data Systems for Data Science](https://nusmods.com/modules/CS5228/knowledge-discovery-and-data-mining) at [National University of Singapore](https://nus.edu.sg/), 2021
-- Teaching Assistant, [Programming Methodology](https://nusmods.com/modules/CS5228/knowledge-discovery-and-data-mining) at [National University of Singapore](https://nus.edu.sg/), 2021
-- Teaching Assistant, [Parallel Computing ](https://nusmods.com/modules/CS3210/parallel-computing) at [National University of Singapore](https://nus.edu.sg/), 2020
-- Teaching Assistant, [Signal Processing and Communications](https://nusmods.com/modules/CS5228/knowledge-discovery-and-data-mining  ) at [The Hong Kong University of Science and Technology](https://hkust.edu.hk/), 2018
+
+- Teaching Assistant：
+**Recent Advance on Image Segmentation and Its Applications** and
+**Digital Image Processing** at [Nanyang Technological University](https://www.ntu.edu.sg/), 2019-2020
 
 {% include_relative _includes/services.md %}
 
 ## Contact
-**Address:** [405 Hilgard Avenue, LA 90095, CA](https://www.google.com/maps/place/UCLA+Computer+Science+Department/@34.0699182,-118.4438495,15z/data=!4m6!3m5!1s0x80c2bd738396536f:0x17516f52d28faa7c!8m2!3d34.0692977!4d-118.4445525!16s%2Fg%2F11f5lxm92j?entry=ttu)
+**Address:** [11261 Willows Rd NE, Redmond, WA 98052](https://www.google.com/maps/place/11261+Willows+Rd+NE,+Redmond,+WA+98052/@47.7012746,-122.1556652,17z/data=!3m1!4b1!4m6!3m5!1s0x54900d6fb14b8307:0xb00d29bb5d7cefb2!8m2!3d47.701271!4d-122.1534765!16s%2Fg%2F11c1zp46h5)
 <br>
-**Office Location:**  UCLA Eng VI Rm 397
+<!-- **Office Location:**  UCLA Eng VI Rm 397 -->

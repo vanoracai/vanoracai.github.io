@@ -8,7 +8,7 @@ email: vanora.caiyj@gmail.com / yujun001@e.ntu.edu.sg
 # Search Engine Optimization (SEO)
 # keywords: yiwei wang, wang yiwei, nus, ucla, amazon, natural language processing, graph neural networks
 canonical: https://vanoracai.github.io/
-description: Yiwei Wang is a Postdoc at UCLA. His research lies in natural language processing and graph neural networks.
+description: Yujun Cai is a Research Scientist in Meta Reality Lab. Her research lies in computer vision, graph learning and natural language processing.
 
 # The option is used to enable the Johns Hopkins template.
 enable_hopkins_logo: true
@@ -17,11 +17,11 @@ enable_hopkins_logo: true
 enable_last_update: true
 
 # Links
-google_scholar: https://scholar.google.com.hk/citations?user=Sh9QvBkAAAAJ&hl=en
-cv_link: Yiwei_CV.pdf
+google_scholar: https://scholar.google.com.sg/citations?user=TE7lbQwAAAAJ&hl=en
+cv_link: ./yujun_cv_2024_0926.pdf
 # github_link: https://github.com/yaoyao-liu/
-linkedin: https://www.linkedin.com/in/yiwei-wang-b632a5118/
-twitter: https://twitter.com/wangyiw33973985
+linkedin: https://www.linkedin.com/in/yujuncai/
+# twitter: https://twitter.com/wangyiw33973985
 
 # Images 
 avatar: ./photo.png
