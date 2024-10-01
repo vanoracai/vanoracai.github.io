@@ -1,13 +1,13 @@
 # Basic Information 
-title: Yiwei Wang
-position: Postdoc
-affiliation: UCLA
-affiliation_link: https://web.cs.ucla.edu/~kwchang/members/
-email: wangyw.evan@gmail.com
+title: Yujun Cai
+position: Research Scientist
+affiliation: Meta
+# affiliation_link: https://web.cs.ucla.edu/~kwchang/members/
+email: vanora.caiyj@gmail.com / yujun001@e.ntu.edu.sg
 
 # Search Engine Optimization (SEO)
-keywords: yiwei wang, wang yiwei, nus, ucla, amazon, natural language processing, graph neural networks
-canonical: https://wangywust.github.io/
+# keywords: yiwei wang, wang yiwei, nus, ucla, amazon, natural language processing, graph neural networks
+canonical: https://vanoracai.github.io/
 description: Yiwei Wang is a Postdoc at UCLA. His research lies in natural language processing and graph neural networks.
 
 # The option is used to enable the Johns Hopkins template.
@@ -24,7 +24,7 @@ linkedin: https://www.linkedin.com/in/yiwei-wang-b632a5118/
 twitter: https://twitter.com/wangyiw33973985
 
 # Images 
-avatar: ./photo.jpg
+avatar: ./photo.png
 favicon: ./assets/img/450.png
 favicon_dark: ./assets/img/450.png
 
