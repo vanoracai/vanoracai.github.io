@@ -47,7 +47,8 @@ VENUE_ABBREVIATIONS = {
     'CONLL': 'CONLL',
     'EMNLP': 'EMNLP',
     'Empirical Methods': 'EMNLP',
-    'CHI' : 'CHI'
+    'CHI' : 'CHI',
+    'European Conference on Computer Vision':'ECCV',
     # Add more mappings for common conferences/journals
 }
 
@@ -177,6 +178,7 @@ CONFERENCE_TIME_ORDER = [
     'NeurIPS',
     'EMNLP',
     'ACL',
+    'ECCV',
     'CVPR',
     'NAACL',
     'ICCV',

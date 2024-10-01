@@ -6,6 +6,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf">Energy-Clibrated VAE with Test Time Free Lunch</a></div>
+      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
+      <div class="periodical"><em>Proceedings of the European conference on computer vision (ECCV), 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr52733.2024.01741">Llms are good action recognizers</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024.</em></div>
@@ -81,20 +95,6 @@
       <div class="periodical"><em>arXiv preprint arXiv:2409.03363, 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf">Energy-Clibrated VAE with Test Time Free Lunch</a></div>
-      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
-      <div class="periodical"><em>Proceedings of the European conference on computer vision (ECCV), 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -202,6 +202,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2\_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
+      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
+      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1007/978-3-031-20050-2\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2205.03786">Graphcache: Message passing as caching for sentence-level relation extraction</a></div>
       <div class="author"><strong>Yiwei Wang, Muhao Chen, Wenxuan Zhou, Yujun Cai, Yuxuan Liang, Bryan Hooi</strong>.</div>
       <div class="periodical"><em>arXiv preprint arXiv:2205.03786, 2022.</em></div>
@@ -249,20 +263,6 @@
       <div class="periodical"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence, 2022.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/tpami.2022.3217373" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2\_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
-      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
-      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-031-20050-2\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -426,6 +426,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1007/978-3-030-58571-6\_14">Learning progressive joint propagation for human motion prediction</a></div>
+      <div class="author"><strong>Yujun Cai, Lin Huang, Yiwei Wang, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Xu Yang, Yiheng Zhu, Xiaohui Shen, others</strong>.</div>
+      <div class="periodical"><em>Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part VII 16, 2020.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1007/978-3-030-58571-6\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/tpami.2020.2993627">3D hand pose estimation using synthetic data and weakly labeled RGB images</a></div>
       <div class="author"><strong>Yujun Cai, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan</strong>.</div>
       <div class="periodical"><em>IEEE transactions on pattern analysis and machine intelligence, 2020.</em></div>
@@ -445,20 +459,6 @@
       <div class="periodical"><em>arXiv preprint arXiv:2009.10564, 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2009.10564" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-030-58571-6\_14">Learning progressive joint propagation for human motion prediction</a></div>
-      <div class="author"><strong>Yujun Cai, Lin Huang, Yiwei Wang, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Xu Yang, Yiheng Zhu, Xiaohui Shen, others</strong>.</div>
-      <div class="periodical"><em>Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part VII 16, 2020.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-030-58571-6\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
