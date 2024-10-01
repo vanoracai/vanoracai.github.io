@@ -1,4 +1,4 @@
-<h2 id="publications" style="margin: 2px 0px -15px;">Selected Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com.sg/citations?user=TE7lbQwAAAAJ&hl=en" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/227/4399.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>
+<h2 id="publications" style="margin: 2px 0px -15px;">Selected Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?user=Sh9QvBkAAAAJ&hl=en" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/50/5889-1.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>
 
 <div class="publications">
 <ol class="bibliography">
@@ -86,6 +86,20 @@
   </div>
 </div>
 </li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf">Energy-Clibrated VAE with Test Time Free Lunch</a></div>
+      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
+      <div class="periodical"><em>Proceedings of the European conference on computer vision (ECCV), 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2023</h3><hr style="margin-bottom: 5px;">
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
@@ -123,20 +137,6 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/iccv51070.2023.00880" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2311.04071">Energy-based Calibrated VAE with Test Time Free Lunch</a></div>
-      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
-      <div class="periodical"><em>arXiv preprint arXiv:2311.04071, 2023.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2311.04071" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -384,20 +384,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.32657/10356/153319">Vision-based 3D human and hand pose analysis</a></div>
-      <div class="author"><strong>Yujun Cai</strong>.</div>
-      <div class="periodical"><em>Preprint, 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.32657/10356/153319" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1145/3442381.3450025">Curgraph: Curriculum learning for graph classification</a></div>
       <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
       <div class="periodical"><em>Proceedings of the Web Conference 2021, 2021.</em></div>
@@ -459,20 +445,6 @@
       <div class="periodical"><em>arXiv preprint arXiv:2009.10564, 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2009.10564" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">ChunhuaShen,\textquotedblleft </a></div>
-      <div class="author"><strong>Chi Zhang, Yujun Cai, Guosheng Lin</strong>.</div>
-      <div class="periodical"><em>Deepemd: Few-shot image classification withdifferentiable earth mover’s distance and structuredclassifiers,textquotedblright  inCVPR, 2020.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
