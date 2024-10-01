@@ -580,47 +580,5 @@
   </div>
 </div>
 </li>
-<h3 style="margin-top: 20px; margin-bottom: 5px;">Unknown</h3><hr style="margin-bottom: 5px;">
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/cvpr52729.2023.01250">A Characteristic Function-based Method for Bottom-up Human Pose Estimation (Supplementary Material)</a></div>
-      <div class="author"><strong>Haoxuan Qu, Yujun Cai, Lin Geng Foo, Ajay Kumar, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Preprint, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/cvpr52729.2023.01250" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">LMC: Large Model Collaboration with Cross-assessment for Training-Free Open-Set Object Recognition (Supplementary Material)</a></div>
-      <div class="author"><strong>Haoxuan Qu, Xiaofei Hui, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Preprint, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">Direct Multi-view Multi-person 3D Pose Estimation (Supplementary Material)</a></div>
-      <div class="author"><strong>Tao Wang, Jianfeng Zhang, Yujun Cai, Shuicheng Yan, Jiashi Feng</strong>.</div>
-      <div class="periodical"><em>Preprint, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
 </ol>
 </div>
