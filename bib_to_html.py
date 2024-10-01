@@ -181,7 +181,8 @@ CONFERENCE_TIME_ORDER = [
     'NAACL',
     'ICCV',
     'ICLR',
-    'AAAI'
+    'AAAI',
+    'CHI',
     # 你可以根据需要添加更多的会议
 ]
 
@@ -192,20 +193,19 @@ def get_conference_time_rank(venue):
         return CONFERENCE_TIME_ORDER.index(abbreviated_venue)
     return len(CONFERENCE_TIME_ORDER)  # 未在列表中的会议放在最后
 
-# 按会议时间排序
 def sort_entries_by_conference_time(entries):
-    # Modify this function to ensure published papers come before preprints and ArXiv entries
     def get_entry_type_rank(entry):
+        # 根据 venue abbreviation 判断是否为会议，优先检查会议
         venue = entry.get('booktitle', entry.get('journal', ''))
         abbreviation = abbreviate_venue(venue)
         
-        # First, determine if the paper is published in a conference or journal
-        if 'booktitle' in entry:
-            return 0  # Conference papers come first
+        # 如果是会议，返回 0，表示会议优先；如果是期刊，返回 1；预印本返回 2
+        if abbreviation in CONFERENCE_TIME_ORDER:
+            return 0  # 会议条目优先
         elif 'journal' in entry:
-            return 1  # Journal papers come second
+            return 1  # 期刊条目次优
         else:
-            return 2  # Preprints/ArXiv papers come last
+            return 2  # 预印本/ArXiv 条目最后
         
     return sorted(
         entries,
