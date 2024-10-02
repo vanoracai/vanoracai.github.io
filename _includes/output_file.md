@@ -36,7 +36,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr52733.2024.01741">Llms are good action recognizers</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr52733.2024.01741" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -50,7 +50,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr52733.2024.00924">6d-diff: A keypoint diffusion framework for 6d object pose estimation</a></div>
       <div class="author"><strong>Li Xu, Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2024.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr52733.2024.00924" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -148,7 +148,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/iccv51070.2023.00880">Social diffusion: Long-term multiple human motion anticipation</a></div>
       <div class="author"><strong>Julian Tanke, Linguang Zhang, Amy Zhao, Chengcheng Tang, Yujun Cai, Lezi Wang, Po-Chen Wu, Juergen Gall, Cem Keskin</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2023.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/iccv51070.2023.00880" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -330,7 +330,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/iccv48922.2021.01144">A unified 3d human motion synthesis model via conditional variational auto-encoder</a></div>
       <div class="author"><strong>Yujun Cai, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2021.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2021.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/iccv48922.2021.01144" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -488,7 +488,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr42600.2020.01222">Deepemd: Few-shot image classification with differentiable earth mover' s distance and structured classifiers</a></div>
       <div class="author"><strong>Chi Zhang, Yujun Cai, Guosheng Lin, Chunhua Shen</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 2020.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (CVPR), 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr42600.2020.01222" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -502,7 +502,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/iccv.2019.00236">Exploiting spatial-temporal relationships for 3d pose estimation via graph convolutional networks</a></div>
       <div class="author"><strong>Yujun Cai, Liuhao Ge, Jun Liu, Jianfei Cai, Tat-Jen Cham, Junsong Yuan, Nadia Magnenat Thalmann</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision, 2019.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2019.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/iccv.2019.00236" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
