@@ -23,6 +23,7 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
+  <li><a href="https://eccv2022.ecva.net/"><autocolor>The Web Conference (WWW) (SPC) </autocolor></a></li>
   <li><a href="https://neurips.cc/Conferences/2022"><autocolor>International Conference on Learning Representations (ICLR) </autocolor></a></li>
   <li><a href="https://icml.cc/Conferences/2022"><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></a></li>
   <li><a href="https://www.siggraph.org/"><autocolor>ACM SIGGRAPH </autocolor></a></li>
