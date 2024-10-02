@@ -160,11 +160,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">Energy-Calibrated VAE with Test Time Free Lunch</a></div>
-      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
-      <div class="periodical"><em>arXiv e-prints, 2023.</em></div>
+      <div class="title"><a href="https://arxiv.org/abs/2305.13551">How Fragile is Relation Extraction under Entity Replacements?</a></div>
+      <div class="author"><strong>Yiwei Wang, Bryan Hooi, Fei Wang, Yujun Cai, Yuxuan Liang, Wenxuan Zhou, Jing Tang, Manjuan Duan, Muhao Chen</strong>.</div>
+      <div class="periodical"><em>CONLL, 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://arxiv.org/abs/2305.13551" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -174,11 +174,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2305.13551">How Fragile is Relation Extraction under Entity Replacements?</a></div>
-      <div class="author"><strong>Yiwei Wang, Bryan Hooi, Fei Wang, Yujun Cai, Yuxuan Liang, Wenxuan Zhou, Jing Tang, Manjuan Duan, Muhao Chen</strong>.</div>
-      <div class="periodical"><em>CONLL, 2023.</em></div>
+      <div class="title"><a href="#">Energy-Calibrated VAE with Test Time Free Lunch</a></div>
+      <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
+      <div class="periodical"><em>arXiv e-prints, 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2305.13551" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>

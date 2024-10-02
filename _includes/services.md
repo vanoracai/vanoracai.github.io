@@ -43,7 +43,7 @@
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 20px;">
-  <li><a href="https://link.springer.com/journal/11263"><autocolor>International Journal of Computer Vision（IJCV)</autocolor></a></li>
+  <li><a href="https://link.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83"><autocolor>IEEE Transactions on Image Processing（TIP)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6046"><autocolor>IEEE Transactions on Multimedia (TMM)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76"><autocolor>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</autocolor></a></li>

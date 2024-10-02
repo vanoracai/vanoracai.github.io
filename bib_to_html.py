@@ -185,6 +185,7 @@ CONFERENCE_TIME_ORDER = [
     'ICLR',
     'AAAI',
     'CHI',
+    'CONLL',
     # 你可以根据需要添加更多的会议
 ]
 
