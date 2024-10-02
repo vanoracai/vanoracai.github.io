@@ -5,7 +5,7 @@ from bibtexparser.customization import homogenize_latex_encoding
 # Dictionary to map venue keywords to abbreviations (CCF Recommended Conferences and more specific examples)
 VENUE_ABBREVIATIONS = {
     'ACM SIGKDD': 'KDD',
-    'IEEE/CVF Conference on Computer Vision and Pattern Recognition': 'CVPR',
+    'Computer Vision and Pattern Recognition': 'CVPR',
     'arXiv preprint': 'Preprint',
     'International Conference on Learning Representations': 'ICLR',
     'Advances in Neural Information Processing Systems': 'NeurIPS',
@@ -34,9 +34,7 @@ VENUE_ABBREVIATIONS = {
     'International Conference on Knowledge Capture': 'K-CAP',
     'IEEE International Conference on Computer Communications': 'INFOCOM',
     'IEEE Transactions on Signal Processing': 'TSP',
-    'Proceedings of the 2017 ACM on Conference on Information and Knowledge Management': 'CIKM',
     'Proceedings of the Web Conference': 'WWW',
-    'International Symposium on Software Reliability Engineering': 'ISSRE',
     'ECCV': 'ECCV',
     'Machine Learning and Knowledge Discovery in Databases: European': 'ECML',
     'Learning on Graph': 'LOG',
@@ -46,6 +44,7 @@ VENUE_ABBREVIATIONS = {
     'CONLL': 'CONLL',
     'EMNLP': 'EMNLP',
     'Empirical Methods': 'EMNLP',
+    'CHI' : 'CHI',
     # Add more mappings for common conferences/journals
 }
 
@@ -54,18 +53,19 @@ CONFERENCE_TIME_ORDER = [
     'NeurIPS',
     'EMNLP',
     'ACL',
+    'ECCV',
+    'ICCV',
     'CVPR',
     'NAACL',
-    'ICCV',
     'ICLR',
     'AAAI'
-    # 你可以根据需要添加更多的会议
 ]
 
-# 函数：根据缩写表替换venue
+# 函数：根据缩写表替换venue，不区分大小写
 def abbreviate_venue(venue):
+    venue_lower = venue.lower()  # 将输入venue转换为小写
     for key, abbreviation in VENUE_ABBREVIATIONS.items():
-        if key in venue:
+        if key.lower() in venue_lower:  # 对字典中的key也转换为小写进行匹配
             return abbreviation
     return venue
 
@@ -87,9 +87,9 @@ def get_conference_order(venue):
     if venue in CONFERENCE_TIME_ORDER:
         return CONFERENCE_TIME_ORDER.index(venue)
     else:
-        # 如果会议不在列表中，返回一个较大的值以确保排在后面
         return len(CONFERENCE_TIME_ORDER)
 
+# 函数：将.bib转换为LaTeX格式的论文列表，使用enumerate环境
 def bib_to_paper_list(bib_file):
     # 读取.bib文件并使用BibTexParser
     with open(bib_file) as bibtex_file:
@@ -120,10 +120,10 @@ def bib_to_paper_list(bib_file):
     paper_list.sort(key=lambda x: (-x[0], get_conference_order(x[1]), x[1].lower() if x[1] else ''))
 
     # 为每篇论文添加编号 [1], [2], 等
-    numbered_papers = [f"[{i+1}] {entry}" for i, (_, _, entry) in enumerate(paper_list)]
+    numbered_papers = [f"\\item {entry}" for i, (_, _, entry) in enumerate(paper_list)]
     
-    # 返回带有编号的论文列表
-    return "\n\n".join(numbered_papers)
+    # 返回带有 \begin{enumerate} 和 \end{enumerate} 的论文列表
+    return "\\begin{enumerate}\n" + "\n\n".join(numbered_papers) + "\n\\end{enumerate}"
 
 # 示例用法
 bib_file = "citations.bib"
