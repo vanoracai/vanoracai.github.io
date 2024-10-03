@@ -4,7 +4,11 @@
 <ol class="bibliography">
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2024</h3><hr style="margin-bottom: 5px;">
 <li>
-<div class="pub-row" style="display: flex; align-items: center;">
+<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
+  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
+    <img src="Image/qu2024disc.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
+    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">NeurIPS</abbr>
+  </div>
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2405.15196">DisC-GS: Discontinuity-aware Gaussian Splatting</a></div>
       <div class="author"><strong>Haoxuan Qu, Zhuoling Li, Hossein Rahmani, Yujun Cai, Jun Liu</strong>.</div>
@@ -32,7 +36,11 @@
 </li>
 
 <li>
-<div class="pub-row" style="display: flex; align-items: center;">
+<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
+  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
+    <img src="Image/qu2024llms.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
+    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">CVPR</abbr>
+  </div>
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr52733.2024.01741">Llms are good action recognizers</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
@@ -466,11 +474,7 @@
 </li>
 
 <li>
-<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
-  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
-    <img src="Image/wang2020nodeaug.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
-    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">KDD</abbr>
-  </div>
+<div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1145/3394486.3403063">Nodeaug: Semi-supervised node classification with data augmentation</a></div>
       <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Juncheng Liu, Bryan Hooi</strong>.</div>
