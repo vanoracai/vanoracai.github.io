@@ -47,8 +47,8 @@ VENUE_ABBREVIATIONS = {
     'CONLL': 'CONLL',
     'EMNLP': 'EMNLP',
     'Empirical Methods': 'EMNLP',
-    'CHI' : 'CHI',
-    'European Conference on Computer Vision':'ECCV',
+    'CHI': 'CHI',
+    'European Conference on Computer Vision': 'ECCV',
     # Add more mappings for common conferences/journals
 }
 
@@ -78,6 +78,11 @@ def clean_full_venue(venue):
 # Function to clean and remove special characters from title, including replacing \textquotesingle and \ast
 def clean_title(title):
     return title.replace("{", "").replace("}", "").replace("\\textquotesingle", "\u0027").replace("\\ast", "*")
+
+# Function to clean LaTeX-related artifacts in URLs, especially for escaping sequences like \_
+def clean_url_latex_artifacts(url):
+    # 将 \_ 替换为普通的 _
+    return url.replace("\\_", "_")
 
 # Function to generate image path based on the bib entry
 def generate_image_filename(entry):
@@ -123,6 +128,9 @@ def generate_html(entry):
     # Get code URL or default code link (if 'code_url' field is present in the bib file, use it)
     code_url = entry.get('code_url', entry.get('code', '#'))
 
+    # Clean the URL to remove LaTeX artifacts (e.g., \_ to _)
+    pdf_url = clean_url_latex_artifacts(entry.get('url', '#'))
+    
     # Define the image style to make it slightly longer and adjust layout
     image_style = "width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;"  # Slightly taller image
     
@@ -136,11 +144,11 @@ def generate_html(entry):
     <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">{abbreviated_venue}</abbr>
   </div>
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="{entry.get('url', '#')}">{clean_title_text}</a></div>
+      <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
       <div class="author"><strong>{formatted_authors}</strong>.</div>
       <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="{entry.get('url', '#')}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -153,11 +161,11 @@ def generate_html(entry):
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="{entry.get('url', '#')}">{clean_title_text}</a></div>
+      <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
       <div class="author"><strong>{formatted_authors}</strong>.</div>
       <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="{entry.get('url', '#')}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>

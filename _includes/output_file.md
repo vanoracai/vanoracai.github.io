@@ -24,11 +24,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf">Energy-Clibrated VAE with Test Time Free Lunch</a></div>
+      <div class="title"><a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11433.pdf">Energy-Clibrated VAE with Test Time Free Lunch</a></div>
       <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
       <div class="periodical"><em>Proceedings of the European conference on computer vision (ECCV), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://www.ecva.net/papers/eccv\_2024/papers\_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -42,11 +42,11 @@
     <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">CVPR</abbr>
   </div>
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu\_LLMs\_are\_Good\_Action\_Recognizers\_CVPR\_2024\_paper.pdf">Llms are good action recognizers</a></div>
+      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_LLMs_are_Good_Action_Recognizers_CVPR_2024_paper.pdf">Llms are good action recognizers</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu\_LLMs\_are\_Good\_Action\_Recognizers\_CVPR\_2024\_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_LLMs_are_Good_Action_Recognizers_CVPR_2024_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -56,11 +56,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Xu\_6D-Diff\_A\_Keypoint\_Diffusion\_Framework\_for\_6D\_Object\_Pose\_Estimation\_CVPR\_2024\_paper.pdf">6d-diff: A keypoint diffusion framework for 6d object pose estimation</a></div>
+      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_6D-Diff_A_Keypoint_Diffusion_Framework_for_6D_Object_Pose_Estimation_CVPR_2024_paper.pdf">6d-diff: A keypoint diffusion framework for 6d object pose estimation</a></div>
       <div class="author"><strong>Li Xu, Haoxuan Qu, Yujun Cai, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Xu\_6D-Diff\_A\_Keypoint\_Diffusion\_Framework\_for\_6D\_Object\_Pose\_Estimation\_CVPR\_2024\_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_6D-Diff_A_Keypoint_Diffusion_Framework_for_6D_Object_Pose_Estimation_CVPR_2024_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -126,11 +126,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu\_A\_Characteristic\_Function-Based\_Method\_for\_Bottom-Up\_Human\_Pose\_Estimation\_CVPR\_2023\_paper.pdf">A Characteristic Function-Based Method for Bottom-Up Human Pose Estimation</a></div>
+      <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu_A_Characteristic_Function-Based_Method_for_Bottom-Up_Human_Pose_Estimation_CVPR_2023_paper.pdf">A Characteristic Function-Based Method for Bottom-Up Human Pose Estimation</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Lin Geng Foo, Ajay Kumar, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu\_A\_Characteristic\_Function-Based\_Method\_for\_Bottom-Up\_Human\_Pose\_Estimation\_CVPR\_2023\_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu_A_Characteristic_Function-Based_Method_for_Bottom-Up_Human_Pose_Estimation_CVPR_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -140,11 +140,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tanke\_Social\_Diffusion\_Long-term\_Multiple\_Human\_Motion\_Anticipation\_ICCV\_2023\_paper.pdf">Social diffusion: Long-term multiple human motion anticipation</a></div>
+      <div class="title"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tanke_Social_Diffusion_Long-term_Multiple_Human_Motion_Anticipation_ICCV_2023_paper.pdf">Social diffusion: Long-term multiple human motion anticipation</a></div>
       <div class="author"><strong>Julian Tanke, Linguang Zhang, Amy Zhao, Chengcheng Tang, Yujun Cai, Lezi Wang, Po-Chen Wu, Juergen Gall, Cem Keskin</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tanke\_Social\_Diffusion\_Long-term\_Multiple\_Human\_Motion\_Anticipation\_ICCV\_2023\_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tanke_Social_Diffusion_Long-term_Multiple_Human_Motion_Anticipation_ICCV_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -210,11 +210,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2\_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
+      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
       <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
       <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-031-20050-2\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://doi.org/10.1007/978-3-031-20050-2_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -378,11 +378,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-030-67658-2\_16">Progressive supervision for node classification</a></div>
+      <div class="title"><a href="https://doi.org/10.1007/978-3-030-67658-2_16">Progressive supervision for node classification</a></div>
       <div class="author"><strong>Yiwei Wang, Wei Wang, Yuxuan Liang, Yujun Cai, Bryan Hooi</strong>.</div>
       <div class="periodical"><em>Machine Learning and Knowledge Discovery in Databases: European Conference, ECML PKDD 2020, Ghent, Belgium, September 14--18, 2020, Proceedings, Part I, 2021.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-030-67658-2\_16" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://doi.org/10.1007/978-3-030-67658-2_16" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -392,11 +392,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-58571-6\_14">Learning progressive joint propagation for human motion prediction</a></div>
+      <div class="title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-58571-6_14">Learning progressive joint propagation for human motion prediction</a></div>
       <div class="author"><strong>Yujun Cai, Lin Huang, Yiwei Wang, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Xu Yang, Yiheng Zhu, Xiaohui Shen, others</strong>.</div>
       <div class="periodical"><em>Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part VII 16, 2020.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-030-58571-6\_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-030-58571-6_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -490,11 +490,11 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-030-01231-1\_41">Weakly-supervised 3d hand pose estimation from monocular rgb images</a></div>
+      <div class="title"><a href="https://doi.org/10.1007/978-3-030-01231-1_41">Weakly-supervised 3d hand pose estimation from monocular rgb images</a></div>
       <div class="author"><strong>Yujun Cai, Liuhao Ge, Jianfei Cai, Junsong Yuan</strong>.</div>
       <div class="periodical"><em>Proceedings of the European conference on computer vision (ECCV), 2018.</em></div>
       <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-030-01231-1\_41" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="https://doi.org/10.1007/978-3-030-01231-1_41" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
