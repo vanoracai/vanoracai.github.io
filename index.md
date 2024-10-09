@@ -47,9 +47,7 @@ graph learning.
 ## Teaching
 
 - Teaching Assistant：
-**Recent Advance on Image Segmentation and Its Applications** 
-
-**Digital Image Processing** at [Nanyang Technological University](https://www.ntu.edu.sg/), 2019-2020
+**Recent Advance on Image Segmentation and Its Applications** and **Digital Image Processing** at [Nanyang Technological University](https://www.ntu.edu.sg/), 2019-2020
 
 {% include_relative _includes/services.md %}
 
