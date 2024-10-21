@@ -9,10 +9,13 @@ layout: homepage
 <!-- **Recruiting Ph.D. students and research interns.** I’m actively looking for strong and motivated students. If you are interested in working with me, please feel free to email me.<br> -->
 
 <!-- I am currently a Postdoc at [UCLA](https://www.ucla.edu/) advised by [Prof. Kai-Wei Chang](http://web.cs.ucla.edu/~kwchang/members/) and [Prof. Nanyun Peng](https://vnpeng.net/group/). I received my Ph.D. in Computer Science at [National University of Singapore](https://nus.edu.sg/), where I was fortunate to be advised by [Prof. Bryan Hooi](http://bhooi.github.io/) and collaborate with [Prof. Muhao Chen](https://muhaochen.github.io/). My recent research is focused on **trustworthy large language models**. -->
+**I will join the School of Electrical Engineering and Computer Science, The University of Queensland (UQ) in Nov. 2024 as a Lecturer (Assistant Professor).**
+
+**Recruiting Ph.D. students and research interns. I’m actively looking for strong and motivated students. If you are interested in working with me, please feel free drop me an email.**
+
 I am currently a Research Scientist in [Meta Inc.](https://about.meta.com/). I received my Ph.D. in Computer Science from [Nanyang Technological University](https://www.ntu.edu.sg/), where I was fortunate to be advised by [Prof. Tat Jen Cham](https://personal.ntu.edu.sg/astjcham/index.html), [Prof. Jianfei Cai](https://jianfei-cai.github.io/), [Prof. Junsong Yuan](https://cse.buffalo.edu/~jsyuan/) and [Prof. Nadia Magnenat Thalmann](http://www.miralab.ch/index.php/rushmore_teams/n-thalmann/). Prior to this, I obtained my Bachelor degree from [Southeast University](https://www.seu.edu.cn/).
 
-My research interests include human perception, vision-language understanding, natural language processing and
-graph learning.
+My research interests include human perception, vision-language understanding, natural language processing.
 <!--
 <strong style="color:#e74d3c; font-weight:600">I am looking for a postdoc or research scientist position in the US and EU. I would appreciate a ping if you see a job I might fit.</strong>
 -->
