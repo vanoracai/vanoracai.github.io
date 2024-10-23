@@ -47,8 +47,9 @@ VENUE_ABBREVIATIONS = {
     'CONLL': 'CONLL',
     'EMNLP': 'EMNLP',
     'Empirical Methods': 'EMNLP',
-    'CHI': 'CHI',
+    ' CHI Conference on Human Factors in Computing Systems': 'CHI',
     'European Conference on Computer Vision': 'ECCV',
+    'pattern analysis and machine intelligence':'TPAMI'
     # Add more mappings for common conferences/journals
 }
 

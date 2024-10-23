@@ -35,7 +35,6 @@ VENUE_ABBREVIATIONS = {
     'IEEE International Conference on Computer Communications': 'INFOCOM',
     'IEEE Transactions on Signal Processing': 'TSP',
     'Proceedings of the Web Conference': 'WWW',
-    'ECCV': 'ECCV',
     'Machine Learning and Knowledge Discovery in Databases: European': 'ECML',
     'Learning on Graph': 'LOG',
     'AAAI': 'AAAI',
@@ -44,12 +43,15 @@ VENUE_ABBREVIATIONS = {
     'CONLL': 'CONLL',
     'EMNLP': 'EMNLP',
     'Empirical Methods': 'EMNLP',
-    'CHI' : 'CHI',
+    'CHI Conference on Human Factors in Computing Systems': 'CHI',
+    'European Conference on Computer Vision': 'ECCV',
+    'pattern analysis and machine intelligence':'TPAMI'
     # Add more mappings for common conferences/journals
 }
 
 # 定义会议时间顺序
 CONFERENCE_TIME_ORDER = [
+    'TPAMI'
     'NeurIPS',
     'EMNLP',
     'ACL',
