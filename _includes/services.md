@@ -24,21 +24,21 @@
 
 <ul style="margin:0 0 5px;">
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
-  <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor>></li>
+  <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Joint Conferences on Artificial Intelligence(IJCAI) 2025  (SPC)</autocolor></li>
   <li><autocolor>The Web Conference (WWW) 2025 (SPC) </autocolor></li>
   <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) (Area Chair) </autocolor></li>
   <li><autocolor>International Conference on Learning Representations (ICLR) </autocolor></li>
-  <li><a href="https://icml.cc/Conferences/2022"><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></a></li>
-  <li><a href="https://www.siggraph.org/"><autocolor>ACM SIGGRAPH </autocolor></a></li>
-  <li><a href="https://aaai.org/Conferences/AAAI-23/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></a></li>
+  <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></li>
+  <li><autocolor>ACM SIGGRAPH </autocolor></li>
+  <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></li>
 
-  <li><a href="https://2022.acmmm.org/"><autocolor>European Conference on Computer Vision (ECCV) </autocolor></a></li>
+  <li><autocolor>European Conference on Computer Vision (ECCV) </autocolor></li>
   <!-- <li><a href="https://2022.acmmm.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI-ECAI) </autocolor></a></li> -->
-  <li><a href="https://iclr.cc/Conferences/2023"><autocolor>The AAAI Conference on Artificial Intelligence (AAAI) </autocolor></a></li>
-  <li><a href="https://2022.acmmm.org/"><autocolor>IEEE International Conference on Multimedia and Expo (ICME) </autocolor></a></li>
-  <li><a href="https://wacv2023.thecvf.com/"><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) </autocolor></a></li>
-  <li><a href="https://2022.acmmm.org/"><autocolor>International Joint Conference on Neural Network (IJCNN) </autocolor></a></li>
+  <li><autocolor>The AAAI Conference on Artificial Intelligence (AAAI) </autocolor></li>
+  <li><autocolor>IEEE International Conference on Multimedia and Expo (ICME) </autocolor></li>
+  <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) </autocolor></li>
+  <li><autocolor>International Joint Conference on Neural Network (IJCNN) </autocolor></li>
   <!--
   <li><a href="https://mmasia2021.uqcloud.net/"><autocolor>ACM MM Asia 2020-2021</autocolor></a></li>
   <li><a href="http://www.acml-conf.org/2021/"><autocolor>ACML 2021</autocolor></a></li>
@@ -48,6 +48,7 @@
 <h4 style="margin:0 10px 0;">Journal Reviewers</h4>
 
 <ul style="margin:0 0 20px;">
+  <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34"><autocolor>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</autocolor></a></li>
   <li><a href="https://link.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83"><autocolor>IEEE Transactions on Image Processing（TIP)</autocolor></a></li>
   <li><a href="https://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6046"><autocolor>IEEE Transactions on Multimedia (TMM)</autocolor></a></li>
