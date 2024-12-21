@@ -63,6 +63,7 @@ CONFERENCE_TIME_ORDER = [
     'ECCV',
     'ACL',
     'CVPR',
+    'CONLL',
 ]
 
 # 函数：根据缩写表替换venue，不区分大小写
