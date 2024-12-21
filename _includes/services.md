@@ -23,12 +23,12 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></a></li>
-  <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></a></li>
-  <li><autocolor>International Joint Conferences on Artificial Intelligence(IJCAI) 2025  (SPC)</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>The Web Conference (WWW) 2025 (SPC) </autocolor></a></li>
-  <li><a href="https://wacv2023.thecvf.com/"><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) (Area Chair) </autocolor></a></li>
-  <li><a href="https://neurips.cc/Conferences/2022"><autocolor>International Conference on Learning Representations (ICLR) </autocolor></a></li>
+  <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
+  <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor>></li>
+  <li><autocolor>International Joint Conferences on Artificial Intelligence(IJCAI) 2025  (SPC)</autocolor></li>
+  <li><autocolor>The Web Conference (WWW) 2025 (SPC) </autocolor></li>
+  <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) (Area Chair) </autocolor></li>
+  <li><autocolor>International Conference on Learning Representations (ICLR) </autocolor></li>
   <li><a href="https://icml.cc/Conferences/2022"><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></a></li>
   <li><a href="https://www.siggraph.org/"><autocolor>ACM SIGGRAPH </autocolor></a></li>
   <li><a href="https://aaai.org/Conferences/AAAI-23/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></a></li>
