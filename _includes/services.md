@@ -23,15 +23,18 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>The Web Conference (WWW) (SPC) </autocolor></a></li>
+  <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></a></li>
+  <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></a></li>
+  <li><autocolor>International Joint Conferences on Artificial Intelligence(IJCAI) 2025  (SPC)</autocolor></a></li>
+  <li><a href="https://eccv2022.ecva.net/"><autocolor>The Web Conference (WWW) 2025 (SPC) </autocolor></a></li>
   <li><a href="https://wacv2023.thecvf.com/"><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) (Area Chair) </autocolor></a></li>
   <li><a href="https://neurips.cc/Conferences/2022"><autocolor>International Conference on Learning Representations (ICLR) </autocolor></a></li>
   <li><a href="https://icml.cc/Conferences/2022"><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></a></li>
   <li><a href="https://www.siggraph.org/"><autocolor>ACM SIGGRAPH </autocolor></a></li>
   <li><a href="https://aaai.org/Conferences/AAAI-23/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></a></li>
-  <li><a href="https://ijcai-23.org/"><autocolor>International Conference on Computer Vision (ICCV) </autocolor></a></li>
+
   <li><a href="https://2022.acmmm.org/"><autocolor>European Conference on Computer Vision (ECCV) </autocolor></a></li>
-  <li><a href="https://2022.acmmm.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI-ECAI) </autocolor></a></li>
+  <!-- <li><a href="https://2022.acmmm.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI-ECAI) </autocolor></a></li> -->
   <li><a href="https://iclr.cc/Conferences/2023"><autocolor>The AAAI Conference on Artificial Intelligence (AAAI) </autocolor></a></li>
   <li><a href="https://2022.acmmm.org/"><autocolor>IEEE International Conference on Multimedia and Expo (ICME) </autocolor></a></li>
   <li><a href="https://wacv2023.thecvf.com/"><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) </autocolor></a></li>
