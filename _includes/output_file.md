@@ -8,7 +8,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
       <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025, 2025.</em></div>
+      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -100,7 +100,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1145/3613904.3642702">STMG: A Machine Learning Microgesture Recognition System for Supporting Thumb-Based VR/AR Input</a></div>
       <div class="author"><strong>Kenrick Kin, Chengde Wan, Ken Koh, Andrei Marin, Necati Cihan Camgoz, Yubo Zhang, Yujun Cai, Fedor Kovalev, Moshe Ben-Zacharia, Shannon Hoople, others</strong>.</div>
-      <div class="periodical"><em>Proceedings of the CHI Conference on Human Factors in Computing Systems, 2024.</em></div>
+      <div class="periodical"><em>Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1145/3613904.3642702" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
