@@ -26,7 +26,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2405.15196">DisC-GS: Discontinuity-aware Gaussian Splatting</a></div>
       <div class="author"><strong>Haoxuan Qu, Zhuoling Li, Hossein Rahmani, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems (Neurips), 2024.</em></div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems (NeurIPS), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2405.15196" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -40,7 +40,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2412.02725">emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation</a></div>
       <div class="author"><strong>Sasha Salter, Richard Warren, Collin Schlager, Adrian Spurr, Shangchen Han, Rohin Bhasin, Yujun Cai, Peter Walkington, Anuoluwapo Bolarinwa, Robert Wang, others</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems Dataset and Benmark Track, 2024.</em></div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems Dataset and Benmark Track (NeurIPS), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2412.02725" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
