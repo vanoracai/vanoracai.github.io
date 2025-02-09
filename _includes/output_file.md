@@ -2,6 +2,20 @@
 
 <div class="publications">
 <ol class="bibliography">
+<h3 style="margin-top: 20px; margin-bottom: 5px;">2025</h3><hr style="margin-bottom: 5px;">
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
+      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2024</h3><hr style="margin-bottom: 5px;">
 <li>
 <div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
@@ -12,7 +26,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2405.15196">DisC-GS: Discontinuity-aware Gaussian Splatting</a></div>
       <div class="author"><strong>Haoxuan Qu, Zhuoling Li, Hossein Rahmani, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems, 2024.</em></div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems (Neurips), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2405.15196" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -38,23 +52,9 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
-      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>International Conference on Computational Linguistics, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11433.pdf">Energy-Calibrated VAE with Test Time Free Lunch</a></div>
       <div class="author"><strong>Yihong Luo, Siya Qiu, Xingjian Tao, Yujun Cai, Jing Tang</strong>.</div>
-      <div class="periodical"><em>European Conference on Computer Vision, 2024.</em></div>
+      <div class="periodical"><em>European Conference on Computer Vision (ECCV), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11433.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="https://github.com/Luo-Yihong/EC-VAE" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -187,6 +187,20 @@
       <div class="periodical"><em>arXiv preprint arXiv:2405.15267, 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2405.15267" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Are LLMs Really Not Knowledgable? Mining the Submerged Knowledge in LLMs'  Memory</a></div>
+      <div class="author"><strong>Xingjian Tao, Yiwei Wang, Yujun Cai, Zhicheng Yang, Jing Tang</strong>.</div>
+      <div class="periodical"><em>arXiv preprint arXiv:2412.20846, 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
