@@ -8,6 +8,7 @@ VENUE_ABBREVIATIONS = {
     'ACM SIGKDD': 'KDD',
     'Computer Vision and Pattern Recognition': 'CVPR',
     'arXiv preprint': 'Preprint',
+    'NAACL': 'NAACL',
     'International Conference on Learning Representations': 'ICLR',
     'Advances in Neural Information Processing Systems': 'NeurIPS',
     'Association for Computational Linguistics': 'ACL',
