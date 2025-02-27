@@ -185,15 +185,16 @@ def load_bib_file(file_path):
 
 # 会议时间排序列表，基于缩写
 CONFERENCE_TIME_ORDER = [
-    'NeurIPS',
+
     'COLING',
-    'EMNLP',
-    'ACL',
     'ECCV',
-    'CVPR',
     'NAACL',
+    'CVPR',
     'ICCV',
+    'NeurIPS',
+    'ACL',
     'ICLR',
+    'EMNLP',
     'AAAI',
     'CHI',
     'CONLL',

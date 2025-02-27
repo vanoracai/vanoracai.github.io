@@ -6,20 +6,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
-      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2411.18000">Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models</a></div>
       <div class="author"><strong>Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, Yujun Cai</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
@@ -39,6 +25,20 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
+      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -102,38 +102,6 @@
 </li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2024</h3><hr style="margin-bottom: 5px;">
 <li>
-<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
-  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
-    <img src="Image/qu2024disc.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
-    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">NeurIPS</abbr>
-  </div>
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2405.15196">DisC-GS: Discontinuity-aware Gaussian Splatting</a></div>
-      <div class="author"><strong>Haoxuan Qu, Zhuoling Li, Hossein Rahmani, Yujun Cai, Jun Liu</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems (NeurIPS), 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2405.15196" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2412.02725">emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation</a></div>
-      <div class="author"><strong>Sasha Salter, Richard Warren, Collin Schlager, Adrian Spurr, Shangchen Han, Rohin Bhasin, Yujun Cai, Peter Walkington, Anuoluwapo Bolarinwa, Robert Wang, others</strong>.</div>
-      <div class="periodical"><em>Advances in Neural Information Processing Systems Dataset and Benmark Track (NeurIPS), 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2412.02725" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/11433.pdf">Energy-Calibrated VAE with Test Time Free Lunch</a></div>
@@ -173,6 +141,38 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_6D-Diff_A_Keypoint_Diffusion_Framework_for_6D_Object_Pose_Estimation_CVPR_2024_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
+  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
+    <img src="Image/qu2024disc.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
+    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">NeurIPS</abbr>
+  </div>
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2405.15196">DisC-GS: Discontinuity-aware Gaussian Splatting</a></div>
+      <div class="author"><strong>Haoxuan Qu, Zhuoling Li, Hossein Rahmani, Yujun Cai, Jun Liu</strong>.</div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems (NeurIPS), 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2405.15196" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2412.02725">emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation</a></div>
+      <div class="author"><strong>Sasha Salter, Richard Warren, Collin Schlager, Adrian Spurr, Shangchen Han, Rohin Bhasin, Yujun Cai, Peter Walkington, Anuoluwapo Bolarinwa, Robert Wang, others</strong>.</div>
+      <div class="periodical"><em>Advances in Neural Information Processing Systems Dataset and Benmark Track (NeurIPS), 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2412.02725" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -280,20 +280,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2310.13206">Primacy effect of chatgpt</a></div>
-      <div class="author"><strong>Yiwei Wang, Yujun Cai, Muhao Chen, Yuxuan Liang, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2023.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2310.13206" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu_A_Characteristic_Function-Based_Method_for_Bottom-Up_Human_Pose_Estimation_CVPR_2023_paper.pdf">A Characteristic Function-Based Method for Bottom-Up Human Pose Estimation</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Lin Geng Foo, Ajay Kumar, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023.</em></div>
@@ -322,6 +308,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2310.13206">Primacy effect of chatgpt</a></div>
+      <div class="author"><strong>Yiwei Wang, Yujun Cai, Muhao Chen, Yuxuan Liang, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2023.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2310.13206" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2305.13551">How Fragile is Relation Extraction under Entity Replacements?</a></div>
       <div class="author"><strong>Yiwei Wang, Bryan Hooi, Fei Wang, Yujun Cai, Yuxuan Liang, Wenxuan Zhou, Jing Tang, Manjuan Duan, Muhao Chen</strong>.</div>
       <div class="periodical"><em>CONLL, 2023.</em></div>
@@ -333,6 +333,20 @@
 </div>
 </li>
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2022</h3><hr style="margin-bottom: 5px;">
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
+      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
+      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1007/978-3-031-20050-2_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
@@ -369,20 +383,6 @@
       <div class="periodical"><em>Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2022.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2205.03784" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1007/978-3-031-20050-2_14">Geometry-guided progressive nerf for generalizable and efficient neural human rendering</a></div>
-      <div class="author"><strong>Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, Yujun Cai, Jiashi Feng, Shuicheng Yan</strong>.</div>
-      <div class="periodical"><em>European Conference on Computer Vision, 2022.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1007/978-3-031-20050-2_14" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -448,6 +448,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1109/iccv48922.2021.01144">A unified 3d human motion synthesis model via conditional variational auto-encoder</a></div>
+      <div class="author"><strong>Yujun Cai, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others</strong>.</div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2021.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1109/iccv48922.2021.01144" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">Adaptive data augmentation on temporal graphs</a></div>
       <div class="author"><strong>Yiwei Wang, Yujun Cai, Yuxuan Liang, Henghui Ding, Changhu Wang, Siddharth Bhatia, Bryan Hooi</strong>.</div>
       <div class="periodical"><em>Advances in Neural Information Processing Systems, 2021.</em></div>
@@ -467,20 +481,6 @@
       <div class="periodical"><em>Advances in Neural Information Processing Systems, 2021.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/iccv48922.2021.01144">A unified 3d human motion synthesis model via conditional variational auto-encoder</a></div>
-      <div class="author"><strong>Yujun Cai, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2021.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/iccv48922.2021.01144" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
