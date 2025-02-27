@@ -51,6 +51,7 @@ VENUE_ABBREVIATIONS = {
     'European Conference on Computer Vision': 'ECCV',
     'pattern analysis and machine intelligence':'TPAMI',
     'Conference on Computational Linguistics':'COLING',
+    'COLING':'COLING',
     # Add more mappings for common conferences/journals
 }
 
@@ -185,11 +186,10 @@ def load_bib_file(file_path):
 
 # 会议时间排序列表，基于缩写
 CONFERENCE_TIME_ORDER = [
-
-    'COLING',
     'ECCV',
     'NAACL',
     'CVPR',
+    'COLING',
     'ICCV',
     'NeurIPS',
     'ACL',
