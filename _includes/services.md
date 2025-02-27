@@ -25,9 +25,11 @@
 <ul style="margin:0 0 5px;">
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></li>
+  <li><autocolor>Conference on Language Modeling (COLM) (Area Chair)</autocolor></li> 
   <li><autocolor>International Joint Conferences on Artificial Intelligence(IJCAI) 2025  (SPC)</autocolor></li>
   <li><autocolor>The Web Conference (WWW) 2025 (SPC) </autocolor></li>
-  <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) (Area Chair) </autocolor></li>
+  <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2024 (Area Chair) </autocolor></li>
+  <li><autocolor>International Joint Conference on Neural Network (IJCNN) 2025 (Area Chair) </autocolor></li>
   <li><autocolor>International Conference on Learning Representations (ICLR) </autocolor></li>
   <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></li>
   <li><autocolor>ACM SIGGRAPH </autocolor></li>
