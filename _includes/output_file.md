@@ -6,20 +6,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack</a></div>
-      <div class="author"><strong>Cheng Wang, Yiwei Wang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2411.18000">Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models</a></div>
       <div class="author"><strong>Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, Yujun Cai</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
@@ -37,6 +23,20 @@
       <div class="title"><a href="#">LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion</a></div>
       <div class="author"><strong>Muchen Li, Sammy Christen, Chengde Wan, Yujun Cai, Renjie Liao, Leonid Sigal, Shugao Ma</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack</a></div>
+      <div class="author"><strong>Cheng Wang, Yiwei Wang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
