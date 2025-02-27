@@ -22,7 +22,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2411.18000">Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models</a></div>
       <div class="author"><strong>Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, Yujun Cai</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2411.18000" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -36,7 +36,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion</a></div>
       <div class="author"><strong>Sammy Christen Muchen Li</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -674,7 +674,7 @@
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.1109/cvpr.2018.00878">Hand pointnet: 3d hand pose estimation using point sets</a></div>
       <div class="author"><strong>Liuhao Ge, Yujun Cai, Junwu Weng, Junsong Yuan</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE conference on computer vision and pattern recognition, 2018.</em></div>
+      <div class="periodical"><em>Proceedings of the IEEE conference on computer vision and pattern recognition (CVPR), 2018.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://doi.org/10.1109/cvpr.2018.00878" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
