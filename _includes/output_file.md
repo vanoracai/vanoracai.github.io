@@ -21,7 +21,7 @@
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion</a></div>
-      <div class="author"><strong>Sammy Christen Muchen Li</strong>.</div>
+      <div class="author"><strong>Muchen Li, Sammy Christen, Chengde Wan, Yujun Cai, Renjie Liao, Leonid Sigal, Shugao Ma</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
