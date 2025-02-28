@@ -9,7 +9,6 @@ VENUE_ABBREVIATIONS = {
     'arXiv preprint': 'Preprint',
     'International Conference on Learning Representations': 'ICLR',
     'Advances in Neural Information Processing Systems': 'NeurIPS',
-    'Association for Computational Linguistics': 'ACL',
     'International Conference on Data Mining': 'ICDM',
     'International Joint Conference on Artificial Intelligence': 'IJCAI',
     'Conference on Computer Vision and Pattern Recognition': 'CVPR',
@@ -20,7 +19,8 @@ VENUE_ABBREVIATIONS = {
     'ACM Conference on Information and Knowledge Management': 'CIKM',
     'International Conference on Web Search and Data Mining': 'WSDM',
     'International Conference on Very Large Data Bases': 'VLDB',
-    'Annual Meeting of the Association for Computational Linguistics': 'ACL',
+    'NAACL':'NAACL',
+    'ACL': 'ACL',
     'International Conference on Automated Planning and Scheduling': 'ICAPS',
     'International Symposium on Information Theory': 'ISIT',
     'IEEE International Conference on Robotics and Automation': 'ICRA',
@@ -47,6 +47,7 @@ VENUE_ABBREVIATIONS = {
     'European Conference on Computer Vision': 'ECCV',
     'pattern analysis and machine intelligence':'TPAMI',
     'Conference on Computational Linguistics':'COLING',
+    'NAACL':'NAACL',
     # Add more mappings for common conferences/journals
 }
 
