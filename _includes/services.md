@@ -23,6 +23,7 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
+  <li><autocolor>ACM Multimedia 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>Conference on Language Modeling (COLM) (Area Chair)</autocolor></li> 
