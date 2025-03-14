@@ -104,7 +104,7 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2502.04364">Lost in Edits? A \textdollar \textdollar \textbackslash backslash\textdollar lambda \textdollar -Compass for AIGC Provenance</a></div>
+      <div class="title"><a href="https://arxiv.org/abs/2502.04364">Lost in Edits? A \lambda -Compass for AIGC Provenance</a></div>
       <div class="author"><strong>Wenhao You, Bryan Hooi, Yiwei Wang, Euijin Choo, Ming-Hsuan Yang, Junsong Yuan, Zi Huang, Yujun Cai</strong>.</div>
       <div class="periodical"><em>arXiv preprint arXiv:2502.04364, 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
