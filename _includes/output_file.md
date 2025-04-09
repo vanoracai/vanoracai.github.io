@@ -73,19 +73,6 @@
 </div>
 </li>
 
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2502.05869">HyLiFormer: Hyperbolic Linear Attention for Skeleton-based Human Action Recognition</a></div>
-      <div class="author"><strong>Yue Li, Haoxuan Qu, Mengyuan Liu, Jun Liu, Yujun Cai</strong>.</div>
-      <div class="periodical"><em>arXiv preprint arXiv:2502.05869, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2502.05869" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
 
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
