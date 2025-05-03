@@ -23,6 +23,7 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
+  <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>ACM Multimedia 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Machine Learning (ICML) 2025 (Area Chair)</autocolor></li>
@@ -32,7 +33,6 @@
   <li><autocolor>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2024 (Area Chair) </autocolor></li>
   <li><autocolor>International Joint Conference on Neural Network (IJCNN) 2025 (Area Chair) </autocolor></li>
   <li><autocolor>International Conference on Learning Representations (ICLR) </autocolor></li>
-  <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) </autocolor></li>
   <li><autocolor>ACM SIGGRAPH </autocolor></li>
   <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></li>
 
