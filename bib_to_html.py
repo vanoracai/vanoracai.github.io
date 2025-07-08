@@ -53,6 +53,7 @@ VENUE_ABBREVIATIONS = {
     'pattern analysis and machine intelligence':'TPAMI',
     'Conference on Computational Linguistics':'COLING',
     'COLING':'COLING',
+    'COLM':'COLM',
     # Add more mappings for common conferences/journals
 }
 
@@ -189,6 +190,7 @@ def load_bib_file(file_path):
 CONFERENCE_TIME_ORDER = [
     'ECCV',
     'CVPR',
+    'COLM',
     'NAACL',
     'COLING',
     'ICCV',

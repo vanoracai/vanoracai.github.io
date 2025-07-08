@@ -34,6 +34,48 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2503.23768?">Texture or Semantics? Vision-Language Models Get Lost in Font Recognition</a></div>
+      <div class="author"><strong>Zhecheng Li, Guoxian Song, Yujun Cai, Zhen Xiong, Junsong Yuan, Yiwei Wang</strong>.</div>
+      <div class="periodical"><em>COLM 2025, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2503.23768?" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2504.01589">Text Speaks Louder than Vision: ASCII Art Reveals Textual Biases in Vision-Language Models</a></div>
+      <div class="author"><strong>Zhaochen Wang, Bryan Hooi, Yiwei Wang, Ming-Hsuan Yang, Zi Huang, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>COLM 2025, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2504.01589" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2504.01048">How does Watermarking Affect Visual Language Models in Document Understanding?</a></div>
+      <div class="author"><strong>Chunxue Xu, Yiwei Wang, Bryan Hooi, Yujun Cai, Songze Li</strong>.</div>
+      <div class="periodical"><em>COLM 2025, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2504.01048" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://doi.org/10.18653/v1/2025.naacl-long.210">Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack</a></div>
       <div class="author"><strong>Cheng Wang, Yiwei Wang, Yujun Cai, Bryan Hooi</strong>.</div>
       <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
@@ -109,48 +151,6 @@
       <div class="periodical"><em>arXiv preprint arXiv:2502.04364, 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2502.04364" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2503.23768?">Texture or Semantics? Vision-Language Models Get Lost in Font Recognition</a></div>
-      <div class="author"><strong>Zhecheng Li, Guoxian Song, Yujun Cai, Zhen Xiong, Junsong Yuan, Yiwei Wang</strong>.</div>
-      <div class="periodical"><em>COLM 2025, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2503.23768?" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2504.01589">Text Speaks Louder than Vision: ASCII Art Reveals Textual Biases in Vision-Language Models</a></div>
-      <div class="author"><strong>Zhaochen Wang, Bryan Hooi, Yiwei Wang, Ming-Hsuan Yang, Zi Huang, Yujun Cai</strong>.</div>
-      <div class="periodical"><em>COLM 2025, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2504.01589" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2504.01048">How does Watermarking Affect Visual Language Models in Document Understanding?</a></div>
-      <div class="author"><strong>Chunxue Xu, Yiwei Wang, Bryan Hooi, Yujun Cai, Songze Li</strong>.</div>
-      <div class="periodical"><em>COLM 2025, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2504.01048" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
