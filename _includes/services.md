@@ -23,6 +23,7 @@
 <h4 style="margin:0 10px 0;">Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
+  <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) 2025 (Area Chair)</autocolor></li>
   <li><autocolor>ACM Multimedia 2025 (Area Chair)</autocolor></li>
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025 (Area Chair)</autocolor></li>
@@ -35,7 +36,7 @@
   <li><autocolor>International Joint Conference on Neural Network (IJCNN) 2025 (Area Chair) </autocolor></li>
   <li><autocolor>International Conference on Learning Representations (ICLR) </autocolor></li>
   <li><autocolor>ACM SIGGRAPH </autocolor></li>
-  <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></li>
+  <!-- <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) </autocolor></li> -->
 
   <li><autocolor>European Conference on Computer Vision (ECCV) </autocolor></li>
   <!-- <li><a href="https://2022.acmmm.org/"><autocolor>International Joint Conference on Artificial Intelligence (IJCAI-ECAI) </autocolor></a></li> -->
