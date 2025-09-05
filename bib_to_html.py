@@ -188,8 +188,10 @@ def load_bib_file(file_path):
 
 # 会议时间排序列表，基于缩写
 CONFERENCE_TIME_ORDER = [
+    'EMNLP',
     'ECCV',
     'CVPR',
+    'ACL',
     'COLM',
     'NAACL',
     'COLING',

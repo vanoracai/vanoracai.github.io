@@ -6,104 +6,6 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2411.18000">Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models</a></div>
-      <div class="author"><strong>Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, Yujun Cai</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2411.18000" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.1109/cvpr52734.2025.01623">LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion</a></div>
-      <div class="author"><strong>Muchen Li, Sammy Christen, Chengde Wan, Yujun Cai, Renjie Liao, Leonid Sigal, Shugao Ma</strong>.</div>
-      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.1109/cvpr52734.2025.01623" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2503.23768?">Texture or Semantics? Vision-Language Models Get Lost in Font Recognition</a></div>
-      <div class="author"><strong>Zhecheng Li, Guoxian Song, Yujun Cai, Zhen Xiong, Junsong Yuan, Yiwei Wang</strong>.</div>
-      <div class="periodical"><em>COLM, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2503.23768?" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2504.01589">Text Speaks Louder than Vision: ASCII Art Reveals Textual Biases in Vision-Language Models</a></div>
-      <div class="author"><strong>Zhaochen Wang, Bryan Hooi, Yiwei Wang, Ming-Hsuan Yang, Zi Huang, Yujun Cai</strong>.</div>
-      <div class="periodical"><em>COLM, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2504.01589" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/pdf/2504.01048">How does Watermarking Affect Visual Language Models in Document Understanding?</a></div>
-      <div class="author"><strong>Chunxue Xu, Yiwei Wang, Bryan Hooi, Yujun Cai, Songze Li</strong>.</div>
-      <div class="periodical"><em>COLM, 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/pdf/2504.01048" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://doi.org/10.18653/v1/2025.naacl-long.210">Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack</a></div>
-      <div class="author"><strong>Cheng Wang, Yiwei Wang, Yujun Cai, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://doi.org/10.18653/v1/2025.naacl-long.210" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
-      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>International Conference on Computational Linguistics (COLING), 2025.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://arxiv.org/abs/2508.18722">VistaWise: Building Cost-Effective Agent with Cross-Modal Knowledge Graph for Minecraft</a></div>
       <div class="author"><strong>Honghao Fu, Junlong Ren, Qi Chai, Deheng Ye, Yujun Cai, Hao Wang</strong>.</div>
       <div class="periodical"><em>EMNLP, 2025.</em></div>
@@ -193,6 +95,104 @@
       <div class="periodical"><em>EMNLP, 2025.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2505.13890" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2411.18000">Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models</a></div>
+      <div class="author"><strong>Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2411.18000" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.1109/cvpr52734.2025.01623">LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion</a></div>
+      <div class="author"><strong>Muchen Li, Sammy Christen, Chengde Wan, Yujun Cai, Renjie Liao, Leonid Sigal, Shugao Ma</strong>.</div>
+      <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.1109/cvpr52734.2025.01623" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2503.23768?">Texture or Semantics? Vision-Language Models Get Lost in Font Recognition</a></div>
+      <div class="author"><strong>Zhecheng Li, Guoxian Song, Yujun Cai, Zhen Xiong, Junsong Yuan, Yiwei Wang</strong>.</div>
+      <div class="periodical"><em>COLM, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2503.23768?" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2504.01589">Text Speaks Louder than Vision: ASCII Art Reveals Textual Biases in Vision-Language Models</a></div>
+      <div class="author"><strong>Zhaochen Wang, Bryan Hooi, Yiwei Wang, Ming-Hsuan Yang, Zi Huang, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>COLM, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2504.01589" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/pdf/2504.01048">How does Watermarking Affect Visual Language Models in Document Understanding?</a></div>
+      <div class="author"><strong>Chunxue Xu, Yiwei Wang, Bryan Hooi, Yujun Cai, Songze Li</strong>.</div>
+      <div class="periodical"><em>COLM, 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/pdf/2504.01048" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://doi.org/10.18653/v1/2025.naacl-long.210">Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack</a></div>
+      <div class="author"><strong>Cheng Wang, Yiwei Wang, Yujun Cai, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://doi.org/10.18653/v1/2025.naacl-long.210" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2409.03363">Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding</a></div>
+      <div class="author"><strong>Cheng Wang, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
+      <div class="periodical"><em>International Conference on Computational Linguistics (COLING), 2025.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2409.03363" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -302,6 +302,34 @@
 </li>
 
 <li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2411.17993">DRS: Deep Question Reformulation With Structured Output</a></div>
+      <div class="author"><strong>Zhecheng Li, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
+      <div class="periodical"><em>ACL, 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2411.17993" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2410.20016">Vulnerability of LLMs to Vertically Aligned Text Manipulations</a></div>
+      <div class="author"><strong>Zhecheng Li, Yiwei Wang, Bryan Hooi, Yujun Cai, Zhen Xiong, Nanyun Peng, Kai-Wei Chang</strong>.</div>
+      <div class="periodical"><em>ACL, 2024.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2410.20016" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
 <div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
   <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
     <img src="Image/qu2024disc.png" class="teaser img-fluid z-depth-1" style="width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;">
@@ -327,34 +355,6 @@
       <div class="periodical"><em>Advances in Neural Information Processing Systems Dataset and Benmark Track (NeurIPS), 2024.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://arxiv.org/abs/2412.02725" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2411.17993">DRS: Deep Question Reformulation With Structured Output</a></div>
-      <div class="author"><strong>Zhecheng Li, Yiwei Wang, Bryan Hooi, Yujun Cai, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>ACL, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2411.17993" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2410.20016">Vulnerability of LLMs to Vertically Aligned Text Manipulations</a></div>
-      <div class="author"><strong>Zhecheng Li, Yiwei Wang, Bryan Hooi, Yujun Cai, Zhen Xiong, Nanyun Peng, Kai-Wei Chang</strong>.</div>
-      <div class="periodical"><em>ACL, 2024.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2410.20016" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
@@ -448,6 +448,20 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://arxiv.org/abs/2310.13206">Primacy effect of chatgpt</a></div>
+      <div class="author"><strong>Yiwei Wang, Yujun Cai, Muhao Chen, Yuxuan Liang, Bryan Hooi</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2023.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://arxiv.org/abs/2310.13206" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Qu_A_Characteristic_Function-Based_Method_for_Bottom-Up_Human_Pose_Estimation_CVPR_2023_paper.pdf">A Characteristic Function-Based Method for Bottom-Up Human Pose Estimation</a></div>
       <div class="author"><strong>Haoxuan Qu, Yujun Cai, Lin Geng Foo, Ajay Kumar, Jun Liu</strong>.</div>
       <div class="periodical"><em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023.</em></div>
@@ -467,20 +481,6 @@
       <div class="periodical"><em>Proceedings of the IEEE/CVF International Conference on Computer Vision (CVPR), 2023.</em></div>
       <div class="links" style="margin-top: 10px;">
         <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Tanke_Social_Diffusion_Long-term_Multiple_Human_Motion_Anticipation_ICCV_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="https://arxiv.org/abs/2310.13206">Primacy effect of chatgpt</a></div>
-      <div class="author"><strong>Yiwei Wang, Yujun Cai, Muhao Chen, Yuxuan Liang, Bryan Hooi</strong>.</div>
-      <div class="periodical"><em>Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2023.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="https://arxiv.org/abs/2310.13206" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
       </div>
   </div>
