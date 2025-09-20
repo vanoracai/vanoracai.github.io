@@ -1,7 +1,6 @@
 ---
 layout: homepage
 ---
-
 ## About Me
 
 <!-- **I will join the Department of Computer Science at [University of California, Merced](https://www.ucmerced.edu/) as an Assistant Professor in the Spring of 2025.**<br> -->
@@ -11,14 +10,13 @@ layout: homepage
 <!-- I am currently a Postdoc at [UCLA](https://www.ucla.edu/) advised by [Prof. Kai-Wei Chang](http://web.cs.ucla.edu/~kwchang/members/) and [Prof. Nanyun Peng](https://vnpeng.net/group/). I received my Ph.D. in Computer Science at [National University of Singapore](https://nus.edu.sg/), where I was fortunate to be advised by [Prof. Bryan Hooi](http://bhooi.github.io/) and collaborate with [Prof. Muhao Chen](https://muhaochen.github.io/). My recent research is focused on **trustworthy large language models**. -->
 **I'm currently a Lecturer (Assistant Professor) at the School of Electrical Engineering and Computer Science, [the University of Queensland (UQ)](https://www.uq.edu.au/) since Nov. 2024.**
 
-**Recruiting Ph.D. students and research interns. I’m actively looking for strong and motivated students. If you are interested in working with me, please feel free drop me an email.**
+<span style="font-size:1.2em;">🔥</span> <b><span style="color:#e74d3c;">Recruiting Ph.D. students and research interns:</span></b> <b>I’m actively looking for strong and motivated students. Working either onsite or remotely is fine. If you are interested in working with me, please feel free to drop me an email with your cv to vanora.caiyj@gmail.com</b>
 
 I was a Research Scientist in [Meta Inc.](https://about.meta.com/). I received my Ph.D. in Computer Science from [Nanyang Technological University](https://www.ntu.edu.sg/), where I was fortunate to be advised by [Prof. Tat Jen Cham](https://personal.ntu.edu.sg/astjcham/index.html), [Prof. Jianfei Cai](https://jianfei-cai.github.io/), [Prof. Junsong Yuan](https://cse.buffalo.edu/~jsyuan/) and [Prof. Nadia Magnenat Thalmann](http://www.miralab.ch/index.php/rushmore_teams/n-thalmann/). Prior to this, I obtained my Bachelor degree from [Southeast University](https://www.seu.edu.cn/).
 
-My research interests include multi-modal human perception, vision-language understanding, natural language processing.
-<!--
-<strong style="color:#e74d3c; font-weight:600">I am looking for a postdoc or research scientist position in the US and EU. I would appreciate a ping if you see a job I might fit.</strong>
--->
+My research interests include **multi-modal understanding** and **trust-worthy large models**.
+
+
 
 <!-- ## News
 
@@ -44,17 +42,61 @@ My research interests include multi-modal human perception, vision-language unde
 </div>
 
 </ul> -->
-{% include_relative _includes/output_file.md %}
 
+
+
+
+
+## News
+<ul>
+<li><strong>[Sep. 2025]</strong> I will serve as an Associate Editor of Neurocomputing</li>
+<li><strong>[Sep. 2025]</strong> I will serve as an Area Chair of ICLR 2025</li>
+<li><strong>[Sep. 2025]</strong> One paper accepted to Neurips 2025</li>
+<li><strong>[July. 2025]</strong> Seven papers accepted to EMNLP 2025</li>
+<!-- <li><strong>[Dec. 2024]</strong> I will serve as an Area Chair of <a href="#">ICML 2025</a> and <a href="#">UAI 2025</a>.</li>
+<li><strong>[Oct. 2024]</strong> Honored to receive the <a href="#">ECVA PhD Award</a>!</li>
+<li><strong>[Oct. 2024]</strong> I gave guest lectures on 3D at UMich and UC Santa Cruz.</li>
+<li><strong>[Sep. 2024]</strong> Two papers about <a href="#">3D</a> are accepted to <a href="#">NeurIPS 2024</a> and its D&B track.</li>
+<li><strong>[Sep. 2024]</strong> I will serve as an Area Chair of <a href="#">CVPR 2025</a>, <a href="#">ICLR 2025</a>, and <a href="#">AISTATS 2025</a>.</li>
+<li><strong>[Aug. 2024]</strong> I will serve as a Senior Program Committee Member of <a href="#">AAAI 2025</a>.</li>
+<li><strong>[Jul. 2024]</strong> Our paper about <a href="#">robust class-incremental learning</a> is accepted to <a href="#">ECCV 2024</a>.</li>
+<li><strong>[Jun. 2024]</strong> I gave a talk on 3D generative models at <a href="#">CVPR 2024 Area Chair Workshop</a>.</li>
+<li><strong>[Apr. 2024]</strong> I will serve as an Area Chair of <a href="#">NeurIPS 2024</a> and <a href="#">ACM MM 2024</a>.</li>
+<li><strong>[Jan. 2024]</strong> Our paper about <a href="#">diffusion models</a> is accepted to <a href="#">ICLR 2024</a>.</li>
+<li><a href="#" style="color:#3498db;">Show more</a></li> -->
+</ul>
 
 ## Teaching
+<div style="margin-bottom: 0.5em;"><strong style="font-size:1.1em; color:#223366;">Teaching and Coordination</strong></div>
+<ul style="margin-top:0;">
+  <li><strong>[2025 Sem1]</strong> ELEC4630 Deep Learning and Computer Vision in UQ</li>
+  <li><strong>[2025 Sem2]</strong> COMP1100/7110 Introduction to Software Innovation in UQ</li>
+</ul>
+<div style="margin-bottom: 0.5em; margin-top:1em;"><strong style="font-size:1.1em; color:#223366;">Teaching Assistant</strong></div>
+<ul style="margin-top:0;">
+  <li><strong>[2018-2019]</strong> Recent Advance on Image Segmentation and Its Applications in NTU</li>
+  <li><strong>[2019-2020]</strong> Digital Image Processing in NTU</li>
+</ul>
 
-- Teaching Assistant：
-**Recent Advance on Image Segmentation and Its Applications** and **Digital Image Processing** at [Nanyang Technological University](https://www.ntu.edu.sg/), 2019-2020
 
-{% include_relative _includes/services.md %}
+## Alumni
+<ul>
+  <li><strong>Shuyang Hao</strong> (2024.08 - 2025.09), undergraduate@SEU -> PhD student@Lancaster, First Author’s Paper at CVPR 2025, EMNLP 2025</li>
+  <li><strong>Cheng Wang</strong> (2024.04 - 2024.12) Undergraduate@NUS, First Author’s Paper at COLING 2025, NAACL 2025</li>
+  <li><strong>Zhaochen Wang</strong> (2025.01 - 2025.08), Master@UQ, First Author’s Paper at COLM 2025</li>
+  <!-- <li><strong>Haiji Liang</strong> (2025.01 - 2025.08), Master@ZJU -> PhD student@HKUST</li> -->
+</ul>
+
+
+
 
 ## Contact
 **Address:** [78 Staff House Rd, St Lucia QLD 4067, Australia](https://www.google.com/maps/place/78+Staff+House+Rd,+St+Lucia+QLD+4067,+Australia/@-27.499998,153.0127147,17z/data=!3m1!4b1!4m6!3m5!1s0x6b915a7f51790f75:0xfd27516ca3675a33!8m2!3d-27.499998!4d153.015295!16s%2Fg%2F11gfhyyn71?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D)
 <br>
 <!-- **Office Location:**  UCLA Eng VI Rm 397 -->
+
+---
+
+<div style="width: 320px; margin: 30px auto 0 auto;">
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=aHchjyvE24Rsi4irFV9ciJ_HrDj2jK2sDbftuwnVJ_c&cl=ffffff&w=a"></script>
+</div>
