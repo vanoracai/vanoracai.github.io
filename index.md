@@ -10,7 +10,7 @@ layout: homepage
 <!-- I am currently a Postdoc at [UCLA](https://www.ucla.edu/) advised by [Prof. Kai-Wei Chang](http://web.cs.ucla.edu/~kwchang/members/) and [Prof. Nanyun Peng](https://vnpeng.net/group/). I received my Ph.D. in Computer Science at [National University of Singapore](https://nus.edu.sg/), where I was fortunate to be advised by [Prof. Bryan Hooi](http://bhooi.github.io/) and collaborate with [Prof. Muhao Chen](https://muhaochen.github.io/). My recent research is focused on **trustworthy large language models**. -->
 **I'm currently a Lecturer (Assistant Professor) at the School of Electrical Engineering and Computer Science, [the University of Queensland (UQ)](https://www.uq.edu.au/) since Nov. 2024.**
 
-<span style="font-size:1.2em;">🔥</span> <b><span style="color:#e74d3c;">Recruiting Ph.D. students and research interns:</span></b> <b>I’m actively looking for strong and motivated students. Working either onsite or remotely is fine. If you are interested in working with me, please feel free to drop me an email with your cv to vanora.caiyj@gmail.com</b>
+<span style="font-size:1.2em;">🔥</span> <b><span style="color:#e74d3c;">Recruiting Ph.D. students and research interns:</span></b> <b>I’m actively looking for strong and motivated students. Working either onsite or remotely is fine to research interns. If you are interested in working with me, please feel free to drop me an email with your cv to vanora.caiyj@gmail.com</b>
 
 I was a Research Scientist in [Meta Inc.](https://about.meta.com/). I received my Ph.D. in Computer Science from [Nanyang Technological University](https://www.ntu.edu.sg/), where I was fortunate to be advised by [Prof. Tat Jen Cham](https://personal.ntu.edu.sg/astjcham/index.html), [Prof. Jianfei Cai](https://jianfei-cai.github.io/), [Prof. Junsong Yuan](https://cse.buffalo.edu/~jsyuan/) and [Prof. Nadia Magnenat Thalmann](http://www.miralab.ch/index.php/rushmore_teams/n-thalmann/). Prior to this, I obtained my Bachelor degree from [Southeast University](https://www.seu.edu.cn/).
 
@@ -81,8 +81,8 @@ My research interests include **multi-modal understanding** and **trust-worthy l
 
 ## Alumni
 <ul>
-  <li><strong>Shuyang Hao</strong> (2024.08 - 2025.09), undergraduate@SEU -> PhD student@Lancaster, First Author’s Paper at CVPR 2025, EMNLP 2025</li>
-  <li><strong>Cheng Wang</strong> (2024.04 - 2024.12) Undergraduate@NUS, First Author’s Paper at COLING 2025, NAACL 2025</li>
+  <li><strong>Shuyang Hao</strong> (2024.08 - 2025.09), Undergrad@SEU -> PhD student@Lancaster, First Author’s Paper at CVPR 2025, EMNLP 2025</li>
+  <li><strong>Cheng Wang</strong> (2024.04 - 2024.12) Undergrad@NUS, First Author’s Paper at COLING 2025, NAACL 2025</li>
   <li><strong>Zhaochen Wang</strong> (2025.01 - 2025.08), Master@UQ, First Author’s Paper at COLM 2025</li>
   <!-- <li><strong>Haiji Liang</strong> (2025.01 - 2025.08), Master@ZJU -> PhD student@HKUST</li> -->
 </ul>
