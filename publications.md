@@ -4,4 +4,4 @@ title: Publications
 permalink: /publications.html
 ---
 
-{% include output_file.md %}
+{% _includes/include output_file.md %}
