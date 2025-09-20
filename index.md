@@ -51,7 +51,7 @@ My research interests include **multi-modal understanding** and **trust-worthy l
 <ul>
 <li><strong>[Sep. 2025]</strong> I will serve as an Associate Editor of Neurocomputing</li>
 <li><strong>[Sep. 2025]</strong> I will serve as an Area Chair of ICLR 2025</li>
-<li><strong>[Sep. 2025]</strong> One paper accepted to Neurips 2025</li>
+<li><strong>[Sep. 2025]</strong> One paper accepted to NeurIPS 2025</li>
 <li><strong>[July. 2025]</strong> Seven papers accepted to EMNLP 2025</li>
 <!-- <li><strong>[Dec. 2024]</strong> I will serve as an Area Chair of <a href="#">ICML 2025</a> and <a href="#">UAI 2025</a>.</li>
 <li><strong>[Oct. 2024]</strong> Honored to receive the <a href="#">ECVA PhD Award</a>!</li>
