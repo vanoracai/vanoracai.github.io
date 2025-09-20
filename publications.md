@@ -1,7 +1,6 @@
 ---
 layout: homepage
 title: Publications
-permalink: /publications.html
 ---
 
-{% include _includes/output_file.md %}
+{% include output_file.md %}
