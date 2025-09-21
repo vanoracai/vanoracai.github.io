@@ -1,0 +1,670 @@
+gcc  -O3 -Wall -c -o adler32.o adler32.c
+adler32.c: In function 'adler32_z':
+adler32.c:63:15: warning: old-style function definition [-Wold-style-definition]
+   63 | uLong ZEXPORT adler32_z(adler, buf, len)
+      |               ^~~~~~~~~
+adler32.c: In function 'adler32':
+adler32.c:134:15: warning: old-style function definition [-Wold-style-definition]
+  134 | uLong ZEXPORT adler32(adler, buf, len)
+      |               ^~~~~~~
+adler32.c: In function 'adler32_combine_':
+adler32.c:143:13: warning: old-style function definition [-Wold-style-definition]
+  143 | local uLong adler32_combine_(adler1, adler2, len2)
+      |             ^~~~~~~~~~~~~~~~
+adler32.c: In function 'adler32_combine':
+adler32.c:172:15: warning: old-style function definition [-Wold-style-definition]
+  172 | uLong ZEXPORT adler32_combine(adler1, adler2, len2)
+      |               ^~~~~~~~~~~~~~~
+adler32.c: In function 'adler32_combine64':
+adler32.c:180:15: warning: old-style function definition [-Wold-style-definition]
+  180 | uLong ZEXPORT adler32_combine64(adler1, adler2, len2)
+      |               ^~~~~~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o compress.o compress.c
+compress.c: In function 'compress2':
+compress.c:22:13: warning: old-style function definition [-Wold-style-definition]
+   22 | int ZEXPORT compress2 (dest, destLen, source, sourceLen, level)
+      |             ^~~~~~~~~
+compress.c: In function 'compress':
+compress.c:68:13: warning: old-style function definition [-Wold-style-definition]
+   68 | int ZEXPORT compress (dest, destLen, source, sourceLen)
+      |             ^~~~~~~~
+compress.c: In function 'compressBound':
+compress.c:81:15: warning: old-style function definition [-Wold-style-definition]
+   81 | uLong ZEXPORT compressBound (sourceLen)
+      |               ^~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o crc32.o crc32.c
+crc32.c: In function 'crc32_z':
+crc32.c:202:23: warning: old-style function definition [-Wold-style-definition]
+  202 | unsigned long ZEXPORT crc32_z(crc, buf, len)
+      |                       ^~~~~~~
+crc32.c: In function 'crc32':
+crc32.c:237:23: warning: old-style function definition [-Wold-style-definition]
+  237 | unsigned long ZEXPORT crc32(crc, buf, len)
+      |                       ^~~~~
+crc32.c: In function 'crc32_little':
+crc32.c:266:21: warning: old-style function definition [-Wold-style-definition]
+  266 | local unsigned long crc32_little(crc, buf, len)
+      |                     ^~~~~~~~~~~~
+crc32.c: In function 'crc32_big':
+crc32.c:306:21: warning: old-style function definition [-Wold-style-definition]
+  306 | local unsigned long crc32_big(crc, buf, len)
+      |                     ^~~~~~~~~
+crc32.c: In function 'gf2_matrix_times':
+crc32.c:344:21: warning: old-style function definition [-Wold-style-definition]
+  344 | local unsigned long gf2_matrix_times(mat, vec)
+      |                     ^~~~~~~~~~~~~~~~
+crc32.c: In function 'gf2_matrix_square':
+crc32.c:361:12: warning: old-style function definition [-Wold-style-definition]
+  361 | local void gf2_matrix_square(square, mat)
+      |            ^~~~~~~~~~~~~~~~~
+crc32.c: In function 'crc32_combine_':
+crc32.c:372:13: warning: old-style function definition [-Wold-style-definition]
+  372 | local uLong crc32_combine_(crc1, crc2, len2)
+      |             ^~~~~~~~~~~~~~
+crc32.c: In function 'crc32_combine':
+crc32.c:428:15: warning: old-style function definition [-Wold-style-definition]
+  428 | uLong ZEXPORT crc32_combine(crc1, crc2, len2)
+      |               ^~~~~~~~~~~~~
+crc32.c: In function 'crc32_combine64':
+crc32.c:436:15: warning: old-style function definition [-Wold-style-definition]
+  436 | uLong ZEXPORT crc32_combine64(crc1, crc2, len2)
+      |               ^~~~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o deflate.o deflate.c
+deflate.c: In function 'slide_hash':
+deflate.c:201:12: warning: old-style function definition [-Wold-style-definition]
+  201 | local void slide_hash(s)
+      |            ^~~~~~~~~~
+deflate.c: In function 'deflateInit_':
+deflate.c:228:13: warning: old-style function definition [-Wold-style-definition]
+  228 | int ZEXPORT deflateInit_(strm, level, version, stream_size)
+      |             ^~~~~~~~~~~~
+deflate.c: In function 'deflateInit2_':
+deflate.c:240:13: warning: old-style function definition [-Wold-style-definition]
+  240 | int ZEXPORT deflateInit2_(strm, level, method, windowBits, memLevel, strategy,
+      |             ^~~~~~~~~~~~~
+deflate.c: In function 'deflateStateCheck':
+deflate.c:353:11: warning: old-style function definition [-Wold-style-definition]
+  353 | local int deflateStateCheck (strm)
+      |           ^~~~~~~~~~~~~~~~~
+deflate.c: In function 'deflateSetDictionary':
+deflate.c:376:13: warning: old-style function definition [-Wold-style-definition]
+  376 | int ZEXPORT deflateSetDictionary (strm, dictionary, dictLength)
+      |             ^~~~~~~~~~~~~~~~~~~~
+deflate.c: In function 'deflateGetDictionary':
+deflate.c:445:13: warning: old-style function definition [-Wold-style-definition]
+  445 | int ZEXPORT deflateGetDictionary (strm, dictionary, dictLength)
+      |             ^~~~~~~~~~~~~~~~~~~~
+deflate.c: In function 'deflateResetKeep':
+deflate.c:467:13: warning: old-style function definition [-Wold-style-definition]
+  467 | int ZEXPORT deflateResetKeep (strm)
+      |             ^~~~~~~~~~~~~~~~
+deflate.c: In function 'deflateReset':
+deflate.c:505:13: warning: old-style function definition [-Wold-style-definition]
+  505 | int ZEXPORT deflateReset (strm)
+      |             ^~~~~~~~~~~~
+deflate.c: In function 'deflateSetHeader':
+deflate.c:517:13: warning: old-style function definition [-Wold-style-definition]
+  517 | int ZEXPORT deflateSetHeader (strm, head)
+      |             ^~~~~~~~~~~~~~~~
+deflate.c: In function 'deflatePending':
+deflate.c:528:13: warning: old-style function definition [-Wold-style-definition]
+  528 | int ZEXPORT deflatePending (strm, pending, bits)
+      |             ^~~~~~~~~~~~~~
+deflate.c: In function 'deflatePrime':
+deflate.c:542:13: warning: old-style function definition [-Wold-style-definition]
+  542 | int ZEXPORT deflatePrime (strm, bits, value)
+      |             ^~~~~~~~~~~~
+deflate.c: In function 'deflateParams':
+deflate.c:568:13: warning: old-style function definition [-Wold-style-definition]
+  568 | int ZEXPORT deflateParams(strm, level, strategy)
+      |             ^~~~~~~~~~~~~
+deflate.c: In function 'deflateTune':
+deflate.c:617:13: warning: old-style function definition [-Wold-style-definition]
+  617 | int ZEXPORT deflateTune(strm, good_length, max_lazy, nice_length, max_chain)
+      |             ^~~~~~~~~~~
+deflate.c: In function 'deflateBound':
+deflate.c:652:15: warning: old-style function definition [-Wold-style-definition]
+  652 | uLong ZEXPORT deflateBound(strm, sourceLen)
+      |               ^~~~~~~~~~~~
+deflate.c: In function 'putShortMSB':
+deflate.c:716:12: warning: old-style function definition [-Wold-style-definition]
+  716 | local void putShortMSB (s, b)
+      |            ^~~~~~~~~~~
+deflate.c: In function 'flush_pending':
+deflate.c:730:12: warning: old-style function definition [-Wold-style-definition]
+  730 | local void flush_pending(strm)
+      |            ^~~~~~~~~~~~~
+deflate.c: In function 'deflate':
+deflate.c:763:13: warning: old-style function definition [-Wold-style-definition]
+  763 | int ZEXPORT deflate (strm, flush)
+      |             ^~~~~~~
+deflate.c: In function 'deflateEnd':
+deflate.c:1076:13: warning: old-style function definition [-Wold-style-definition]
+ 1076 | int ZEXPORT deflateEnd (strm)
+      |             ^~~~~~~~~~
+deflate.c: In function 'deflateCopy':
+deflate.c:1102:13: warning: old-style function definition [-Wold-style-definition]
+ 1102 | int ZEXPORT deflateCopy (dest, source)
+      |             ^~~~~~~~~~~
+deflate.c: In function 'read_buf':
+deflate.c:1164:16: warning: old-style function definition [-Wold-style-definition]
+ 1164 | local unsigned read_buf(strm, buf, size)
+      |                ^~~~~~~~
+deflate.c: In function 'lm_init':
+deflate.c:1194:12: warning: old-style function definition [-Wold-style-definition]
+ 1194 | local void lm_init (s)
+      |            ^~~~~~~
+deflate.c: In function 'longest_match':
+deflate.c:1236:12: warning: old-style function definition [-Wold-style-definition]
+ 1236 | local uInt longest_match(s, cur_match)
+      |            ^~~~~~~~~~~~~
+deflate.c: In function 'fill_window':
+deflate.c:1482:12: warning: old-style function definition [-Wold-style-definition]
+ 1482 | local void fill_window(s)
+      |            ^~~~~~~~~~~
+deflate.c: In function 'deflate_stored':
+deflate.c:1643:19: warning: old-style function definition [-Wold-style-definition]
+ 1643 | local block_state deflate_stored(s, flush)
+      |                   ^~~~~~~~~~~~~~
+deflate.c: In function 'deflate_fast':
+deflate.c:1824:19: warning: old-style function definition [-Wold-style-definition]
+ 1824 | local block_state deflate_fast(s, flush)
+      |                   ^~~~~~~~~~~~
+deflate.c: In function 'deflate_slow':
+deflate.c:1926:19: warning: old-style function definition [-Wold-style-definition]
+ 1926 | local block_state deflate_slow(s, flush)
+      |                   ^~~~~~~~~~~~
+deflate.c: In function 'deflate_rle':
+deflate.c:2057:19: warning: old-style function definition [-Wold-style-definition]
+ 2057 | local block_state deflate_rle(s, flush)
+      |                   ^~~~~~~~~~~
+deflate.c: In function 'deflate_huff':
+deflate.c:2130:19: warning: old-style function definition [-Wold-style-definition]
+ 2130 | local block_state deflate_huff(s, flush)
+      |                   ^~~~~~~~~~~~
+gcc  -O3 -Wall -c -o gzclose.o gzclose.c
+gzclose.c: In function 'gzclose':
+gzclose.c:11:13: warning: old-style function definition [-Wold-style-definition]
+   11 | int ZEXPORT gzclose(file)
+      |             ^~~~~~~
+gcc  -O3 -Wall -c -o gzlib.o gzlib.c
+gzlib.c: In function 'gz_reset':
+gzlib.c:75:12: warning: old-style function definition [-Wold-style-definition]
+   75 | local void gz_reset(state)
+      |            ^~~~~~~~
+gzlib.c: In function 'gz_open':
+gzlib.c:91:14: warning: old-style function definition [-Wold-style-definition]
+   91 | local gzFile gz_open(path, fd, mode)
+      |              ^~~~~~~
+gzlib.c: In function 'gzopen':
+gzlib.c:270:16: warning: old-style function definition [-Wold-style-definition]
+  270 | gzFile ZEXPORT gzopen(path, mode)
+      |                ^~~~~~
+gzlib.c: In function 'gzopen64':
+gzlib.c:278:16: warning: old-style function definition [-Wold-style-definition]
+  278 | gzFile ZEXPORT gzopen64(path, mode)
+      |                ^~~~~~~~
+gzlib.c: In function 'gzdopen':
+gzlib.c:286:16: warning: old-style function definition [-Wold-style-definition]
+  286 | gzFile ZEXPORT gzdopen(fd, mode)
+      |                ^~~~~~~
+gzlib.c: In function 'gzopen_w':
+gzlib.c:307:16: warning: old-style function definition [-Wold-style-definition]
+  307 | gzFile ZEXPORT gzopen_w(path, mode)
+      |                ^~~~~~~~
+gzlib.c: In function 'gzbuffer':
+gzlib.c:316:13: warning: old-style function definition [-Wold-style-definition]
+  316 | int ZEXPORT gzbuffer(file, size)
+      |             ^~~~~~~~
+gzlib.c: In function 'gzrewind':
+gzlib.c:343:13: warning: old-style function definition [-Wold-style-definition]
+  343 | int ZEXPORT gzrewind(file)
+      |             ^~~~~~~~
+gzlib.c: In function 'gzseek64':
+gzlib.c:366:19: warning: old-style function definition [-Wold-style-definition]
+  366 | z_off64_t ZEXPORT gzseek64(file, offset, whence)
+      |                   ^~~~~~~~
+gzlib.c: In function 'gzseek':
+gzlib.c:443:17: warning: old-style function definition [-Wold-style-definition]
+  443 | z_off_t ZEXPORT gzseek(file, offset, whence)
+      |                 ^~~~~~
+gzlib.c: In function 'gztell64':
+gzlib.c:455:19: warning: old-style function definition [-Wold-style-definition]
+  455 | z_off64_t ZEXPORT gztell64(file)
+      |                   ^~~~~~~~
+gzlib.c: In function 'gztell':
+gzlib.c:472:17: warning: old-style function definition [-Wold-style-definition]
+  472 | z_off_t ZEXPORT gztell(file)
+      |                 ^~~~~~
+gzlib.c: In function 'gzoffset64':
+gzlib.c:482:19: warning: old-style function definition [-Wold-style-definition]
+  482 | z_off64_t ZEXPORT gzoffset64(file)
+      |                   ^~~~~~~~~~
+gzlib.c: In function 'gzoffset':
+gzlib.c:505:17: warning: old-style function definition [-Wold-style-definition]
+  505 | z_off_t ZEXPORT gzoffset(file)
+      |                 ^~~~~~~~
+gzlib.c: In function 'gzeof':
+gzlib.c:515:13: warning: old-style function definition [-Wold-style-definition]
+  515 | int ZEXPORT gzeof(file)
+      |             ^~~~~
+gzlib.c: In function 'gzerror':
+gzlib.c:532:22: warning: old-style function definition [-Wold-style-definition]
+  532 | const char * ZEXPORT gzerror(file, errnum)
+      |                      ^~~~~~~
+gzlib.c: In function 'gzclearerr':
+gzlib.c:553:14: warning: old-style function definition [-Wold-style-definition]
+  553 | void ZEXPORT gzclearerr(file)
+      |              ^~~~~~~~~~
+gzlib.c: In function 'gz_error':
+gzlib.c:579:20: warning: old-style function definition [-Wold-style-definition]
+  579 | void ZLIB_INTERNAL gz_error(state, err, msg)
+      |                    ^~~~~~~~
+gcc  -O3 -Wall -c -o gzread.o gzread.c
+gzread.c: In function 'gz_load':
+gzread.c:21:11: warning: old-style function definition [-Wold-style-definition]
+   21 | local int gz_load(state, buf, len, have)
+      |           ^~~~~~~
+gzread.c: In function 'gz_avail':
+gzread.c:56:11: warning: old-style function definition [-Wold-style-definition]
+   56 | local int gz_avail(state)
+      |           ^~~~~~~~
+gzread.c: In function 'gz_look':
+gzread.c:91:11: warning: old-style function definition [-Wold-style-definition]
+   91 | local int gz_look(state)
+      |           ^~~~~~~
+gzread.c: In function 'gz_decomp':
+gzread.c:175:11: warning: old-style function definition [-Wold-style-definition]
+  175 | local int gz_decomp(state)
+      |           ^~~~~~~~~
+gzread.c: In function 'gz_fetch':
+gzread.c:229:11: warning: old-style function definition [-Wold-style-definition]
+  229 | local int gz_fetch(state)
+      |           ^~~~~~~~
+gzread.c: In function 'gz_skip':
+gzread.c:259:11: warning: old-style function definition [-Wold-style-definition]
+  259 | local int gz_skip(state, len)
+      |           ^~~~~~~
+gzread.c: In function 'gz_read':
+gzread.c:294:16: warning: old-style function definition [-Wold-style-definition]
+  294 | local z_size_t gz_read(state, buf, len)
+      |                ^~~~~~~
+gzread.c: In function 'gzread':
+gzread.c:375:13: warning: old-style function definition [-Wold-style-definition]
+  375 | int ZEXPORT gzread(file, buf, len)
+      |             ^~~~~~
+gzread.c: In function 'gzfread':
+gzread.c:411:18: warning: old-style function definition [-Wold-style-definition]
+  411 | z_size_t ZEXPORT gzfread(buf, size, nitems, file)
+      |                  ^~~~~~~
+gzread.c: In function 'gzgetc':
+gzread.c:447:13: warning: old-style function definition [-Wold-style-definition]
+  447 | int ZEXPORT gzgetc(file)
+      |             ^~~~~~
+gzread.c: In function 'gzgetc_':
+gzread.c:476:13: warning: old-style function definition [-Wold-style-definition]
+  476 | int ZEXPORT gzgetc_(file)
+      |             ^~~~~~~
+gzread.c: In function 'gzungetc':
+gzread.c:483:13: warning: old-style function definition [-Wold-style-definition]
+  483 | int ZEXPORT gzungetc(c, file)
+      |             ^~~~~~~~
+gzread.c: In function 'gzgets':
+gzread.c:543:16: warning: old-style function definition [-Wold-style-definition]
+  543 | char * ZEXPORT gzgets(file, buf, len)
+      |                ^~~~~~
+gzread.c: In function 'gzdirect':
+gzread.c:607:13: warning: old-style function definition [-Wold-style-definition]
+  607 | int ZEXPORT gzdirect(file)
+      |             ^~~~~~~~
+gzread.c: In function 'gzclose_r':
+gzread.c:627:13: warning: old-style function definition [-Wold-style-definition]
+  627 | int ZEXPORT gzclose_r(file)
+      |             ^~~~~~~~~
+gcc  -O3 -Wall -c -o gzwrite.o gzwrite.c
+gzwrite.c: In function 'gz_init':
+gzwrite.c:17:11: warning: old-style function definition [-Wold-style-definition]
+   17 | local int gz_init(state)
+      |           ^~~~~~~
+gzwrite.c: In function 'gz_comp':
+gzwrite.c:73:11: warning: old-style function definition [-Wold-style-definition]
+   73 | local int gz_comp(state, flush)
+      |           ^~~~~~~
+gzwrite.c: In function 'gz_zero':
+gzwrite.c:145:11: warning: old-style function definition [-Wold-style-definition]
+  145 | local int gz_zero(state, len)
+      |           ^~~~~~~
+gzwrite.c: In function 'gz_write':
+gzwrite.c:178:16: warning: old-style function definition [-Wold-style-definition]
+  178 | local z_size_t gz_write(state, buf, len)
+      |                ^~~~~~~~
+gzwrite.c: In function 'gzwrite':
+gzwrite.c:246:13: warning: old-style function definition [-Wold-style-definition]
+  246 | int ZEXPORT gzwrite(file, buf, len)
+      |             ^~~~~~~
+gzwrite.c: In function 'gzfwrite':
+gzwrite.c:274:18: warning: old-style function definition [-Wold-style-definition]
+  274 | z_size_t ZEXPORT gzfwrite(buf, size, nitems, file)
+      |                  ^~~~~~~~
+gzwrite.c: In function 'gzputc':
+gzwrite.c:304:13: warning: old-style function definition [-Wold-style-definition]
+  304 | int ZEXPORT gzputc(file, c)
+      |             ^~~~~~
+gzwrite.c: In function 'gzputs':
+gzwrite.c:352:13: warning: old-style function definition [-Wold-style-definition]
+  352 | int ZEXPORT gzputs(file, str)
+      |             ^~~~~~
+gzwrite.c: In function 'gzflush':
+gzwrite.c:553:13: warning: old-style function definition [-Wold-style-definition]
+  553 | int ZEXPORT gzflush(file, flush)
+      |             ^~~~~~~
+gzwrite.c: In function 'gzsetparams':
+gzwrite.c:585:13: warning: old-style function definition [-Wold-style-definition]
+  585 | int ZEXPORT gzsetparams(file, level, strategy)
+      |             ^~~~~~~~~~~
+gzwrite.c: In function 'gzclose_w':
+gzwrite.c:627:13: warning: old-style function definition [-Wold-style-definition]
+  627 | int ZEXPORT gzclose_w(file)
+      |             ^~~~~~~~~
+gcc  -O3 -Wall -c -o infback.o infback.c
+infback.c: In function 'inflateBackInit_':
+infback.c:28:13: warning: old-style function definition [-Wold-style-definition]
+   28 | int ZEXPORT inflateBackInit_(strm, windowBits, window, version, stream_size)
+      |             ^~~~~~~~~~~~~~~~
+infback.c: In function 'fixedtables':
+infback.c:82:12: warning: old-style function definition [-Wold-style-definition]
+   82 | local void fixedtables(state)
+      |            ^~~~~~~~~~~
+infback.c: In function 'inflateBack':
+infback.c:250:13: warning: old-style function definition [-Wold-style-definition]
+  250 | int ZEXPORT inflateBack(strm, in, in_desc, out, out_desc)
+      |             ^~~~~~~~~~~
+infback.c: In function 'inflateBackEnd':
+infback.c:631:13: warning: old-style function definition [-Wold-style-definition]
+  631 | int ZEXPORT inflateBackEnd(strm)
+      |             ^~~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o inffast.o inffast.c
+inffast.c: In function 'inflate_fast':
+inffast.c:50:20: warning: old-style function definition [-Wold-style-definition]
+   50 | void ZLIB_INTERNAL inflate_fast(strm, start)
+      |                    ^~~~~~~~~~~~
+gcc  -O3 -Wall -c -o inflate.o inflate.c
+inflate.c: In function 'inflateStateCheck':
+inflate.c:105:11: warning: old-style function definition [-Wold-style-definition]
+  105 | local int inflateStateCheck(strm)
+      |           ^~~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateResetKeep':
+inflate.c:119:13: warning: old-style function definition [-Wold-style-definition]
+  119 | int ZEXPORT inflateResetKeep(strm)
+      |             ^~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateReset':
+inflate.c:144:13: warning: old-style function definition [-Wold-style-definition]
+  144 | int ZEXPORT inflateReset(strm)
+      |             ^~~~~~~~~~~~
+inflate.c: In function 'inflateReset2':
+inflate.c:157:13: warning: old-style function definition [-Wold-style-definition]
+  157 | int ZEXPORT inflateReset2(strm, windowBits)
+      |             ^~~~~~~~~~~~~
+inflate.c: In function 'inflateInit2_':
+inflate.c:195:13: warning: old-style function definition [-Wold-style-definition]
+  195 | int ZEXPORT inflateInit2_(strm, windowBits, version, stream_size)
+      |             ^~~~~~~~~~~~~
+inflate.c: In function 'inflateInit_':
+inflate.c:239:13: warning: old-style function definition [-Wold-style-definition]
+  239 | int ZEXPORT inflateInit_(strm, version, stream_size)
+      |             ^~~~~~~~~~~~
+inflate.c: In function 'inflatePrime':
+inflate.c:247:13: warning: old-style function definition [-Wold-style-definition]
+  247 | int ZEXPORT inflatePrime(strm, bits, value)
+      |             ^~~~~~~~~~~~
+inflate.c: In function 'fixedtables':
+inflate.c:278:12: warning: old-style function definition [-Wold-style-definition]
+  278 | local void fixedtables(state)
+      |            ^~~~~~~~~~~
+inflate.c: In function 'updatewindow':
+inflate.c:396:11: warning: old-style function definition [-Wold-style-definition]
+  396 | local int updatewindow(strm, end, copy)
+      |           ^~~~~~~~~~~~
+inflate.c: In function 'inflate':
+inflate.c:622:13: warning: old-style function definition [-Wold-style-definition]
+  622 | int ZEXPORT inflate(strm, flush)
+      |             ^~~~~~~
+inflate.c: In function 'inflateEnd':
+inflate.c:1277:13: warning: old-style function definition [-Wold-style-definition]
+ 1277 | int ZEXPORT inflateEnd(strm)
+      |             ^~~~~~~~~~
+inflate.c: In function 'inflateGetDictionary':
+inflate.c:1291:13: warning: old-style function definition [-Wold-style-definition]
+ 1291 | int ZEXPORT inflateGetDictionary(strm, dictionary, dictLength)
+      |             ^~~~~~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateSetDictionary':
+inflate.c:1314:13: warning: old-style function definition [-Wold-style-definition]
+ 1314 | int ZEXPORT inflateSetDictionary(strm, dictionary, dictLength)
+      |             ^~~~~~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateGetHeader':
+inflate.c:1349:13: warning: old-style function definition [-Wold-style-definition]
+ 1349 | int ZEXPORT inflateGetHeader(strm, head)
+      |             ^~~~~~~~~~~~~~~~
+inflate.c: In function 'syncsearch':
+inflate.c:1377:16: warning: old-style function definition [-Wold-style-definition]
+ 1377 | local unsigned syncsearch(have, buf, len)
+      |                ^~~~~~~~~~
+inflate.c: In function 'inflateSync':
+inflate.c:1400:13: warning: old-style function definition [-Wold-style-definition]
+ 1400 | int ZEXPORT inflateSync(strm)
+      |             ^~~~~~~~~~~
+inflate.c: In function 'inflateSyncPoint':
+inflate.c:1451:13: warning: old-style function definition [-Wold-style-definition]
+ 1451 | int ZEXPORT inflateSyncPoint(strm)
+      |             ^~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateCopy':
+inflate.c:1461:13: warning: old-style function definition [-Wold-style-definition]
+ 1461 | int ZEXPORT inflateCopy(dest, source)
+      |             ^~~~~~~~~~~
+inflate.c: In function 'inflateUndermine':
+inflate.c:1508:13: warning: old-style function definition [-Wold-style-definition]
+ 1508 | int ZEXPORT inflateUndermine(strm, subvert)
+      |             ^~~~~~~~~~~~~~~~
+inflate.c: In function 'inflateValidate':
+inflate.c:1526:13: warning: old-style function definition [-Wold-style-definition]
+ 1526 | int ZEXPORT inflateValidate(strm, check)
+      |             ^~~~~~~~~~~~~~~
+inflate.c: In function 'inflateMark':
+inflate.c:1541:14: warning: old-style function definition [-Wold-style-definition]
+ 1541 | long ZEXPORT inflateMark(strm)
+      |              ^~~~~~~~~~~
+inflate.c: In function 'inflateCodesUsed':
+inflate.c:1554:23: warning: old-style function definition [-Wold-style-definition]
+ 1554 | unsigned long ZEXPORT inflateCodesUsed(strm)
+      |                       ^~~~~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o inftrees.o inftrees.c
+inftrees.c: In function 'inflate_table':
+inftrees.c:32:19: warning: old-style function definition [-Wold-style-definition]
+   32 | int ZLIB_INTERNAL inflate_table(type, lens, codes, table, bits, work)
+      |                   ^~~~~~~~~~~~~
+gcc  -O3 -Wall -c -o trees.o trees.c
+trees.c: In function '_tr_init':
+trees.c:379:20: warning: old-style function definition [-Wold-style-definition]
+  379 | void ZLIB_INTERNAL _tr_init(s)
+      |                    ^~~~~~~~
+trees.c: In function 'init_block':
+trees.c:407:12: warning: old-style function definition [-Wold-style-definition]
+  407 | local void init_block(s)
+      |            ^~~~~~~~~~
+trees.c: In function 'pqdownheap':
+trees.c:451:12: warning: old-style function definition [-Wold-style-definition]
+  451 | local void pqdownheap(s, tree, k)
+      |            ^~~~~~~~~~
+trees.c: In function 'gen_bitlen':
+trees.c:486:12: warning: old-style function definition [-Wold-style-definition]
+  486 | local void gen_bitlen(s, desc)
+      |            ^~~~~~~~~~
+trees.c: In function 'gen_codes':
+trees.c:572:12: warning: old-style function definition [-Wold-style-definition]
+  572 | local void gen_codes (tree, max_code, bl_count)
+      |            ^~~~~~~~~
+trees.c: In function 'build_tree':
+trees.c:615:12: warning: old-style function definition [-Wold-style-definition]
+  615 | local void build_tree(s, desc)
+      |            ^~~~~~~~~~
+trees.c: In function 'scan_tree':
+trees.c:703:12: warning: old-style function definition [-Wold-style-definition]
+  703 | local void scan_tree (s, tree, max_code)
+      |            ^~~~~~~~~
+trees.c: In function 'send_tree':
+trees.c:748:12: warning: old-style function definition [-Wold-style-definition]
+  748 | local void send_tree (s, tree, max_code)
+      |            ^~~~~~~~~
+trees.c: In function 'build_bl_tree':
+trees.c:799:11: warning: old-style function definition [-Wold-style-definition]
+  799 | local int build_bl_tree(s)
+      |           ^~~~~~~~~~~~~
+trees.c: In function 'send_all_trees':
+trees.c:834:12: warning: old-style function definition [-Wold-style-definition]
+  834 | local void send_all_trees(s, lcodes, dcodes, blcodes)
+      |            ^~~~~~~~~~~~~~
+trees.c: In function '_tr_stored_block':
+trees.c:863:20: warning: old-style function definition [-Wold-style-definition]
+  863 | void ZLIB_INTERNAL _tr_stored_block(s, buf, stored_len, last)
+      |                    ^~~~~~~~~~~~~~~~
+trees.c: In function '_tr_flush_bits':
+trees.c:886:20: warning: old-style function definition [-Wold-style-definition]
+  886 | void ZLIB_INTERNAL _tr_flush_bits(s)
+      |                    ^~~~~~~~~~~~~~
+trees.c: In function '_tr_align':
+trees.c:896:20: warning: old-style function definition [-Wold-style-definition]
+  896 | void ZLIB_INTERNAL _tr_align(s)
+      |                    ^~~~~~~~~
+trees.c: In function '_tr_flush_block':
+trees.c:911:20: warning: old-style function definition [-Wold-style-definition]
+  911 | void ZLIB_INTERNAL _tr_flush_block(s, buf, stored_len, last)
+      |                    ^~~~~~~~~~~~~~~
+trees.c: In function '_tr_tally':
+trees.c:1014:19: warning: old-style function definition [-Wold-style-definition]
+ 1014 | int ZLIB_INTERNAL _tr_tally (s, dist, lc)
+      |                   ^~~~~~~~~
+trees.c: In function 'compress_block':
+trees.c:1064:12: warning: old-style function definition [-Wold-style-definition]
+ 1064 | local void compress_block(s, ltree, dtree)
+      |            ^~~~~~~~~~~~~~
+trees.c: In function 'detect_data_type':
+trees.c:1124:11: warning: old-style function definition [-Wold-style-definition]
+ 1124 | local int detect_data_type(s)
+      |           ^~~~~~~~~~~~~~~~
+trees.c: In function 'bi_reverse':
+trees.c:1158:16: warning: old-style function definition [-Wold-style-definition]
+ 1158 | local unsigned bi_reverse(code, len)
+      |                ^~~~~~~~~~
+trees.c: In function 'bi_flush':
+trees.c:1173:12: warning: old-style function definition [-Wold-style-definition]
+ 1173 | local void bi_flush(s)
+      |            ^~~~~~~~
+trees.c: In function 'bi_windup':
+trees.c:1190:12: warning: old-style function definition [-Wold-style-definition]
+ 1190 | local void bi_windup(s)
+      |            ^~~~~~~~~
+gcc  -O3 -Wall -c -o uncompr.o uncompr.c
+uncompr.c: In function 'uncompress2':
+uncompr.c:27:13: warning: old-style function definition [-Wold-style-definition]
+   27 | int ZEXPORT uncompress2 (dest, destLen, source, sourceLen)
+      |             ^~~~~~~~~~~
+uncompr.c: In function 'uncompress':
+uncompr.c:86:13: warning: old-style function definition [-Wold-style-definition]
+   86 | int ZEXPORT uncompress (dest, destLen, source, sourceLen)
+      |             ^~~~~~~~~~
+gcc  -O3 -Wall -c -o zutil.o zutil.c
+zutil.c: In function 'zError':
+zutil.c:133:22: warning: old-style function definition [-Wold-style-definition]
+  133 | const char * ZEXPORT zError(err)
+      |                      ^~~~~~
+zutil.c: In function 'zcalloc':
+zutil.c:305:22: warning: old-style function definition [-Wold-style-definition]
+  305 | voidpf ZLIB_INTERNAL zcalloc (opaque, items, size)
+      |                      ^~~~~~~
+zutil.c: In function 'zcfree':
+zutil.c:315:20: warning: old-style function definition [-Wold-style-definition]
+  315 | void ZLIB_INTERNAL zcfree (opaque, ptr)
+      |                    ^~~~~~
+ar rcs libz.a adler32.o compress.o crc32.o deflate.o gzclose.o gzlib.o gzread.o gzwrite.o infback.o inffast.o inflate.o inftrees.o trees.o uncompr.o zutil.o 
+windres --define GCC_WINDRES -o zlibrc.o win32/zlib1.rc
+gcc -shared -Wl,--out-implib,libz.dll.a  \
+-o zlib1.dll win32/zlib.def adler32.o compress.o crc32.o deflate.o gzclose.o gzlib.o gzread.o gzwrite.o infback.o inffast.o inflate.o inftrees.o trees.o uncompr.o zutil.o  zlibrc.o
+strip zlib1.dll
+gcc  -O3 -Wall -I. -c -o example.o test/example.c
+test/example.c: In function 'test_compress':
+test/example.c:88:6: warning: old-style function definition [-Wold-style-definition]
+   88 | void test_compress(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~~~~~
+test/example.c: In function 'test_gzio':
+test/example.c:114:6: warning: old-style function definition [-Wold-style-definition]
+  114 | void test_gzio(fname, uncompr, uncomprLen)
+      |      ^~~~~~~~~
+test/example.c: In function 'test_deflate':
+test/example.c:200:6: warning: old-style function definition [-Wold-style-definition]
+  200 | void test_deflate(compr, comprLen)
+      |      ^~~~~~~~~~~~
+test/example.c: In function 'test_inflate':
+test/example.c:238:6: warning: old-style function definition [-Wold-style-definition]
+  238 | void test_inflate(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~~~~
+test/example.c: In function 'test_large_deflate':
+test/example.c:279:6: warning: old-style function definition [-Wold-style-definition]
+  279 | void test_large_deflate(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~~~~~~~~~~
+test/example.c: In function 'test_large_inflate':
+test/example.c:334:6: warning: old-style function definition [-Wold-style-definition]
+  334 | void test_large_inflate(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~~~~~~~~~~
+test/example.c: In function 'test_flush':
+test/example.c:375:6: warning: old-style function definition [-Wold-style-definition]
+  375 | void test_flush(compr, comprLen)
+      |      ^~~~~~~~~~
+test/example.c: In function 'test_sync':
+test/example.c:413:6: warning: old-style function definition [-Wold-style-definition]
+  413 | void test_sync(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~
+test/example.c: In function 'test_dict_deflate':
+test/example.c:457:6: warning: old-style function definition [-Wold-style-definition]
+  457 | void test_dict_deflate(compr, comprLen)
+      |      ^~~~~~~~~~~~~~~~~
+test/example.c: In function 'test_dict_inflate':
+test/example.c:494:6: warning: old-style function definition [-Wold-style-definition]
+  494 | void test_dict_inflate(compr, comprLen, uncompr, uncomprLen)
+      |      ^~~~~~~~~~~~~~~~~
+test/example.c: In function 'main':
+test/example.c:545:5: warning: old-style function definition [-Wold-style-definition]
+  545 | int main(argc, argv)
+      |     ^~~~
+gcc  -o example.exe example.o libz.a
+strip example.exe
+gcc  -O3 -Wall -I. -c -o minigzip.o test/minigzip.c
+test/minigzip.c: In function 'error':
+test/minigzip.c:351:6: warning: old-style function definition [-Wold-style-definition]
+  351 | void error(msg)
+      |      ^~~~~
+test/minigzip.c: In function 'gz_compress':
+test/minigzip.c:362:6: warning: old-style function definition [-Wold-style-definition]
+  362 | void gz_compress(in, out)
+      |      ^~~~~~~~~~~
+test/minigzip.c: In function 'gz_uncompress':
+test/minigzip.c:430:6: warning: old-style function definition [-Wold-style-definition]
+  430 | void gz_uncompress(in, out)
+      |      ^~~~~~~~~~~~~
+test/minigzip.c: In function 'file_compress':
+test/minigzip.c:457:6: warning: old-style function definition [-Wold-style-definition]
+  457 | void file_compress(file, mode)
+      |      ^~~~~~~~~~~~~
+test/minigzip.c: In function 'file_uncompress':
+test/minigzip.c:496:6: warning: old-style function definition [-Wold-style-definition]
+  496 | void file_uncompress(file)
+      |      ^~~~~~~~~~~~~~~
+test/minigzip.c: In function 'main':
+test/minigzip.c:556:5: warning: old-style function definition [-Wold-style-definition]
+  556 | int main(argc, argv)
+      |     ^~~~
+gcc  -o minigzip.exe minigzip.o libz.a
+strip minigzip.exe
+gcc  -o example_d.exe example.o libz.dll.a
+strip example_d.exe
+gcc  -o minigzip_d.exe minigzip.o libz.dll.a
+strip minigzip_d.exe

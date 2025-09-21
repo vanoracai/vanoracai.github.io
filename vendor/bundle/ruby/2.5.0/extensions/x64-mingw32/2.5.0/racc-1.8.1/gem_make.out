@@ -1,0 +1,16 @@
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/2.5.0/gems/racc-1.8.1/ext/racc/cparse
+C:/Ruby25-x64/bin/ruby.exe -r ./siteconf20250921-448952-1aufzrk.rb extconf.rb
+creating Makefile
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/2.5.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/2.5.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR="
+generating cparse-x64-mingw32.def
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/2.5.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250921-448952-1bh4r1h/racc

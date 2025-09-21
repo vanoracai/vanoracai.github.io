@@ -1,14 +1,16 @@
 
 ## Services
-<h4 style="margin:0 10px 0;">Journal Associate Editor</h4>
+<h4 style="margin:0 10px 0;">Editor in Board</h4>
 <ul style="margin:0 0 20px;">
   <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>Neurocomputing</autocolor></a></li>
 </ul>
-<h4 style="margin:0 10px 0;">Area Chairs</h4>
+<h4 style="margin:0 10px 0;">(Senior) Area Chairs</h4>
 <ul style="margin:0 0 5px;">
+
   <li><autocolor>International Conference on Learning Representations (ICLR) 2026</autocolor></li>
   <li><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2025 </autocolor></li>
   <li><autocolor>Conference on Neural Information Processing Systems (NeurIPS) 2025</autocolor></li>
+  <li><autocolor>Conference on Empirical Methods in Natural Language Processing (EMNLP) 2025</autocolor></li>
   <li><autocolor>ACM Multimedia 2025</autocolor></li>
     <li><autocolor>The AAAI Conference on Artificial Intelligence (AAAI) 2026</autocolor></li>
   <li><autocolor>International Conference on Computer Vision (ICCV) 2025</autocolor></li>

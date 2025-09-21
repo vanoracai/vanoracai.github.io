@@ -1,0 +1,343 @@
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/commonmarker-0.17.13/ext/commonmarker
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/commonmarker-0.17.13/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20250921-364932-fwaut0 sitelibdir\=./.gem.20250921-364932-fwaut0 clean
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/commonmarker-0.17.13/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20250921-364932-fwaut0 sitelibdir\=./.gem.20250921-364932-fwaut0
+generating commonmarker-x64-mingw-ucrt.def
+compiling arena.c
+compiling autolink.c
+compiling blocks.c
+compiling buffer.c
+compiling cmark.c
+compiling cmark_ctype.c
+compiling commonmark.c
+compiling commonmarker.c
+In file included from houdini.h:9,
+                 from commonmarker.c:3:
+config.h:8:9: warning: 'HAVE_STDBOOL_H' redefined
+    8 | #define HAVE_STDBOOL_H
+      |         ^~~~~~~~~~~~~~
+In file included from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/config.h:22,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/ruby.h:15,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby.h:38,
+                 from commonmarker.h:9,
+                 from commonmarker.c:1:
+C:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt/ruby/config.h:43:9: note: this is the location of the previous definition
+   43 | #define HAVE_STDBOOL_H 1
+      |         ^~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_to_value':
+commonmarker.c:97:3: warning: 'rb_data_object_wrap_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+   97 |   val = Data_Wrap_Struct(rb_mNode, rb_mark_c_struct, free_func, node);
+      |   ^~~
+In file included from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core.h:27,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/ruby.h:29:
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_string_content':
+commonmarker.c:301:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  301 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_string_content':
+commonmarker.c:323:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  323 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_type':
+commonmarker.c:344:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  344 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_sourcepos':
+commonmarker.c:431:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  431 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_type_string':
+commonmarker.c:454:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  454 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_unlink':
+commonmarker.c:465:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  465 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_first_child':
+commonmarker.c:480:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  480 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_next':
+commonmarker.c:493:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  493 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_insert_before':
+commonmarker.c:510:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  510 |   Data_Get_Struct(self, cmark_node, node1);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c:512:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  512 |   Data_Get_Struct(sibling, cmark_node, node2);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_render_html':
+commonmarker.c:540:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  540 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_render_commonmark':
+commonmarker.c:589:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  589 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_render_plaintext':
+commonmarker.c:617:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  617 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_insert_after':
+commonmarker.c:636:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  636 |   Data_Get_Struct(self, cmark_node, node1);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c:638:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  638 |   Data_Get_Struct(sibling, cmark_node, node2);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_prepend_child':
+commonmarker.c:659:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  659 |   Data_Get_Struct(self, cmark_node, node1);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c:661:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  661 |   Data_Get_Struct(child, cmark_node, node2);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_append_child':
+commonmarker.c:682:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  682 |   Data_Get_Struct(self, cmark_node, node1);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c:684:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  684 |   Data_Get_Struct(child, cmark_node, node2);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_last_child':
+commonmarker.c:701:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  701 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_parent':
+commonmarker.c:714:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  714 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_previous':
+commonmarker.c:727:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  727 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_url':
+commonmarker.c:743:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  743 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_url':
+commonmarker.c:765:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  765 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_title':
+commonmarker.c:784:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  784 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_title':
+commonmarker.c:806:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  806 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_header_level':
+commonmarker.c:825:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  825 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_header_level':
+commonmarker.c:848:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  848 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_list_type':
+commonmarker.c:868:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  868 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_list_type':
+commonmarker.c:895:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  895 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_list_start':
+commonmarker.c:921:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  921 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_list_start':
+commonmarker.c:945:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  945 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_list_tight':
+commonmarker.c:964:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  964 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_list_tight':
+commonmarker.c:985:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  985 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_fence_info':
+commonmarker.c:1004:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1004 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_set_fence_info':
+commonmarker.c:1027:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1027 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_node_get_table_alignments':
+commonmarker.c:1042:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1042 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_html_escape_href':
+commonmarker.c:1071:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1071 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+commonmarker.c: In function 'rb_html_escape_html':
+commonmarker.c:1091:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1091 |   Data_Get_Struct(self, cmark_node, node);
+      |   ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compiling core-extensions.c
+compiling ext_scanners.c
+compiling footnotes.c
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling houdini_html_u.c
+compiling html.c
+compiling inlines.c
+compiling iterator.c
+compiling latex.c
+compiling linked_list.c
+compiling man.c
+compiling map.c
+compiling node.c
+compiling plaintext.c
+compiling plugin.c
+compiling references.c
+compiling registry.c
+compiling render.c
+compiling scanners.c
+compiling strikethrough.c
+compiling syntax_extension.c
+compiling table.c
+compiling tagfilter.c
+compiling utf8.c
+compiling xml.c
+linking shared-object commonmarker/commonmarker.so
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/commonmarker-0.17.13/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20250921-364932-fwaut0 sitelibdir\=./.gem.20250921-364932-fwaut0 install
+/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20250921-364932-fwaut0/commonmarker
+
+current directory: D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/commonmarker-0.17.13/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20250921-364932-fwaut0 sitelibdir\=./.gem.20250921-364932-fwaut0 clean

@@ -30,8 +30,11 @@ favicon_dark: ./assets/img/450.png
 
 # The following files will be removed from the generated website.
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
+  - node_modules
+
   - README.md
   - LICENSE
   - CNAME

@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.12.5/ports/x86_64-w64-mingw32/zlib/1.2.11/lib
+sharedlibdir=D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.12.5/ports/x86_64-w64-mingw32/zlib/1.2.11/lib
+includedir=D:/github/vanoracai.github.io/vendor/bundle/ruby/3.4.0/gems/nokogiri-1.12.5/ports/x86_64-w64-mingw32/zlib/1.2.11/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.11
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
