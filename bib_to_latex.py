@@ -53,18 +53,22 @@ VENUE_ABBREVIATIONS = {
 
 # 定义会议时间顺序
 CONFERENCE_TIME_ORDER = [
-    'TPAMI',
-    'NAACL',
-    'EMNLP',
-    'ICLR',
-    'AAAI',
-    'COLING',
     'NeurIPS',
-    'ICCV',
+    'EMNLP',
     'ECCV',
-    'ACL',
     'CVPR',
+    'ACL',
+    'COLM',
+    'NAACL',
+    'COLING',
+    'ICCV',
+    'ACL',
+    'ICLR',
+    'EMNLP',
+    'AAAI',
+    'CHI',
     'CONLL',
+    # 你可以根据需要添加更多的会议
 ]
 
 # 函数：根据缩写表替换venue，不区分大小写

@@ -79,11 +79,20 @@ def clean_title(title):
 
 # 从 journal 字段中提取 Arxiv ID
 def extract_arxiv_id(entry):
+    # 1) 优先从 journal 字段中解析形如 "arXiv:YYMM.NNNNN" 的编号
     if 'journal' in entry:
         journal = entry['journal']
         arxiv_match = re.search(r'arxiv[:\s]*([\d.]+)', journal, re.IGNORECASE)
         if arxiv_match:
             return arxiv_match.group(1)
+
+    # 2) 若 journal 未解析到，再尝试从 arxivid 字段读取（仅当存在且非空）
+    arxiv_id_field = entry.get('arxivid')
+    if arxiv_id_field is not None:
+        arxiv_id = arxiv_id_field.strip()
+        if arxiv_id:
+            return arxiv_id
+
     return None
 
 # 解析 .bib 文件
