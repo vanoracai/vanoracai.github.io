@@ -3,6 +3,7 @@
 <h4 style="margin:0 10px 0;">Editor in Board</h4>
 <ul style="margin:0 0 20px;">
   <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>Neurocomputing</autocolor></a></li>
+  <li><a href="https://www.springer.com/journal/11263"><autocolor>Pattern Recognition (PR)</autocolor></a></li>
 </ul>
 <h4 style="margin:0 10px 0;">(Senior) Area Chairs</h4>
 <ul style="margin:0 0 5px;">
@@ -48,7 +49,7 @@
   <li><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76"><autocolor>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</autocolor></a></li>
   <li><a href="https://dl.acm.org/journal/tomm"><autocolor>ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)</autocolor></a></li>
   <!-- <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>Neurocomputing</autocolor></a></li> -->
-  <li><a href="https://www.springer.com/journal/11263"><autocolor>Pattern Recognition (PR)</autocolor></a></li>
+
 
   <!--
   <li><a href="https://www.journals.elsevier.com/neural-networks"><autocolor>Neural Networks</autocolor></a></li>
