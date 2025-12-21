@@ -68,7 +68,7 @@ My research interests include **multi-modal understanding** and **trust-worthy l
 
 
 ## Contact
-**Email** vanora.caiyj@gmail.com <span style="color:#e74d3c;"><b>or</b></span> yujun.cai@uq.edu.au
+**Email** vanora.caiyj@gmail.com <span style="color:#e74d3c;"><b>
 
 **Address:** [78 Staff House Rd, St Lucia QLD 4067, Australia](https://www.google.com/maps/place/78+Staff+House+Rd,+St+Lucia+QLD+4067,+Australia/@-27.499998,153.0127147,17z/data=!3m1!4b1!4m6!3m5!1s0x6b915a7f51790f75:0xfd27516ca3675a33!8m2!3d-27.499998!4d153.015295!16s%2Fg%2F11gfhyyn71?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D)
 <br>
