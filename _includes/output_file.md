@@ -3,19 +3,6 @@
 <div class="publications">
 <ol class="bibliography">
 <h3 style="margin-top: 20px; margin-bottom: 5px;">2026</h3><hr style="margin-bottom: 5px;">
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="#">From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting</a></div>
-      <div class="author"><strong>Jianing Chen, Zehao Li, Yujun Cai, Hao Jiang, Shuqin Gao, Honglong Zhao, Tianlu Mao, Yucheng Zhang</strong>.</div>
-      <div class="periodical"><em>The Fourteenth International Conference on Learning Representations (ICLR), 2026.</em></div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
 
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
@@ -30,6 +17,22 @@
   </div>
 </div>
 </li>
+
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting</a></div>
+      <div class="author"><strong>Jianing Chen, Zehao Li, Yujun Cai, Hao Jiang, Shuqin Gao, Honglong Zhao, Tianlu Mao, Yucheng Zhang</strong>.</div>
+      <div class="periodical"><em>The Fourteenth International Conference on Learning Representations (ICLR), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
 
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
