@@ -34,7 +34,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-
+  - CLAUDE.md
   - README.md
   - LICENSE
   - CNAME
