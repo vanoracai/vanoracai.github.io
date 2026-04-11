@@ -90,6 +90,76 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG</a></div>
+      <div class="author"><strong>Honghao Fu, Miao Xu, Yiwei Wang, Dailing Zhang, Jun Liu, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models</a></div>
+      <div class="author"><strong>Boyan Han, Yiwei Wang, Yi Song, Yujun Cai, Chi Zhang</strong>.</div>
+      <div class="periodical"><em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">ReCon: Active Defense against Large Vision-Language Model Jailbreaks via Reverse Safety Concept Injection</a></div>
+      <div class="author"><strong>Zheng He, Yiwei Wang, Hongxing Wang, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>Findings of the Association for Computational Linguistics: ACL 2026, 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Beyond Query Bias: Candidate-Aware Iterative Refinement for Zero-Shot Composed Image Retrieval</a></div>
+      <div class="author"><strong>Nan Sun, Jing Tang, Lei Sun, Rui Chen, Yuxing Lu, Xiangxiang Chu, Hefei Ling, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>Findings of the Association for Computational Linguistics: ACL 2026, 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="#">Rectifying Coordinate Drift in MLLMs via Counterfactual Positional Guidance</a></div>
+      <div class="author"><strong>Xingjian Tao, Yiwei Wang, Yujun Cai, Yihong Luo, Kai Han, Jing Tang</strong>.</div>
+      <div class="periodical"><em>Findings of the Association for Computational Linguistics: ACL 2026, 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting</a></div>
       <div class="author"><strong>Jianing Chen, Zehao Li, Yujun Cai, Hao Jiang, Shuqin Gao, Honglong Zhao, Tianlu Mao, Yucheng Zhang</strong>.</div>
       <div class="periodical"><em>The Fourteenth International Conference on Learning Representations (ICLR), 2026.</em></div>
