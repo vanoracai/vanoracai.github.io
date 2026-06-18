@@ -90,6 +90,76 @@
 <li>
 <div class="pub-row" style="display: flex; align-items: center;">
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://openreview.net/pdf?id=uUnIAtZUfX">TimeOmni-VL: Unified Models for Time Series Understanding and Generation</a></div>
+      <div class="author"><strong>Tong Guan, Sheng Pan, Johan Barthelemy, Zhao Li, Yujun Cai, Cesare Alippi, Ming Jin, Shirui Pan</strong>.</div>
+      <div class="periodical"><em>International Conference on Machine Learning (ICML), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://openreview.net/pdf?id=uUnIAtZUfX" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://openreview.net/pdf?id=AprtLFCirb">FactGuard: Agentic Video Misinformation Detection via Reinforcement Learning</a></div>
+      <div class="author"><strong>Zehao Li, Hongwei Yu, Hao Jiang, Qiang Sheng, Yilong Xu, Baolong Bi, Yang Li, Zhenlong Yuan, Yujun Cai, Zhaoqi Wang</strong>.</div>
+      <div class="periodical"><em>International Conference on Machine Learning (ICML), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://openreview.net/pdf?id=AprtLFCirb" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://openreview.net/pdf?id=QZlNaWuxO6">Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective</a></div>
+      <div class="author"><strong>Puwei Lian, Yujun Cai, Songze Li, Bingkun Bao</strong>.</div>
+      <div class="periodical"><em>International Conference on Machine Learning (ICML), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://openreview.net/pdf?id=QZlNaWuxO6" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://openreview.net/pdf?id=5Ls1FrQflg">MIMO-LP: A Multi-Input Multi-Output Framework for Subgraph-based Link Prediction</a></div>
+      <div class="author"><strong>Yixin Song, Guangchi Liu, Xiangyu Xu, Shaofeng Li, Zhen Ling, Yiwei Wang, Yujun Cai</strong>.</div>
+      <div class="periodical"><em>International Conference on Machine Learning (ICML), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://openreview.net/pdf?id=5Ls1FrQflg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="title"><a href="https://openreview.net/pdf?id=QfRtFf9Q3X">AuTAgent: A Reinforcement Learning Framework for Tool-Augmented Audio Reasoning</a></div>
+      <div class="author"><strong>Siqian Tong, Li Xuan, Yiwei Wang, Baolong Bi, Yujun Cai, Shenghua Liu, Yuchen He, Hao Chengpeng</strong>.</div>
+      <div class="periodical"><em>International Conference on Machine Learning (ICML), 2026.</em></div>
+      <div class="links" style="margin-top: 10px;">
+        <a href="https://openreview.net/pdf?id=QfRtFf9Q3X" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      </div>
+  </div>
+</div>
+</li>
+
+<li>
+<div class="pub-row" style="display: flex; align-items: center;">
+  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="#">VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG</a></div>
       <div class="author"><strong>Honghao Fu, Miao Xu, Yiwei Wang, Dailing Zhang, Jun Liu, Yujun Cai</strong>.</div>
       <div class="periodical"><em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</em></div>
