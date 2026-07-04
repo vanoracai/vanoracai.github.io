@@ -4,7 +4,7 @@ layout: homepage
 ## About Me
 
 <!-- **Previously a Postdoc at [UCLA](https://www.ucla.edu/) advised by [Prof. Kai-Wei Chang](http://web.cs.ucla.edu/~kwchang/members/) and [Prof. Nanyun Peng](https://vnpeng.net/group/).** -->
-**I'm currently a Lecturer (Assistant Professor) at the School of Electrical Engineering and Computer Science, [the University of Queensland (UQ)](https://www.uq.edu.au/) since Nov. 2024.**
+**I'm currently a Lecturer (Assistant Professor) at the School of Electrical Engineering and Computer Science, [the University of Queensland (UQ)](https://www.uq.edu.au/) since 2024.**
 
 <span style="font-size:1.2em;">🔥</span> <b><span style="color:#e74d3c;">Recruiting Ph.D. students and research interns:</span></b> <b>I'm actively looking for strong and motivated students. Both onsite and remote research opportunities are available for interns. If you are interested in working with me, please feel free to drop me an email with your cv. </b>
 
