@@ -38,6 +38,10 @@ layout: course
     background: #f1ecff;
   }
 
+  .lecture-toggle:nth-of-type(5) > summary {
+    background: #ffeef2;
+  }
+
   .lecture-toggle > summary::-webkit-details-marker {
     display: none;
   }
@@ -88,6 +92,7 @@ layout: course
 This page collects lecture notes for the Pattern Recognition and Machine Learning course, following Christopher M. Bishop's *Pattern Recognition and Machine Learning*.
 
 - [Textbook PDF](./CoursePR2026/教科书.pdf)
+- [Lecture 5 package](./CoursePR2026/lecture_5_package.zip)
 
 <details class="lecture-toggle" markdown="1">
 <summary>
@@ -126,6 +131,16 @@ This page collects lecture notes for the Pattern Recognition and Machine Learnin
 </summary>
 
 {% include_relative CoursePR2026/lecture_4.md %}
+
+</details>
+
+<details class="lecture-toggle" markdown="1">
+<summary>
+<span class="lecture-title">Lecture 5: Neural Networks</span>
+<span class="lecture-description">This lecture studies feed-forward neural networks, including adaptive basis functions, network training, backpropagation, Hessian-based analysis, regularization, mixture density networks, and Bayesian neural networks.</span>
+</summary>
+
+{% include_relative CoursePR2026/lecture_5.md %}
 
 </details>
 
