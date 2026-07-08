@@ -39,3 +39,5 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
+  - CoursePR2026/Python
+  - CoursePR2026/lecture_4_with_figures(1).zip
