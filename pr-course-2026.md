@@ -87,6 +87,8 @@ layout: course
 
 This page collects lecture notes for the Pattern Recognition and Machine Learning course, following Christopher M. Bishop's *Pattern Recognition and Machine Learning*.
 
+- [Textbook PDF](./CoursePR2026/教科书.pdf)
+
 <details class="lecture-toggle" markdown="1">
 <summary>
 <span class="lecture-title">Lecture 1: Pattern Recognition and Machine Learning Introduction</span>
