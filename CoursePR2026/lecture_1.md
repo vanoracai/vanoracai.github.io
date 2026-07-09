@@ -10,8 +10,8 @@
 
 1. [§0 Learning Viewpoint and Chapter Roadmap](#0-learning-viewpoint-and-chapter-roadmap)
 2. [§1 Pattern Recognition and Machine Learning](#1-pattern-recognition-and-machine-learning)
-3. [§2 Polynomial Curve Fitting](#2-polynomial-curve-fitting)
-4. [§3 Probability Theory Essentials](#3-probability-theory-essentials)
+3. [§2 Polynomial Curve Fitting（多项式曲线拟合）](#2-polynomial-curve-fitting)
+4. [§3 Probability Theory Essentials（概率论基础）](#3-probability-theory-essentials)
 5. [§4 Probabilistic Curve Fitting](#4-probabilistic-curve-fitting)
 6. [§5 Model Selection and the Curse of Dimensionality](#5-model-selection-and-the-curse-of-dimensionality)
 7. [§6 Decision Theory](#6-decision-theory)
@@ -24,19 +24,25 @@
 
 This first chapter introduces the notation that will be used throughout the course. The important shift is from thinking of machine learning as “fitting a curve” to thinking of it as **reasoning under uncertainty**.
 
+> **Teaching focus.** Do not treat this section as a dictionary to memorize. In class, highlight the symbols that form the course pipeline:
+>
+> $$\mathcal{D} \rightarrow \mathbf{x},t \rightarrow y(\mathbf{x}) \rightarrow p(C_k\mid \mathbf{x}) \rightarrow \mathcal{R}_k,\ L_{kj}.$$
+>
+> The key message is: **data define the learning problem, probability represents uncertainty, and decision theory turns uncertainty into action.**
+
 ### Data, Inputs, Targets, and Models
 
 | Symbol | Definition |
 |--------|------------|
-| $\mathbf{x}$ | Input vector / feature vector. In digit recognition, it can be a vector of pixel intensities. |
+| **$\mathbf{x}$** | **Input vector / feature vector.** In digit recognition, it can be a vector of pixel intensities. |
 | $x$ | A scalar input variable, used in the polynomial curve-fitting example. |
-| $t$ | Target variable. In regression it is continuous; in classification it represents a class label. |
-| $\mathcal{D}$ | Training data set, usually $\mathcal{D}=\{(\mathbf{x}_n,t_n)\}_{n=1}^N$. |
-| $N$ | Number of training examples. |
+| **$t$** | **Target variable.** In regression it is continuous; in classification it represents a class label. |
+| **$\mathcal{D}$** | **Training data set**, usually $\mathcal{D}=\{(\mathbf{x}_n,t_n)\}_{n=1}^N$. |
+| **$N$** | **Number of training examples.** Use this later when discussing generalization and overfitting. |
 | $D$ | Dimensionality of the input vector $\mathbf{x}$. |
 | $K$ | Number of classes in a classification problem. |
-| $y(\mathbf{x})$ | Model output / prediction as a function of the input. |
-| $\mathbf{w}$ | Parameter vector of a model. |
+| **$y(\mathbf{x})$** | **Model output / prediction** as a function of the input. |
+| **$\mathbf{w}$** | **Parameter vector of a model.** Learning usually means estimating or constraining $\mathbf{w}$. |
 | $M$ | Polynomial order in §1.1. A polynomial of order $M$ has $M+1$ coefficients. |
 
 ### Probability and Statistics
@@ -46,13 +52,13 @@ This first chapter introduces the notation that will be used throughout the cour
 | $p(X)$ | Probability that discrete random variable $X$ takes a particular value. |
 | $p(x)$ | Probability density of a continuous variable $x$. |
 | $p(X,Y)$ | Joint probability of $X$ and $Y$. |
-| $p(X \mid Y)$ | Conditional probability of $X$ given $Y$. |
-| $p(\mathbf{x}\mid C_k)$ | Class-conditional density for class $C_k$. |
-| $p(C_k\mid \mathbf{x})$ | Posterior probability of class $C_k$ after observing $\mathbf{x}$. |
-| $\mathbb{E}[f]$ | Expectation or average value of a function $f$. |
+| **$p(X \mid Y)$** | **Conditional probability** of $X$ given $Y$. This is the basic language for updating uncertainty. |
+| **$p(\mathbf{x}\mid C_k)$** | **Class-conditional density** for class $C_k$: what inputs from class $k$ tend to look like. |
+| **$p(C_k\mid \mathbf{x})$** | **Posterior probability** of class $C_k$ after observing $\mathbf{x}$: what we believe after seeing the data. |
+| **$\mathbb{E}[f]$** | **Expectation or average value** of a function $f$. This becomes the language of risk and loss. |
 | $\operatorname{var}[x]$ | Variance of random variable $x$. |
 | $\operatorname{cov}[\mathbf{x}]$ | Covariance matrix of random vector $\mathbf{x}$. |
-| $\mathcal{N}(x\mid \mu,\sigma^2)$ | Univariate Gaussian density with mean $\mu$ and variance $\sigma^2$. |
+| **$\mathcal{N}(x\mid \mu,\sigma^2)$** | **Univariate Gaussian density** with mean $\mu$ and variance $\sigma^2$. This connects noise assumptions to least squares. |
 | $\mathcal{N}(\mathbf{x}\mid \boldsymbol{\mu},\boldsymbol{\Sigma})$ | Multivariate Gaussian density with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$. |
 | $\beta$ | Precision parameter, equal to inverse variance: $\beta=1/\sigma^2$. |
 
@@ -60,11 +66,11 @@ This first chapter introduces the notation that will be used throughout the cour
 
 | Symbol | Definition |
 |--------|------------|
-| $C_k$ | Class $k$. |
-| $\mathcal{R}_k$ | Decision region assigned to class $C_k$. |
-| $L_{kj}$ | Loss incurred when the true class is $C_k$ but the decision is $C_j$. |
-| $H[x]$ | Entropy of random variable $x$. |
-| $\mathrm{KL}(p\Vert q)$ | Kullback-Leibler divergence from distribution $q$ to distribution $p$. |
+| **$C_k$** | **Class $k$.** |
+| **$\mathcal{R}_k$** | **Decision region** assigned to class $C_k$. This is where inference becomes a concrete decision rule. |
+| **$L_{kj}$** | **Loss** incurred when the true class is $C_k$ but the decision is $C_j$. This explains why the most probable class is not always the best action. |
+| **$H[x]$** | **Entropy** of random variable $x$: a measure of uncertainty. |
+| **$\mathrm{KL}(p\Vert q)$** | **Kullback-Leibler divergence** from distribution $q$ to distribution $p$: a measure of distribution mismatch. |
 | $I[x,y]$ | Mutual information between $x$ and $y$. |
 
 ---
@@ -79,15 +85,15 @@ This chapter is called “Introduction”, but it is not merely a motivational c
 
 | Pillar | Main Question | Why It Matters |
 |--------|---------------|----------------|
-| **Probability theory** | How do we represent uncertainty? | Real data contain noise, ambiguity, missing information, and finite-sample uncertainty. |
+| **Probability theory（概率论）** | How do we represent uncertainty? | Real data contain noise, ambiguity, missing information, and finite-sample uncertainty. |
 | **Decision theory** | How do we make an action or prediction once probabilities are known? | A posterior probability is not yet a decision. Different applications have different costs. |
 | **Information theory** | How do we quantify uncertainty, surprise, and distributional mismatch? | Entropy, KL divergence, and mutual information appear repeatedly in density estimation, latent-variable models, variational inference, and neural networks. |
 
 A useful way to read the chapter is the following:
 
 1. The digit example tells us what pattern recognition is.
-2. Polynomial curve fitting gives a concrete miniature version of supervised learning.
-3. Probability theory explains why least squares, regularization, and Bayesian prediction are not arbitrary tricks.
+2. Polynomial curve fitting（多项式曲线拟合） gives a concrete miniature version of supervised learning.
+3. Probability theory（概率论） explains why least squares, regularization, and Bayesian prediction are not arbitrary tricks.
 4. Model selection and high-dimensional geometry explain why “more flexible” does not automatically mean “better”.
 5. Decision theory separates estimating uncertainty from acting under uncertainty.
 6. Information theory gives a language for uncertainty and distribution comparison.
@@ -200,9 +206,9 @@ The polynomial curve-fitting example is a regression problem. It is intentionall
 
 ---
 
-# §2 Polynomial Curve Fitting
+# §2 Polynomial Curve Fitting（多项式曲线拟合）
 
-> 📖 Textbook §1.1 Example: Polynomial Curve Fitting
+> 📖 Textbook §1.1 Example: Polynomial Curve Fitting（多项式曲线拟合）
 
 ## 2.1 The Curve-Fitting Setup
 
@@ -376,9 +382,9 @@ The polynomial example is simple, but it already contains the major themes of th
 
 ---
 
-# §3 Probability Theory Essentials
+# §3 Probability Theory Essentials（概率论基础）
 
-> 📖 Textbook §1.2 Probability Theory (§1.2.1-§1.2.4)
+> 📖 Textbook §1.2 Probability Theory（概率论） (§1.2.1-§1.2.4)
 
 ## 3.1 Why Probability Is Needed
 
