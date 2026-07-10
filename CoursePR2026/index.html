@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRML Course Local Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --line: #d9dee8;
+      --accent: #2563eb;
+      --accent-soft: #e8f1ff;
+      --code: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+      line-height: 1.62;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 22px 18px;
+      border-right: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .brand {
+      margin-bottom: 22px;
+    }
+
+    .brand h1 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lecture-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    button.lecture-button {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+
+    button.lecture-button:hover,
+    button.lecture-button.active {
+      border-color: #9bbcf8;
+      background: var(--accent-soft);
+      color: #123c86;
+    }
+
+    .tools {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tools button {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    main {
+      min-width: 0;
+      padding: 28px;
+    }
+
+    .content {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 34px 42px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+      box-shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
+    }
+
+    .status {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.25;
+      scroll-margin-top: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+    }
+
+    h2 {
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+    }
+
+    h3 {
+      margin-top: 26px;
+      font-size: 20px;
+    }
+
+    h4 {
+      margin-top: 22px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 16px auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    blockquote {
+      margin: 16px 0;
+      padding: 10px 16px;
+      border-left: 4px solid #94a3b8;
+      background: #f8fafc;
+      color: #334155;
+    }
+
+    table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th, td {
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      text-align: left;
+    }
+
+    code {
+      padding: 0.1em 0.28em;
+      border-radius: 4px;
+      background: var(--code);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 0.92em;
+    }
+
+    pre {
+      overflow: auto;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .math-block {
+      overflow-x: auto;
+      margin: 16px 0;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #fbfdff;
+      text-align: center;
+    }
+
+    .error {
+      padding: 14px 16px;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      background: #fff1f2;
+      color: #991b1b;
+    }
+
+    @media (max-width: 860px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      main {
+        padding: 16px;
+      }
+
+      .content {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand">
+        <h1>PRML Course Preview</h1>
+        <p>Local preview for CoursePR2026 markdown lectures.</p>
+      </div>
+      <div class="lecture-list" id="lectureList"></div>
+      <div class="tools">
+        <button id="reloadButton" type="button">Reload</button>
+        <button id="topButton" type="button">Top</button>
+      </div>
+    </aside>
+    <main>
+      <div class="content">
+        <p class="status" id="status">Loading...</p>
+        <article id="article"></article>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const lectures = [
+      { file: 'lecture_1.md', title: 'Lecture 1' },
+      { file: 'lecture_2.md', title: 'Lecture 2' },
+      { file: 'lecture_3.md', title: 'Lecture 3' },
+      { file: 'lecture_4.md', title: 'Lecture 4' },
+      { file: 'lecture_5.md', title: 'Lecture 5' },
+      { file: 'lecture_6.md', title: 'Lecture 6' },
+      { file: '内容大纲.md', title: '内容大纲' }
+    ];
+
+    const article = document.getElementById('article');
+    const statusEl = document.getElementById('status');
+    const lectureList = document.getElementById('lectureList');
+    let currentFile = new URLSearchParams(location.search).get('file') || 'lecture_1.md';
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function slugify(text) {
+      return text
+        .toLowerCase()
+        .replace(/<[^>]+>/g, '')
+        .replace(/[`*_~$\\]/g, '')
+        .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function fixPath(path) {
+      return path.replace(/^\.\/CoursePR2026\//, './');
+    }
+
+    function inlineMarkdown(text) {
+      let output = escapeHtml(text);
+      output = output.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+        return `<img src="${fixPath(src)}" alt="${escapeHtml(alt)}">`;
+      });
+      output = output.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+        return `<a href="${fixPath(href)}">${label}</a>`;
+      });
+      output = output.replace(/`([^`]+)`/g, '<code>$1</code>');
+      output = output.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      output = output.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      return output;
+    }
+
+    function isTableStart(lines, index) {
+      return index + 1 < lines.length &&
+        /^\s*\|.*\|\s*$/.test(lines[index]) &&
+        /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(lines[index + 1]);
+    }
+
+    function renderTable(lines) {
+      const rows = lines.map(line => line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim()));
+      const header = rows[0];
+      const body = rows.slice(2);
+      const thead = `<thead><tr>${header.map(cell => `<th>${inlineMarkdown(cell)}</th>`).join('')}</tr></thead>`;
+      const tbody = `<tbody>${body.map(row => `<tr>${row.map(cell => `<td>${inlineMarkdown(cell)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+      return `<table>${thead}${tbody}</table>`;
+    }
+
+    function renderMarkdown(markdown) {
+      const lines = markdown.replace(/\r\n/g, '\n').split('\n');
+      const html = [];
+      let paragraph = [];
+      let list = [];
+      let blockquote = [];
+      let inCode = false;
+      let codeFence = [];
+      let inMath = false;
+      let mathLines = [];
+
+      function flushParagraph() {
+        if (paragraph.length) {
+          html.push(`<p>${inlineMarkdown(paragraph.join(' '))}</p>`);
+          paragraph = [];
+        }
+      }
+
+      function flushList() {
+        if (list.length) {
+          html.push(`<ul>${list.map(item => `<li>${inlineMarkdown(item)}</li>`).join('')}</ul>`);
+          list = [];
+        }
+      }
+
+      function flushBlockquote() {
+        if (blockquote.length) {
+          html.push(`<blockquote>${renderMarkdown(blockquote.join('\n'))}</blockquote>`);
+          blockquote = [];
+        }
+      }
+
+      for (let i = 0; i < lines.length; i += 1) {
+        const line = lines[i];
+
+        if (/^```/.test(line)) {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          if (inCode) {
+            html.push(`<pre><code>${escapeHtml(codeFence.join('\n'))}</code></pre>`);
+            codeFence = [];
+            inCode = false;
+          } else {
+            inCode = true;
+          }
+          continue;
+        }
+
+        if (inCode) {
+          codeFence.push(line);
+          continue;
+        }
+
+        if (line.trim() === '$$') {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          if (inMath) {
+            html.push(`<div class="math-block">$$${escapeHtml(mathLines.join('\n'))}$$</div>`);
+            mathLines = [];
+            inMath = false;
+          } else {
+            inMath = true;
+          }
+          continue;
+        }
+
+        if (inMath) {
+          mathLines.push(line);
+          continue;
+        }
+
+        if (line.trim() === '') {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          continue;
+        }
+
+        if (/^\s*---+\s*$/.test(line)) {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          html.push('<hr>');
+          continue;
+        }
+
+        if (/^>\s?/.test(line)) {
+          flushParagraph();
+          flushList();
+          blockquote.push(line.replace(/^>\s?/, ''));
+          continue;
+        }
+
+        if (isTableStart(lines, i)) {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          const tableLines = [];
+          while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) {
+            tableLines.push(lines[i]);
+            i += 1;
+          }
+          i -= 1;
+          html.push(renderTable(tableLines));
+          continue;
+        }
+
+        const heading = /^(#{1,4})\s+(.+)$/.exec(line);
+        if (heading) {
+          flushParagraph();
+          flushList();
+          flushBlockquote();
+          const level = heading[1].length;
+          const content = inlineMarkdown(heading[2]);
+          const id = slugify(heading[2]);
+          html.push(`<h${level} id="${id}">${content}</h${level}>`);
+          continue;
+        }
+
+        const item = /^\s*[-*]\s+(.+)$/.exec(line);
+        if (item) {
+          flushParagraph();
+          flushBlockquote();
+          list.push(item[1]);
+          continue;
+        }
+
+        paragraph.push(line.trim());
+      }
+
+      flushParagraph();
+      flushList();
+      flushBlockquote();
+      return html.join('\n');
+    }
+
+    function renderNav() {
+      lectureList.innerHTML = lectures.map(lecture => {
+        const active = lecture.file === currentFile ? ' active' : '';
+        return `<button class="lecture-button${active}" type="button" data-file="${lecture.file}">${lecture.title}</button>`;
+      }).join('');
+    }
+
+    async function loadLecture(file) {
+      currentFile = file;
+      renderNav();
+      statusEl.textContent = `Loading ${file}...`;
+      article.innerHTML = '';
+
+      try {
+        const response = await fetch(`${file}?t=${Date.now()}`);
+        if (!response.ok) {
+          throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const markdown = await response.text();
+        article.innerHTML = renderMarkdown(markdown);
+        statusEl.textContent = `Showing ${file}. Edit the markdown, then click Reload.`;
+        history.replaceState(null, '', `?file=${encodeURIComponent(file)}`);
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          window.MathJax.typesetPromise([article]);
+        }
+      } catch (error) {
+        statusEl.textContent = '';
+        article.innerHTML = `<div class="error">Cannot load ${escapeHtml(file)}. Start a local server in this folder, then open http://127.0.0.1:8000/. Details: ${escapeHtml(error.message)}</div>`;
+      }
+    }
+
+    lectureList.addEventListener('click', event => {
+      const button = event.target.closest('button[data-file]');
+      if (button) {
+        loadLecture(button.dataset.file);
+      }
+    });
+
+    document.getElementById('reloadButton').addEventListener('click', () => loadLecture(currentFile));
+    document.getElementById('topButton').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    renderNav();
+    loadLecture(currentFile);
+  </script>
+</body>
+</html>

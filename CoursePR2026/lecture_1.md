@@ -262,7 +262,7 @@ The factor $1/2$ is included only to simplify derivatives. It does not change th
 >
 > *Figure 1.3 (Textbook Fig. 1.3, p. 6): Sum-of-squares error measures the vertical discrepancy between the model prediction and each target value. Squaring penalizes large deviations strongly and gives a smooth differentiable objective.*
 
-For the polynomial model, $E(\mathbf{w})$ is a quadratic function of the parameters. Therefore the minimizing coefficients can be obtained by solving linear equations.
+For the polynomial model, $E(\mathbf{w})$ is a quadratic function (二次函数) of the parameters. The reason is simple: the prediction is linear in $\mathbf{w}$, and the squared-error loss squares this linear expression. Therefore the error contains terms like $w_iw_j$, and the minimizing coefficients can be obtained by solving linear equations.
 
 However, a small training error does not automatically mean good prediction on future data.
 
@@ -272,7 +272,7 @@ The order $M$ controls the flexibility of the polynomial.
 
 > ![Figure 1.4](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_4__textbook_fig_1_4__p7.png)
 >
-> *Figure 1.4 (Textbook Fig. 1.4, p. 7): Polynomial fits for several values of $M$. Low-order models are too rigid; an intermediate model captures the trend; a very high-order model can fit every training point while oscillating badly between them.*
+> *Figure 1.4 (Textbook Fig. 1.4, p. 7): Polynomial fits for several values of $M$. Low-order models are too rigid; an intermediate model captures the trend; a very high-order model can fit every training point while oscillating (震荡) badly between them.*
 
 This figure gives the first major lesson of the course.
 
@@ -280,7 +280,7 @@ This figure gives the first major lesson of the course.
 |------|--------------|------|
 | $M=0,1$ | The model is too simple to represent the sinusoidal pattern. | Underfitting |
 | $M=3$ | The model captures the main trend without chasing every noisy point. | Good generalization |
-| $M=9$ | The model interpolates the training data but oscillates wildly. | Overfitting |
+| $M=9$ | The model interpolates the training data but oscillates (震荡) wildly. | Overfitting |
 
 Overfitting is not merely “the model is complicated.” A complicated model is harmful when it uses its flexibility to explain noise rather than stable structure.
 
@@ -345,7 +345,7 @@ The parameter $\lambda\geq 0$ controls the strength of the penalty.
 
 > ![Figure 1.7](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_7__textbook_fig_1_7__p10.png)
 >
-> *Figure 1.7 (Textbook Fig. 1.7, p. 10): Regularization can suppress the extreme oscillations of a high-order polynomial. If the penalty is too strong, however, the model becomes overly flat and underfits.*
+> *Figure 1.7 (Textbook Fig. 1.7, p. 10): Regularization can suppress the extreme oscillations (震荡) of a high-order polynomial. If the penalty is too strong, however, the model becomes overly flat and underfits.*
 
 Regularization can be understood in three equivalent ways:
 
@@ -376,7 +376,7 @@ The polynomial example is simple, but it already contains the major themes of th
 | Error function | Sum-of-squares error | Training objective |
 | Complexity | Polynomial order $M$ | Capacity/flexibility of model class |
 | Generalization | Test error | Performance on unseen data |
-| Overfitting | $M=9$ oscillates | Fits noise rather than stable structure |
+| Overfitting | $M=9$ oscillates (震荡) | Fits noise rather than stable structure |
 | Regularization | $\lambda\|\mathbf{w}\|^2/2$ | Bias toward simpler/smoother solutions |
 | Hyperparameter | $M,\lambda$ | Chosen by validation or model selection |
 
@@ -428,33 +428,40 @@ $$
 
 This example is small, but it already contains the general Bayesian logic used throughout the course.
 
-## 3.3 Sum Rule and Product Rule
+## 3.3 Why Probability Matters in Pattern Recognition
 
-Consider two random variables $X$ and $Y$. Their joint probability is $p(X,Y)$.
+At a high level, probability is the language we use when the input is incomplete, noisy, or ambiguous. A model usually cannot say "this is certainly class A" or "this curve is certainly correct." Instead, it should say how plausible different explanations are after seeing the data.
 
-> ![Figure 1.10](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_10__textbook_fig_1_10__p13.png)
->
-> *Figure 1.10 (Textbook Fig. 1.10, p. 13): Counting occurrences in a two-variable table motivates the sum rule and product rule of probability.*
+This viewpoint will appear repeatedly later in the course:
 
-The **sum rule** says that a marginal probability is obtained by summing over the other variable:
+| Idea | Why it matters later |
+|------|----------------------|
+| Likelihood (似然) | Used for learning model parameters: after the data are fixed, compare which parameter values make those data more probable. Least squares will become maximum likelihood under Gaussian noise. |
+| Posterior (后验) | Used for inference after seeing data: classify an input, update beliefs about parameters, and represent uncertainty. |
+| Evidence (证据/归一化常数) | Used to normalize posterior probabilities, and later to compare models with different complexity. |
+| Marginalization (边缘化) | Used to average over unknown variables or uncertain parameters instead of pretending they have one fixed value. |
+
+So the purpose of this probability section is not to memorize rules in isolation. The purpose is to build the machinery for three recurring questions:
+
+1. **Learning:** Which parameters make the data likely?
+2. **Inference:** After observing data, what should we believe?
+3. **Decision:** Given uncertainty, what action minimizes expected loss?
+
+The sum rule (求和法则) and product rule (乘法法则) are the basic algebra behind these operations.
+
+The **sum rule** removes a variable we do not care about by adding over its possible values:
 
 $$
 p(X)=\sum_Y p(X,Y).
 $$
 
-The **product rule** says that the joint probability can be factorized into a conditional probability times a marginal probability:
+The **product rule** decomposes a joint probability into a marginal probability and a conditional probability:
 
 $$
 p(X,Y)=p(Y\mid X)p(X).
 $$
 
-Because the joint probability is symmetric,
-
-$$
-p(X,Y)=p(X\mid Y)p(Y).
-$$
-
-Combining these equations gives Bayes' theorem:
+Together, these rules lead directly to Bayes' theorem:
 
 $$
 p(Y\mid X)=\frac{p(X\mid Y)p(Y)}{p(X)}.
@@ -476,10 +483,12 @@ $$
 
 | Term | Formula | Meaning |
 |------|---------|---------|
-| Prior | $p(Y)$ | Belief about $Y$ before observing $X$ |
-| Likelihood | $p(X\mid Y)$ | How probable the observation would be if $Y$ were true |
-| Evidence | $p(X)$ | Normalizing probability of the observation |
-| Posterior | $p(Y\mid X)$ | Updated belief after observing $X$ |
+| Prior (先验) | $p(Y)$ | Belief about $Y$ before observing $X$ |
+| Likelihood (似然) | $p(X\mid Y)$ | How probable the observation would be if $Y$ were true |
+| Evidence (证据/归一化常数) | $p(X)$ | Normalizing probability of the observation |
+| Posterior (后验) | $p(Y\mid X)$ | Updated belief after observing $X$ |
+
+The evidence $p(X)$ is called a normalizing probability because it makes the posterior probabilities over all possible $Y$ values sum to one. It is the total probability of observing $X$, considering every possible explanation $Y$.
 
 The denominator can be computed by the sum rule:
 
@@ -487,7 +496,9 @@ $$
 p(X)=\sum_Y p(X\mid Y)p(Y).
 $$
 
-For continuous variables, the sum is replaced by an integral.
+For continuous variables, the sum is replaced by an integral (积分).
+
+Use the **likelihood** when you want to evaluate or learn a model: given a possible hypothesis or parameter value $Y$, how likely is the observed data $X$? Use the **posterior** when you want to make inference or decisions after seeing data: given the observation $X$, which hypothesis $Y$ should we believe, and with what probability?
 
 ## 3.5 Marginal and Conditional Distributions
 
@@ -509,7 +520,7 @@ $$
 p(X)=\sum_Y p(X,Y).
 $$
 
-For continuous variables:
+For continuous variables, use an integral (积分):
 
 $$
 p(x)=\int p(x,y)\,dy.
@@ -601,15 +612,39 @@ $$
 p_y(y)\,dy=p_x(x)\,dx.
 $$
 
+In words, the probability of a small interval in $y$-space should equal the probability of the corresponding small interval in $x$-space.
+
 Therefore,
 
 $$
 p_y(y)=p_x(g(y))\left|\frac{dg(y)}{dy}\right|.
 $$
 
+For example, if
+
+$$
+x=2y,
+$$
+
+then a small interval of length $dy$ in $y$-space corresponds to an interval of length
+
+$$
+dx=2dy
+$$
+
+in $x$-space. Therefore the density is multiplied by $2$. This does not mean that probability has increased; it means that the same interval in $y$ covers a longer interval in $x$.
+
 The absolute derivative is the one-dimensional Jacobian. In multiple dimensions, the corresponding term is the absolute determinant of the Jacobian matrix.
 
-This is a common source of mistakes. A density is not itself a probability; probability is density times volume.
+Here $p_x(x)$ means a probability density, not the probability of the exact value $x$. For a continuous variable, probability is assigned to an interval:
+
+$$
+P(x\leq X\leq x+\Delta x)\simeq p_x(x)\Delta x.
+$$
+
+So density tells us how much probability mass there is per unit length, area, or volume near a point.
+
+This is a common source of mistakes. **A density is not itself a probability; probability is density times volume.**
 
 ## 3.9 Expectations, Variances, and Covariances
 
@@ -1600,7 +1635,6 @@ Filename convention: `lecture_fig_<lecture-number>__textbook_fig_<original-textb
 | Figure 1.7 | PRML Fig. 1.7 | `lecture_fig_1_7__textbook_fig_1_7__p10.png` |
 | Figure 1.8 | PRML Fig. 1.8 | `lecture_fig_1_8__textbook_fig_1_8__p11.png` |
 | Figure 1.9 | PRML Fig. 1.9 | `lecture_fig_1_9__textbook_fig_1_9__p12.png` |
-| Figure 1.10 | PRML Fig. 1.10 | `lecture_fig_1_10__textbook_fig_1_10__p13.png` |
 | Figure 1.11 | PRML Fig. 1.11 | `lecture_fig_1_11__textbook_fig_1_11__p16.png` |
 | Figure 1.12 | PRML Fig. 1.12 | `lecture_fig_1_12__textbook_fig_1_12__p18.png` |
 | Figure 1.13 | PRML Fig. 1.13 | `lecture_fig_1_13__textbook_fig_1_13__p25.png` |
