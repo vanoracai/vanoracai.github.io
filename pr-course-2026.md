@@ -42,6 +42,10 @@ layout: course
     background: #ffeef2;
   }
 
+  .lecture-toggle:nth-of-type(6) > summary {
+    background: #eef8ff;
+  }
+
   .lecture-toggle > summary::-webkit-details-marker {
     display: none;
   }
@@ -140,6 +144,16 @@ This page collects lecture notes for the Pattern Recognition and Machine Learnin
 </summary>
 
 {% include_relative CoursePR2026/lecture_5.md %}
+
+</details>
+
+<details class="lecture-toggle" markdown="1">
+<summary>
+<span class="lecture-title">Lecture 6: Kernel Methods</span>
+<span class="lecture-description">This lecture studies kernel methods, including dual representations, kernel construction, radial basis function networks, Gaussian processes, and Gaussian-process classification.</span>
+</summary>
+
+{% include_relative CoursePR2026/lecture_6.md %}
 
 </details>
 

@@ -1032,10 +1032,10 @@ The log evidence has the form
 $$
 \ln p(\mathbf{t}\mid\alpha,\beta)
 =
-\frac{M}{2}\ln\alpha+rac{N}{2}\ln\beta
+\frac{M}{2}\ln\alpha+\frac{N}{2}\ln\beta
 -E(\mathbf{m}_N)
--rac{1}{2}\ln|\mathbf{A}|
--rac{N}{2}\ln(2\pi).
+-\frac{1}{2}\ln|\mathbf{A}|
+-\frac{N}{2}\ln(2\pi).
 $$
 
 Each term has an interpretation.

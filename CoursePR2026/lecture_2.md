@@ -1267,7 +1267,7 @@ This is why the sigmoid function appears naturally in logistic regression: it ma
 For the multinomial/categorical distribution, the exponential-family form leads to the softmax function:
 
 $$
-\mu_k=rac{\exp(\eta_k)}{\sum_j\exp(\eta_j)}.
+\mu_k=\frac{\exp(\eta_k)}{\sum_j\exp(\eta_j)}.
 $$
 
 Again, the reason is constraint handling. The natural parameters $\eta_k$ can be arbitrary real numbers, while the resulting $\mu_k$ must be nonnegative and sum to one.

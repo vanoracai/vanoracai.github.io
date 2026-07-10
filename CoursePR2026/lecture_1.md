@@ -878,13 +878,13 @@ $$
 Taking the negative log posterior gives an objective proportional to
 
 $$
-\frac{\beta}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+rac{\alpha}{2}\mathbf{w}^T\mathbf{w}.
+\frac{\beta}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+\frac{\alpha}{2}\mathbf{w}^T\mathbf{w}.
 $$
 
 Dividing by $\beta$ gives
 
 $$
-\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+rac{\lambda}{2}\mathbf{w}^T\mathbf{w},
+\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+\frac{\lambda}{2}\mathbf{w}^T\mathbf{w},
 $$
 
 where

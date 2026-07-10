@@ -361,7 +361,7 @@ $$
 The negative log-likelihood, ignoring constants independent of $\mathbf{w}$, becomes
 
 $$
-E_D(\mathbf{w})=rac{1}{2}\sum_{n=1}^N
+E_D(\mathbf{w})=\frac{1}{2}\sum_{n=1}^N
 \{y(\mathbf{x}_n,\mathbf{w})-t_n\}^2.
 $$
 
@@ -370,7 +370,7 @@ Thus the familiar sum-of-squares error is not arbitrary. It corresponds to Gauss
 For multiple independent regression outputs,
 
 $$
-E_D(\mathbf{w})=rac{1}{2}\sum_{n=1}^N\sum_{k=1}^K
+E_D(\mathbf{w})=\frac{1}{2}\sum_{n=1}^N\sum_{k=1}^K
 \{y_k(\mathbf{x}_n,\mathbf{w})-t_{nk}\}^2.
 $$
 
@@ -1143,9 +1143,9 @@ Equivalently, minimize the regularized error function. For Gaussian regression n
 
 $$
 E(\mathbf{w})
-=rac{\beta}{2}\sum_{n=1}^N
+=\frac{\beta}{2}\sum_{n=1}^N
 \{y(\mathbf{x}_n,\mathbf{w})-t_n\}^2
-+rac{\alpha}{2}\mathbf{w}^T\mathbf{w}.
++\frac{\alpha}{2}\mathbf{w}^T\mathbf{w}.
 $$
 
 Around $\mathbf{w}_{\mathrm{MAP}}$, approximate the posterior by a Gaussian:
