@@ -326,10 +326,18 @@
       return path.replace(/^\.\/CoursePR2026\//, './');
     }
 
+    function cacheBustAsset(path) {
+      if (!/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(path)) {
+        return path;
+      }
+      const separator = path.includes('?') ? '&' : '?';
+      return `${path}${separator}v=${Date.now()}`;
+    }
+
     function inlineMarkdown(text) {
       let output = escapeHtml(text);
       output = output.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
-        return `<img src="${fixPath(src)}" alt="${escapeHtml(alt)}">`;
+        return `<img src="${cacheBustAsset(fixPath(src))}" alt="${escapeHtml(alt)}">`;
       });
       output = output.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
         return `<a href="${fixPath(href)}">${label}</a>`;

@@ -26,7 +26,7 @@ This first chapter introduces the notation that will be used throughout the cour
 
 > **Teaching focus.** Do not treat this section as a dictionary to memorize. In class, highlight the symbols that form the course pipeline:
 >
-> $$\mathcal{D} \rightarrow \mathbf{x},t \rightarrow y(\mathbf{x}) \rightarrow p(C_k\mid \mathbf{x}) \rightarrow \mathcal{R}_k,\ L_{kj}.$$
+> $$D_{\mathrm{train}} \rightarrow \mathbf{x},t \rightarrow y(\mathbf{x}) \rightarrow p(C_k\mid \mathbf{x}) \rightarrow R_k,\ L_{kj}.$$
 >
 > The key message is: **data define the learning problem, probability represents uncertainty, and decision theory turns uncertainty into action.**
 
@@ -37,7 +37,7 @@ This first chapter introduces the notation that will be used throughout the cour
 | **$\mathbf{x}$** | **Input vector / feature vector.** In digit recognition, it can be a vector of pixel intensities. |
 | $x$ | A scalar input variable, used in the polynomial curve-fitting example. |
 | **$t$** | **Target variable.** In regression it is continuous; in classification it represents a class label. |
-| **$\mathcal{D}$** | **Training data set**, usually $\mathcal{D}=\{(\mathbf{x}_n,t_n)\}_{n=1}^N$. |
+| **$D_{\mathrm{train}}$** | **Training data set**, usually $D_{\mathrm{train}}=\{(\mathbf{x}_n,t_n)\}_{n=1}^N$. |
 | **$N$** | **Number of training examples.** Use this later when discussing generalization and overfitting. |
 | $D$ | Dimensionality of the input vector $\mathbf{x}$. |
 | $K$ | Number of classes in a classification problem. |
@@ -58,8 +58,8 @@ This first chapter introduces the notation that will be used throughout the cour
 | **$\mathbb{E}[f]$** | **Expectation or average value** of a function $f$. This becomes the language of risk and loss. |
 | $\operatorname{var}[x]$ | Variance of random variable $x$. |
 | $\operatorname{cov}[\mathbf{x}]$ | Covariance matrix of random vector $\mathbf{x}$. |
-| **$\mathcal{N}(x\mid \mu,\sigma^2)$** | **Univariate Gaussian density** with mean $\mu$ and variance $\sigma^2$. This connects noise assumptions to least squares. |
-| $\mathcal{N}(\mathbf{x}\mid \boldsymbol{\mu},\boldsymbol{\Sigma})$ | Multivariate Gaussian density with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$. |
+| **$\mathrm{N}(x\mid \mu,\sigma^2)$** | **Univariate Gaussian density** with mean $\mu$ and variance $\sigma^2$. This connects noise assumptions to least squares. |
+| $\mathrm{N}(\mathbf{x}\mid \boldsymbol{\mu},\boldsymbol{\Sigma})$ | Multivariate Gaussian density with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$. |
 | $\beta$ | Precision parameter, equal to inverse variance: $\beta=1/\sigma^2$. |
 
 ### Decision Theory and Information Theory
@@ -67,7 +67,7 @@ This first chapter introduces the notation that will be used throughout the cour
 | Symbol | Definition |
 |--------|------------|
 | **$C_k$** | **Class $k$.** |
-| **$\mathcal{R}_k$** | **Decision region** assigned to class $C_k$. This is where inference becomes a concrete decision rule. |
+| **$R_k$** | **Decision region** assigned to class $C_k$. This is where inference becomes a concrete decision rule. |
 | **$L_{kj}$** | **Loss** incurred when the true class is $C_k$ but the decision is $C_j$. This explains why the most probable class is not always the best action. |
 | **$H[x]$** | **Entropy** of random variable $x$: a measure of uncertainty. |
 | **$\mathrm{KL}(p\Vert q)$** | **Kullback-Leibler divergence** from distribution $q$ to distribution $p$: a measure of distribution mismatch. |
@@ -151,7 +151,7 @@ The goal is not to memorize the training digits. The goal is to correctly classi
 A training set is a collection of examples:
 
 $$
-\mathcal{D}=\{(\mathbf{x}_1,t_1),(\mathbf{x}_2,t_2),\ldots,(\mathbf{x}_N,t_N)\}.
+D_{\mathrm{train}}=\{(\mathbf{x}_1,t_1),(\mathbf{x}_2,t_2),\ldots,(\mathbf{x}_N,t_N)\}.
 $$
 
 A model uses the training set to choose its parameters. After training, it is evaluated on a test set that was not used for fitting. The test set estimates how well the model generalizes.
@@ -650,6 +650,11 @@ This is a common source of mistakes. **A density is not itself a probability; pr
 
 The expectation of a function $f(x)$ is its probability-weighted average.
 
+Intuitively, expectation is the **average location** of a random quantity.
+If $x$ represents exam scores, then $\mathbb{E}[x]$ is the average score.
+If $f(x)$ is some quantity computed from $x$, then $\mathbb{E}[f(x)]$ is the
+average value of that computed quantity.
+
 For a discrete variable:
 
 $$
@@ -668,24 +673,94 @@ $$
 \mathbb{E}[f]\simeq \frac{1}{N}\sum_{n=1}^{N}f(x_n).
 $$
 
-The variance measures spread:
+The variance measures spread around the mean. A useful way to read the formula is:
+
+1. Compute the distance from the mean: $x-\mathbb{E}[x]$.
+2. Square this distance so that positive and negative deviations do not cancel.
+3. Take the expectation, which gives the average squared deviation.
+
+So variance answers the question:
+
+> How far is $x$ from its mean, on average?
 
 $$
 \operatorname{var}[x]=\mathbb{E}\left[(x-\mathbb{E}[x])^2\right]
 =\mathbb{E}[x^2]-\mathbb{E}[x]^2.
 $$
 
-For two variables, covariance measures linear co-variation:
+The second expression,
+$\mathbb{E}[x^2]-\mathbb{E}[x]^2$, is mainly a convenient computational form.
+Conceptually, the first expression is more important: variance is the average
+squared distance from the mean.
+
+For two variables, covariance measures linear co-variation. It tells us whether
+two variables tend to move together.
 
 $$
 \operatorname{cov}[x,y]=\mathbb{E}\left[(x-\mathbb{E}[x])(y-\mathbb{E}[y])\right].
 $$
+
+For example, suppose
+
+- $x$ is study time;
+- $y$ is exam score.
+
+The term $x-\mathbb{E}[x]$ tells us whether study time is above or below average.
+The term $y-\mathbb{E}[y]$ tells us whether the exam score is above or below
+average.
+
+If study time and exam score are often above average together, or below average
+together, then the two deviations usually have the same sign. In the covariance
+formula, the two deviations are multiplied:
+
+$$
+(x-\mathbb{E}[x])(y-\mathbb{E}[y]).
+$$
+
+When both deviations have the same sign, their product is positive. Therefore:
+
+- $\operatorname{cov}[x,y]>0$: $x$ and $y$ tend to increase or decrease together.
+- $\operatorname{cov}[x,y]<0$: when one is above average, the other tends to be below average.
+- $\operatorname{cov}[x,y]\simeq 0$: there is little linear co-variation.
 
 For a vector $\mathbf{x}$, the covariance matrix is
 
 $$
 \operatorname{cov}[\mathbf{x}]=\mathbb{E}\left[(\mathbf{x}-\mathbb{E}[\mathbf{x}])(\mathbf{x}-\mathbb{E}[\mathbf{x}])^T\right].
 $$
+
+If
+
+$$
+\mathbf{x}=
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix},
+$$
+
+then the covariance matrix collects all variances and covariances in one table:
+
+$$
+\operatorname{cov}[\mathbf{x}]
+=
+\begin{bmatrix}
+\operatorname{var}[x_1] & \operatorname{cov}[x_1,x_2] & \operatorname{cov}[x_1,x_3]\\
+\operatorname{cov}[x_2,x_1] & \operatorname{var}[x_2] & \operatorname{cov}[x_2,x_3]\\
+\operatorname{cov}[x_3,x_1] & \operatorname{cov}[x_3,x_2] & \operatorname{var}[x_3]
+\end{bmatrix}.
+$$
+
+The diagonal entries are variances: they describe how much each variable varies
+by itself. The off-diagonal entries are covariances: they describe how pairs of
+variables vary together.
+
+A short summary is:
+
+> Expectation is the average location. Variance is the spread around that
+> location. Covariance is whether two variables move together. A covariance
+> matrix puts all of these pairwise relationships into one matrix.
 
 ## 3.10 Frequentist and Bayesian Views of Probability
 
@@ -703,7 +778,7 @@ In the frequentist view, $\mathbf{w}$ is fixed but unknown. We estimate it from 
 In the Bayesian view, uncertainty about $\mathbf{w}$ is represented by a distribution:
 
 $$
-p(\mathbf{w}\mid \mathcal{D}).
+p(\mathbf{w}\mid D_{\mathrm{train}}).
 $$
 
 This posterior distribution can be used to make predictions by averaging over parameter uncertainty.
@@ -712,10 +787,18 @@ This posterior distribution can be used to make predictions by averaging over pa
 
 The Gaussian distribution is central because it is mathematically convenient, widely occurring, and closely connected to least squares.
 
-The univariate Gaussian density is
+The univariate Gaussian density is a Gaussian probability density for **one**
+continuous variable. "Univariate" means one variable. For example, $x$ might be
+one student's exam score, one measurement error, or one input feature.
+
+We write it as $\mathrm{N}(x\mid \mu,\sigma^2)$. This means:
+
+- the variable is $x$;
+- the mean is $\mu$, which sets the center of the bell curve;
+- the variance is $\sigma^2$, which controls how wide or narrow the bell curve is.
 
 $$
-\mathcal{N}(x\mid \mu,\sigma^2)
+\mathrm{N}(x\mid \mu,\sigma^2)
 =\frac{1}{(2\pi\sigma^2)^{1/2}}
 \exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\}.
 $$
@@ -736,10 +819,27 @@ $$
 \operatorname{var}[x]=\sigma^2.
 $$
 
-The multivariate Gaussian is
+The multivariate Gaussian is the same idea, but for a **vector** instead of one
+number. "Multivariate" means multiple variables.
+
+For example, one data point might contain several features:
 
 $$
-\mathcal{N}(\mathbf{x}\mid \boldsymbol{\mu},\boldsymbol{\Sigma})
+\mathbf{x}=
+\begin{bmatrix}
+\text{height}\\
+\text{weight}\\
+\text{age}
+\end{bmatrix}.
+$$
+
+Then the mean is no longer a single number. It becomes a mean vector
+$\boldsymbol{\mu}$. The variance is also no longer a single number. It becomes a
+covariance matrix $\boldsymbol{\Sigma}$, which describes both the spread of each
+feature and how different features vary together.
+
+$$
+\mathrm{N}(\mathbf{x}\mid \boldsymbol{\mu},\boldsymbol{\Sigma})
 =\frac{1}{(2\pi)^{D/2}|\boldsymbol{\Sigma}|^{1/2}}
 \exp\left\{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})\right\}.
 $$
@@ -752,56 +852,454 @@ $$
 
 is the squared Mahalanobis distance.
 
+Intuitively, this is a distance from $\mathbf{x}$ to the mean
+$\boldsymbol{\mu}$, but it is not ordinary Euclidean distance. It measures
+distance after accounting for the covariance structure of the data.
+
+This matters because different directions may have different natural spreads.
+Moving 10 units in a direction where the data usually varies a lot may not be
+surprising. Moving 10 units in a direction where the data is usually very tight
+may be very surprising. The Mahalanobis distance adjusts for this.
+
+So the multivariate Gaussian assigns high density to points that are close to
+the mean in this covariance-aware sense, and low density to points that are far
+away in this covariance-aware sense.
+
+This is different from ordinary Euclidean distance. Euclidean distance only asks
+how far two points are geometrically:
+
+$$
+\|\mathbf{x}-\boldsymbol{\mu}\|^2
+=(\mathbf{x}-\boldsymbol{\mu})^T(\mathbf{x}-\boldsymbol{\mu}).
+$$
+
+Mahalanobis distance instead asks how unusual the point is under the data
+distribution:
+
+$$
+(\mathbf{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu}).
+$$
+
+The difference is the matrix $\boldsymbol{\Sigma}^{-1}$. It rescales distance
+according to the covariance. Directions with large variance are penalized less,
+because variation in those directions is common. Directions with small variance
+are penalized more, because variation in those directions is more surprising.
+
+In short:
+
+> Euclidean distance asks: how far is this point geometrically?
+>
+> Mahalanobis distance asks: how unusual is this point relative to the data
+> distribution?
+
 ## 3.12 Likelihood for Gaussian Parameters
 
-Suppose we observe independent data $x_1,\ldots,x_N$ from a Gaussian distribution. The likelihood of the parameters is
+In the previous section, we introduced the Gaussian distribution. But in a real
+problem, we usually do not know the correct mean $\mu$ or variance $\sigma^2$ in
+advance.
+
+So the question in this section is:
+
+> Given observed data, which Gaussian distribution should we choose?
+
+In other words, we want to estimate the Gaussian parameters from data. The mean
+$\mu$ controls where the Gaussian is centered, and the variance $\sigma^2$
+controls how wide it is. Maximum likelihood gives one standard way to choose
+these parameters.
+
+The basic idea is simple:
+
+> Choose the parameters that make the observed data look most likely under the
+> model.
+
+Suppose we observe independent data $x_1,\ldots,x_N$ from a Gaussian
+distribution. Here the data values are already observed, and we want to estimate
+the unknown parameters $\mu$ and $\sigma^2$.
+
+The likelihood is a function of the parameters:
 
 $$
-p(\mathbf{x}\mid \mu,\sigma^2)=\prod_{n=1}^{N}\mathcal{N}(x_n\mid \mu,\sigma^2).
+p(\mathbf{x}\mid \mu,\sigma^2)=\prod_{n=1}^{N}\mathrm{N}(x_n\mid \mu,\sigma^2).
 $$
+
+This formula says:
+
+- $\mathbf{x}=(x_1,\ldots,x_N)$ is the whole observed data set.
+- $\mathrm{N}(x_n\mid \mu,\sigma^2)$ is the Gaussian density value assigned to
+  one data point $x_n$.
+- $\prod_{n=1}^{N}$ means multiply these density values for all data points.
+
+For example, if we have three observations, the product expands to
+
+$$
+p(\mathbf{x}\mid \mu,\sigma^2)
+=\mathrm{N}(x_1\mid \mu,\sigma^2)
+\times \mathrm{N}(x_2\mid \mu,\sigma^2)
+\times \mathrm{N}(x_3\mid \mu,\sigma^2).
+$$
+
+The reason we multiply is the independence assumption. If data points are
+independently generated from the same Gaussian distribution, then the density of
+the whole data set is the product of the individual density values.
+
+The goal of maximum likelihood is to choose the parameter values that make the
+observed data look most plausible under the Gaussian model:
+
+$$
+(\mu_{\mathrm{ML}},\sigma^2_{\mathrm{ML}})
+=\arg\max_{\mu,\sigma^2} p(\mathbf{x}\mid \mu,\sigma^2).
+$$
+
+In words, we ask:
+
+> Which Gaussian curve gives high density to the data points we actually
+> observed?
 
 > ![Figure 1.14](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_14__textbook_fig_1_14__p26.png)
 >
 > *Figure 1.14 (Textbook Fig. 1.14, p. 26): The Gaussian likelihood is the product of the density values assigned to the observed data points. Maximum likelihood chooses parameters that make the observed data most probable under the model.*
 
-It is easier to maximize the log likelihood:
+Products of many small density values can be inconvenient to work with.
+Therefore, it is easier to maximize the log likelihood:
 
 $$
 \ln p(\mathbf{x}\mid \mu,\sigma^2)
 = -\frac{N}{2}\ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2.
 $$
 
-Taking derivatives gives the maximum likelihood estimates:
+To find the maximum-likelihood estimates, we differentiate the log likelihood
+with respect to the unknown parameters and set the derivatives to zero.
+
+First, differentiate with respect to $\mu$. Only the squared-error term depends
+on $\mu$:
+
+$$
+\frac{\partial}{\partial \mu}
+\ln p(\mathbf{x}\mid \mu,\sigma^2)
+=\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu).
+$$
+
+At the maximum, this derivative should be zero:
+
+$$
+\frac{1}{\sigma^2}\sum_{n=1}^{N}(x_n-\mu)=0.
+$$
+
+Since $\sigma^2>0$, this is equivalent to
+
+$$
+\sum_{n=1}^{N}(x_n-\mu)=0.
+$$
+
+Expanding the sum gives
+
+$$
+\sum_{n=1}^{N}x_n-N\mu=0,
+$$
+
+so the maximum-likelihood estimate of the mean is
 
 $$
 \mu_{\mathrm{ML}}=\frac{1}{N}\sum_{n=1}^{N}x_n,
 $$
 
-and
+which is simply the sample average.
+
+Next, differentiate with respect to the variance. To make the notation simpler,
+let
+
+$$
+s=\sigma^2.
+$$
+
+The part of the log likelihood that depends on $s$ can be written as
+
+$$
+\ell(s)=-\frac{N}{2}\ln s-\frac{1}{2s}\sum_{n=1}^{N}(x_n-\mu)^2+\text{constant}.
+$$
+
+Let
+
+$$
+A=\sum_{n=1}^{N}(x_n-\mu)^2.
+$$
+
+Then
+
+$$
+\ell(s)=-\frac{N}{2}\ln s-\frac{A}{2s}+\text{constant}.
+$$
+
+Differentiating with respect to $s$ gives
+
+$$
+\frac{d\ell}{ds}
+=-\frac{N}{2s}+\frac{A}{2s^2}.
+$$
+
+Set this derivative to zero:
+
+$$
+-\frac{N}{2s}+\frac{A}{2s^2}=0.
+$$
+
+Multiplying both sides by $2s^2$ gives
+
+$$
+-Ns+A=0,
+$$
+
+so
+
+$$
+s=\frac{A}{N}.
+$$
+
+Substituting back $s=\sigma^2$ and using $\mu_{\mathrm{ML}}$ gives
 
 $$
 \sigma^2_{\mathrm{ML}}=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2.
 $$
 
+So maximum likelihood chooses the sample mean as the Gaussian center and the
+average squared distance from that center as the Gaussian variance.
+
 ## 3.13 Bias of the Maximum-Likelihood Variance Estimate
 
-The maximum-likelihood estimate of variance is biased. Its expectation is
+Core message:
+
+> The maximum-likelihood variance estimate divides by $N$, but this tends to
+> underestimate the true variance. The unbiased sample variance divides by
+> $N-1$ instead.
+
+In formulas,
 
 $$
-\mathbb{E}[\sigma^2_{\mathrm{ML}}]=\frac{N-1}{N}\sigma^2.
+\sigma^2_{\mathrm{ML}}
+=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2,
 $$
 
-The unbiased estimate is
+whereas
 
 $$
-\widehat{\sigma}^2=\frac{1}{N-1}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2.
+\widehat{\sigma}^2
+=\frac{1}{N-1}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2.
+$$
+
+The difference between $N$ and $N-1$ is the main point of this section.
+
+The ML formula looks natural:
+
+$$
+\sigma^2_{\mathrm{ML}}
+=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2.
+$$
+
+It computes the squared distances from the fitted mean and takes their average.
+But there is a subtle issue. The mean $\mu_{\mathrm{ML}}$ is estimated from the
+same data, so it is pulled toward the observed points.
+
+Because the fitted mean is chosen to be close to the data, the distances
+$x_n-\mu_{\mathrm{ML}}$ are slightly smaller than the distances to the true mean
+$x_n-\mu$. Therefore the ML variance tends to underestimate the true variance.
+
+The key calculation is based on the identity
+
+$$
+\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2
+=
+\sum_{n=1}^{N}(x_n-\mu)^2
+-N(\mu_{\mathrm{ML}}-\mu)^2.
+$$
+
+This identity says:
+
+> The squared distances to the fitted mean are smaller than the squared
+> distances to the true mean.
+
+Before taking expectations, let us clarify the symbols in the next few lines:
+
+| Symbol | Meaning |
+|--------|---------|
+| $\mu$ | The true mean of the data-generating Gaussian. We do not know it in practice. |
+| $\mu_{\mathrm{ML}}$ | The sample mean, used as the ML estimate of $\mu$. It changes from sample to sample, so it is a random variable. |
+| $\sigma^2$ | The true variance of the data-generating Gaussian. |
+| $N$ | Number of observed data points. |
+| $\mathbb{E}[\cdot]$ | Expectation: average value over many possible repeated data sets. |
+| $\operatorname{var}[\cdot]$ | Variance: how much a random quantity varies around its average. |
+
+Important viewpoint:
+
+> After we observe one particular data set, $\mu_{\mathrm{ML}}$ is just one
+> fixed number. But when we analyze an estimator, we imagine repeating the
+> sampling process many times. Each repeated data set gives a different
+> $\mu_{\mathrm{ML}}$. In this repeated-sampling sense, $\mu_{\mathrm{ML}}$ is a
+> random variable, so it can have an expectation and a variance.
+
+Now take expectations on both sides.
+
+First,
+
+$$
+\mathbb{E}\left[\sum_{n=1}^{N}(x_n-\mu)^2\right]=N\sigma^2,
+$$
+
+because each data point has variance $\sigma^2$.
+
+Second, the sample mean $\mu_{\mathrm{ML}}$ also varies from data set to data
+set. This is easy to miss. Although $\mu_{\mathrm{ML}}$ is one number after we
+compute it from our current data, it would be a different number if we collected
+a different data set.
+
+Since
+
+$$
+\mu_{\mathrm{ML}}=\frac{1}{N}\sum_{n=1}^{N}x_n,
+$$
+
+it is an average of $N$ independent observations. Averages are more stable than
+individual observations. If each $x_n$ has variance $\sigma^2$, then the average
+has variance $\sigma^2/N$.
+
+Here is the calculation:
+
+$$
+\operatorname{var}[\mu_{\mathrm{ML}}]
+=\operatorname{var}\left[\frac{1}{N}\sum_{n=1}^{N}x_n\right].
+$$
+
+Constants come out of variance as squares:
+
+$$
+\operatorname{var}\left[\frac{1}{N}\sum_{n=1}^{N}x_n\right]
+=\frac{1}{N^2}\operatorname{var}\left[\sum_{n=1}^{N}x_n\right].
+$$
+
+For independent data points, variances add:
+
+$$
+\operatorname{var}\left[\sum_{n=1}^{N}x_n\right]
+=\sum_{n=1}^{N}\operatorname{var}[x_n]
+=N\sigma^2.
+$$
+
+Therefore,
+
+$$
+\operatorname{var}[\mu_{\mathrm{ML}}]=\frac{\sigma^2}{N}.
+$$
+
+This tells us how much the estimated mean wiggles around the true mean. Since
+the sample mean is centered around the true mean,
+
+$$
+\mathbb{E}[\mu_{\mathrm{ML}}]=\mu.
+$$
+
+So $\mu_{\mathrm{ML}}-\mu$ means "the error in the estimated mean". Its average
+is zero, because sometimes the sample mean is above the true mean and sometimes
+it is below.
+
+The average squared size of this error is
+
+$$
+\mathbb{E}\left[(\mu_{\mathrm{ML}}-\mu)^2\right]
+=\operatorname{var}[\mu_{\mathrm{ML}}]
+=\frac{\sigma^2}{N}.
+$$
+
+In words:
+
+> The estimated mean is not exactly the true mean. Its typical squared error is
+> $\sigma^2/N$.
+
+In the earlier identity, this error term appears multiplied by $N$:
+
+$$
+\mathbb{E}\left[N(\mu_{\mathrm{ML}}-\mu)^2\right]
+=N\cdot\frac{\sigma^2}{N}
+=\sigma^2.
+$$
+
+So estimating the mean "uses up" an amount of squared variation equal to one
+$\sigma^2$.
+
+Now return to the identity:
+
+$$
+\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2
+=
+\sum_{n=1}^{N}(x_n-\mu)^2
+-N(\mu_{\mathrm{ML}}-\mu)^2.
+$$
+
+Taking expectations gives:
+
+- The first term has expected value $N\sigma^2$.
+- The second term has expected value $\sigma^2$.
+
+Therefore,
+
+$$
+\mathbb{E}\left[\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2\right]
+=N\sigma^2-\sigma^2
+=(N-1)\sigma^2.
+$$
+
+This is the key point: after we fit the mean from the data, the expected total
+squared deviation is not $N\sigma^2$ anymore. It is only $(N-1)\sigma^2$.
+
+But the ML variance divides this sum by $N$, so
+
+$$
+\mathbb{E}[\sigma^2_{\mathrm{ML}}]
+=\frac{1}{N}(N-1)\sigma^2
+=\frac{N-1}{N}\sigma^2.
+$$
+
+This is smaller than the true variance $\sigma^2$. That is why we say the ML
+variance estimate is biased downward.
+
+To correct this bias, we divide by $N-1$ instead of $N$:
+
+$$
+\widehat{\sigma}^2
+=\frac{1}{N-1}\sum_{n=1}^{N}(x_n-\mu_{\mathrm{ML}})^2.
 $$
 
 > ![Figure 1.15](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_15__textbook_fig_1_15__p28.png)
 >
 > *Figure 1.15 (Textbook Fig. 1.15, p. 28): Estimating the mean from the same small data set pulls the fitted Gaussian toward the data, causing the maximum-likelihood variance estimate to be too small on average.*
 
-The intuition is important. When the mean is estimated from the data, the fitted mean is closer to the observed points than the true mean would be on average. This reduces the measured squared deviations and therefore underestimates variance.
+How general is this result?
+
+The formula
+
+$$
+\operatorname{var}[\mu_{\mathrm{ML}}]=\frac{\sigma^2}{N}
+$$
+
+is not a Gaussian approximation. It follows from independence and finite
+variance. The data points do not have to be exactly Gaussian for this variance
+of the sample mean to hold.
+
+The Gaussian assumption is used in this section to write down the Gaussian
+likelihood and derive the maximum-likelihood estimates. But the main lesson of
+this section is broader:
+
+> If we estimate the mean from the same data, the deviations from that fitted
+> mean are slightly too small on average. That is why the unbiased sample
+> variance divides by $N-1$ rather than $N$.
+
+So this section is still useful even when real data are not perfectly Gaussian.
+It teaches a general warning: parameter estimates computed from data also have
+their own uncertainty, and this uncertainty can affect later estimates.
+
+The intuition is important:
+
+> The fitted mean is chosen from the data, so it sits closer to the observed
+> data points than the true mean would on average. Dividing by $N-1$ corrects
+> this downward bias.
 
 ---
 
@@ -809,9 +1307,46 @@ The intuition is important. When the mean is estimated from the data, the fitted
 
 > 📖 Textbook §1.2.5 Curve fitting re-visited; §1.2.6 Bayesian curve fitting
 
+Before this section, we fitted curves by minimizing an error function such as
+sum-of-squares error. That gives us a best-fitting curve, but it does not yet
+explain where the error function comes from or how to represent uncertainty.
+
+The main question in this section is:
+
+> Can we reinterpret curve fitting as a probabilistic model for how data are
+> generated?
+
+The key idea is to treat each observed target value as
+
+$$
+\text{observed target}=\text{curve prediction}+\text{random noise}.
+$$
+
+In symbols,
+
+$$
+t=y(x,\mathbf{w})+\epsilon.
+$$
+
+This says that the data point does not have to lie exactly on the curve. Instead,
+the curve gives the average prediction, and the noise explains random deviations
+around the curve.
+
+This probabilistic view is useful for three reasons:
+
+1. It explains why least squares appears naturally.
+2. It lets us describe prediction uncertainty using probability distributions.
+3. It prepares us for Bayesian curve fitting, where uncertainty about the
+   parameters $\mathbf{w}$ is also represented probabilistically.
+
+In short:
+
+> Probabilistic curve fitting turns "find the best curve" into "build a
+> probability model for how the data could have been generated."
+
 ## 4.1 From Least Squares to a Probabilistic Model
 
-We now revisit polynomial curve fitting using probability.
+We now make this probabilistic model precise for polynomial curve fitting.
 
 Assume that each target is generated by
 
@@ -822,18 +1357,23 @@ $$
 where the noise is Gaussian:
 
 $$
-\epsilon\sim \mathcal{N}(0,\beta^{-1}).
+\epsilon\sim \mathrm{N}(0,\beta^{-1}).
 $$
 
 Equivalently,
 
 $$
-p(t\mid x,\mathbf{w},\beta)=\mathcal{N}(t\mid y(x,\mathbf{w}),\beta^{-1}).
+p(t\mid x,\mathbf{w},\beta)=\mathrm{N}(t\mid y(x,\mathbf{w}),\beta^{-1}).
 $$
 
 > ![Figure 1.16](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_16__textbook_fig_1_16__p29.png)
 >
-> *Figure 1.16 (Textbook Fig. 1.16, p. 29): A probabilistic regression model places a Gaussian distribution over $t$ for each input $x$. The mean is the polynomial prediction; the variance describes noise around the curve.*
+> *Figure 1.16 (Textbook Fig. 1.16, p. 29): Probabilistic regression predicts a distribution around the curve, not just a single curve value. For each input $x$, the model places a Gaussian distribution over possible target values $t$. The mean is the polynomial prediction; the variance describes noise around the curve.*
+
+The key takeaway from the figure is:
+
+> The curve gives the average prediction, while the Gaussian spread around the
+> curve describes how much the observed targets may vary.
 
 This model says:
 
@@ -843,120 +1383,262 @@ This model says:
 
 ## 4.2 Maximum Likelihood Gives Least Squares
 
-Assuming independent observations, the likelihood is
+This section explains the most important connection in probabilistic curve
+fitting:
+
+> If the observation noise is Gaussian, then maximum likelihood gives the same
+> solution as least squares.
+
+The unknown quantity we want to choose is $\mathbf{w}$, the parameter vector
+that controls the shape of the curve. For example, in a polynomial model,
 
 $$
-p(\mathbf{t}\mid \mathbf{x},\mathbf{w},\beta)=
-\prod_{n=1}^{N}\mathcal{N}(t_n\mid y(x_n,\mathbf{w}),\beta^{-1}).
+y(x,\mathbf{w})=w_0+w_1x+w_2x^2+\cdots+w_Mx^M.
 $$
 
-Taking logs gives
+Different values of $\mathbf{w}$ give different curves.
+
+For one data point, the model says:
+
+> If $y(x_n,\mathbf{w})$ is close to the observed target $t_n$, then this data
+> point is likely. If it is far away, then this data point is unlikely.
+
+For all data points together, maximum likelihood chooses the curve parameters
+that make the observed targets most likely:
+
+$$
+\mathbf{w}_{\mathrm{ML}}
+=\arg\max_{\mathbf{w}}p(\mathbf{t}\mid \mathbf{x},\mathbf{w},\beta).
+$$
+
+The full likelihood multiplies the Gaussian density values for all data points:
+
+$$
+p(\mathbf{t}\mid \mathbf{x},\mathbf{w},\beta)
+=
+\prod_{n=1}^{N}\mathrm{N}(t_n\mid y(x_n,\mathbf{w}),\beta^{-1}).
+$$
+
+Why does this become least squares?
+
+For one data point, the Gaussian density has the form
+
+$$
+\mathrm{N}(t_n\mid y(x_n,\mathbf{w}),\beta^{-1})
+\propto
+\exp\left\{
+-\frac{\beta}{2}(t_n-y(x_n,\mathbf{w}))^2
+\right\}.
+$$
+
+The important part is the squared error:
+
+$$
+(t_n-y(x_n,\mathbf{w}))^2.
+$$
+
+If the prediction $y(x_n,\mathbf{w})$ is far from the observed target $t_n$, this
+squared error is large, and the Gaussian density becomes small. If the
+prediction is close to $t_n$, the squared error is small, and the density is
+large.
+
+For all data points, multiplying the Gaussian densities gives a likelihood. When
+we take the log, the product becomes a sum:
 
 $$
 \ln p(\mathbf{t}\mid \mathbf{x},\mathbf{w},\beta)
-=\frac{N}{2}\ln\beta-\frac{N}{2}\ln(2\pi)
--\beta E(\mathbf{w}),
+=\text{constant}
+-\frac{\beta}{2}\sum_{n=1}^{N}(t_n-y(x_n,\mathbf{w}))^2.
 $$
 
-where
+The constant does not depend on $\mathbf{w}$. Also, $\beta>0$, so maximizing the
+log likelihood with respect to $\mathbf{w}$ is the same as minimizing the sum of
+squared errors:
 
 $$
-E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2.
+E(\mathbf{w})
+=\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2.
 $$
 
-For fixed $\beta$, maximizing the log likelihood with respect to $\mathbf{w}$ is exactly the same as minimizing the sum-of-squares error.
+This is exactly the objective from ordinary least squares. The factor $1/2$ does
+not change the minimizer; it is included because it makes later derivatives
+cleaner.
 
-This equivalence is one of the most important points in the chapter:
+So the main takeaway is:
 
-> Least squares is not just an algebraic convenience. It is maximum likelihood under a Gaussian noise assumption.
+> Least squares is maximum likelihood under a Gaussian noise assumption.
+
+This means least squares is not just a convenient algebraic trick. It corresponds
+to a clear probabilistic assumption: the data are generated by a curve plus
+Gaussian noise.
 
 ## 4.3 Estimating the Noise Precision
 
-After finding $\mathbf{w}_{\mathrm{ML}}$, we can estimate $\beta$ by maximum likelihood:
+After we choose the best curve parameters $\mathbf{w}_{\mathrm{ML}}$, we can also
+estimate how noisy the data are.
+
+Let the noise variance be $\sigma_{\mathrm{noise}}^2$. This number describes how
+widely the observed targets scatter around the fitted curve.
+
+Instead of writing the Gaussian noise using variance, PRML often uses
+**precision**, denoted by $\beta$. Precision is the inverse of variance:
+
+$$
+\beta=\frac{1}{\sigma_{\mathrm{noise}}^2}.
+$$
+
+This is just a different way to describe the same noise level:
+
+- if $\sigma_{\mathrm{noise}}^2$ is large, the noise is large, so $\beta$ is small;
+- if $\sigma_{\mathrm{noise}}^2$ is small, the noise is small, so $\beta$ is large.
+
+That is why a large $\beta$ means a narrow Gaussian around the curve, and a small
+$\beta$ means a wide Gaussian around the curve.
+
+Maximum likelihood estimates the noise variance by the average squared residual:
 
 $$
 \frac{1}{\beta_{\mathrm{ML}}}=\frac{1}{N}\sum_{n=1}^{N}\{y(x_n,\mathbf{w}_{\mathrm{ML}})-t_n\}^2.
 $$
 
-This is the residual variance under the fitted model.
-
-The predictive distribution under the maximum-likelihood parameters is
+Here a residual is the prediction error
 
 $$
-p(t\mid x,\mathbf{w}_{\mathrm{ML}},\beta_{\mathrm{ML}})=
-\mathcal{N}(t\mid y(x,\mathbf{w}_{\mathrm{ML}}),\beta_{\mathrm{ML}}^{-1}).
+y(x_n,\mathbf{w}_{\mathrm{ML}})-t_n.
 $$
 
-This predictive distribution includes observation noise but does not include uncertainty about the fitted parameters $\mathbf{w}$.
+So this formula says:
+
+> Estimate the noise level by looking at how far the observed targets are from
+> the fitted curve.
+
+For this section, the main point is simply: after fitting the curve, the
+remaining residuals tell us how noisy the observations are.
 
 ## 4.4 MAP Estimation and Regularized Least Squares
 
-Now place a Gaussian prior on the weights:
+Maximum likelihood only asks one question:
+
+> Which curve fits the observed data best?
+
+This can be dangerous when the model is flexible. The curve may twist too much
+just to chase the training points. This is overfitting.
+
+MAP estimation adds a second question:
+
+> Among curves that fit the data, can we prefer a simpler one?
+
+In polynomial curve fitting, the parameter vector $\mathbf{w}$ controls the
+shape of the curve. Very large weights often allow the curve to change sharply
+and fit noise in the training data.
+
+So MAP uses this idea:
+
+> Fit the data, but also discourage very large weights.
+
+This leads to the regularized objective
 
 $$
-p(\mathbf{w}\mid \alpha)=\mathcal{N}(\mathbf{w}\mid \mathbf{0},\alpha^{-1}\mathbf{I}).
+\underbrace{\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2}_{\text{fit the data}}
++
+\underbrace{\frac{\lambda}{2}\mathbf{w}^T\mathbf{w}}_{\text{penalize large weights}}.
 $$
 
-By Bayes' theorem,
+The first term is the usual least-squares error. The second term is the
+regularization penalty. It becomes large when the weights become large.
+The parameter $\lambda$ controls how strong this penalty is:
+
+- small $\lambda$: weak regularization, the curve can fit the data more freely;
+- large $\lambda$: strong regularization, large weights are discouraged more.
+
+In probability language, this penalty comes from a prior belief:
+
+> Before seeing the data, smaller weights are more plausible than very large
+> weights.
+
+This prior can be written as a Gaussian distribution over $\mathbf{w}$:
 
 $$
-p(\mathbf{w}\mid \mathbf{x},\mathbf{t},\alpha,\beta)
-\propto p(\mathbf{t}\mid \mathbf{x},\mathbf{w},\beta)p(\mathbf{w}\mid \alpha).
+p(\mathbf{w}\mid \alpha)=\mathrm{N}(\mathbf{w}\mid \mathbf{0},\alpha^{-1}\mathbf{I}).
 $$
 
-The maximum a posteriori estimate is
+Here $\alpha$ controls how strongly the prior prefers small weights. A larger
+$\alpha$ means the prior is more concentrated near zero, so it more strongly
+discourages large weights.
 
-$$
-\mathbf{w}_{\mathrm{MAP}}=\arg\max_{\mathbf{w}}p(\mathbf{w}\mid \mathbf{x},\mathbf{t},\alpha,\beta).
-$$
+You do not need to focus on the full prior formula at this stage. The important
+meaning is simple: it gives a probabilistic reason for penalizing large weights.
 
-Taking the negative log posterior gives an objective proportional to
+Main takeaway:
 
-$$
-\frac{\beta}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+\frac{\alpha}{2}\mathbf{w}^T\mathbf{w}.
-$$
+> Maximum likelihood says: fit the data.
+>
+> MAP says: fit the data, but prefer smaller and simpler weights.
 
-Dividing by $\beta$ gives
-
-$$
-\frac{1}{2}\sum_{n=1}^{N}\{y(x_n,\mathbf{w})-t_n\}^2+\frac{\lambda}{2}\mathbf{w}^T\mathbf{w},
-$$
-
-where
-
-$$
-\lambda=\frac{\alpha}{\beta}.
-$$
-
-Therefore:
-
-> Regularized least squares is MAP estimation under a Gaussian prior over the weights.
-
-This connects optimization, probability, and regularization.
+So regularized least squares is not just an optimization trick. It can be viewed
+as MAP estimation with a prior preference for smaller weights.
 
 ## 4.5 Full Bayesian Curve Fitting
 
-MAP estimation still returns a single parameter vector. Full Bayesian prediction keeps the entire posterior distribution over parameters.
+Maximum likelihood and MAP both return one chosen parameter vector:
 
-The Bayesian predictive distribution is
+- maximum likelihood returns $\mathbf{w}_{\mathrm{ML}}$;
+- MAP returns $\mathbf{w}_{\mathrm{MAP}}$.
+
+Full Bayesian curve fitting does something different. It does not commit to only
+one curve. Instead, it keeps a distribution over plausible parameter values.
+
+The idea is:
+
+> Several curves may fit the data reasonably well. Bayesian prediction averages
+> over them instead of choosing just one.
+
+The Bayesian predictive distribution is written as
 
 $$
 p(t\mid x,\mathbf{x},\mathbf{t})=
 \int p(t\mid x,\mathbf{w})p(\mathbf{w}\mid \mathbf{x},\mathbf{t})\,d\mathbf{w}.
 $$
 
-This integral averages predictions over all plausible parameter values, weighted by their posterior probability.
+This formula looks intimidating, but do not focus on the integral symbol first.
+It is just a weighted average over many possible curves.
+
+Read the pieces as follows:
+
+| Term | Meaning |
+|------|---------|
+| $\mathbf{w}$ | One possible set of curve parameters, hence one possible curve. |
+| $p(\mathbf{w}\mid \mathbf{x},\mathbf{t})$ | How plausible that curve is after seeing the training data. |
+| $p(t\mid x,\mathbf{w})$ | The prediction made by that particular curve. |
+| $\int \cdots d\mathbf{w}$ | Average over all possible curves. |
+
+So the meaning is:
+
+> Predict using many possible curves, weighted by how plausible each curve is
+> after seeing the data.
 
 > ![Figure 1.17](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_17__textbook_fig_1_17__p32.png)
 >
-> *Figure 1.17 (Textbook Fig. 1.17, p. 32): Bayesian curve fitting produces both a predictive mean and a predictive uncertainty band. Uncertainty is larger where the data provide less constraint.*
+> *Figure 1.17 (Textbook Fig. 1.17, p. 32): Bayesian curve fitting does not just draw one fitted curve. It gives a predictive mean curve and an uncertainty band around it. Where there are many nearby data points, the band is narrow. Where data are sparse or we extrapolate beyond the data, the band becomes wider.*
+
+The key message of Figure 1.17 is:
+
+> Bayesian prediction knows when it is uncertain. It is more confident near
+> observed data and less confident far away from observed data.
 
 The Bayesian view gives two advantages:
 
 1. It naturally expresses predictive uncertainty.
-2. It reduces overconfident extrapolation when data are limited.
+2. It avoids being too confident when data are limited.
 
-In later chapters, this idea will reappear in Bayesian linear regression, Gaussian processes, Bayesian neural networks, variational inference, and graphical models.
+The main takeaway is:
+
+> ML and MAP choose one curve. Full Bayesian prediction averages over many
+> plausible curves.
+
+In later chapters, this idea will reappear in Bayesian linear regression,
+Gaussian processes, Bayesian neural networks, variational inference, and
+graphical models.
 
 ---
 
@@ -1128,9 +1810,9 @@ The best action depends on the loss associated with different mistakes.
 
 ## 6.2 Minimizing Misclassification Rate
 
-Suppose there are classes $C_1,\ldots,C_K$. A classifier divides input space into decision regions $\mathcal{R}_1,\ldots,\mathcal{R}_K$.
+Suppose there are classes $C_1,\ldots,C_K$. A classifier divides input space into decision regions $R_1,\ldots,R_K$.
 
-If $\mathbf{x}\in\mathcal{R}_k$, the classifier assigns class $C_k$.
+If $\mathbf{x}\in R_k$, the classifier assigns class $C_k$.
 
 > ![Figure 1.24](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_24__textbook_fig_1_24__p40.png)
 >
@@ -1579,7 +2261,7 @@ $$
 ### Gaussian
 
 $$
-\mathcal{N}(x\mid \mu,\sigma^2)=\frac{1}{(2\pi\sigma^2)^{1/2}}
+\mathrm{N}(x\mid \mu,\sigma^2)=\frac{1}{(2\pi\sigma^2)^{1/2}}
 \exp\left\{-\frac{(x-\mu)^2}{2\sigma^2}\right\}
 $$
 
