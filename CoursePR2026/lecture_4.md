@@ -14,7 +14,7 @@
 4. [§3 Probabilistic Discriminative Models](#3-probabilistic-discriminative-models)
 5. [§4 The Laplace Approximation](#4-the-laplace-approximation)
 6. [§5 Bayesian Logistic Regression](#5-bayesian-logistic-regression)
-7. [§6 Chapter Summary, Figure Checklist, and Teaching Flow](#6-chapter-summary-figure-checklist-and-teaching-flow)
+7. [§6 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow](#6-chapter-summary-figure-checklist-exercises-and-teaching-flow)
 
 ---
 
@@ -25,6 +25,14 @@ Chapter 3 studied linear models for regression, where the target variable is con
 > Given an input vector $\mathbf{x}$, assign it to one of $K$ classes $\mathcal{C}_1,\ldots,\mathcal{C}_K$.
 
 The phrase **linear model** again has a precise meaning. A classifier may become nonlinear in the original input space after applying basis functions $\boldsymbol{\phi}(\mathbf{x})$, but the decision score is linear in the adaptive parameters $\mathbf{w}$. Classification differs from regression because the output is no longer a real-valued target; it is a class label or a posterior probability over class labels.
+
+> **Teaching focus.** This chapter should connect directly to modern classification models. A neural network classifier still ends with:
+>
+> $$
+> \text{features} \rightarrow \text{linear logits} \rightarrow \text{sigmoid/softmax} \rightarrow \text{cross-entropy}.
+> $$
+>
+> For this course, the essential parts are the geometry of linear decision boundaries, why least squares is not ideal for labels, Fisher/perceptron as historical and geometric baselines, and logistic/softmax regression as the modern core. The Laplace approximation and Bayesian logistic regression are useful as a preview of approximate inference, but can be taught at the intuition level.
 
 ### Generic Classification Notation
 
@@ -387,6 +395,8 @@ This comparison helps students see why the same linear algebra can appear in man
 
 ## 1.7 Fisher's Discriminant for Multiple Classes
 
+> **Optional depth.** The two-class Fisher idea is useful and visual. The full multiclass determinant-ratio derivation is less central for modern ML practice, so it can be summarized rather than derived in detail.
+
 For $K$ classes, Fisher's idea generalizes by defining an overall within-class scatter and between-class scatter. Let
 
 $$
@@ -523,6 +533,72 @@ a_k=\ln p(\mathbf{x}\mid\mathcal{C}_k)+\ln p(\mathcal{C}_k).
 $$
 
 Thus sigmoid and softmax are not arbitrary choices. They arise naturally when posterior probabilities are written in terms of log probabilities.
+
+## Textbook Exercise 4.7: Sigmoid Symmetry and Inverse
+
+> ![Textbook Exercise 4.7](./CoursePR2026/Fig/Chapter_4/lecture_ex_4_7__textbook_ex_4_7_p221.png)
+>
+> *Textbook Exercise 4.7 (p. 221): Verify two basic identities for the logistic sigmoid.*
+
+Start from
+
+$$
+\sigma(a)=\frac{1}{1+\exp(-a)}.
+$$
+
+For the symmetry identity,
+
+$$
+\sigma(-a)=\frac{1}{1+\exp(a)}.
+$$
+
+Also,
+
+$$
+1-\sigma(a)
+=1-\frac{1}{1+\exp(-a)}
+=\frac{\exp(-a)}{1+\exp(-a)}
+=\frac{1}{1+\exp(a)}.
+$$
+
+Therefore
+
+$$
+\boxed{\sigma(-a)=1-\sigma(a).}
+$$
+
+For the inverse, let
+
+$$
+y=\sigma(a)=\frac{1}{1+\exp(-a)}.
+$$
+
+Then
+
+$$
+\frac{1}{y}=1+\exp(-a),
+\qquad
+\frac{1-y}{y}=\exp(-a).
+$$
+
+Taking logs gives
+
+$$
+\ln\frac{1-y}{y}=-a,
+$$
+
+so
+
+$$
+\boxed{a=\sigma^{-1}(y)=\ln\frac{y}{1-y}.}
+$$
+
+This inverse is called the **logit**. In words, logistic regression models the log-odds as a linear function:
+
+$$
+\ln\frac{p(\mathcal{C}_1\mid\mathbf{x})}{1-p(\mathcal{C}_1\mid\mathbf{x})}
+=\mathbf{w}^T\boldsymbol{\phi}.
+$$
 
 ## 2.2 Continuous Inputs: Gaussian Class-Conditional Densities
 
@@ -719,6 +795,102 @@ $$
 
 This resembles the gradient of least squares, but the underlying likelihood is Bernoulli rather than Gaussian. There is no closed-form solution because the sigmoid makes the objective nonlinear in $\mathbf{w}$. However, the negative log-likelihood is convex for logistic regression, so standard optimization methods can find the unique global optimum, provided the data are not perfectly separable in an unregularized setting.
 
+## Textbook Exercise 4.12: Derivative of the Sigmoid
+
+> ![Textbook Exercise 4.12](./CoursePR2026/Fig/Chapter_4/lecture_ex_4_12__textbook_ex_4_12_p222.png)
+>
+> *Textbook Exercise 4.12 (p. 222): Verify the derivative of the logistic sigmoid.*
+
+Start from
+
+$$
+\sigma(a)=\frac{1}{1+\exp(-a)}.
+$$
+
+Differentiate:
+
+$$
+\frac{d\sigma}{da}
+=-\frac{1}{(1+\exp(-a))^2}\cdot(-\exp(-a))
+=\frac{\exp(-a)}{(1+\exp(-a))^2}.
+$$
+
+Now write this in terms of $\sigma(a)$. Since
+
+$$
+\sigma(a)=\frac{1}{1+\exp(-a)}
+$$
+
+and
+
+$$
+1-\sigma(a)=\frac{\exp(-a)}{1+\exp(-a)},
+$$
+
+we get
+
+$$
+\boxed{
+\frac{d\sigma(a)}{da}
+=\sigma(a)\{1-\sigma(a)\}.
+}
+$$
+
+This small identity is the reason logistic regression gradients become so clean.
+
+## Textbook Exercise 4.13: Gradient of Logistic Cross-Entropy
+
+> ![Textbook Exercise 4.13](./CoursePR2026/Fig/Chapter_4/lecture_ex_4_13__textbook_ex_4_13_p222.png)
+>
+> *Textbook Exercise 4.13 (p. 222): Use the sigmoid derivative to derive the logistic-regression gradient.*
+
+For one data point, the cross-entropy error is
+
+$$
+E_n=-\{t_n\ln y_n+(1-t_n)\ln(1-y_n)\},
+\qquad
+y_n=\sigma(a_n),
+\qquad
+a_n=\mathbf{w}^T\boldsymbol{\phi}_n.
+$$
+
+First differentiate with respect to $y_n$:
+
+$$
+\frac{\partial E_n}{\partial y_n}
+=-\frac{t_n}{y_n}+\frac{1-t_n}{1-y_n}.
+$$
+
+Then use
+
+$$
+\frac{\partial y_n}{\partial a_n}=y_n(1-y_n),
+\qquad
+\frac{\partial a_n}{\partial \mathbf{w}}=\boldsymbol{\phi}_n.
+$$
+
+Combining the terms,
+
+$$
+\frac{\partial E_n}{\partial a_n}
+=
+\left(
+-\frac{t_n}{y_n}+\frac{1-t_n}{1-y_n}
+\right)y_n(1-y_n)
+=y_n-t_n.
+$$
+
+Therefore
+
+$$
+\boxed{
+\nabla_{\mathbf{w}}E
+=\sum_{n=1}^N (y_n-t_n)\boldsymbol{\phi}_n.
+}
+$$
+
+The meaning is easy to remember: the update is driven by **prediction minus label**, multiplied by the feature vector. This is the same local error signal that appears at the output layer of a neural network with sigmoid or softmax cross-entropy.
+
 A crucial warning: if the data are linearly separable, maximum likelihood can drive $\|\mathbf{w}\|\rightarrow\infty$. The model can keep increasing confidence without changing the classification boundary. Regularization or a Bayesian prior is therefore essential in separable or nearly separable problems.
 
 ## 3.3 Iterative Reweighted Least Squares
@@ -804,6 +976,8 @@ This is one of the most important formulas in classification. The model update i
 
 ## 3.5 Probit Regression
 
+> **Optional depth.** Probit regression is useful mainly because Gaussian cumulative functions make some Bayesian integrals easier. For a first classification lecture, students only need to know that probit is another sigmoid-shaped probability link.
+
 Logistic regression uses the logistic sigmoid as its activation function. Another possibility is the **probit** activation, which is the cumulative distribution function of a standard Gaussian:
 
 $$
@@ -827,6 +1001,8 @@ If $p(\theta)$ is Gaussian, this gives the probit model.
 Logistic and probit regression often behave similarly. The logistic sigmoid is algebraically convenient for Bernoulli likelihoods, while the probit function is convenient for Gaussian integrals. This Gaussian-integral convenience becomes important in Bayesian logistic regression.
 
 ## 3.6 Canonical Link Functions
+
+> **Optional depth.** This subsection is a short conceptual bridge to generalized linear models. The important reusable pattern is the gradient form "prediction minus target"; the exponential-family derivation can be skipped.
 
 The Bernoulli likelihood with a logistic link is one example of a broader generalized linear model pattern. For suitable exponential-family target distributions, choosing the canonical link produces especially simple gradients.
 
@@ -858,6 +1034,8 @@ This shared structure is one reason generalized linear models are so central: di
 # §4 The Laplace Approximation
 
 > 📖 Textbook §4.4 The Laplace Approximation; §4.4.1
+>
+> **Teaching choice.** Present Laplace approximation visually: approximate a complicated posterior by a Gaussian near its mode. The Taylor expansion is useful, but the main modern ML lesson is broader: exact Bayesian inference is often impossible, so we use approximations.
 
 ## 4.1 Why We Need an Approximation
 
@@ -978,6 +1156,8 @@ The first term rewards data fit. The second term penalizes model complexity. Thi
 # §5 Bayesian Logistic Regression
 
 > 📖 Textbook §4.5 Bayesian Logistic Regression; §4.5.1-§4.5.2
+>
+> **Teaching choice.** This section is advanced. Keep the main idea: ordinary logistic regression gives one set of weights, while Bayesian logistic regression averages over plausible weights and therefore avoids some overconfidence. The predictive approximation with $\kappa(\sigma^2)$ can be shown as a result rather than derived.
 
 ## 5.1 Posterior Over Logistic-Regression Weights
 
@@ -1126,7 +1306,7 @@ This section is an important bridge to later chapters. Exact Bayesian inference 
 
 ---
 
-# §6 Chapter Summary, Figure Checklist, and Teaching Flow
+# §6 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow
 
 ## 6.1 Chapter Summary
 
@@ -1171,7 +1351,15 @@ All figures used in this lecture are screenshots/crops from the uploaded textboo
 | 4.13 | 4.13 | Density and cumulative distribution function | `./CoursePR2026/Fig/Chapter_4/lecture_fig_4_13__textbook_fig_4_13_p211_density_and_cumulative_distribution.png` |
 | 4.14 | 4.14 | Laplace approximation to a non-Gaussian distribution | `./CoursePR2026/Fig/Chapter_4/lecture_fig_4_14__textbook_fig_4_14_p215_laplace_approximation_distribution.png` |
 
-## 6.3 Suggested Teaching Flow
+## 6.3 Exercise Checklist
+
+| Lecture Exercise | Textbook Exercise | Topic | File |
+|------------------|-------------------|-------|------|
+| 4.7 | 4.7 | Sigmoid symmetry and inverse logit | `./CoursePR2026/Fig/Chapter_4/lecture_ex_4_7__textbook_ex_4_7_p221.png` |
+| 4.12 | 4.12 | Derivative of the logistic sigmoid | `./CoursePR2026/Fig/Chapter_4/lecture_ex_4_12__textbook_ex_4_12_p222.png` |
+| 4.13 | 4.13 | Gradient of logistic cross-entropy | `./CoursePR2026/Fig/Chapter_4/lecture_ex_4_13__textbook_ex_4_13_p222.png` |
+
+## 6.4 Suggested Teaching Flow
 
 A practical lecture sequence is:
 
@@ -1184,17 +1372,18 @@ A practical lecture sequence is:
 7. Introduce Fisher's criterion and use Figure 4.6 to explain why within-class scatter matters.
 8. Present the perceptron update rule and use Figures 4.7-4.8 for algorithmic and historical context.
 9. Transition to probabilities by deriving posterior log-odds from Bayes' theorem.
-10. Use Figure 4.9 to introduce sigmoid and probit activations.
+10. Use Figure 4.9 and Exercise 4.7 to introduce sigmoid probabilities and logits.
 11. Derive the shared-covariance Gaussian classifier and use Figures 4.10-4.11 to connect covariance assumptions to boundary shape.
 12. Use Figure 4.12 to explain nonlinear basis functions and feature-space separability.
-13. Derive logistic regression, cross-entropy, and the gradient $\sum_n(y_n-t_n)\boldsymbol{\phi}_n$.
-14. Explain IRLS as Newton's method rewritten as weighted least squares.
-15. Extend to softmax regression and emphasize the $y_{nk}-t_{nk}$ gradient pattern.
-16. Use Figure 4.13 to introduce probit regression as a cumulative-threshold model.
-17. Introduce the Laplace approximation and use Figure 4.14 to show local Gaussian fitting.
-18. Finish with Bayesian logistic regression and the predictive shrinkage factor $\kappa(\sigma^2)$.
+13. Derive logistic regression and cross-entropy.
+14. Work through Exercises 4.12 and 4.13 so students see why the gradient becomes $\sum_n(y_n-t_n)\boldsymbol{\phi}_n$.
+15. Explain IRLS as Newton's method rewritten as weighted least squares, but keep implementation details brief.
+16. Extend to softmax regression and emphasize the $y_{nk}-t_{nk}$ gradient pattern.
+17. Treat probit regression and canonical links as optional context.
+18. Introduce the Laplace approximation visually with Figure 4.14.
+19. Finish Bayesian logistic regression as an intuition: posterior uncertainty makes probabilities less overconfident.
 
-## 6.4 Key Equations to Put on the Board
+## 6.5 Key Equations to Put on the Board
 
 The following equations are the minimum board set for this chapter.
 

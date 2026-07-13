@@ -55,7 +55,7 @@ This chapter is therefore the bridge between abstract probability rules and the 
 | $\mathbf{x}$ | 1-of-$K$ coded vector for a categorical outcome. Exactly one entry equals 1. |
 | $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ | Probability vector on a simplex, with $\mu_k\ge 0$ and $\sum_k\mu_k=1$. |
 | $m_k$ | Number of observations assigned to category $k$. |
-| $\operatorname{Dir}(\boldsymbol{\mu}\mid\boldsymbol{\alpha})$ | Dirichlet distribution, a prior/postior distribution over a multinomial probability vector. |
+| $\operatorname{Dir}(\boldsymbol{\mu}\mid\boldsymbol{\alpha})$ | Dirichlet distribution, a prior/posterior distribution over a multinomial probability vector. |
 | $\alpha_k$ | Dirichlet concentration parameter for class $k$. |
 
 ### Gaussian and Related Distributions
@@ -67,11 +67,7 @@ This chapter is therefore the bridge between abstract probability rules and the 
 | $\boldsymbol{\Sigma}$ | Covariance matrix. Its eigenvectors determine ellipsoid directions; eigenvalues determine squared axis lengths. |
 | $\boldsymbol{\Lambda}=\boldsymbol{\Sigma}^{-1}$ | Precision matrix. |
 | $\lambda$ | Scalar precision, typically $\lambda=1/\sigma^2$. |
-| $\operatorname{Gam}(\lambda\mid a,b)$ | Gamma distribution over a precision parameter. |
-| $\mathcal{W}(\boldsymbol{\Lambda}\mid\mathbf{W},\nu)$ | Wishart distribution over a precision matrix. |
-| $\operatorname{St}(x\mid\mu,\lambda,\nu)$ | Student's $t$-distribution. |
-| $\theta$ | Angular / periodic variable. |
-| $\operatorname{vonMises}(\theta\mid\theta_0,m)$ | Circular analogue of a Gaussian distribution. |
+| $\operatorname{St}(x\mid\mu,\lambda,\nu)$ | Student's $t$-distribution; useful as a heavy-tailed alternative to a Gaussian. |
 | $\pi_k$ | Mixing coefficient for the $k$th mixture component. |
 | $\gamma_k(\mathbf{x})$ | Responsibility of mixture component $k$ for data point $\mathbf{x}$. |
 
@@ -201,6 +197,73 @@ $$
 $$
 
 The variance is largest when $\mu=0.5$, because then the outcome is most uncertain. The variance becomes zero when $\mu=0$ or $\mu=1$, because the outcome is deterministic.
+
+## Textbook Exercise 2.1: Bernoulli Mean, Variance, and Entropy
+
+> ![Textbook Exercise 2.1](./CoursePR2026/Fig/Chapter_2/lecture_ex_2_1__textbook_ex_2_1_p127.png)
+>
+> *Textbook Exercise 2.1 (p. 127): Verify normalization, mean, variance, and entropy for a Bernoulli random variable.*
+
+For a Bernoulli variable, there are only two possible outcomes. So every
+calculation is just a two-row table.
+
+| $x$ | Probability |
+|-----|-------------|
+| $0$ | $1-\mu$ |
+| $1$ | $\mu$ |
+
+Normalization means the two probabilities add to one:
+
+$$
+p(0\mid\mu)+p(1\mid\mu)=(1-\mu)+\mu=1.
+$$
+
+The expectation is the probability-weighted average:
+
+$$
+\mathbb{E}[x]=0\cdot(1-\mu)+1\cdot\mu=\mu.
+$$
+
+Because $x^2=x$ when $x\in\{0,1\}$,
+
+$$
+\mathbb{E}[x^2]=\mu.
+$$
+
+Therefore
+
+$$
+\operatorname{var}[x]
+=\mathbb{E}[x^2]-\mathbb{E}[x]^2
+=\mu-\mu^2
+=\mu(1-\mu).
+$$
+
+For a concrete value, suppose $\mu=0.7$. Then
+
+$$
+\mathbb{E}[x]=0.7,
+\qquad
+\operatorname{var}[x]=0.7\cdot0.3=0.21.
+$$
+
+The entropy is
+
+$$
+H[x]=-\mu\ln\mu-(1-\mu)\ln(1-\mu).
+$$
+
+For $\mu=0.7$,
+
+$$
+H[x]
+=-0.7\ln0.7-0.3\ln0.3
+\approx 0.611.
+$$
+
+The plain-English message is: when the coin is almost deterministic, entropy is
+small; when $\mu$ is near $0.5$, entropy is large because the outcome is hard to
+predict.
 
 ## 1.2 Maximum Likelihood for Bernoulli Data
 
@@ -339,6 +402,56 @@ The beta distribution is flexible enough to express many qualitatively different
 | $a<b$ | Shifted toward 0 | We expect more failures than successes. |
 | $a,b<1$ | U-shaped | We believe $\mu$ is likely near 0 or near 1, but not near the middle. |
 
+## Textbook Exercise 2.6: Mean, Variance, and Mode of a Beta Distribution
+
+> ![Textbook Exercise 2.6](./CoursePR2026/Fig/Chapter_2/lecture_ex_2_6__textbook_ex_2_6_p128.png)
+>
+> *Textbook Exercise 2.6 (p. 128): Use the beta normalization result to obtain the mean, variance, and mode.*
+
+For teaching, it is useful to read a beta distribution as a soft belief about an
+unknown probability $\mu$. The three most useful summary numbers are:
+
+$$
+\mathbb{E}[\mu]=\frac{a}{a+b},
+$$
+
+$$
+\operatorname{var}[\mu]
+=\frac{ab}{(a+b)^2(a+b+1)},
+$$
+
+and, when $a>1$ and $b>1$,
+
+$$
+\operatorname{mode}[\mu]=\frac{a-1}{a+b-2}.
+$$
+
+Now plug in a simple example. Let $a=3$ and $b=2$. Then
+
+$$
+\mathbb{E}[\mu]=\frac{3}{3+2}=0.6,
+$$
+
+$$
+\operatorname{var}[\mu]
+=\frac{3\cdot2}{(3+2)^2(3+2+1)}
+=\frac{6}{150}
+=0.04,
+$$
+
+and
+
+$$
+\operatorname{mode}[\mu]
+=\frac{3-1}{3+2-2}
+=\frac{2}{3}
+\approx 0.667.
+$$
+
+So this prior says: values above $0.5$ are more plausible, the average belief is
+$0.6$, and the most likely single value is about $0.667$. The mean and mode do
+not have to be identical because the beta distribution can be asymmetric.
+
 ## 1.5 Conjugacy: Beta Prior plus Binomial Likelihood
 
 The beta distribution is conjugate to the binomial likelihood. This means that if the prior is beta and the likelihood is binomial/Bernoulli, then the posterior is also beta.
@@ -374,7 +487,7 @@ $$
 This is one of the most important patterns in Bayesian learning:
 
 $$
-\text{posterior parameter}=	ext{prior parameter}+\text{observed count}.
+\text{posterior parameter}=\text{prior parameter}+\text{observed count}.
 $$
 
 The posterior mean is
@@ -719,6 +832,44 @@ This can be too many when $D$ is large. Common restrictions include:
 | Diagonal | $\boldsymbol{\Sigma}=\operatorname{diag}(\sigma_1^2,\ldots,\sigma_D^2)$ | $D$ | Axis-aligned ellipsoid. |
 | Isotropic | $\boldsymbol{\Sigma}=\sigma^2\mathbf{I}$ | $1$ | Sphere / circle. |
 
+## Textbook Exercise 2.21: Count the Parameters in a Symmetric Matrix
+
+> ![Textbook Exercise 2.21](./CoursePR2026/Fig/Chapter_2/lecture_ex_2_21__textbook_ex_2_21_p131.png)
+>
+> *Textbook Exercise 2.21 (p. 131): Show that a real symmetric $D\times D$ matrix has $D(D+1)/2$ independent parameters.*
+
+A covariance matrix is symmetric:
+
+$$
+\Sigma_{ij}=\Sigma_{ji}.
+$$
+
+This means the upper-right half and lower-left half contain duplicate
+information. We only need to count:
+
+- $D$ diagonal entries;
+- $D(D-1)/2$ off-diagonal pairs.
+
+Therefore the number of free parameters is
+
+$$
+D+\frac{D(D-1)}{2}
+=\frac{D(D+1)}{2}.
+$$
+
+Concrete counts:
+
+| Dimension $D$ | Full Covariance Parameters |
+|---------------|----------------------------|
+| 2 | $2\cdot3/2=3$ |
+| 10 | $10\cdot11/2=55$ |
+| 100 | $100\cdot101/2=5{,}050$ |
+
+This is why covariance modeling quickly becomes a data problem. A diagonal
+covariance in $D=100$ has only 100 parameters, but a full covariance has 5,050.
+The full model can represent correlations, but it needs much more data to estimate
+reliably.
+
 > ![Figure 2.8](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_8__textbook_fig_2_8_p84.png)
 >
 > *Figure 2.8 (Textbook Fig. 2.8, p. 84): Full, diagonal, and isotropic covariance structures. Restrictions reduce parameters but also reduce the shapes the model can express.*
@@ -874,7 +1025,115 @@ $$
 
 This is another example of a finite-sample effect: maximum likelihood can be systematically overconfident when estimating variance.
 
-## 3.8 Sequential Estimation and Robbins-Monro
+## Textbook Exercise 2.27: Add Independent Random Vectors
+
+> ![Textbook Exercise 2.27](./CoursePR2026/Fig/Chapter_2/lecture_ex_2_27__textbook_ex_2_27_p132.png)
+>
+> *Textbook Exercise 2.27 (p. 132): For independent random vectors, the mean and covariance of the sum are the sums of the means and covariances.*
+
+Let
+
+$$
+\mathbf{y}=\mathbf{x}+\mathbf{z},
+$$
+
+and assume $\mathbf{x}$ and $\mathbf{z}$ are independent. The mean is easy:
+
+$$
+\mathbb{E}[\mathbf{y}]
+=\mathbb{E}[\mathbf{x}+\mathbf{z}]
+=\mathbb{E}[\mathbf{x}]+\mathbb{E}[\mathbf{z}].
+$$
+
+Independence also makes the covariance matrices add:
+
+$$
+\operatorname{cov}[\mathbf{y}]
+=\operatorname{cov}[\mathbf{x}]+\operatorname{cov}[\mathbf{z}].
+$$
+
+For a concrete calculation, suppose
+
+$$
+\mathbb{E}[\mathbf{x}]
+=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix},
+\qquad
+\operatorname{cov}[\mathbf{x}]
+=
+\begin{bmatrix}
+4 & 1\\
+1 & 9
+\end{bmatrix},
+$$
+
+and
+
+$$
+\mathbb{E}[\mathbf{z}]
+=
+\begin{bmatrix}
+-1\\
+3
+\end{bmatrix},
+\qquad
+\operatorname{cov}[\mathbf{z}]
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 4
+\end{bmatrix}.
+$$
+
+Then
+
+$$
+\mathbb{E}[\mathbf{y}]
+=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix}
++
+\begin{bmatrix}
+-1\\
+3
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+5
+\end{bmatrix},
+$$
+
+and
+
+$$
+\operatorname{cov}[\mathbf{y}]
+=
+\begin{bmatrix}
+4 & 1\\
+1 & 9
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 0\\
+0 & 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 & 1\\
+1 & 13
+\end{bmatrix}.
+$$
+
+The practical message is the same as in Exercise 1.10: independent uncertainty
+adds in variance/covariance, not in standard deviation.
+
+## 3.8 Sequential Mean Update and SGD Intuition
 
 The sample mean can be updated sequentially. After seeing $N-1$ data points, suppose we have
 
@@ -897,39 +1156,20 @@ This formula has a simple interpretation:
 
 The step size $1/N$ decreases over time, so later observations have smaller individual influence.
 
-The Robbins-Monro algorithm generalizes this idea. Suppose we want to find $\theta^*$ such that
+For this course, the important modern-ML connection is stochastic optimization.
+Many deep-learning algorithms also update parameters by repeatedly moving a
+current estimate a small step using one mini-batch:
 
 $$
-f(\theta^*)=0,
+\text{new estimate}
+=
+\text{old estimate}
++
+\text{step size}\times\text{new information}.
 $$
 
-but we can only observe noisy values whose expectation is $f(\theta)$. A sequential update has the form
-
-$$
-\theta^{(N)}=\theta^{(N-1)}+a_{N-1}z(\theta^{(N-1)}),
-$$
-
-where $z(\theta)$ is a noisy observation and $a_N$ is a sequence of learning rates.
-
-> ![Figure 2.10](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_10__textbook_fig_2_10_p95.png)
->
-> *Figure 2.10 (Textbook Fig. 2.10, p. 95): Robbins-Monro root finding. The goal is to find the point $\theta^*$ where the regression function crosses zero, using noisy observations.*
-
-For convergence, the step sizes should satisfy
-
-$$
-\sum_{N=1}^{\infty}a_N=\infty,
-\qquad
-\sum_{N=1}^{\infty}a_N^2<\infty.
-$$
-
-The first condition says the algorithm must keep moving enough to reach the target. The second condition says the random noise must eventually average out.
-
-> ![Figure 2.11](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_11__textbook_fig_2_11_p97.png)
->
-> *Figure 2.11 (Textbook Fig. 2.11, p. 97): For Gaussian mean estimation, the Robbins-Monro framework leads to a sequential update that moves the estimate toward each new observation.*
-
-This section foreshadows stochastic gradient descent: many modern optimization algorithms are sequential noisy updates toward an optimum.
+The useful classroom message is simply: online learning updates an estimate
+incrementally instead of recomputing everything from scratch.
 
 ## 3.9 Bayesian Inference for the Gaussian Mean
 
@@ -976,102 +1216,16 @@ This figure illustrates two Bayesian effects:
 1. The posterior mean shifts toward the value supported by the data.
 2. The posterior variance shrinks as data accumulate.
 
-## 3.10 Bayesian Inference for the Gaussian Precision
+## 3.10 Student's t-Distribution
 
-Now suppose the mean $\mu$ is known but the precision $\lambda$ is unknown. The conjugate prior for a precision parameter is the gamma distribution:
+The Student's $t$-distribution is a heavy-tailed alternative to the Gaussian.
+Intuitively, it behaves like a Gaussian near the center but is more tolerant of
+large deviations.
 
-$$
-\operatorname{Gam}(\lambda\mid a,b)
-=\frac{1}{\Gamma(a)}b^a\lambda^{a-1}\exp(-b\lambda),
-\qquad \lambda>0.
-$$
-
-The mean and variance are
-
-$$
-\mathbb{E}[\lambda]=\frac{a}{b},
-\qquad
-\operatorname{var}[\lambda]=\frac{a}{b^2}.
-$$
-
-> ![Figure 2.13](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_13__textbook_fig_2_13_p100.png)
->
-> *Figure 2.13 (Textbook Fig. 2.13, p. 100): Gamma distributions for different hyperparameters. Gamma distributions are defined on positive real values, making them suitable priors over precision parameters.*
-
-After observing data, the posterior is also gamma:
-
-$$
-p(\lambda\mid\mathcal{D})
-=\operatorname{Gam}(\lambda\mid a_N,b_N),
-$$
-
-where
-
-$$
-a_N=a_0+\frac{N}{2},
-$$
-
-$$
-b_N=b_0+\frac{1}{2}\sum_{n=1}^N(x_n-\mu)^2.
-$$
-
-Again, the posterior hyperparameters equal prior hyperparameters plus data-dependent sufficient statistics.
-
-## 3.11 Unknown Mean and Unknown Precision
-
-If both the mean and precision are unknown, the conjugate prior is the normal-gamma distribution:
-
-$$
-p(\mu,\lambda)
-=
-\mathcal{N}(\mu\mid\mu_0,(\beta\lambda)^{-1})
-\operatorname{Gam}(\lambda\mid a,b).
-$$
-
-This couples mean uncertainty and precision uncertainty. The multivariate generalization uses a Gaussian-Wishart distribution over the mean and precision matrix.
-
-> ![Figure 2.14](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_14__textbook_fig_2_14_p102.png)
->
-> *Figure 2.14 (Textbook Fig. 2.14, p. 102): Contours of the normal-gamma distribution. This joint prior/posterior expresses uncertainty over both the Gaussian mean and precision.*
-
-The key lesson is that conjugate priors are not isolated tricks. They are systematic pairings:
-
-| Likelihood | Unknown Parameter | Conjugate Prior |
-|------------|-------------------|-----------------|
-| Bernoulli/binomial | Probability $\mu$ | Beta |
-| Multinomial | Probability vector $\boldsymbol{\mu}$ | Dirichlet |
-| Gaussian, known variance | Mean $\mu$ | Gaussian |
-| Gaussian, known mean | Precision $\lambda$ | Gamma |
-| Gaussian, unknown mean and precision | Mean and precision | Normal-gamma |
-| Multivariate Gaussian precision | Precision matrix $\boldsymbol{\Lambda}$ | Wishart |
-
-## 3.12 Student's t-Distribution
-
-The Student's $t$-distribution can be obtained by mixing Gaussians with different precisions, where the precision follows a gamma distribution.
-
-Conceptually:
-
-$$
-\text{Student's }t
-=
-\int
-\text{Gaussian}(x\mid\text{precision})
-\times
-\text{Gamma}(\text{precision})
-\,d(\text{precision}).
-$$
-
-The result is
-
-$$
-\operatorname{St}(x\mid\mu,\lambda,\nu)
-=
-\frac{\Gamma(\nu/2+1/2)}{\Gamma(\nu/2)}
-\left(\frac{\lambda}{\pi\nu}\right)^{1/2}
-\left[1+\frac{\lambda(x-\mu)^2}{\nu}\right]^{-\nu/2-1/2}.
-$$
-
-Here $\nu$ is the degrees-of-freedom parameter.
+The exact density is not important for this lecture. What matters is the shape:
+Student's $t$ has heavier tails than a Gaussian. The parameter $\nu$ controls tail
+heaviness; smaller $\nu$ means heavier tails, and as $\nu\to\infty$ the distribution
+approaches a Gaussian.
 
 > ![Figure 2.15](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_15__textbook_fig_2_15_p103.png)
 >
@@ -1079,7 +1233,7 @@ Here $\nu$ is the degrees-of-freedom parameter.
 
 The most important practical property of the Student's $t$ is **heavy tails**. Heavy-tailed distributions assign more probability to extreme observations than Gaussians do.
 
-## 3.13 Robustness to Outliers
+## 3.11 Robustness to Outliers
 
 Because a Gaussian assigns very low probability to outliers, maximum likelihood fitting with a Gaussian can be strongly distorted by a few extreme values. The Student's $t$ is more robust because it expects occasional large deviations.
 
@@ -1093,73 +1247,7 @@ The teaching message is broad:
 
 A Gaussian likelihood treats squared error as natural. A heavy-tailed likelihood is more forgiving toward occasional large errors.
 
-## 3.14 Periodic Variables
-
-Some variables are angles. For example, wind direction, object orientation, and phase are periodic. The values $0$ and $2\pi$ represent the same direction.
-
-A standard Gaussian is not suitable for angles because it treats the real line as non-periodic. For example, angles near $0$ and angles near $2\pi$ are close on a circle but far apart on the real line.
-
-The mean direction can be computed by mapping angles to points on the unit circle:
-
-$$
-\mathbf{x}_n=(\cos\theta_n,\sin\theta_n)^T.
-$$
-
-The average vector is
-
-$$
-\bar{\mathbf{x}}=\frac{1}{N}\sum_{n=1}^N\mathbf{x}_n.
-$$
-
-The mean angle is the direction of this average vector:
-
-$$
-\bar{\theta}
-=\tan^{-1}\left\{
-\frac{\sum_n\sin\theta_n}{\sum_n\cos\theta_n}
-\right\}.
-$$
-
-> ![Figure 2.17](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_17__textbook_fig_2_17_p106.png)
->
-> *Figure 2.17 (Textbook Fig. 2.17, p. 106): Periodic variables can be represented as points on the unit circle. Averaging is done in Cartesian coordinates and then converted back to an angle.*
-
-## 3.15 The von Mises Distribution
-
-The von Mises distribution is a circular analogue of the Gaussian:
-
-$$
-p(\theta\mid\theta_0,m)
-=\frac{1}{2\pi I_0(m)}\exp\{m\cos(\theta-\theta_0)\}.
-$$
-
-Here:
-
-- $\theta_0$ is the mean direction;
-- $m$ is a concentration parameter;
-- $I_0(m)$ is a modified Bessel function that normalizes the density.
-
-> ![Figure 2.18](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_18__textbook_fig_2_18_p107.png)
->
-> *Figure 2.18 (Textbook Fig. 2.18, p. 107): The von Mises distribution can be derived by taking a two-dimensional Gaussian and conditioning on the unit circle.*
-
-> ![Figure 2.19](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_19__textbook_fig_2_19_p108.png)
->
-> *Figure 2.19 (Textbook Fig. 2.19, p. 108): von Mises distributions shown both as a function of angle and as circular density plots. Larger concentration gives a sharper directional distribution.*
-
-The normalization and maximum likelihood equations involve the function
-
-$$
-A(m)=\frac{I_1(m)}{I_0(m)}.
-$$
-
-> ![Figure 2.20](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_20__textbook_fig_2_20_p109.png)
->
-> *Figure 2.20 (Textbook Fig. 2.20, p. 109): The Bessel function $I_0(m)$ and the ratio $A(m)=I_1(m)/I_0(m)$ used in estimating the von Mises concentration parameter.*
-
-This subsection is often taught as an introduction-only topic. Its real purpose is to show that choosing a distribution must respect the geometry of the data.
-
-## 3.16 Mixtures of Gaussians
+## 3.12 Mixtures of Gaussians
 
 A single Gaussian is unimodal. It can describe one elliptical cluster, but it cannot describe multiple separated clusters well.
 
@@ -1330,54 +1418,6 @@ Examples:
 | Gaussian with unknown mean and variance | $\sum_n x_n$, $\sum_n x_n^2$ |
 | Multivariate Gaussian | $\sum_n \mathbf{x}_n$, $\sum_n \mathbf{x}_n\mathbf{x}_n^T$ |
 
-## 4.6 Conjugate Priors for the Exponential Family
-
-The exponential family has a general conjugate prior form:
-
-$$
-p(\boldsymbol{\eta}\mid\boldsymbol{\chi},\nu)
-=f(\boldsymbol{\chi},\nu)
- g(\boldsymbol{\eta})^{\nu}
-\exp\{\nu\boldsymbol{\eta}^T\boldsymbol{\chi}\}.
-$$
-
-Here $\boldsymbol{\chi}$ and $\nu$ can often be interpreted as prior pseudo-statistics and prior sample size.
-
-After seeing data, the posterior hyperparameters update by adding sufficient statistics:
-
-$$
-\nu_{\mathrm{new}}=\nu+N,
-$$
-
-$$
-\boldsymbol{\chi}_{\mathrm{new}}
-=\frac{\nu\boldsymbol{\chi}+\sum_n\mathbf{u}(x_n)}{\nu+N}.
-$$
-
-The important lesson is that conjugacy is not a coincidence. It is built into the algebra of exponential-family likelihoods.
-
-## 4.7 Noninformative Priors
-
-Sometimes we want a prior that expresses minimal information. For a location parameter such as a mean $\mu$, a common noninformative prior is flat:
-
-$$
-p(\mu)\propto 1.
-$$
-
-For a scale parameter such as $\sigma$, a common choice is
-
-$$
-p(\sigma)\propto \frac{1}{\sigma}.
-$$
-
-Such priors may be **improper**, meaning they do not integrate to one. They can still be useful if the resulting posterior is proper.
-
-The practical warning is:
-
-> A “noninformative” prior is not automatically neutral in every parameterization.
-
-Changing variables can change what appears to be flat. This is why prior choice must be treated carefully in Bayesian modeling.
-
 ---
 
 # §5 Nonparametric Methods
@@ -1512,8 +1552,6 @@ The classifier chooses the class with the largest local count.
 
 For $K=1$, the rule is especially simple: assign the test point to the class of the nearest training point.
 
-The 1-NN rule has an interesting asymptotic property: as the training set becomes infinitely large, its error rate is no more than twice the Bayes-optimal error rate. This is a theoretical guarantee, not necessarily a practical recommendation.
-
 > ![Figure 2.28](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_28__textbook_fig_2_28_p126.png)
 >
 > *Figure 2.28 (Textbook Fig. 2.28, p. 126): K-NN decision regions for different values of $K$. Small $K$ produces highly fragmented decision regions; large $K$ produces smoother boundaries.*
@@ -1555,7 +1593,7 @@ The major ideas are:
 3. **Conjugate priors give analytically simple Bayesian updates.**
    - Beta prior plus Bernoulli/binomial likelihood gives beta posterior.
    - Dirichlet prior plus multinomial likelihood gives Dirichlet posterior.
-   - Gaussian/gamma/normal-gamma priors support Gaussian inference.
+   - Gaussian priors for Gaussian means illustrate the same "prior plus data" idea.
 
 4. **Gaussian distributions are algebraically special.**
    - Marginals are Gaussian.
@@ -1564,7 +1602,6 @@ The major ideas are:
 
 5. **The exponential family unifies many distributions.**
    - It explains sufficient statistics.
-   - It explains conjugate-prior structure.
    - It explains why sigmoid and softmax appear naturally.
 
 6. **Nonparametric methods trade assumptions for data.**
@@ -1578,7 +1615,7 @@ The major ideas are:
 |--------|------------|--------------------|
 | Bernoulli likelihood | Categorical likelihood | Gaussian likelihood |
 | Count successes | Count classes | Compute sample mean/covariance |
-| Beta prior | Dirichlet prior | Gaussian/Gamma/Normal-Gamma prior |
+| Beta prior | Dirichlet prior | Gaussian prior over a mean |
 | Posterior adds counts | Posterior adds counts | Posterior adds sufficient statistics |
 | Predict by posterior mean | Predict by posterior mean | Predict by posterior distribution |
 
@@ -1609,17 +1646,9 @@ All displayed figures in this lecture are screenshots from the uploaded textbook
 | Figure 2.7 | Textbook Fig. 2.7, p. 81 | `lecture_fig_2_7__textbook_fig_2_7_p81.png` |
 | Figure 2.8 | Textbook Fig. 2.8, p. 84 | `lecture_fig_2_8__textbook_fig_2_8_p84.png` |
 | Figure 2.9 | Textbook Fig. 2.9, p. 90 | `lecture_fig_2_9__textbook_fig_2_9_p90.png` |
-| Figure 2.10 | Textbook Fig. 2.10, p. 95 | `lecture_fig_2_10__textbook_fig_2_10_p95.png` |
-| Figure 2.11 | Textbook Fig. 2.11, p. 97 | `lecture_fig_2_11__textbook_fig_2_11_p97.png` |
 | Figure 2.12 | Textbook Fig. 2.12, p. 99 | `lecture_fig_2_12__textbook_fig_2_12_p99.png` |
-| Figure 2.13 | Textbook Fig. 2.13, p. 100 | `lecture_fig_2_13__textbook_fig_2_13_p100.png` |
-| Figure 2.14 | Textbook Fig. 2.14, p. 102 | `lecture_fig_2_14__textbook_fig_2_14_p102.png` |
 | Figure 2.15 | Textbook Fig. 2.15, p. 103 | `lecture_fig_2_15__textbook_fig_2_15_p103.png` |
 | Figure 2.16 | Textbook Fig. 2.16, p. 104 | `lecture_fig_2_16__textbook_fig_2_16_p104.png` |
-| Figure 2.17 | Textbook Fig. 2.17, p. 106 | `lecture_fig_2_17__textbook_fig_2_17_p106.png` |
-| Figure 2.18 | Textbook Fig. 2.18, p. 107 | `lecture_fig_2_18__textbook_fig_2_18_p107.png` |
-| Figure 2.19 | Textbook Fig. 2.19, p. 108 | `lecture_fig_2_19__textbook_fig_2_19_p108.png` |
-| Figure 2.20 | Textbook Fig. 2.20, p. 109 | `lecture_fig_2_20__textbook_fig_2_20_p109.png` |
 | Figure 2.21 | Textbook Fig. 2.21, p. 110 | `lecture_fig_2_21__textbook_fig_2_21_p110.png` |
 | Figure 2.22 | Textbook Fig. 2.22, p. 111 | `lecture_fig_2_22__textbook_fig_2_22_p111.png` |
 | Figure 2.23 | Textbook Fig. 2.23, p. 112 | `lecture_fig_2_23__textbook_fig_2_23_p112.png` |
@@ -1628,6 +1657,15 @@ All displayed figures in this lecture are screenshots from the uploaded textbook
 | Figure 2.26 | Textbook Fig. 2.26, p. 125 | `lecture_fig_2_26__textbook_fig_2_26_p125.png` |
 | Figure 2.27 | Textbook Fig. 2.27, p. 126 | `lecture_fig_2_27__textbook_fig_2_27_p126.png` |
 | Figure 2.28 | Textbook Fig. 2.28, p. 126 | `lecture_fig_2_28__textbook_fig_2_28_p126.png` |
+
+Added textbook exercise screenshots:
+
+| Lecture Exercise | Textbook Exercise | File |
+|------------------|-------------------|------|
+| Exercise 2.1 | Textbook Ex. 2.1, p. 127 | `lecture_ex_2_1__textbook_ex_2_1_p127.png` |
+| Exercise 2.6 | Textbook Ex. 2.6, p. 128 | `lecture_ex_2_6__textbook_ex_2_6_p128.png` |
+| Exercise 2.21 | Textbook Ex. 2.21, p. 131 | `lecture_ex_2_21__textbook_ex_2_21_p131.png` |
+| Exercise 2.27 | Textbook Ex. 2.27, p. 132 | `lecture_ex_2_27__textbook_ex_2_27_p132.png` |
 
 ## 6.4 Suggested Teaching Flow
 
@@ -1638,12 +1676,11 @@ A clean lecture sequence is:
 3. Generalize binary outcomes to $K$-class outcomes using 1-of-$K$ coding, the multinomial, and the Dirichlet.
 4. Move to continuous variables with the Gaussian. Spend time on covariance geometry, because this intuition is reused everywhere.
 5. Teach conditional and marginal Gaussians as the algebraic foundation for future latent-variable and Bayesian regression models.
-6. Present Gaussian Bayesian inference through conjugate priors. Emphasize that precision addition is the continuous analogue of count addition.
-7. Introduce Student's $t$ as a heavy-tailed robust alternative to the Gaussian.
-8. Treat periodic variables briefly unless the course needs directional statistics.
-9. Introduce Gaussian mixtures as the first major example of latent-variable density modeling.
-10. Use the exponential family to unify the chapter and explain sufficient statistics.
-11. Close with nonparametric density estimation and K-NN to contrast flexible local methods against compact parametric models.
+6. Present Gaussian Bayesian inference only through the unknown-mean case, emphasizing weighted averaging between prior and data.
+7. Introduce Student's $t$ briefly as a heavy-tailed robust alternative to the Gaussian.
+8. Introduce Gaussian mixtures as the first major example of latent-variable density modeling.
+9. Use the exponential family to explain sufficient statistics, sigmoid, and softmax.
+10. Close with nonparametric density estimation and K-NN to contrast flexible local methods against compact parametric models.
 
 ## 6.5 What Students Should Be Able to Do After This Lecture
 
@@ -1657,10 +1694,9 @@ After studying this chapter, students should be able to:
 6. interpret the covariance matrix of a multivariate Gaussian geometrically;
 7. distinguish Gaussian marginalization from Gaussian conditioning;
 8. state why Gaussian distributions are closed under linear-Gaussian Bayesian inference;
-9. explain the role of the gamma prior for unknown Gaussian precision;
-10. explain why Student's $t$ distributions are more robust to outliers than Gaussians;
-11. identify sigmoid and softmax as natural mappings from exponential-family natural parameters to constrained probabilities;
-12. explain the bias-variance role of histogram bin width, KDE bandwidth, and K-NN neighbourhood size.
+9. explain why Student's $t$ distributions are more robust to outliers than Gaussians;
+10. identify sigmoid and softmax as natural mappings from exponential-family natural parameters to constrained probabilities;
+11. explain the bias-variance role of histogram bin width, KDE bandwidth, and K-NN neighbourhood size.
 
 ## 6.6 Connection to Later Chapters
 
@@ -1674,7 +1710,7 @@ Chapter 2 is foundational for the rest of the course.
 | Ch.6 Kernel Methods | Gaussian processes and kernel density intuition. |
 | Ch.8 Graphical Models | Conditional and marginal distributions, conjugacy, exponential-family structure. |
 | Ch.9 Mixture Models and EM | Gaussian mixtures, responsibilities, latent component indicators. |
-| Ch.10 Approximate Inference | Exponential-family conjugacy, variational factors, sufficient statistics. |
+| Ch.10 Approximate Inference | Exponential-family form, variational factors, sufficient statistics. |
 | Ch.11 Sampling Methods | Sampling from distributions and approximating expectations. |
 | Ch.12 Continuous Latent Variables | Linear-Gaussian identities, Gaussian marginalization and conditioning. |
 | Ch.13 Sequential Data | Sequential estimation, Gaussian updates, Kalman filtering. |

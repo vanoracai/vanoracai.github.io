@@ -15,7 +15,7 @@
 5. [§4 Bayesian Model Comparison](#4-bayesian-model-comparison)
 6. [§5 The Evidence Approximation](#5-the-evidence-approximation)
 7. [§6 Limitations of Fixed Basis Functions](#6-limitations-of-fixed-basis-functions)
-8. [§7 Chapter Summary, Figure Checklist, and Teaching Flow](#7-chapter-summary-figure-checklist-and-teaching-flow)
+8. [§7 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow](#7-chapter-summary-figure-checklist-exercises-and-teaching-flow)
 
 ---
 
@@ -26,6 +26,14 @@ Chapter 1 introduced regression through polynomial curve fitting. Chapter 2 intr
 > Given an input vector $\mathbf{x}$ and a continuous target $t$, construct a function or predictive distribution that can estimate $t$ for new inputs.
 
 The key phrase in this chapter is **linear models**. This does **not** mean the prediction must be a linear function of the original input $\mathbf{x}$. It means the prediction is linear in the adjustable parameters $\mathbf{w}$. By transforming inputs through basis functions $\boldsymbol{\phi}(\mathbf{x})$, we can obtain nonlinear regression curves while keeping parameter estimation mathematically tractable.
+
+> **Teaching focus.** This chapter should feel like a careful extension of the polynomial curve-fitting example in Chapter 1. The core classroom goal is not to make students memorize every matrix identity. The core goal is:
+>
+> $$
+> \text{features} \rightarrow \text{least squares} \rightarrow \text{regularization} \rightarrow \text{uncertainty}.
+> $$
+>
+> For EE undergraduate and graduate students, the most useful parts are linear basis models, ridge/lasso intuition, bias-variance, and the idea that Bayesian regression gives a predictive distribution. The evidence approximation and equivalent-kernel derivations are useful conceptually, but can be treated as optional if time is limited.
 
 ### Generic Regression Notation
 
@@ -345,6 +353,63 @@ $$
 
 The pseudo-inverse notation is useful because it emphasizes that least squares is a linear operation on the target vector. However, in numerical computation, directly forming $(\boldsymbol{\Phi}^T\boldsymbol{\Phi})^{-1}$ can be unstable when the design matrix is ill-conditioned. Practical implementations often use QR decomposition, singular value decomposition, or regularized solvers.
 
+## Textbook Exercise 3.3: Weighted Least Squares
+
+> ![Textbook Exercise 3.3](./CoursePR2026/Fig/Chapter_3/lecture_ex_3_3__textbook_ex_3_3_p174.png)
+>
+> *Textbook Exercise 3.3 (p. 174): Derive the weighted least-squares solution and interpret the weights.*
+
+This is a good exercise because it changes only one thing from ordinary least squares: every data point now has a weight $r_n>0$.
+
+Write the error in matrix form. Let
+
+$$
+\mathbf{R}=\operatorname{diag}(r_1,\ldots,r_N).
+$$
+
+Then
+
+$$
+E_D(\mathbf{w})
+=\frac{1}{2}(\mathbf{t}-\boldsymbol{\Phi}\mathbf{w})^T
+\mathbf{R}
+(\mathbf{t}-\boldsymbol{\Phi}\mathbf{w}).
+$$
+
+Differentiate with respect to $\mathbf{w}$:
+
+$$
+\nabla_{\mathbf{w}}E_D
+=-\boldsymbol{\Phi}^T\mathbf{R}(\mathbf{t}-\boldsymbol{\Phi}\mathbf{w}).
+$$
+
+Set the gradient to zero:
+
+$$
+\boldsymbol{\Phi}^T\mathbf{R}\boldsymbol{\Phi}\mathbf{w}^{\star}
+=\boldsymbol{\Phi}^T\mathbf{R}\mathbf{t}.
+$$
+
+So the solution is
+
+$$
+\boxed{
+\mathbf{w}^{\star}
+=
+(\boldsymbol{\Phi}^T\mathbf{R}\boldsymbol{\Phi})^{-1}
+\boldsymbol{\Phi}^T\mathbf{R}\mathbf{t}.
+}
+$$
+
+There are two simple ways to understand $r_n$.
+
+| Interpretation | Meaning |
+|----------------|---------|
+| Data-dependent noise | A large $r_n$ means point $n$ is trusted more. In a Gaussian noise model, this corresponds to smaller noise variance. |
+| Replicated data | If $r_n$ is an integer, it behaves like repeating point $n$ that many times in the data set. |
+
+The main idea is practical: not every measurement has to be trusted equally. This appears in sensor fusion, robust regression, and later in IRLS for logistic regression.
+
 ## 1.5 Estimating the Noise Precision
 
 After finding $\mathbf{w}_{\mathrm{ML}}$, we can maximize the likelihood with respect to $\beta$. The result is
@@ -497,6 +562,55 @@ The regularization coefficient $\lambda$ and the constraint size $\eta$ are two 
 >
 > *Figure 3.4 (Textbook Fig. 3.4, p. 146): The blue contours represent the unregularized error. The feasible region represents the regularization constraint. With $q=2$, the circular boundary usually touches an error contour away from the axes, so both weights remain nonzero. With $q=1$, the diamond boundary has sharp corners on the axes, and the optimum can occur at a corner. That is why lasso often sets some coefficients exactly to zero.*
 
+## Textbook Exercise 3.5: Regularization as a Constraint
+
+> ![Textbook Exercise 3.5](./CoursePR2026/Fig/Chapter_3/lecture_ex_3_5__textbook_ex_3_5_p174.png)
+>
+> *Textbook Exercise 3.5 (p. 174): Show that penalized least squares is equivalent to constrained least squares.*
+
+This exercise is mainly about interpretation. There are two ways to say the same preference.
+
+The penalized version is
+
+$$
+\min_{\mathbf{w}}
+\left[
+E_D(\mathbf{w})+\lambda E_W(\mathbf{w})
+\right].
+$$
+
+The constrained version is
+
+$$
+\min_{\mathbf{w}} E_D(\mathbf{w})
+\quad \text{subject to} \quad
+E_W(\mathbf{w})\leq \eta.
+$$
+
+Using a Lagrange multiplier, the constrained problem becomes
+
+$$
+\mathcal{L}(\mathbf{w},\lambda)
+=E_D(\mathbf{w})+\lambda(E_W(\mathbf{w})-\eta).
+$$
+
+For a fixed active constraint, the term $-\lambda\eta$ is constant with respect to $\mathbf{w}$, so minimizing $\mathcal{L}$ over $\mathbf{w}$ is equivalent to minimizing
+
+$$
+E_D(\mathbf{w})+\lambda E_W(\mathbf{w}).
+$$
+
+The relationship between $\lambda$ and $\eta$ is inverse in spirit:
+
+| Parameter | Intuition |
+|-----------|-----------|
+| Large $\lambda$ | Strong penalty, so the allowed effective weight size is small. |
+| Small $\lambda$ | Weak penalty, so the allowed effective weight size is larger. |
+| Small $\eta$ | Tight constraint, similar to strong regularization. |
+| Large $\eta$ | Loose constraint, similar to weak regularization. |
+
+In class, this is worth explaining geometrically: regularization either adds a cost for leaving the origin, or says the solution must stay inside a ball/diamond. The final fitted point is where the lowest possible error contour first touches that allowed region.
+
 ## 1.11 Multiple Outputs
 
 So far the target $t$ has been scalar. If each input has a vector target
@@ -632,6 +746,8 @@ Therefore, the decomposition is mainly a conceptual explanation of generalizatio
 # §3 Bayesian Linear Regression
 
 > 📖 Textbook §3.3 Bayesian Linear Regression; §3.3.1-§3.3.3
+>
+> **Teaching choice.** Keep the main story simple: Bayesian regression replaces one best-fit weight vector by a distribution over plausible weight vectors. Students should understand the predictive mean and predictive variance. The exact completion-of-square derivation can be assigned as reading or skipped.
 
 ## 3.1 From Point Estimates to Parameter Distributions
 
@@ -868,6 +984,8 @@ Thus Chapter 3 prepares two future paths:
 # §4 Bayesian Model Comparison
 
 > 📖 Textbook §3.4 Bayesian Model Comparison
+>
+> **Teaching choice.** Treat this section as a conceptual bridge rather than a derivation-heavy topic. The main idea is that evidence rewards good fit but penalizes models that need very finely tuned parameters. Detailed Bayes-factor calculations are optional for this course.
 
 ## 4.1 The Model Selection Problem
 
@@ -966,6 +1084,8 @@ Bayesian model comparison is powerful, but it depends on the prior. The evidence
 # §5 The Evidence Approximation
 
 > 📖 Textbook §3.5 The Evidence Approximation; §3.5.1-§3.5.3
+>
+> **Teaching choice.** This is the most mathematically dense part of Chapter 3. For a modern ML course aimed at EE students, it is enough to explain empirical Bayes, effective number of parameters, and why evidence can tune regularization. The re-estimation equations for $\alpha$ and $\beta$ are useful reference material but do not need to be derived line by line in lecture.
 
 ## 5.1 Hyperparameters in Bayesian Linear Regression
 
@@ -1209,7 +1329,7 @@ The central lessons are:
 
 ---
 
-# §7 Chapter Summary, Figure Checklist, and Teaching Flow
+# §7 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow
 
 ## 7.1 Chapter Summary
 
@@ -1255,7 +1375,14 @@ All figures used in this lecture are screenshots/crops from the uploaded textboo
 | 3.16 | 3.16 | Evidence optimization over $\alpha$ | `./CoursePR2026/Fig/Chapter_3/lecture_fig_3_16__textbook_fig_3_16_p172_evidence_alpha_gamma_curves.png` |
 | 3.17 | 3.17 | Weight paths versus effective number of parameters | `./CoursePR2026/Fig/Chapter_3/lecture_fig_3_17__textbook_fig_3_17_p172_weights_vs_effective_parameters.png` |
 
-## 7.3 Suggested Teaching Flow
+## 7.3 Exercise Checklist
+
+| Lecture Exercise | Textbook Exercise | Topic | File |
+|------------------|-------------------|-------|------|
+| 3.3 | 3.3 | Weighted least squares and data weights | `./CoursePR2026/Fig/Chapter_3/lecture_ex_3_3__textbook_ex_3_3_p174.png` |
+| 3.5 | 3.5 | Regularization as constrained optimization | `./CoursePR2026/Fig/Chapter_3/lecture_ex_3_5__textbook_ex_3_5_p174.png` |
+
+## 7.4 Suggested Teaching Flow
 
 A practical lecture sequence is:
 
@@ -1263,18 +1390,20 @@ A practical lecture sequence is:
 2. Use Figure 3.1 to show that basis functions determine model shape.
 3. Derive least squares from the Gaussian likelihood.
 4. Explain the design matrix and normal equations.
-5. Use Figure 3.2 to interpret least squares as projection.
-6. Introduce regularization and show Figures 3.3-3.4 for ridge versus lasso geometry.
-7. Use Figures 3.5-3.6 to explain bias and variance.
-8. Transition to Bayesian regression by asking: instead of one weight vector, why not maintain uncertainty over weights?
-9. Use Figure 3.7 to explain sequential posterior updating.
-10. Derive the predictive distribution and explain Figures 3.8-3.9.
-11. Use Figures 3.10-3.11 to introduce equivalent kernels and foreshadow Gaussian processes.
-12. Explain evidence and Occam factors using Figures 3.12-3.13.
-13. Present the evidence approximation and effective number of parameters with Figures 3.14-3.17.
-14. Close by explaining why fixed bases do not scale and how this motivates later chapters.
+5. Work through Exercise 3.3 to show how ordinary least squares changes when examples have different reliability.
+6. Use Figure 3.2 to interpret least squares as projection.
+7. Introduce regularization and show Figures 3.3-3.4 for ridge versus lasso geometry.
+8. Work through Exercise 3.5 to connect penalized and constrained views of regularization.
+9. Use Figures 3.5-3.6 to explain bias and variance.
+10. Transition to Bayesian regression by asking: instead of one weight vector, why not maintain uncertainty over weights?
+11. Use Figure 3.7 to explain sequential posterior updating.
+12. Derive the predictive distribution and explain Figures 3.8-3.9.
+13. Use Figures 3.10-3.11 briefly to foreshadow kernels and Gaussian processes.
+14. Explain evidence and Occam factors conceptually using Figures 3.12-3.14.
+15. Treat the detailed evidence approximation equations and Figures 3.15-3.17 as optional depth.
+16. Close by explaining why fixed bases do not scale and how this motivates later chapters.
 
-## 7.4 Key Equations to Put on the Board
+## 7.5 Key Equations to Put on the Board
 
 The following equations are the minimum board set for this chapter.
 
@@ -1344,7 +1473,7 @@ $$
 \gamma=\sum_i\frac{\lambda_i}{\alpha+\lambda_i}.
 $$
 
-## 7.5 Common Student Misunderstandings
+## 7.6 Common Student Misunderstandings
 
 | Misunderstanding | Correction |
 |------------------|------------|
@@ -1356,6 +1485,6 @@ $$
 | “Evidence always chooses the simplest model.” | Evidence balances fit and complexity; it often prefers intermediate complexity. |
 | “The number of parameters is always $M$.” | In the evidence framework, the effective number of parameters is $\gamma$, which can be smaller than $M$. |
 
-## 7.6 One-Sentence Takeaway
+## 7.7 One-Sentence Takeaway
 
 Linear models for regression are the simplest setting in which we can see the full machine-learning pipeline: representation through basis functions, fitting by likelihood, complexity control by regularization or priors, uncertainty through Bayesian prediction, and model comparison through evidence.

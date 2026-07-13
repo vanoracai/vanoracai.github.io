@@ -16,7 +16,7 @@
 6. [§5 Model Selection and the Curse of Dimensionality](#5-model-selection-and-the-curse-of-dimensionality)
 7. [§6 Decision Theory](#6-decision-theory)
 8. [§7 Information Theory](#7-information-theory)
-9. [§8 Chapter Summary, Figure Checklist, and Teaching Flow](#8-chapter-summary-figure-checklist-and-teaching-flow)
+9. [§8 Chapter Summary and Bridge to Chapter 2](#8-chapter-summary-and-bridge-to-chapter-2)
 
 ---
 
@@ -428,6 +428,62 @@ $$
 
 This example is small, but it already contains the general Bayesian logic used throughout the course.
 
+## Textbook Exercise 1.3: Bayes' Rule with Fruit Boxes
+
+> ![Textbook Exercise 1.3](./CoursePR2026/Fig/Chapter_1/lecture_ex_1_3__textbook_ex_1_3__p58.png)
+>
+> *Textbook Exercise 1.3 (p. 58): Compute a marginal fruit probability and a posterior box probability.*
+
+First compute the probability of selecting an apple. This is a total-probability
+calculation: average over the possible boxes.
+
+$$
+p(\text{apple})
+=p(r)p(\text{apple}\mid r)
++p(b)p(\text{apple}\mid b)
++p(g)p(\text{apple}\mid g).
+$$
+
+From the question:
+
+$$
+p(\text{apple})=0.2\cdot\frac{3}{10}
++0.2\cdot\frac{1}{2}
++0.6\cdot\frac{3}{10}
+=0.34.
+$$
+
+Now suppose the observed fruit is an orange. We want the probability that the
+box was green:
+
+$$
+p(g\mid \text{orange})
+=\frac{p(\text{orange}\mid g)p(g)}{p(\text{orange})}.
+$$
+
+The denominator again averages over all boxes:
+
+$$
+p(\text{orange})
+=0.2\cdot\frac{4}{10}
++0.2\cdot\frac{1}{2}
++0.6\cdot\frac{3}{10}
+=0.36.
+$$
+
+So
+
+$$
+p(g\mid \text{orange})
+=\frac{0.6\cdot 3/10}{0.36}
+=\frac{0.18}{0.36}
+=0.5.
+$$
+
+The important idea is not the arithmetic. The important idea is the direction:
+before seeing the fruit we average over boxes; after seeing the fruit we update
+which box is plausible.
+
 ## 3.3 Why Probability Matters in Pattern Recognition
 
 At a high level, probability is the language we use when the input is incomplete, noisy, or ambiguous. A model usually cannot say "this is certainly class A" or "this curve is certainly correct." Instead, it should say how plausible different explanations are after seeing the data.
@@ -761,6 +817,41 @@ A short summary is:
 > Expectation is the average location. Variance is the spread around that
 > location. Covariance is whether two variables move together. A covariance
 > matrix puts all of these pairwise relationships into one matrix.
+
+## Textbook Exercise 1.10: Add Independent Uncertainties
+
+> ![Textbook Exercise 1.10](./CoursePR2026/Fig/Chapter_1/lecture_ex_1_10__textbook_ex_1_10__p59.png)
+>
+> *Textbook Exercise 1.10 (p. 59): Compute the mean and variance of a sum of independent variables.*
+
+Use this as a quick calculation rule:
+
+| Quantity | $x$ | $z$ |
+|----------|-----|-----|
+| Mean | $\mathbb{E}[x]=10$ | $\mathbb{E}[z]=3$ |
+| Variance | $\operatorname{var}[x]=4$ | $\operatorname{var}[z]=9$ |
+
+If $x$ and $z$ are independent, then
+
+$$
+\mathbb{E}[x+z]=10+3=13.
+$$
+
+The variances also add:
+
+$$
+\operatorname{var}[x+z]=4+9=13.
+$$
+
+So the standard deviation of the sum is
+
+$$
+\sqrt{13}\approx 3.61.
+$$
+
+The useful classroom message is: independent noise sources add in variance, not
+in standard deviation. Two small uncertainties can combine into a noticeably
+larger uncertainty.
 
 ## 3.10 Frequentist and Bayesian Views of Probability
 
@@ -1699,11 +1790,15 @@ High-dimensional spaces behave very differently from low-dimensional spaces. A n
 >
 > *Figure 1.20 (Textbook Fig. 1.20, p. 35): A simple grid-based classifier assigns a test point according to the majority class in the same cell. This becomes impractical in high dimensions.*
 
+These figures show a simple local classification idea: divide the input space into small regions and classify a new point by the training examples nearby. This works only when the space is low-dimensional and well populated. In high dimensions, the number of regions grows exponentially, so most regions contain little or no data.
+
 If each dimension is divided into $L$ intervals, then the total number of grid cells is
 
 $$
 L^D.
 $$
+
+Read $L^D$ as "$L$ to the power of $D$."
 
 This grows exponentially with dimension $D$.
 
@@ -1737,6 +1832,43 @@ For example, a second-order polynomial in $D$ variables includes:
 
 The exact count depends on whether terms are repeated and how the polynomial is represented, but the key point is that complexity grows quickly as dimension increases.
 
+## Textbook Exercise 1.16: Count Cubic Polynomial Parameters
+
+> ![Textbook Exercise 1.16](./CoursePR2026/Fig/Chapter_1/lecture_ex_1_16__textbook_ex_1_16__p61.png)
+>
+> *Textbook Exercise 1.16 (p. 61): Evaluate how many independent parameters a cubic polynomial has in $D$ dimensions.*
+
+For all polynomial terms up to order $M$, the textbook gives
+
+$$
+N(D,M)=\frac{(D+M)!}{D!M!}.
+$$
+
+For a cubic polynomial, $M=3$, so
+
+$$
+N(D,3)=\frac{(D+3)!}{D!3!}
+=\frac{(D+1)(D+2)(D+3)}{6}.
+$$
+
+Now plug in the two values from the exercise.
+
+For $D=10$:
+
+$$
+N(10,3)=\frac{11\cdot 12\cdot 13}{6}=286.
+$$
+
+For $D=100$:
+
+$$
+N(100,3)=\frac{101\cdot 102\cdot 103}{6}=176{,}851.
+$$
+
+This is the practical meaning of the curse of dimensionality: even a cubic model
+goes from a few hundred parameters to almost two hundred thousand parameters
+when the input dimension grows from 10 to 100.
+
 This motivates models that exploit structure, such as:
 
 - sparse representations,
@@ -1748,25 +1880,45 @@ This motivates models that exploit structure, such as:
 
 ## 5.5 Geometry in High Dimensions: Volume Near the Boundary
 
-High-dimensional geometry is often unintuitive. Consider a unit sphere in $D$ dimensions. The fraction of volume lying near the surface becomes large as $D$ increases.
+High-dimensional geometry is often unintuitive. A useful example is a unit ball in $D$ dimensions: all points whose distance from the center is at most 1.
 
-> ![Figure 1.22](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_22__textbook_fig_1_22__p37.png)
->
-> *Figure 1.22 (Textbook Fig. 1.22, p. 37): In high dimensions, most of the volume of a sphere lies in a thin shell near the surface.*
+In one dimension, the outer 10% of the interval is only 10% of the length. In two dimensions, the outer 10% of the radius already contains
 
-This means that our low-dimensional intuition can be misleading. In high dimensions, “typical” points may not be near the center.
+$$
+1 - 0.9^2 = 0.19
+$$
+
+of the area. In 20 dimensions, the same outer 10% of the radius contains
+
+$$
+1 - 0.9^{20} \approx 0.88
+$$
+
+of the volume.
+
+So a "thin shell" near the boundary can contain most of the space. This is the main message: in high dimensions, a randomly chosen point in a ball is usually not near the center. It is much more likely to be close to the boundary.
+
+This means that our low-dimensional intuition can be misleading. In high dimensions, "typical" points may not be where we expect them to be.
 
 ## 5.6 Gaussian Probability Mass in High Dimensions
 
 A similar effect occurs for high-dimensional Gaussian distributions.
 
-> ![Figure 1.23](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_23__textbook_fig_1_23__p37.png)
->
-> *Figure 1.23 (Textbook Fig. 1.23, p. 37): For a high-dimensional Gaussian, most probability mass lies in a shell at a nonzero radius rather than near the mean.*
+For a Gaussian distribution, the density is highest at the mean. For example, in a standard Gaussian centered at 0, the point 0 has the largest density.
 
-The density is highest at the mean, but the amount of volume near the mean is small. The product of density and volume determines probability mass.
+But this does not mean that most samples lie very close to 0. In high dimensions, the region near the mean has very little volume. A larger-radius shell has lower density at each individual point, but it contains many more possible points.
 
-This distinction matters in machine learning. High density and high probability mass are not always the same thing in high dimensions.
+A useful analogy is a city: downtown may have the highest population density per block, but most people may live in the much larger surrounding residential area. High density at one location is not the same as large total population in a whole region.
+
+For a $D$-dimensional standard Gaussian, a typical sample is usually at distance about
+
+$$
+\sqrt{D}
+$$
+
+from the mean, not near distance 0.
+
+The main message is: in high dimensions, the highest-density point is not necessarily where most probability mass is located.
 
 ## 5.7 Why Machine Learning Is Still Possible
 
@@ -1786,6 +1938,14 @@ Machine learning works by exploiting such structure through assumptions, archite
 # §6 Decision Theory
 
 > 📖 Textbook §1.5 Decision Theory (§1.5.1-§1.5.5)
+
+This section explains how to turn model uncertainty into practical action.
+
+A posterior probability such as $p(C_k\mid \mathbf{x})$ tells us what the model believes, but not what we should do. If all mistakes have the same cost, we choose the most probable class. If different mistakes have different costs, we minimize expected loss. If the model is too uncertain, we may reject the example instead of forcing a decision.
+
+The same idea appears in regression: the loss function determines what prediction is optimal. Squared loss leads to the conditional mean, while absolute loss leads to the conditional median.
+
+> Decision theory is the bridge from probabilities to decisions.
 
 ## 6.1 Inference versus Decision
 
@@ -1814,9 +1974,13 @@ Suppose there are classes $C_1,\ldots,C_K$. A classifier divides input space int
 
 If $\mathbf{x}\in R_k$, the classifier assigns class $C_k$.
 
+To understand the rule, first focus on one input location $\mathbf{x}$. If $p(C_1\mid \mathbf{x})$ is larger than $p(C_2\mid \mathbf{x})$, then choosing $C_1$ gives a smaller chance of being wrong. If $p(C_2\mid \mathbf{x})$ is larger, we choose $C_2$ instead.
+
 > ![Figure 1.24](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_24__textbook_fig_1_24__p40.png)
 >
-> *Figure 1.24 (Textbook Fig. 1.24, p. 40): For two classes, errors occur in regions where the chosen decision region does not match the true class distribution. The optimal boundary for minimizing error assigns each $x$ to the most probable class.*
+> *Figure 1.24 (Textbook Fig. 1.24, p. 40): Decision regions for a two-class classification problem.*
+
+Figure 1.24 applies this same idea across the whole input space. Each point is assigned to the class with the larger posterior probability. The decision boundary appears where the two posterior probabilities are equal.
 
 If all mistakes have equal cost, the optimal decision rule is:
 
@@ -1834,7 +1998,12 @@ This is the standard maximum-posterior classification rule.
 
 ## 6.3 Minimizing Expected Loss
 
-In many applications, different errors have different consequences.
+In many applications, different errors have different consequences. For example, consider a medical diagnosis system with two possible decisions:
+
+- decide "healthy",
+- decide "needs further testing".
+
+If a healthy patient is sent for extra testing, the cost is usually limited: time, money, and inconvenience. But if a seriously ill patient is classified as healthy, the cost can be much larger. This means that the most probable class is not always the best decision.
 
 > ![Figure 1.25](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_25__textbook_fig_1_25__p41.png)
 >
@@ -1842,20 +2011,20 @@ In many applications, different errors have different consequences.
 
 Let $L_{kj}$ be the loss incurred when the true class is $C_k$ but we decide $C_j$.
 
-If we observe $\mathbf{x}$ and choose class $C_j$, the expected loss is
+If we observe $\mathbf{x}$ and choose class $C_j$, we do not know the true class for sure. We only have posterior probabilities $p(C_k\mid \mathbf{x})$. Therefore we compute the average possible loss, weighted by these probabilities:
 
 $$
 \mathbb{E}[L\mid \mathbf{x},\text{choose }C_j]
 =\sum_k L_{kj}p(C_k\mid \mathbf{x}).
 $$
 
-The optimal decision is
+The optimal decision is the one with the smallest expected loss:
 
 $$
 \hat{j}=\arg\min_j \sum_k L_{kj}p(C_k\mid \mathbf{x}).
 $$
 
-This is more general than maximum-posterior classification. Maximum-posterior classification is the special case where all wrong decisions have the same cost.
+The key message is: decision making should consider both probability and consequence. Maximum-posterior classification is the special case where all wrong decisions have the same cost.
 
 ## 6.4 The Reject Option
 
@@ -1871,6 +2040,8 @@ $$
 \max_k p(C_k\mid \mathbf{x}) < \theta \quad \Longrightarrow \quad \text{reject}.
 $$
 
+In words: if the model is not confident enough in any class, we reject the input instead of forcing a classification.
+
 The threshold $\theta$ controls the tradeoff:
 
 | Threshold | Effect |
@@ -1882,77 +2053,113 @@ Reject options are common in safety-critical settings, medical diagnosis, fraud 
 
 ## 6.5 Three Approaches: Generative, Discriminative, and Discriminant Models
 
-Bishop distinguishes three modeling approaches for classification.
+Bishop distinguishes three modeling approaches for classification. The difference is what the model tries to learn and what kind of output it gives us.
+
+Suppose we want to classify an email as spam or not spam. There are three natural ways to think about the problem.
 
 ### Approach A: Generative Modeling
 
-Model the class-conditional density and class prior:
+A generative model asks:
+
+> What does each class usually look like?
+
+For spam detection, it tries to learn what spam emails look like and what normal emails look like. Then a new email is assigned to the class it looks most similar to.
+
+The simple formula is:
 
 $$
-p(\mathbf{x}\mid C_k),\qquad p(C_k).
+p(\mathbf{x}\mid C_k)
 $$
 
-Then compute the posterior using Bayes' theorem:
+This means: if the class is $C_k$, how likely is it to see this input $\mathbf{x}$?
+
+After learning this, we can convert it into a posterior probability $p(C_k\mid \mathbf{x})$ using Bayes' rule. The main idea is:
 
 $$
-p(C_k\mid \mathbf{x})=\frac{p(\mathbf{x}\mid C_k)p(C_k)}{p(\mathbf{x})}.
+p(\mathbf{x}\mid C_k) \Rightarrow p(C_k\mid \mathbf{x}).
 $$
 
-Generative models can generate or evaluate input data. They are useful for missing data, outlier detection, and data simulation. But modeling the full input distribution can be difficult in high dimensions.
+Generative models are useful when we care about the data distribution itself, such as missing data, outlier detection, or data simulation. The downside is that modeling everything about the input can be difficult in high dimensions.
 
 ### Approach B: Discriminative Probabilistic Modeling
 
-Model the posterior directly:
+A discriminative probabilistic model asks:
+
+> Given this input, how likely is each class?
+
+For spam detection, it directly estimates probabilities such as "this email is 92% likely to be spam."
+
+The simple formula is:
 
 $$
 p(C_k\mid \mathbf{x}).
 $$
 
-This often requires fewer assumptions about the input distribution and can be more accurate for classification when the only goal is predicting labels.
+This is often enough for classification, and it directly supports probability-based decisions such as expected loss and reject options.
 
 ### Approach C: Discriminant Functions
 
-Learn a direct mapping from input to class label:
+A discriminant function asks:
+
+> Which class gets the highest score?
+
+It may not output a probability. It only gives each class a score and chooses the largest one:
 
 $$
-f(\mathbf{x})\rightarrow C_k.
+f_k(\mathbf{x})
 $$
 
-This can be computationally simple, but it does not provide calibrated posterior probabilities. Without posterior probabilities, it is harder to handle rejection, asymmetric loss, class-prior changes, and model combination.
+and
+
+$$
+\hat{k}=\arg\max_k f_k(\mathbf{x}).
+$$
+
+This can be simple and efficient. The downside is that scores are not necessarily calibrated probabilities, so it is harder to handle uncertainty, rejection, asymmetric loss, or model combination.
 
 > ![Figure 1.27](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_27__textbook_fig_1_27__p44.png)
 >
 > *Figure 1.27 (Textbook Fig. 1.27, p. 44): Generative modeling captures class-conditional densities, while discriminative modeling focuses on posterior probabilities and decision boundaries. Some density structure may be irrelevant for classification.*
 
+In plain language, the left plot asks: what does each class look like as a distribution over $x$? The right plot asks: after seeing a particular $x$, which class is more likely?
+
+The decision boundary is determined by the right plot, not by every detail of the left plot. For example, the extra bump in the blue class density on the left does not really affect the final boundary. This is why a generative model may spend effort modeling details of the data distribution that are not needed for classification.
+
 The comparison is:
 
-| Approach | Learns | Advantages | Limitations |
-|----------|--------|------------|-------------|
-| Generative | $p(\mathbf{x}\mid C_k)$ and $p(C_k)$ | Can model data distribution; useful for outliers and missing data | May waste effort modeling irrelevant input variation |
-| Discriminative probabilistic | $p(C_k\mid \mathbf{x})$ | Directly supports probabilistic decisions | Does not model full input distribution |
-| Discriminant function | Direct class label | Simple and often efficient | Loses uncertainty information |
+| Approach | Simple question | Learns | Output style |
+|----------|-----------------|--------|--------------|
+| Generative | What does each class look like? | $p(\mathbf{x}\mid C_k)$ | Can be converted to probabilities |
+| Discriminative probabilistic | How likely is each class for this input? | $p(C_k\mid \mathbf{x})$ | Posterior probabilities |
+| Discriminant function | Which class gets the highest score? | $f_k(\mathbf{x})$ | Scores or direct labels |
 
 ## 6.6 Loss Functions for Regression
 
-Decision theory also applies to regression. Suppose we predict $y(\mathbf{x})$ and the true target is $t$.
+Decision theory also applies to regression. In classification, the decision is which class to choose. In regression, the decision is which number to predict.
 
-For squared loss,
+Suppose we predict $y(\mathbf{x})$ and the true target is $t$. A common choice is squared loss:
 
 $$
 L(t,y)=\{y(\mathbf{x})-t\}^2.
 $$
 
-The expected loss is
+Squared loss penalizes large errors strongly. For example, an error of $2$ gives loss $4$, while an error of $5$ gives loss $25$.
+
+If the same input $\mathbf{x}$ can lead to different possible target values $t$, then the best prediction should not chase one particular outcome. Under squared loss, the best prediction is the average target value for that input:
+
+$$
+y(\mathbf{x})=\mathbb{E}[t\mid \mathbf{x}].
+$$
+
+In words, predict the conditional mean (条件均值).
+
+The full expected squared loss is
 
 $$
 \mathbb{E}[L]=\int\int \{y(\mathbf{x})-t\}^2p(\mathbf{x},t)\,d\mathbf{x}\,dt.
 $$
 
-The function that minimizes expected squared loss is the conditional mean:
-
-$$
-y(\mathbf{x})=\mathbb{E}[t\mid \mathbf{x}].
-$$
+This formula averages the squared error over all possible inputs and targets.
 
 > ![Figure 1.28](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_28__textbook_fig_1_28__p47.png)
 >
@@ -1962,7 +2169,20 @@ This tells us why regression is often formulated as estimating a conditional ave
 
 ## 6.7 Expected Squared Loss Decomposition
 
-For squared loss, the expected loss can be decomposed into two parts:
+This section explains a practical point:
+
+> Not all prediction error comes from a bad model.
+
+Suppose two houses have almost the same features: size, location, age, and number of rooms. Their final selling prices may still differ because of negotiation, timing, market noise, or unobserved factors. Even the best model cannot predict all of this variation perfectly.
+
+So prediction error has two sources:
+
+| Source | Meaning | Can we reduce it by improving the model? |
+|--------|---------|------------------------------------------|
+| Model error | Our prediction is not equal to the best conditional average. | Yes |
+| Irreducible noise | The target itself varies even for the same input. | No |
+
+For squared loss, the compact mathematical version is:
 
 $$
 \mathbb{E}[L]
@@ -1970,19 +2190,25 @@ $$
 +\int \operatorname{var}[t\mid \mathbf{x}]p(\mathbf{x})\,d\mathbf{x}.
 $$
 
-The first term depends on our chosen predictor. It is zero if we choose the conditional mean.
+The first term is the reducible part: it becomes zero if we choose the conditional mean.
 
-The second term is irreducible noise. It remains even for the optimal predictor because $t$ itself may be random given $\mathbf{x}$.
+The second term is the irreducible part: it remains even for the optimal predictor because $t$ itself may be random given $\mathbf{x}$.
 
-This decomposition is important: not all prediction error is due to a bad model. Some error may be intrinsic to the data-generating process.
+The key message is simple: a better model can reduce model error, but it cannot remove noise that is intrinsic to the data-generating process.
 
 ## 6.8 Minkowski Loss Family
 
-Bishop also considers the loss
+The previous sections used squared loss, but squared loss is not the only possible choice. This matters because the loss function defines what kind of mistake we care about.
+
+For example, suppose we predict house prices for a neighborhood. Most similar houses sell around 1 million dollars, but a few unusual houses sell for much more. If we use squared loss, those large errors get amplified, so the prediction may be pulled upward by the expensive outliers. If we use absolute loss, the prediction is less sensitive to extreme values.
+
+Bishop summarizes this using the Minkowski loss family:
 
 $$
 L_q=|y-t|^q.
 $$
+
+The parameter $q$ controls how strongly large errors are punished. Larger $q$ means large errors become much more expensive.
 
 > ![Figure 1.29](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_29__textbook_fig_1_29__p49.png)
 >
@@ -1996,7 +2222,9 @@ Important cases:
 | $q=1$ | Absolute loss | Conditional median |
 | $q\to 0$ | Strong preference for high-density target values | Conditional mode |
 
-This explains why the choice of loss function is not a minor technical detail. It determines what kind of summary of $p(t\mid \mathbf{x})$ the model is encouraged to predict.
+This table says that "the best prediction" is not a universal idea. Under squared loss, the best prediction is the average. Under absolute loss, it is the median. If we care mainly about the most likely target value, the prediction moves toward the mode.
+
+The key message is: choosing a loss function is also choosing what kind of summary of $p(t\mid \mathbf{x})$ we want the model to report.
 
 ---
 
@@ -2004,9 +2232,21 @@ This explains why the choice of loss function is not a minor technical detail. I
 
 > 📖 Textbook §1.6 Information Theory (§1.6.1)
 
+This section introduces a language for measuring uncertainty and distribution mismatch.
+
+Probability tells us how likely events are. Information theory asks related questions: how surprising is an event, how uncertain is a distribution, how different are two distributions, and how much does one variable tell us about another?
+
+These ideas will reappear later in maximum likelihood, cross-entropy loss, KL divergence, variational inference, and representation learning.
+
+Maximum likelihood tells us how to fit a probabilistic model. Information theory explains what this fitting means: reducing surprise, minimizing coding cost, and making the model distribution close to the data distribution.
+
 ## 7.1 Information Content
 
-Information theory begins with the idea that unlikely events carry more information than likely events.
+Information theory begins with a simple intuition:
+
+> The more surprising an event is, the more information we get when it happens.
+
+For example, if a fair coin lands heads, this is not very surprising. If a very rare event happens, we learn much more from seeing it.
 
 If event $x$ has probability $p(x)$, its information content is
 
@@ -2014,17 +2254,27 @@ $$
 h(x)=-\log_2 p(x).
 $$
 
-Properties:
+This formula has the behavior we want:
 
-1. If $p(x)$ is small, then $h(x)$ is large.
-2. If $p(x)=1$, then $h(x)=0$.
-3. Independent events have additive information because logarithms turn products into sums.
+- Rare event: small $p(x)$, large information.
+- Certain event: $p(x)=1$, so $h(x)=0$. We learn nothing from an event that was guaranteed to happen.
+- Independent events: information adds up. This is why the logarithm appears: it turns products of probabilities into sums.
 
-The base of the logarithm determines the unit. Base 2 gives bits; natural logarithms give nats.
+The base of the logarithm determines the unit. Base 2 gives bits; natural logarithms give nats. In this course, the unit is less important than the intuition: information measures surprise.
 
 ## 7.2 Entropy
 
-Entropy is the expected information content:
+Entropy is the average amount of surprise.
+
+If a random variable is easy to predict, its entropy is low. If many outcomes are possible and hard to guess, its entropy is high.
+
+For example:
+
+- A coin that is almost always heads has low entropy.
+- A fair coin has higher entropy because the outcome is less predictable.
+- A uniform choice among many options has even higher entropy.
+
+Mathematically, entropy is the expected information content:
 
 $$
 H[x]=-\sum_x p(x)\log_2 p(x).
@@ -2036,7 +2286,7 @@ $$
 H[x]=-\int p(x)\ln p(x)\,dx.
 $$
 
-Entropy measures the average uncertainty of a random variable.
+So entropy measures the average uncertainty of a random variable.
 
 > ![Figure 1.30](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_30__textbook_fig_1_30__p52.png)
 >
@@ -2054,13 +2304,21 @@ $$
 H[x]=\log M.
 $$
 
-This result can be derived using a Lagrange multiplier to enforce the normalization constraint $\sum_i p(x_i)=1$.
+Intuitively, the uniform distribution is the most uncertain case because no outcome is more likely than any other outcome.
+
+This result can be derived using a Lagrange multiplier to enforce the normalization constraint $\sum_i p(x_i)=1$, but the main idea is simple: maximum entropy means maximum uncertainty under the given constraints.
 
 ## 7.3 Maximum Entropy and the Gaussian
 
-A recurring idea in probabilistic modeling is maximum entropy.
+A recurring idea in probabilistic modeling is maximum entropy. The question is:
 
-If we only know limited facts about a distribution, the maximum-entropy distribution is the least committed distribution consistent with those facts.
+> If we only know a few facts, what distribution should we choose?
+
+The answer is: choose the distribution that adds the least extra assumptions.
+
+For example, suppose there are $M$ possible outcomes and we know nothing else. Then we should not prefer one outcome over another. The most neutral choice is the uniform distribution.
+
+For a continuous variable, suppose we only know its mean and variance. We know where the distribution is centered and roughly how spread out it is, but we do not know any other shape details. In that case, the most neutral choice is the Gaussian.
 
 Important results:
 
@@ -2069,9 +2327,17 @@ Important results:
 | Discrete variable with $M$ states and no other constraints | Uniform distribution |
 | Continuous variable with fixed mean and variance | Gaussian distribution |
 
-This helps explain why the Gaussian distribution is so central. It is the maximum-entropy continuous distribution when only mean and variance are specified.
+This helps explain why the Gaussian distribution is so central. It is not just mathematically convenient. It is also the distribution that says: "I know the mean and variance, but I will not invent extra structure beyond that."
 
 ## 7.4 Conditional Entropy and the Chain Rule
+
+Conditional entropy asks:
+
+> After we know $x$, how much uncertainty about $y$ is still left?
+
+If $x$ tells us a lot about $y$, then $H[y\mid x]$ is small. If $x$ tells us almost nothing about $y$, then $H[y\mid x]$ remains large.
+
+For example, knowing the weather may reduce uncertainty about traffic. Knowing a random coin flip probably tells us nothing about traffic.
 
 The conditional entropy of $y$ given $x$ is
 
@@ -2080,17 +2346,23 @@ H[y\mid x]=-
 \int\int p(y,x)\ln p(y\mid x)\,dy\,dx.
 $$
 
-The entropy chain rule says
+The entropy chain rule says that the total uncertainty in two variables can be decomposed into two parts: uncertainty in one variable, plus the remaining uncertainty in the other after the first is known.
 
 $$
 H[x,y]=H[y\mid x]+H[x].
 $$
 
-Equivalently,
+This means: to describe both $x$ and $y$, we can first describe $x$, and then describe the remaining uncertainty in $y$ after $x$ is known.
+
+Equivalently, we can choose the opposite order:
 
 $$
 H[x,y]=H[x\mid y]+H[y].
 $$
+
+This means: first describe $y$, and then describe the remaining uncertainty in $x$ after $y$ is known.
+
+Both formulas describe the same total joint uncertainty $H[x,y]$. They differ only in the order in which we decompose the uncertainty.
 
 This mirrors the probability product rule:
 
@@ -2098,15 +2370,49 @@ $$
 p(x,y)=p(y\mid x)p(x).
 $$
 
+We could also write the same joint probability in the opposite order:
+
+$$
+p(x,y)=p(x\mid y)p(y).
+$$
+
 The analogy is useful: probability factorization becomes entropy decomposition.
 
 ## 7.5 Convexity and Jensen's Inequality
 
-KL divergence and many later variational methods rely on convexity.
+This section introduces one mathematical tool that will be useful soon. The next section will compare two probability distributions, and Jensen's inequality is one of the standard tools for proving that comparison behaves sensibly.
+
+The main idea is simple: for a convex function, averaging before applying the function is different from applying the function first and then averaging.
 
 > ![Figure 1.31](./CoursePR2026/Fig/Chapter_1/lecture_fig_1_31__textbook_fig_1_31__p56.png)
 >
 > *Figure 1.31 (Textbook Fig. 1.31, p. 56): A convex function lies below its chords. This geometric property underlies Jensen's inequality, which is used to prove non-negativity of KL divergence.*
+
+Intuitively, a convex function is bowl-shaped. The line segment between two points on the curve lies above the curve.
+
+For example, $f(x)=x^2$ is convex. If $x$ is equally likely to be $1$ or $3$, then
+
+$$
+\mathbb{E}[x]=2.
+$$
+
+If we average first and then square, we get
+
+$$
+f(\mathbb{E}[x])=2^2=4.
+$$
+
+If we square first and then average, we get
+
+$$
+\mathbb{E}[f(x)]=\frac{1^2+3^2}{2}=5.
+$$
+
+So in this example,
+
+$$
+f(\mathbb{E}[x])\leq \mathbb{E}[f(x)].
+$$
 
 A function $f$ is convex if
 
@@ -2124,9 +2430,25 @@ $$
 
 for convex $f$.
 
-This inequality is one of the key tools behind variational inference in Chapter 10.
+In words: for a convex function, "function of the average" is no larger than "average of the function." This inequality is one of the key tools behind distribution comparison and variational inference in Chapter 10.
 
 ## 7.6 KL Divergence
+
+KL divergence is a way to compare two probability distributions.
+
+In machine learning, a useful way to read it is:
+
+> $p$ is the distribution we want to match, and $q$ is our model's distribution.
+
+Then $\mathrm{KL}(p\Vert q)$ asks:
+
+> If the real data follow $p$, how bad is it to describe them using $q$?
+
+If $q$ is close to $p$, the KL divergence is small. If $q$ gives low probability to events that often happen under $p$, the KL divergence becomes large. In other words, KL strongly penalizes a model for missing important parts of the real data distribution.
+
+For example, suppose real data often contain digit 8, but the model says digit 8 is almost impossible. Then the model is badly mismatched to the data, so the KL divergence should be large.
+
+The best possible value is 0, which means the two distributions match. KL divergence cannot be negative.
 
 The Kullback-Leibler divergence from $q$ to $p$ is
 
@@ -2136,23 +2458,42 @@ $$
 =\int p(x)\ln\left\{\frac{p(x)}{q(x)}\right\}\,dx.
 $$
 
-It measures the mismatch between two distributions.
+The formula is an average under $p$: it checks the mismatch at values that actually matter according to the target distribution $p$.
 
 Important properties:
 
-1. $\mathrm{KL}(p\Vert q)\geq 0$.
-2. $\mathrm{KL}(p\Vert q)=0$ only when $p(x)=q(x)$ almost everywhere.
-3. KL divergence is not symmetric:
+- **Non-negative:** KL divergence measures the extra average cost of using $q$ to describe data that actually follow $p$. The best possible case is no extra cost, so the value cannot go below zero.
+
+$$
+\mathrm{KL}(p\Vert q)\geq 0.
+$$
+
+- **Zero means perfect match:** KL divergence is zero only when the two distributions are the same.
+
+$$
+\mathrm{KL}(p\Vert q)=0
+\quad \text{only when} \quad
+p(x)=q(x).
+$$
+
+- **Not symmetric:** comparing $p$ to $q$ is not the same as comparing $q$ to $p$.
 
 $$
 \mathrm{KL}(p\Vert q)\neq \mathrm{KL}(q\Vert p)
 $$
 
-in general.
-
-Because it is not symmetric, KL divergence is not a distance metric in the strict mathematical sense.
+Because of this asymmetry, KL divergence is not a distance metric in the strict mathematical sense.
 
 ## 7.7 Maximum Likelihood as KL Minimization
+
+This section connects maximum likelihood back to information theory.
+
+There are two distributions to keep in mind:
+
+- the empirical data distribution: what the training data actually look like;
+- the model distribution: what the model thinks the data should look like.
+
+Learning means adjusting the model parameters so that the model distribution becomes close to the data distribution.
 
 Suppose the empirical distribution of the data is
 
@@ -2160,11 +2501,15 @@ $$
 \widehat{p}_{\mathrm{data}}(x)=\frac{1}{N}\sum_{n=1}^{N}\delta(x-x_n).
 $$
 
+This is a formal way of saying: put probability mass on the observed training examples.
+
 Maximum likelihood chooses model parameters $\theta$ to maximize
 
 $$
 \sum_{n=1}^{N}\ln p(x_n\mid \theta).
 $$
+
+In words, it chooses parameters that give high probability to the observed data points.
 
 This is equivalent to minimizing
 
@@ -2176,16 +2521,34 @@ up to terms that do not depend on $\theta$.
 
 Thus maximum likelihood can be interpreted as choosing the model distribution closest to the empirical data distribution in the KL sense.
 
+The key message is: maximum likelihood is not just a parameter-fitting trick. It is a way to make the model distribution match the data distribution as closely as possible.
+
+This does not mean every loss function must be KL divergence. KL is natural when the learning goal is to match probability distributions. But many tasks define success through a particular decision or error measure rather than through a full distribution.
+
+For example, squared loss in regression encourages the model to predict the conditional mean. Absolute loss encourages the conditional median. Cross-entropy is natural for probabilistic classification because it compares predicted probabilities with target labels. Hinge loss focuses on classification margins. Ranking losses focus on ordering examples correctly.
+
+So the choice of loss function encodes what we care about: distribution matching, numerical prediction error, robustness to outliers, classification margin, ranking quality, or task-specific cost.
+
 ## 7.8 Mutual Information
 
-Mutual information measures how much knowing one variable reduces uncertainty about another.
+Mutual information measures how much two variables tell us about each other.
 
-It is defined as
+The basic question is:
+
+> If we know $y$, does that help us predict $x$?
+
+If the answer is no, then $x$ and $y$ are independent and the mutual information is zero. If knowing one variable makes the other much easier to predict, then the mutual information is large.
+
+For example, an image and its class label should have high mutual information. A random coin flip and the class label should have almost no mutual information.
+
+One definition is
 
 $$
 I[x,y]
 =\mathrm{KL}(p(x,y)\Vert p(x)p(y)).
 $$
+
+This compares the true joint distribution $p(x,y)$ with the distribution we would get if $x$ and $y$ were independent, $p(x)p(y)$. If these two distributions are the same, then knowing one variable tells us nothing about the other.
 
 Equivalently,
 
@@ -2193,16 +2556,17 @@ $$
 I[x,y]=H[x]-H[x\mid y]=H[y]-H[y\mid x].
 $$
 
-Interpretation:
+This version says the same thing in terms of uncertainty:
 
-- If $x$ and $y$ are independent, then $p(x,y)=p(x)p(y)$ and $I[x,y]=0$.
-- If knowing $y$ strongly reduces uncertainty about $x$, then $I[x,y]$ is large.
+> mutual information = original uncertainty - remaining uncertainty after observing the other variable.
+
+So mutual information is large when observing one variable removes a lot of uncertainty about the other.
 
 Mutual information appears in feature selection, representation learning, clustering, and information-theoretic views of Bayesian learning.
 
 ---
 
-# §8 Chapter Summary, Figure Checklist, and Teaching Flow
+# §8 Chapter Summary and Bridge to Chapter 2
 
 ## 8.1 Conceptual Summary
 
@@ -2301,65 +2665,7 @@ $$
 I[x,y]=\mathrm{KL}(p(x,y)\Vert p(x)p(y))
 $$
 
-## 8.3 Figure Checklist
-
-Filename convention: `lecture_fig_<lecture-number>__textbook_fig_<original-textbook-number>__p<textbook-page>.png`.
-
-
-| Lecture Figure | Textbook Figure | File |
-|----------------|-----------------|------|
-| Figure 1.1 | PRML Fig. 1.1 | `lecture_fig_1_1__textbook_fig_1_1__p2.png` |
-| Figure 1.2 | PRML Fig. 1.2 | `lecture_fig_1_2__textbook_fig_1_2__p4.png` |
-| Figure 1.3 | PRML Fig. 1.3 | `lecture_fig_1_3__textbook_fig_1_3__p6.png` |
-| Figure 1.4 | PRML Fig. 1.4 | `lecture_fig_1_4__textbook_fig_1_4__p7.png` |
-| Figure 1.5 | PRML Fig. 1.5 | `lecture_fig_1_5__textbook_fig_1_5__p8.png` |
-| Figure 1.6 | PRML Fig. 1.6 | `lecture_fig_1_6__textbook_fig_1_6__p9.png` |
-| Figure 1.7 | PRML Fig. 1.7 | `lecture_fig_1_7__textbook_fig_1_7__p10.png` |
-| Figure 1.8 | PRML Fig. 1.8 | `lecture_fig_1_8__textbook_fig_1_8__p11.png` |
-| Figure 1.9 | PRML Fig. 1.9 | `lecture_fig_1_9__textbook_fig_1_9__p12.png` |
-| Figure 1.11 | PRML Fig. 1.11 | `lecture_fig_1_11__textbook_fig_1_11__p16.png` |
-| Figure 1.12 | PRML Fig. 1.12 | `lecture_fig_1_12__textbook_fig_1_12__p18.png` |
-| Figure 1.13 | PRML Fig. 1.13 | `lecture_fig_1_13__textbook_fig_1_13__p25.png` |
-| Figure 1.14 | PRML Fig. 1.14 | `lecture_fig_1_14__textbook_fig_1_14__p26.png` |
-| Figure 1.15 | PRML Fig. 1.15 | `lecture_fig_1_15__textbook_fig_1_15__p28.png` |
-| Figure 1.16 | PRML Fig. 1.16 | `lecture_fig_1_16__textbook_fig_1_16__p29.png` |
-| Figure 1.17 | PRML Fig. 1.17 | `lecture_fig_1_17__textbook_fig_1_17__p32.png` |
-| Figure 1.18 | PRML Fig. 1.18 | `lecture_fig_1_18__textbook_fig_1_18__p33.png` |
-| Figure 1.19 | PRML Fig. 1.19 | `lecture_fig_1_19__textbook_fig_1_19__p34.png` |
-| Figure 1.20 | PRML Fig. 1.20 | `lecture_fig_1_20__textbook_fig_1_20__p35.png` |
-| Figure 1.21 | PRML Fig. 1.21 | `lecture_fig_1_21__textbook_fig_1_21__p35.png` |
-| Figure 1.22 | PRML Fig. 1.22 | `lecture_fig_1_22__textbook_fig_1_22__p37.png` |
-| Figure 1.23 | PRML Fig. 1.23 | `lecture_fig_1_23__textbook_fig_1_23__p37.png` |
-| Figure 1.24 | PRML Fig. 1.24 | `lecture_fig_1_24__textbook_fig_1_24__p40.png` |
-| Figure 1.25 | PRML Fig. 1.25 | `lecture_fig_1_25__textbook_fig_1_25__p41.png` |
-| Figure 1.26 | PRML Fig. 1.26 | `lecture_fig_1_26__textbook_fig_1_26__p42.png` |
-| Figure 1.27 | PRML Fig. 1.27 | `lecture_fig_1_27__textbook_fig_1_27__p44.png` |
-| Figure 1.28 | PRML Fig. 1.28 | `lecture_fig_1_28__textbook_fig_1_28__p47.png` |
-| Figure 1.29 | PRML Fig. 1.29 | `lecture_fig_1_29__textbook_fig_1_29__p49.png` |
-| Figure 1.30 | PRML Fig. 1.30 | `lecture_fig_1_30__textbook_fig_1_30__p52.png` |
-| Figure 1.31 | PRML Fig. 1.31 | `lecture_fig_1_31__textbook_fig_1_31__p56.png` |
-
-All figures used in this lecture were rendered from the supplied textbook PDF and saved under:
-
-```text
-./CoursePR2026/Fig/Chapter_1/
-```
-
-## 8.4 Suggested Teaching Flow
-
-A practical teaching sequence for this chapter is:
-
-1. Start with handwritten digit recognition to motivate vector inputs and classification.
-2. Use polynomial curve fitting as the main running example.
-3. Emphasize the difference between training error and test error using Figures 1.4-1.5.
-4. Introduce regularization as a practical solution, then reinterpret it probabilistically.
-5. Teach probability rules slowly: sum rule, product rule, Bayes' theorem.
-6. Connect Gaussian likelihood directly to least squares.
-7. Explain model selection and cross-validation before moving to high-dimensional geometry.
-8. Separate inference from decision using medical loss and reject-option examples.
-9. End with entropy, KL divergence, and mutual information as tools that will reappear later.
-
-## 8.5 Common Student Confusions
+## 8.3 Common Student Confusions
 
 | Confusion | Clarification |
 |-----------|---------------|
@@ -2371,7 +2677,7 @@ A practical teaching sequence for this chapter is:
 | “The best classifier always chooses the most probable class.” | Only when all errors have equal cost. With asymmetric loss, minimize expected loss instead. |
 | “KL divergence is a distance.” | It measures distribution mismatch but is not symmetric and is not a metric. |
 
-## 8.6 Bridge to Chapter 2
+## 8.4 Bridge to Chapter 2
 
 Chapter 1 introduces probability as a language. Chapter 2 develops the main probability distributions used in pattern recognition and machine learning.
 
