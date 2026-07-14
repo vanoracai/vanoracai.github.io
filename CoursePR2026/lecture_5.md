@@ -16,7 +16,7 @@
 6. [§5 Regularization in Neural Networks](#5-regularization-in-neural-networks)
 7. [§6 Mixture Density Networks](#6-mixture-density-networks)
 8. [§7 Bayesian Neural Networks](#7-bayesian-neural-networks)
-9. [§8 Chapter Summary, Figure Checklist, and Teaching Flow](#8-chapter-summary-figure-checklist-and-teaching-flow)
+9. [§8 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow](#8-chapter-summary-figure-checklist-exercises-and-teaching-flow)
 
 ---
 
@@ -27,6 +27,20 @@ Chapters 3 and 4 studied **linear models** for regression and classification. In
 > The basis functions are no longer fixed by hand. They become **adaptive basis functions** whose parameters are learned from data.
 
 This is the main idea behind feed-forward neural networks. A neural network is still a parametric function $y(\mathbf{x},\mathbf{w})$, but its parameters appear in several layers, and therefore the error function is usually non-convex.
+
+> **Teaching focus.** This chapter should not become a catalogue of every neural-network trick in the textbook. For EE undergraduate and graduate students, the core classroom path is:
+>
+> $$
+> \text{network as learned features}
+> \rightarrow
+> \text{task-matched loss}
+> \rightarrow
+> \text{backpropagation}
+> \rightarrow
+> \text{regularization and modern architectures}.
+> $$
+>
+> The most important parts are feed-forward computation, sigmoid/softmax losses, backpropagation, weight decay, early stopping, data augmentation, and convolution/weight sharing. The Hessian, mixture density networks, and Bayesian neural networks are useful conceptually, but can be shortened or skipped if teaching time is limited.
 
 ### Generic Neural-Network Notation
 
@@ -236,6 +250,64 @@ The activation function must be nonlinear. If all hidden units were linear and a
 
 Bias terms are important because they allow units to shift their activation thresholds. Without biases, every hidden unit boundary would pass through the origin in its input space. Including a bias lets each hidden unit respond in a more flexible location.
 
+## Textbook Exercise 5.8: Derivative of the Tanh Activation
+
+> ![Textbook Exercise 5.8](./CoursePR2026/Fig/Chapter_5/lecture_ex_5_8__textbook_ex_5_8_p285.png)
+>
+> *Textbook Exercise 5.8 (p. 285): Derive the derivative of the $\tanh$ activation in terms of its own value.*
+
+The hyperbolic tangent can be written as
+
+$$
+\tanh(a)=\frac{e^a-e^{-a}}{e^a+e^{-a}}.
+$$
+
+It is often easier to use the identity
+
+$$
+\tanh(a)=2\sigma(2a)-1.
+$$
+
+Differentiate both sides:
+
+$$
+\frac{d}{da}\tanh(a)
+=2\cdot \frac{d\sigma(2a)}{da}
+=2\cdot 2\sigma(2a)\{1-\sigma(2a)\}.
+$$
+
+So
+
+$$
+\frac{d}{da}\tanh(a)
+=4\sigma(2a)\{1-\sigma(2a)\}.
+$$
+
+Now express this using $\tanh(a)$. Since
+
+$$
+\sigma(2a)=\frac{1+\tanh(a)}{2},
+$$
+
+we obtain
+
+$$
+\frac{d}{da}\tanh(a)
+=4\cdot
+\frac{1+\tanh(a)}{2}
+\cdot
+\frac{1-\tanh(a)}{2}
+=1-\tanh^2(a).
+$$
+
+Therefore
+
+$$
+\boxed{\frac{d}{da}\tanh(a)=1-\tanh^2(a).}
+$$
+
+This is useful in backpropagation because once the forward pass has computed $z=\tanh(a)$, the derivative can be computed as $1-z^2$ without recomputing exponentials.
+
 ## 1.3 Output Activations Must Match the Task
 
 The output activation should be chosen according to the target distribution.
@@ -374,6 +446,44 @@ E_D(\mathbf{w})=\frac{1}{2}\sum_{n=1}^N\sum_{k=1}^K
 \{y_k(\mathbf{x}_n,\mathbf{w})-t_{nk}\}^2.
 $$
 
+## Textbook Exercise 5.2: Gaussian Regression Gives Sum-of-Squares
+
+> ![Textbook Exercise 5.2](./CoursePR2026/Fig/Chapter_5/lecture_ex_5_2__textbook_ex_5_2_p284.png)
+>
+> *Textbook Exercise 5.2 (p. 284): Show that maximum likelihood under a Gaussian output model is equivalent to minimizing sum-of-squares error.*
+
+For one training example with $K$ independent output dimensions, assume
+
+$$
+p(\mathbf{t}_n\mid\mathbf{x}_n,\mathbf{w})
+=\prod_{k=1}^K
+\mathcal{N}(t_{nk}\mid y_k(\mathbf{x}_n,\mathbf{w}),\beta^{-1}).
+$$
+
+The likelihood for all data points is the product over $n$ and $k$. Taking the negative log gives
+
+$$
+-\ln p(\mathcal{D}\mid\mathbf{w})
+=
+\frac{\beta}{2}
+\sum_{n=1}^N\sum_{k=1}^K
+\{t_{nk}-y_k(\mathbf{x}_n,\mathbf{w})\}^2
+\text{constant}.
+$$
+
+The constant and the positive scale factor $\beta$ do not change the minimizing $\mathbf{w}$. Therefore maximum likelihood is equivalent to minimizing
+
+$$
+\boxed{
+E_D(\mathbf{w})
+=\frac{1}{2}
+\sum_{n=1}^N\sum_{k=1}^K
+\{y_k(\mathbf{x}_n,\mathbf{w})-t_{nk}\}^2.
+}
+$$
+
+The important lesson is the same as in linear regression: squared error is not just a habit. It encodes a Gaussian noise assumption for continuous targets.
+
 ## 2.3 Binary Classification: Sigmoid Output and Cross-Entropy
 
 For binary classification, the target is $t_n\in\{0,1\}$. If the network output is
@@ -426,6 +536,45 @@ E(\mathbf{w})=-\sum_{n=1}^N\sum_{k=1}^K t_{nk}\ln y_{nk}.
 $$
 
 Again, the output activation and error function form a natural pair. For sigmoid plus Bernoulli likelihood, the derivative at the output has a simple form. For softmax plus multiclass cross-entropy, the derivative also has a simple form. This is why these pairings are standard.
+
+## Textbook Exercise 5.5: Multiclass Likelihood and Cross-Entropy
+
+> ![Textbook Exercise 5.5](./CoursePR2026/Fig/Chapter_5/lecture_ex_5_5__textbook_ex_5_5_p285.png)
+>
+> *Textbook Exercise 5.5 (p. 285): Show that maximum likelihood for multiclass probabilistic outputs gives the cross-entropy loss.*
+
+Suppose the network output has the probability interpretation
+
+$$
+y_k(\mathbf{x},\mathbf{w})=p(t_k=1\mid\mathbf{x}).
+$$
+
+For a one-hot target vector $\mathbf{t}_n$, only one component is 1. The likelihood for one example is
+
+$$
+p(\mathbf{t}_n\mid\mathbf{x}_n,\mathbf{w})
+=\prod_{k=1}^K y_{nk}^{t_{nk}}.
+$$
+
+If the correct class is $c$, then $t_{nc}=1$ and all other $t_{nk}=0$, so this product simply selects $y_{nc}$, the predicted probability of the correct class.
+
+For the whole data set,
+
+$$
+p(\mathcal{D}\mid\mathbf{w})
+=\prod_{n=1}^N\prod_{k=1}^K y_{nk}^{t_{nk}}.
+$$
+
+Taking negative log likelihood gives
+
+$$
+\boxed{
+E(\mathbf{w})
+=-\sum_{n=1}^N\sum_{k=1}^K t_{nk}\ln y_{nk}.
+}
+$$
+
+This is exactly the multiclass cross-entropy. It strongly penalizes assigning low probability to the true class. That is why it is the standard loss for softmax classifiers.
 
 ## 2.5 Parameter Optimization and Error Surfaces
 
@@ -573,6 +722,59 @@ $$
 
 The output layer therefore produces the error signal that will be propagated backwards through the network.
 
+## Textbook Exercise 5.6: Sigmoid Cross-Entropy Output Delta
+
+> ![Textbook Exercise 5.6](./CoursePR2026/Fig/Chapter_5/lecture_ex_5_6__textbook_ex_5_6_p285.png)
+>
+> *Textbook Exercise 5.6 (p. 285): Show that the derivative with respect to the sigmoid output activation satisfies the simple output-delta formula.*
+
+For one binary classification example,
+
+$$
+E=-\{t\ln y+(1-t)\ln(1-y)\},
+\qquad
+y=\sigma(a).
+$$
+
+First differentiate the loss with respect to $y$:
+
+$$
+\frac{\partial E}{\partial y}
+=-\frac{t}{y}+\frac{1-t}{1-y}.
+$$
+
+For the sigmoid,
+
+$$
+\frac{\partial y}{\partial a}=y(1-y).
+$$
+
+By the chain rule,
+
+$$
+\frac{\partial E}{\partial a}
+=
+\left(
+-\frac{t}{y}+\frac{1-t}{1-y}
+\right)y(1-y).
+$$
+
+Simplify:
+
+$$
+\frac{\partial E}{\partial a}
+=-t(1-y)+(1-t)y
+=y-t.
+$$
+
+Therefore the output delta is
+
+$$
+\boxed{\delta=\frac{\partial E}{\partial a}=y-t.}
+$$
+
+This is why sigmoid cross-entropy is such a convenient pairing. The output-layer error signal is just predicted probability minus target label.
+
 ## 3.3 Hidden-unit Deltas
 
 For a hidden unit $j$, the error does not directly compare $z_j$ to a target. Instead, hidden unit $j$ influences later units. By the chain rule,
@@ -700,6 +902,8 @@ The broader lesson is that backpropagation is not limited to ordinary weight gra
 
 > 📖 Textbook §5.4 The Hessian Matrix; §5.4.1-§5.4.6  
 > This section is an introduction only. It can be shortened if teaching time is limited.
+>
+> **Teaching choice.** The Hessian section is useful for understanding curvature, second-order optimization, pruning, and Bayesian approximations. For a modern ML lecture, it is usually enough to explain the local quadratic picture and why full Hessians are expensive. The exact Hessian backpropagation details can be skipped.
 
 ## 4.1 Why the Hessian Matters
 
@@ -797,6 +1001,8 @@ Backpropagation makes gradients cheap. Hessian information is more costly, so we
 # §5 Regularization in Neural Networks
 
 > 📖 Textbook §5.5 Regularization in Neural Networks; §5.5.1-§5.5.7
+>
+> **Teaching choice.** Keep this section practical. Students should understand weight decay, early stopping, data augmentation, invariance, and convolution/weight sharing. Tangent propagation and soft weight sharing are elegant but less central today, so they can be presented briefly as historical or conceptual extensions.
 
 ## 5.1 Why Regularization Is Needed
 
@@ -972,6 +1178,8 @@ This can produce a kind of parameter compression or structure discovery. The met
 # §6 Mixture Density Networks
 
 > 📖 Textbook §5.6 Mixture Density Networks
+>
+> **Teaching choice.** Treat mixture density networks as an optional advanced example. The important idea is that a neural network can output a whole conditional distribution, not just a mean. The derivative formulas for mixture parameters are not necessary for a first pass.
 
 ## 6.1 Why Ordinary Regression Can Fail for Inverse Problems
 
@@ -1106,6 +1314,8 @@ The core lesson is that a neural network does not have to output only a point pr
 # §7 Bayesian Neural Networks
 
 > 📖 Textbook §5.7 Bayesian Neural Networks; §5.7.1-§5.7.3
+>
+> **Teaching choice.** This section is advanced. Keep the main idea: standard neural networks give one fitted parameter vector, while Bayesian neural networks average over plausible weights to express uncertainty. The Laplace/evidence equations can be shown as a conceptual bridge to approximate inference rather than derived in detail.
 
 ## 7.1 Why Bayesian Neural Networks Are Hard
 
@@ -1241,7 +1451,7 @@ The main message is that Bayesian neural networks do not merely output a fitted 
 
 ---
 
-# §8 Chapter Summary, Figure Checklist, and Teaching Flow
+# §8 Chapter Summary, Figure Checklist, Exercises, and Teaching Flow
 
 ## 8.1 Chapter Summary
 
@@ -1302,36 +1512,45 @@ All figures used in this lecture are screenshots/crops from the uploaded textboo
 | 5.22 | 5.22 | Evidence framework for classification regularization | `./CoursePR2026/Fig/Chapter_5/lecture_fig_5_22__textbook_fig_5_22_p283_evidence_regularization_classification.png` |
 | 5.23 | 5.23 | Laplace approximation for Bayesian neural-network classification | `./CoursePR2026/Fig/Chapter_5/lecture_fig_5_23__textbook_fig_5_23_p284_bayesian_neural_network_laplace_classification.png` |
 
-## 8.4 Suggested Teaching Flow
+## 8.4 Exercise Checklist
+
+| Lecture Exercise | Textbook Exercise | Topic | File |
+|------------------|-------------------|-------|------|
+| 5.2 | 5.2 | Gaussian regression likelihood and sum-of-squares error | `./CoursePR2026/Fig/Chapter_5/lecture_ex_5_2__textbook_ex_5_2_p284.png` |
+| 5.5 | 5.5 | Multiclass likelihood and cross-entropy | `./CoursePR2026/Fig/Chapter_5/lecture_ex_5_5__textbook_ex_5_5_p285.png` |
+| 5.6 | 5.6 | Sigmoid cross-entropy output delta | `./CoursePR2026/Fig/Chapter_5/lecture_ex_5_6__textbook_ex_5_6_p285.png` |
+| 5.8 | 5.8 | Derivative of the $\tanh$ activation | `./CoursePR2026/Fig/Chapter_5/lecture_ex_5_8__textbook_ex_5_8_p285.png` |
+
+## 8.5 Suggested Teaching Flow
 
 A practical lecture sequence is:
 
 1. Start by reviewing fixed basis-function models from Chapters 3 and 4.
 2. Explain the move from fixed basis functions to adaptive hidden units.
 3. Use Figure 5.1 to walk through the two-layer network computation step by step.
-4. Explain hidden activations, output activations, weights, and biases.
+4. Explain hidden activations, output activations, weights, and biases, then work through Exercise 5.8 for the $\tanh$ derivative.
 5. Use Figure 5.2 to show that feed-forward networks can have more general acyclic topologies.
 6. Use Figures 5.3-5.4 to explain universal approximation and nonlinear decision boundaries.
 7. Discuss weight-space symmetries and why equivalent parameter settings exist.
 8. Derive regression, binary classification, and multiclass classification error functions from maximum likelihood.
-9. Use Figure 5.5 to introduce non-convex error surfaces and local minima.
-10. Use Figure 5.6 to explain the local quadratic approximation and Hessian eigenvalues.
-11. Derive the output delta formula and then the hidden delta backpropagation formula.
-12. Use Figure 5.7 to illustrate backward error propagation.
-13. Present the four-step backpropagation algorithm.
-14. Explain computational efficiency and gradient checking.
-15. Use Figure 5.8 to introduce Jacobians in modular systems.
-16. Give a short overview of Hessian approximations, emphasizing that this section can be trimmed.
-17. Use Figures 5.9-5.10 to introduce over-fitting, model size, and local minima.
-18. Discuss weight decay and grouped Gaussian priors using Figure 5.11.
-19. Explain early stopping with Figures 5.12-5.13.
-20. Discuss invariance, data augmentation, tangent propagation, and Figures 5.14-5.16.
-21. Introduce convolutional networks using Figure 5.17.
-22. Introduce inverse problems using Figure 5.18 and Figure 5.19.
-23. Derive mixture density networks and use Figures 5.20-5.21 to show conditional density modelling.
-24. Finish with Bayesian neural networks, Laplace approximation, and Figures 5.22-5.23.
+9. Work through Exercise 5.2 for Gaussian regression and Exercise 5.5 for multiclass cross-entropy.
+10. Use Figure 5.5 to introduce non-convex error surfaces and local minima.
+11. Use Figure 5.6 briefly to explain the local quadratic approximation and Hessian eigenvalues.
+12. Derive the output delta formula, work through Exercise 5.6, and then derive the hidden delta backpropagation formula.
+13. Use Figure 5.7 to illustrate backward error propagation.
+14. Present the four-step backpropagation algorithm.
+15. Explain computational efficiency and gradient checking.
+16. Use Figure 5.8 to introduce Jacobians in modular systems if time allows.
+17. Give a short overview of Hessian approximations, emphasizing that this section can be trimmed.
+18. Use Figures 5.9-5.10 to introduce over-fitting, model size, and local minima.
+19. Discuss weight decay and grouped Gaussian priors using Figure 5.11.
+20. Explain early stopping with Figures 5.12-5.13.
+21. Discuss invariance and data augmentation; tangent propagation can be optional.
+22. Introduce convolutional networks and weight sharing using Figure 5.17.
+23. Introduce inverse problems with Figures 5.18-5.19, then treat MDNs as optional advanced conditional-density models.
+24. Finish with Bayesian neural networks as an uncertainty concept, using Figures 5.22-5.23 without deriving every Laplace/evidence equation.
 
-## 8.5 Key Equations to Put on the Board
+## 8.6 Key Equations to Put on the Board
 
 The following equations are the minimum board set for this chapter.
 
@@ -1352,6 +1571,12 @@ $$
 a_j=\sum_i w^{(1)}_{ji}x_i+w^{(1)}_{j0},
 \qquad
 z_j=h(a_j).
+$$
+
+For $h(a)=\tanh(a)$,
+
+$$
+h'(a)=1-\tanh^2(a)=1-z^2.
 $$
 
 ### Output activations
@@ -1390,6 +1615,12 @@ $$
 
 $$
 \delta_j=\frac{\partial E}{\partial a_j}.
+$$
+
+For the standard output-layer pairings used here,
+
+$$
+\delta_k=y_k-t_k.
 $$
 
 ### Hidden-unit backpropagation formula

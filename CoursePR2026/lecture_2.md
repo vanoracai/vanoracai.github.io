@@ -28,6 +28,20 @@ This chapter is therefore the bridge between abstract probability rules and the 
 
 ### Generic Data and Distribution Notation
 
+> **Teaching focus.** Do not treat this section as a dictionary of symbols. For Chapter 2, highlight the notation that tells students how a distributional model is built from data:
+>
+> $$
+> \mathcal{D}=\{x_n\}_{n=1}^N
+> \quad\longrightarrow\quad
+> p(x\mid \boldsymbol{\theta})
+> \quad\longrightarrow\quad
+> \ln p(\mathcal{D}\mid \boldsymbol{\theta})
+> \quad\longrightarrow\quad
+> \mathbb{E}[x],\operatorname{var}[x],\operatorname{cov}[\mathbf{x}].
+> $$
+>
+> The key message is: **data are summarized by counts or moments, distributions encode assumptions, and likelihood connects the two.** In class, put most emphasis on $\mathcal{D}$, $N$, $D$, $K$, $p(x\mid\boldsymbol{\theta})$, log likelihood, and the three moment quantities.
+
 | Symbol | Definition |
 |--------|------------|
 | $x$ | A random variable. In §2.1 it is binary; in §2.3 it may be continuous. |
@@ -53,7 +67,7 @@ This chapter is therefore the bridge between abstract probability rules and the 
 | $\operatorname{Bin}(m\mid N,\mu)$ | Binomial distribution over the count $m$. |
 | $\operatorname{Beta}(\mu\mid a,b)$ | Beta distribution, a prior/posterior distribution over $\mu$. |
 | $\mathbf{x}$ | 1-of-$K$ coded vector for a categorical outcome. Exactly one entry equals 1. |
-| $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ | Probability vector on a simplex, with $\mu_k\ge 0$ and $\sum_k\mu_k=1$. |
+| $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ | Vector of category probabilities. Each $\mu_k$ is nonnegative, and all probabilities sum to one: $\sum_k\mu_k=1$. |
 | $m_k$ | Number of observations assigned to category $k$. |
 | $\operatorname{Dir}(\boldsymbol{\mu}\mid\boldsymbol{\alpha})$ | Dirichlet distribution, a prior/posterior distribution over a multinomial probability vector. |
 | $\alpha_k$ | Dirichlet concentration parameter for class $k$. |
@@ -112,6 +126,25 @@ $$
 \text{estimate parameters or place priors} \longrightarrow
 \text{make predictions}.
 $$
+
+In formulas, this usually looks like:
+
+$$
+\begin{aligned}
+\text{choose a distribution:}\quad
+&p(x\mid\boldsymbol{\theta}) \\
+\text{write the likelihood:}\quad
+&p(\mathcal{D}\mid\boldsymbol{\theta})
+=\prod_{n=1}^N p(x_n\mid\boldsymbol{\theta}) \\
+\text{estimate parameters:}\quad
+&\hat{\boldsymbol{\theta}}
+=\arg\max_{\boldsymbol{\theta}}\ln p(\mathcal{D}\mid\boldsymbol{\theta}) \\
+\text{make predictions:}\quad
+&p(x_{\mathrm{new}}\mid\hat{\boldsymbol{\theta}}).
+\end{aligned}
+$$
+
+For a Bayesian treatment, the estimate step is replaced by a posterior distribution $p(\boldsymbol{\theta}\mid\mathcal{D})$, and prediction averages over parameter uncertainty.
 
 This chapter is not a catalogue of formulas. It teaches a way of thinking: probability distributions are **modeling assumptions**, and each assumption determines what kind of structure, uncertainty, and learning behavior the model can express.
 
