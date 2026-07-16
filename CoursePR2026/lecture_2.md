@@ -879,6 +879,14 @@ Bayesian updating can be done one observation at a time. If we observe a success
 
 This means the posterior after one observation becomes the prior for the next observation:
 
+> **Key idea: prior versus posterior.** A prior is our belief about the
+> unknown parameter before seeing the current data. A posterior is our updated
+> belief after seeing the current data. The posterior is not the data itself; it
+> is the new distribution over the unknown parameter after the data have been
+> used. Therefore, in sequential learning, the same distribution can play two
+> roles: it is the posterior for the observation just processed, and it becomes
+> the prior for the next observation.
+
 $$
 \operatorname{Beta}(a,b)
 \xrightarrow{x=1}
