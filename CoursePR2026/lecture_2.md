@@ -185,7 +185,15 @@ $$
 \sum_{n=1}^N \mathbf{x}_n\mathbf{x}_n^T.
 $$
 
-The deeper idea is that many probability models do not need to remember every training example once certain summary statistics have been computed. This idea will reappear as **sufficient statistics** in the exponential family.
+The key point is that, for many models, parameter estimation only needs the right summaries of the data, such as counts, sums, or sums of outer products.
+
+This is why the exponential family will matter later. Bernoulli, categorical, multinomial, Gaussian, and several other common distributions can all be written in one shared form. In that form, the likelihood depends on the dataset only through a sum of feature-like quantities:
+
+$$
+\sum_{n=1}^N T(\mathbf{x}_n).
+$$
+
+For a categorical model, this sum becomes class counts. For a Gaussian model, it becomes sums such as $\sum_n \mathbf{x}_n$ and $\sum_n \mathbf{x}_n\mathbf{x}_n^T$. The exponential-family view gives a unified name to these required summaries: they are the model's **sufficient statistics**.
 
 ---
 
@@ -227,6 +235,20 @@ $$
 \mathbb{E}[x]=\mu,
 \qquad
 \operatorname{var}[x]=\mu(1-\mu).
+$$
+
+The variance formula comes from the identity
+
+$$
+\operatorname{var}[x]=\mathbb{E}[x^2]-\mathbb{E}[x]^2.
+$$
+
+For a binary variable, $x$ can only be 0 or 1, so $x^2=x$. Therefore
+
+$$
+\mathbb{E}[x^2]=\mathbb{E}[x]=\mu,
+\qquad
+\operatorname{var}[x]=\mu-\mu^2=\mu(1-\mu).
 $$
 
 The variance is largest when $\mu=0.5$, because then the outcome is most uncertain. The variance becomes zero when $\mu=0$ or $\mu=1$, because the outcome is deterministic.
@@ -280,7 +302,15 @@ $$
 \operatorname{var}[x]=0.7\cdot0.3=0.21.
 $$
 
-The entropy is
+The entropy is defined as the expected negative log probability:
+
+$$
+H[x]=-\sum_x p(x)\ln p(x).
+$$
+
+For a Bernoulli variable, there are only two possible values. When $x=1$, the
+probability is $\mu$; when $x=0$, the probability is $1-\mu$. Substituting these
+two cases gives
 
 $$
 H[x]=-\mu\ln\mu-(1-\mu)\ln(1-\mu).
@@ -292,6 +322,16 @@ $$
 H[x]
 =-0.7\ln0.7-0.3\ln0.3
 \approx 0.611.
+$$
+
+For the maximally uncertain case $\mu=0.5$,
+
+$$
+H[x]
+=-0.5\ln0.5-0.5\ln0.5
+=-\ln0.5
+=\ln2
+\approx 0.693.
 $$
 
 The plain-English message is: when the coin is almost deterministic, entropy is
@@ -377,6 +417,39 @@ $$
 \mathbb{E}[m]=N\mu,
 \qquad
 \operatorname{var}[m]=N\mu(1-\mu).
+$$
+
+One quick way to derive these formulas is to write the count as a sum of
+Bernoulli variables:
+
+$$
+m=x_1+\cdots+x_N=\sum_{n=1}^N x_n.
+$$
+
+Each trial has
+
+$$
+\mathbb{E}[x_n]=\mu,
+\qquad
+\operatorname{var}[x_n]=\mu(1-\mu).
+$$
+
+Therefore, by linearity of expectation,
+
+$$
+\mathbb{E}[m]
+=\mathbb{E}\left[\sum_{n=1}^N x_n\right]
+=\sum_{n=1}^N \mathbb{E}[x_n]
+=N\mu.
+$$
+
+Because the trials are independent, their variances also add:
+
+$$
+\operatorname{var}[m]
+=\operatorname{var}\left[\sum_{n=1}^N x_n\right]
+=\sum_{n=1}^N \operatorname{var}[x_n]
+=N\mu(1-\mu).
 $$
 
 > ![Figure 2.1](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_1__textbook_fig_2_1_p70.png)
