@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 1
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 1: Introduction: Probability, Decision Theory, and Information Theory
 

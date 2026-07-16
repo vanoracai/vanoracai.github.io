@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 4
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 4: Linear Models for Classification
 

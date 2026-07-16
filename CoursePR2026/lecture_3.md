@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 3
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 3: Linear Models for Regression
 

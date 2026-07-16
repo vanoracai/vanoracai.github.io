@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 2
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 2: Probability Distributions and Density Estimation
 

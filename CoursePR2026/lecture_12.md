@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 12
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 12: Continuous Latent Variables — PCA and Autoencoders
 

@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 13
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 13: Sequential Data — Hidden Markov Models
 

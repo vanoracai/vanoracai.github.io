@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 14
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 14: Combining Models: Trees, Ensembles, Boosting, and Mixtures of Experts
 

@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 5
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 5: Neural Networks
 

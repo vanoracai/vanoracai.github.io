@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 10
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 10: Approximate Inference — Variational Methods and Expectation Propagation（近似推断）
 
