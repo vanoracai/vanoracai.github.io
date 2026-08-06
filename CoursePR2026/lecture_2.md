@@ -66,6 +66,7 @@ This chapter is therefore the bridge between abstract probability rules and the 
 | $\operatorname{Bern}(x\mid\mu)$ | Bernoulli distribution. |
 | $\operatorname{Bin}(m\mid N,\mu)$ | Binomial distribution over the count $m$. |
 | $\operatorname{Beta}(\mu\mid a,b)$ | Beta distribution, a prior/posterior distribution over $\mu$. |
+| $a,b>0$ | Beta hyperparameters. They control the prior's preferred values of $\mu$ and how strongly the prior is concentrated. |
 | $\mathbf{x}$ | 1-of-$K$ coded vector for a categorical outcome. Exactly one entry equals 1. |
 | $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ | Vector of category probabilities. Each $\mu_k$ is nonnegative, and all probabilities sum to one: $\sum_k\mu_k=1$. |
 | $m_k$ | Number of observations assigned to category $k$. |
@@ -464,6 +465,8 @@ The Bernoulli and binomial distributions treat $\mu$ as a parameter. In Bayesian
 
 Because $\mu$ must lie in $[0,1]$, a natural prior is the beta distribution:
 
+Here, $\mu$ is the unknown success probability we want to learn, while $a>0$ and $b>0$ are **hyperparameters** chosen to describe our prior belief about $\mu$. They are not additional observations or possible outcomes. Roughly, $a$ controls how strongly the prior favors successes, $b$ controls how strongly it favors failures, and their total $a+b$ controls how concentrated or confident the prior is.
+
 $$
 \operatorname{Beta}(\mu\mid a,b)
 =\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\mu^{a-1}(1-\mu)^{b-1},
@@ -494,9 +497,15 @@ The parameters $a$ and $b$ can be interpreted as **effective prior counts**:
 - $b$ behaves like a prior count of failures plus one;
 - $a+b$ controls the strength or concentration of the prior.
 
+### How to Read Figure 2.2
+
+- The horizontal axis is a candidate value of the unknown success probability $\mu$, ranging from 0 to 1.
+- The vertical axis is the **probability density** $p(\mu\mid a,b)$, although the original figure does not label it. A taller curve means values of $\mu$ near that location are more plausible under the prior.
+- The vertical value itself is not a probability and may exceed 1. The probability that $\mu$ lies in an interval, such as $0.6\leq\mu\leq0.8$, is the **area under the curve** over that interval. The total area from 0 to 1 is always 1.
+
+For example, when $a=b=1$, the density is the horizontal line $p(\mu)=1$, so equal-width intervals are equally probable. When $a=8,b=4$, the high peak near $\mu\approx0.7$ says that success probabilities around 0.7 are much more plausible than values near 0 or 1. When $a=b=0.1$, the density rises without bound near 0 and 1; the plot is clipped at a vertical value of 3, and the prior favors probabilities close to either extreme.
+
 > ![Figure 2.2](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_2__textbook_fig_2_2_p72.png)
->
-> *Figure 2.2 (Textbook Fig. 2.2, p. 72): Beta distributions with different hyperparameters. Small values below 1 can concentrate mass near the boundaries; $a=b=1$ gives a uniform prior; larger values produce more concentrated beliefs about $\mu$.*
 
 The beta distribution is flexible enough to express many qualitatively different beliefs:
 
@@ -558,31 +567,85 @@ So this prior says: values above $0.5$ are more plausible, the average belief is
 $0.6$, and the most likely single value is about $0.667$. The mean and mode do
 not have to be identical because the beta distribution can be asymmetric.
 
-## 1.5 Conjugacy: Beta Prior plus Binomial Likelihood
+## 1.5 Conjugacy（共轭性）: Beta Prior plus Binomial Likelihood
 
-The beta distribution is conjugate to the binomial likelihood. This means that if the prior is beta and the likelihood is binomial/Bernoulli, then the posterior is also beta.
+### Plain-Language Idea（通俗理解）
 
-Suppose the prior is
+Imagine that $\mu$ is the unknown probability that a coin lands heads. Before flipping the coin, we describe our belief about $\mu$ with a beta distribution. After observing some flips, we want to update that belief.
+
+**Conjugacy means that the distribution keeps the same form after updating.** We start with a beta distribution and end with another beta distribution; only its two numbers change. This is useful because we do not need to invent a new kind of distribution or redo a difficult calculation every time new data arrive.
+
+The update is simple bookkeeping:
+
+| Information | Before observing data | New data | After observing data |
+|-------------|-----------------------|----------|----------------------|
+| Success side | $a$ | $m$ successes | $a+m$ |
+| Failure side | $b$ | $N-m$ failures | $b+N-m$ |
+
+In short:
 
 $$
-p(\mu)=\operatorname{Beta}(\mu\mid a,b).
+\boxed{\text{new }a=\text{old }a+\text{number of successes}}
 $$
 
-If we observe $m$ successes in $N$ trials, then the likelihood is proportional to
+$$
+\boxed{\text{new }b=\text{old }b+\text{number of failures}}
+$$
+
+### A Concrete Example
+
+For illustration, suppose we **choose** the prior $\operatorname{Beta}(2,2)$. This prior is not calculated from the four new flips below; it represents information or assumptions we have **before** seeing them. It is a valid beta prior because both hyperparameters are positive. Since $a=b$, it is symmetric around $\mu=0.5$; since $a=b=2>1$, it places more density near $0.5$ than near 0 or 1. In plain language, it says: “I expect the coin to be roughly balanced, but I am not completely certain.”
+
+Why are we allowed to use such a prior? A prior is a modeling choice. In a real problem, it might come from previous experiments, domain knowledge, or a deliberately weak regularizing assumption. $\operatorname{Beta}(2,2)$ is used here because it makes the update easy to see, not because it is the only correct prior. For example, $\operatorname{Beta}(1,1)$ would express a uniform prior, while $\operatorname{Beta}(20,20)$ would express a much stronger belief that the coin is close to balanced. The chosen prior should be stated and, when it matters, tested with alternative reasonable choices.
+
+We then flip the coin four times and observe three heads and one tail. Thus
+
+$$
+N=4,\qquad m=3,\qquad N-m=1.
+$$
+
+The updated distribution is
+
+$$
+\operatorname{Beta}(2+3,\,2+1)=\operatorname{Beta}(5,3).
+$$
+
+Its mean is
+
+$$
+\mathbb{E}[\mu\mid\mathcal{D}]=\frac{5}{5+3}=0.625.
+$$
+
+The observed success rate is $3/4=0.75$, but the posterior mean is only $0.625$ because the prior pulls the estimate back toward $0.5$. The answer combines our earlier belief with the new evidence instead of trusting four observations completely.
+
+### Why the Formula Works
+
+The beta prior has the part that depends on $\mu$
+
+$$
+p(\mu)\propto \mu^{a-1}(1-\mu)^{b-1}.
+$$
+
+For $m$ successes and $N-m$ failures, the likelihood has the same two building blocks:
 
 $$
 p(\mathcal{D}\mid\mu)\propto \mu^m(1-\mu)^{N-m}.
 $$
 
-Multiplying prior and likelihood gives
+Bayes' rule multiplies the prior and likelihood. When powers with the same base are multiplied, their exponents add:
 
 $$
+\begin{aligned}
 p(\mu\mid\mathcal{D})
-\propto
-\mu^{m+a-1}(1-\mu)^{N-m+b-1}.
+&\propto
+\mu^{a-1}(1-\mu)^{b-1}
+\mu^m(1-\mu)^{N-m}\\
+&=
+\mu^{a+m-1}(1-\mu)^{b+N-m-1}.
+\end{aligned}
 $$
 
-Therefore
+This has exactly the form of another beta distribution, so
 
 $$
 p(\mu\mid\mathcal{D})
@@ -590,26 +653,32 @@ p(\mu\mid\mathcal{D})
 \operatorname{Beta}(\mu\mid a+m,b+N-m).
 $$
 
-This is one of the most important patterns in Bayesian learning:
+The symbol $\propto$ means "proportional to": we temporarily omit factors that do not depend on $\mu$. The beta distribution's normalization constant supplies them at the end.
 
-$$
-\text{posterior parameter}=\text{prior parameter}+\text{observed count}.
-$$
-
-The posterior mean is
+For any $a,b,N,$ and $m$, the posterior mean is
 
 $$
 \mathbb{E}[\mu\mid\mathcal{D}]
 =\frac{a+m}{a+b+N}.
 $$
 
-This lies between the prior mean $a/(a+b)$ and the maximum likelihood estimate $m/N$. When $N$ is small, the prior matters. As $N$ grows, the data dominate.
+It lies between the prior mean $a/(a+b)$ and the observed success rate $m/N$. When the dataset is small, the prior has a visible effect. As $N$ grows, the data gradually dominate.
 
 ## 1.6 Sequential Bayesian Updating
 
-Bayesian updating can be done one observation at a time. If we observe a success, we increase $a$ by 1. If we observe a failure, we increase $b$ by 1.
+### What Does “Sequential” Mean?（什么是逐次更新？）
 
-This means the posterior after one observation becomes the prior for the next observation:
+We do not have to wait until all observations have been collected. We can update our belief after each new observation, then use the updated belief as the prior for the next observation:
+
+$$
+\boxed{\text{current prior}+\text{one new observation}=\text{new posterior}}
+$$
+
+$$
+\boxed{\text{new posterior becomes the next prior}}
+$$
+
+For a binary observation, there are only two update rules:
 
 $$
 \operatorname{Beta}(a,b)
@@ -617,26 +686,76 @@ $$
 \operatorname{Beta}(a+1,b),
 $$
 
+because $x=1$ is one new success, and
+
 $$
 \operatorname{Beta}(a,b)
 \xrightarrow{x=0}
 \operatorname{Beta}(a,b+1).
 $$
 
-> ![Figure 2.3](./CoursePR2026/Fig/Chapter_2/lecture_fig_2_3__textbook_fig_2_3_p73.png)
->
-> *Figure 2.3 (Textbook Fig. 2.3, p. 73): One step of sequential Bayesian inference. A beta prior is multiplied by a Bernoulli likelihood, producing a beta posterior. The shape changes in the direction supported by the new observation.*
+because $x=0$ is one new failure. In plain language, a success adds 1 to $a$, while a failure adds 1 to $b$.
 
-This is the simplest example of online learning. We do not need to store all past observations; we only need the current values of $a$ and $b$.
+### A Three-Observation Example
 
-The important conceptual distinction is:
+Start with $\operatorname{Beta}(2,2)$ and observe the sequence success, success, failure:
 
-| Method | Estimate / Belief after 3 heads |
-|--------|----------------------------------|
-| Maximum likelihood | $\mu_{\mathrm{ML}}=1$, so tails receive probability zero. |
-| Bayesian with beta prior | $\mathbb{E}[\mu\mid\mathcal{D}]<1$ unless the prior itself is degenerate. |
+| Step | New observation | Update | Posterior mean |
+|------|-----------------|--------|----------------|
+| Start | None | $\operatorname{Beta}(2,2)$ | $2/(2+2)=0.5$ |
+| 1 | $x_1=1$ (success) | $\operatorname{Beta}(3,2)$ | $3/5=0.6$ |
+| 2 | $x_2=1$ (success) | $\operatorname{Beta}(4,2)$ | $4/6\approx0.667$ |
+| 3 | $x_3=0$ (failure) | $\operatorname{Beta}(4,3)$ | $4/7\approx0.571$ |
 
-Bayesian inference prevents extreme certainty from tiny data sets by preserving uncertainty over the parameter.
+Each success moves the belief toward larger values of $\mu$; a failure moves it back toward smaller values. For independent coin flips, processing all observations at once gives the same final result as processing them one at a time.
+
+This is the simplest example of **online learning**: the model can learn as data arrive. We do not need to store the complete history of coin flips; for this model, the current $a$ and $b$ already summarize the numbers of past successes and failures.
+
+### Maximum Likelihood versus a Beta Prior（最大似然与 Beta 先验）
+
+The two approaches ask different questions:
+
+- **Maximum likelihood:** Which single value of $\mu$ best explains the observations we have just seen?
+- **Bayesian inference:** After combining our prior belief with the observations, which values of $\mu$ are still plausible, and how uncertain are we?
+
+Suppose we flip a coin only three times and all three results are heads.
+
+#### Maximum-likelihood answer
+
+The observed success rate is
+
+$$
+\mu_{\mathrm{ML}}=\frac{3}{3}=1.
+$$
+
+If we use this point estimate directly for prediction, the next flip is assigned probability 1 of heads and probability 0 of tails. The calculation is correct for maximum likelihood, but the conclusion is too confident for such a tiny dataset: three heads do not prove that tails are impossible.
+
+#### Bayesian answer with a $\operatorname{Beta}(2,2)$ prior
+
+Starting from $\operatorname{Beta}(2,2)$, three successes and zero failures give
+
+$$
+\operatorname{Beta}(2+3,\,2+0)=\operatorname{Beta}(5,2).
+$$
+
+We retain a distribution over possible values of $\mu$ rather than declaring one value certainly correct. The posterior mean, which is also the predictive probability of heads on the next flip, is
+
+$$
+p(x_{\mathrm{new}}=1\mid\mathcal{D})
+=\mathbb{E}[\mu\mid\mathcal{D}]
+=\frac{5}{5+2}
+=\frac{5}{7}
+\approx0.714.
+$$
+
+Thus the three heads move our belief strongly toward heads, from $0.5$ to about $0.714$, but they do not make us absolutely certain. The remaining probability of tails is $2/7\approx0.286$.
+
+| Method | Uses prior information? | Result after 3 heads | Meaning |
+|--------|-------------------------|----------------------|---------|
+| Maximum likelihood | No | $\mu_{\mathrm{ML}}=1$ | Choose the single value that fits the observed data best. |
+| Bayesian, $\operatorname{Beta}(2,2)$ prior | Yes | Posterior $\operatorname{Beta}(5,2)$; next-head probability $5/7$ | Combine prior belief and data while retaining uncertainty. |
+
+Neither method has made an algebra mistake; they use different information and produce different kinds of answers. Maximum likelihood gives a point estimate based only on the observed sample. Bayesian inference gives a posterior distribution based on the prior and the sample. With little data, the prior prevents an extreme conclusion. With a large amount of data, the observations dominate and the two approaches become much closer.
 
 ---
 
@@ -644,37 +763,61 @@ Bayesian inference prevents extreme certainty from tiny data sets by preserving 
 
 > 📖 Textbook §2.2 Multinomial Variables; §2.2.1 The Dirichlet distribution
 
-## 2.1 1-of-K Coding
+## 2.1 1-of-$K$ Coding（独热编码）
 
-A binary variable can represent two states. To represent one of $K$ states, we use a 1-of-$K$ coding scheme.
+### Plain-Language Idea（通俗理解）
 
-For example, if $K=4$, the four possible outcomes are
+A binary variable is enough for two outcomes, such as heads or tails. If there are $K$ mutually exclusive categories, we use a vector with $K$ positions. Exactly one position is 1 and all the others are 0. This is called **1-of-$K$ coding**, or **one-hot encoding**.
 
-$$
-(1,0,0,0)^T,
-\quad
-(0,1,0,0)^T,
-\quad
-(0,0,1,0)^T,
-\quad
-(0,0,0,1)^T.
-$$
-
-In general, $\mathbf{x}$ has elements $x_k\in\{0,1\}$ and satisfies
+Suppose an image classifier has four possible labels in this fixed order:
 
 $$
+(\text{cat},\ \text{dog},\ \text{bird},\ \text{car}).
+$$
+
+The observed label is encoded as follows:
+
+| Actual category | Encoded vector $\mathbf{x}$ |
+|-----------------|-----------------------------|
+| cat | $(1,0,0,0)^T$ |
+| dog | $(0,1,0,0)^T$ |
+| bird | $(0,0,1,0)^T$ |
+| car | $(0,0,0,1)^T$ |
+
+For example, $(0,1,0,0)^T$ simply says “the observed category is dog.” The superscript $T$ means that we regard the displayed row as a column vector; it does not change which category is selected.
+
+In general, each entry $x_k$ is either 0 or 1, and exactly one entry is 1:
+
+$$
+x_k\in\{0,1\},
+\qquad
 \sum_{k=1}^K x_k=1.
 $$
 
-If category $k$ occurs with probability $\mu_k$, then
+### Observed Label versus Model Probabilities
+
+Two vectors play different roles:
+
+- $\mathbf{x}$ records **which category actually occurred**. It contains one 1 and the rest 0.
+- $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ records the model's **probability for every category**. Its entries can be any nonnegative numbers that sum to 1.
+
+For the four categories above, suppose
 
 $$
-\mu_k\geq 0,
+\boldsymbol{\mu}=(0.1,\ 0.6,\ 0.2,\ 0.1)^T.
+$$
+
+The model assigns probability 0.1 to cat, 0.6 to dog, 0.2 to bird, and 0.1 to car. These probabilities satisfy
+
+$$
+\mu_k\geq0,
 \qquad
 \sum_{k=1}^K\mu_k=1.
 $$
 
-The categorical distribution can be written compactly as
+### Why Use the Product Formula?
+
+The categorical distribution is written compactly as
 
 $$
 p(\mathbf{x}\mid\boldsymbol{\mu})
@@ -682,17 +825,80 @@ p(\mathbf{x}\mid\boldsymbol{\mu})
 \prod_{k=1}^K \mu_k^{x_k}.
 $$
 
-Only one factor is active because only one $x_k$ equals 1.
+If the observed category is dog, then $\mathbf{x}=(0,1,0,0)^T$. Substituting the numbers gives
+
+$$
+\begin{aligned}
+p(\mathbf{x}\mid\boldsymbol{\mu})
+&=0.1^0\times0.6^1\times0.2^0\times0.1^0\\
+&=1\times0.6\times1\times1\\
+&=0.6.
+\end{aligned}
+$$
+
+The exponent acts like an on/off switch: $\mu_k^1=\mu_k$ for the category that occurred, while $\mu_j^0=1$ for every category that did not occur. Therefore the product simply selects the model probability assigned to the observed category.
 
 ## 2.2 Maximum Likelihood for Categorical Data
 
-Suppose we observe $N$ independent 1-of-$K$ vectors:
+### What Are We Trying to Learn?（我们要估计什么？）
+
+In §2.1, the probabilities $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_K)^T$ were assumed to be known. In practice, they are usually unknown. We observe many category labels and use them to estimate how frequently each category occurs.
+
+Maximum likelihood asks:
+
+> Which category probabilities would make the labels we actually observed as likely as possible?
+
+The answer is very simple: **count each category and divide by the total number of observations.**
+
+### A Concrete Example
+
+Continue with the four categories
 
 $$
-\mathcal{D}=\{\mathbf{x}_1,\ldots,\mathbf{x}_N\}.
+(\text{cat},\ \text{dog},\ \text{bird},\ \text{car}).
 $$
 
-The likelihood is
+Suppose we observe $N=10$ labeled images:
+
+| Category | Number observed |
+|----------|-----------------|
+| cat | $m_1=2$ |
+| dog | $m_2=5$ |
+| bird | $m_3=1$ |
+| car | $m_4=2$ |
+
+Maximum likelihood estimates each probability by its observed proportion:
+
+$$
+\boldsymbol{\mu}_{\mathrm{ML}}
+=
+\left(\frac{2}{10},\frac{5}{10},\frac{1}{10},\frac{2}{10}\right)^T
+=(0.2,0.5,0.1,0.2)^T.
+$$
+
+So the fitted model says that a new label has probability 0.2 of being cat, 0.5 of being dog, 0.1 of being bird, and 0.2 of being car.
+
+### Connecting the Example to the Notation
+
+The complete dataset is written as
+
+$$
+\mathcal{D}=\{\mathbf{x}_1,\ldots,\mathbf{x}_N\},
+$$
+
+where $\mathbf{x}_n$ is the one-hot vector for observation $n$. The symbol $x_{nk}$ means “the entry for category $k$ in observation $n$.” It equals 1 when observation $n$ belongs to category $k$, and 0 otherwise.
+
+Therefore,
+
+$$
+m_k=\sum_{n=1}^N x_{nk}
+$$
+
+just counts how many observations belong to category $k$. For example, adding the “dog” entries across all ten one-hot vectors gives $m_2=5$.
+
+### Where Does the Likelihood Formula Come From?
+
+For one observation, the product formula from §2.1 selects the probability assigned to its observed category. For independent observations, we multiply these selected probabilities together:
 
 $$
 p(\mathcal{D}\mid\boldsymbol{\mu})
@@ -700,13 +906,16 @@ p(\mathcal{D}\mid\boldsymbol{\mu})
 \prod_{n=1}^N\prod_{k=1}^K \mu_k^{x_{nk}}.
 $$
 
-Define the count for category $k$ as
+For our ten-image example, the same expression can be grouped by category:
 
 $$
-m_k=\sum_{n=1}^N x_{nk}.
+p(\mathcal{D}\mid\boldsymbol{\mu})
+=\mu_1^2\mu_2^5\mu_3^1\mu_4^2.
 $$
 
-Then the log likelihood becomes
+This form is easier to read: cat probability appears twice because two cats were observed, dog probability appears five times because five dogs were observed, and so on.
+
+Taking the logarithm turns products into sums:
 
 $$
 \ln p(\mathcal{D}\mid\boldsymbol{\mu})
@@ -714,13 +923,54 @@ $$
 \sum_{k=1}^K m_k\ln\mu_k.
 $$
 
-We maximize this subject to the simplex constraint $\sum_k\mu_k=1$. Using a Lagrange multiplier gives
+We want to maximize this quantity, but the probabilities cannot be chosen independently: they must satisfy $\sum_k\mu_k=1$. For example, we cannot increase every $\mu_k$ to 1, because the result would no longer be a valid probability distribution.
+
+### Optional Derivation: Why a Lagrange Multiplier Appears（可选推导）
+
+A **Lagrange multiplier** is a bookkeeping device for optimizing a function while enforcing a constraint. We introduce one extra unknown number, $\lambda$, and combine the log likelihood with the sum-to-one constraint:
 
 $$
-\mu_{k,\mathrm{ML}}=\frac{m_k}{N}.
+\mathcal{L}(\boldsymbol{\mu},\lambda)
+=\sum_{k=1}^K m_k\ln\mu_k
++\lambda\left(1-\sum_{k=1}^K\mu_k\right).
 $$
 
-Again, maximum likelihood gives the observed frequency.
+The first term says “fit the observed data,” while the second term enforces “all probabilities must sum to 1.” The value of $\lambda$ is not a model probability; it is an auxiliary number that will be determined during the calculation.
+
+At the maximum, differentiating with respect to each $\mu_k$ and setting the result to zero gives
+
+$$
+\frac{\partial\mathcal{L}}{\partial\mu_k}
+=\frac{m_k}{\mu_k}-\lambda=0
+\quad\Longrightarrow\quad
+\mu_k=\frac{m_k}{\lambda}.
+$$
+
+Now use the constraint that all $\mu_k$ sum to 1:
+
+$$
+1=\sum_{k=1}^K\mu_k
+=\frac{\sum_k m_k}{\lambda}
+=\frac{N}{\lambda}.
+$$
+
+Therefore $\lambda=N$, and hence
+
+$$
+\boxed{\mu_{k,\mathrm{ML}}=\frac{m_k}{N}}.
+$$
+
+In words:
+
+$$
+\boxed{\text{estimated probability of category }k
+=\frac{\text{number of times category }k\text{ appeared}}
+{\text{total number of observations}}}.
+$$
+
+### A Limitation with Small Datasets
+
+If a category never appears in a small training set, maximum likelihood assigns it probability zero. That does not necessarily mean the category is impossible; we may simply not have observed enough data. A Dirichlet prior, introduced later, plays the same smoothing role for multiple categories that a beta prior plays for a binary outcome.
 
 ## 2.3 Multinomial Distribution over Counts
 
@@ -1745,7 +1995,6 @@ All displayed figures in this lecture are screenshots from the uploaded textbook
 |----------------|-----------------|------|
 | Figure 2.1 | Textbook Fig. 2.1, p. 70 | `lecture_fig_2_1__textbook_fig_2_1_p70.png` |
 | Figure 2.2 | Textbook Fig. 2.2, p. 72 | `lecture_fig_2_2__textbook_fig_2_2_p72.png` |
-| Figure 2.3 | Textbook Fig. 2.3, p. 73 | `lecture_fig_2_3__textbook_fig_2_3_p73.png` |
 | Figure 2.4 | Textbook Fig. 2.4, p. 77 | `lecture_fig_2_4__textbook_fig_2_4_p77.png` |
 | Figure 2.5 | Textbook Fig. 2.5, p. 78 | `lecture_fig_2_5__textbook_fig_2_5_p78.png` |
 | Figure 2.6 | Textbook Fig. 2.6, p. 79 | `lecture_fig_2_6__textbook_fig_2_6_p79.png` |
