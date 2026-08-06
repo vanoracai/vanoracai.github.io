@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 6
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 6: Kernel Methods
 

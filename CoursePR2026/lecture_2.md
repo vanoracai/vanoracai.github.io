@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 2
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 2: Probability Distributions and Density Estimation
 
@@ -461,9 +466,20 @@ The key teaching point is that a probability model can be placed either on an in
 
 ## 1.4 Beta Distribution: A Distribution over Probabilities
 
-The Bernoulli and binomial distributions treat $\mu$ as a parameter. In Bayesian inference, we treat $\mu$ as uncertain and place a prior distribution over it.
+The Bernoulli and binomial distributions assume that the success probability
+$\mu$ is already known. For example, if a coin has probability $\mu$ of landing
+heads, then a Bernoulli model tells us the probability of one toss, and a
+binomial model tells us the probability of getting $m$ heads in $N$ tosses.
 
-Because $\mu$ must lie in $[0,1]$, a natural prior is the beta distribution:
+In many real problems, however, $\mu$ is exactly what we do not know.
+
+- What is the probability that this coin lands heads?
+- What is the probability that a user clicks this advertisement?
+- What is the probability that a patient responds to a treatment?
+
+Bayesian inference represents this uncertainty by putting a distribution over
+$\mu$ itself. Since $\mu$ is a probability, it must live between 0 and 1. The
+beta distribution is a convenient distribution on this interval:
 
 Here, $\mu$ is the unknown success probability we want to learn, while $a>0$ and $b>0$ are **hyperparameters** chosen to describe our prior belief about $\mu$. They are not additional observations or possible outcomes. Roughly, $a$ controls how strongly the prior favors successes, $b$ controls how strongly it favors failures, and their total $a+b$ controls how concentrated or confident the prior is.
 
@@ -472,6 +488,53 @@ $$
 =\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\mu^{a-1}(1-\mu)^{b-1},
 \qquad 0\leq\mu\leq 1.
 $$
+
+Here $\mu$ is the unknown probability, and $a$ and $b$ are positive
+hyperparameters chosen by the modeler:
+
+- $a$ controls how much prior belief we put on success, or values of $\mu$
+  close to 1;
+- $b$ controls how much prior belief we put on failure, or values of $\mu$
+  close to 0;
+- $a+b$ controls how concentrated the prior belief is.
+
+For a coin example, if we call heads a success, then a larger $a$ means we
+expect heads to be more likely, while a larger $b$ means we expect tails to be
+more likely.
+
+The first factor
+
+$$
+\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}
+$$
+
+does not decide where the distribution is large or small. It only rescales the
+curve vertically so that the total area under the curve is exactly 1. This is
+needed because every probability density must have total area 1.
+
+The part that determines the shape is
+
+$$
+\mu^{a-1}(1-\mu)^{b-1}.
+$$
+
+For example, if $a=2$ and $b=2$, then the shape part is
+
+$$
+\mu(1-\mu).
+$$
+
+This curve is low near $\mu=0$, low near $\mu=1$, and highest near
+$\mu=0.5$. So it expresses the belief that middle values of $\mu$ are more
+plausible than extreme values. However, the area under $\mu(1-\mu)$ from 0 to 1
+is only $1/6$, not 1. Therefore we multiply it by 6:
+
+$$
+\operatorname{Beta}(\mu\mid 2,2)=6\mu(1-\mu).
+$$
+
+The multiplication by 6 does not change the shape; it only turns the curve into
+a valid probability density.
 
 The gamma function generalizes the factorial:
 
@@ -491,11 +554,50 @@ $$
 =\frac{ab}{(a+b)^2(a+b+1)}.
 $$
 
-The parameters $a$ and $b$ can be interpreted as **effective prior counts**:
+Another useful interpretation is that $a$ and $b$ behave like **effective prior
+counts**. Roughly speaking, a $\operatorname{Beta}(a,b)$ prior acts as if we
+have already seen some success-like and failure-like evidence before collecting
+the current data. This is why, after observing new data, successes will be added
+to $a$ and failures will be added to $b$.
 
-- $a$ behaves like a prior count of successes plus one;
-- $b$ behaves like a prior count of failures plus one;
-- $a+b$ controls the strength or concentration of the prior.
+### Reading the Parameters
+
+The mean
+
+$$
+\mathbb{E}[\mu]=\frac{a}{a+b}
+$$
+
+tells us the center of our belief.
+
+For example:
+
+$$
+\operatorname{Beta}(8,2)
+\quad\Longrightarrow\quad
+\mathbb{E}[\mu]=\frac{8}{10}=0.8.
+$$
+
+This says: before seeing the current data, we believe the success probability
+is probably around $0.8$.
+
+Now compare two priors with the same mean:
+
+$$
+\operatorname{Beta}(8,2),
+\qquad
+\operatorname{Beta}(80,20).
+$$
+
+Both have mean $0.8$, but they do not express the same confidence.
+
+- $\operatorname{Beta}(8,2)$ says "I think $\mu$ is around $0.8$, but I am still
+  fairly open to other values."
+- $\operatorname{Beta}(80,20)$ says "I am much more confident that $\mu$ is
+  close to $0.8$."
+
+So the ratio $a/(a+b)$ controls the location, while the total $a+b$ controls
+the concentration.
 
 ### How to Read Figure 2.2
 
@@ -517,14 +619,46 @@ The beta distribution is flexible enough to express many qualitatively different
 | $a<b$ | Shifted toward 0 | We expect more failures than successes. |
 | $a,b<1$ | U-shaped | We believe $\mu$ is likely near 0 or near 1, but not near the middle. |
 
+### A Simple Coin Example
+
+Suppose a student asks: "Is this coin fair?"
+
+One possible prior is
+
+$$
+\operatorname{Beta}(1,1).
+$$
+
+This is a uniform prior. It says that before observing any tosses, we do not
+favor any value of $\mu$ over another.
+
+Another possible prior is
+
+$$
+\operatorname{Beta}(20,20).
+$$
+
+This prior is centered at $0.5$, but it is much more concentrated. It says that
+we already strongly believe the coin is close to fair.
+
+These two priors have different teaching meanings:
+
+| Prior | Mean | Classroom interpretation |
+|-------|------|--------------------------|
+| $\operatorname{Beta}(1,1)$ | $0.5$ | We are almost completely open-minded. |
+| $\operatorname{Beta}(20,20)$ | $0.5$ | We believe the coin is probably fair, and this belief is fairly strong. |
+
+This distinction is important: two beta distributions can have the same mean
+but very different uncertainty.
+
 ## Textbook Exercise 2.6: Mean, Variance, and Mode of a Beta Distribution
 
 > ![Textbook Exercise 2.6](./CoursePR2026/Fig/Chapter_2/lecture_ex_2_6__textbook_ex_2_6_p128.png)
 >
 > *Textbook Exercise 2.6 (p. 128): Use the beta normalization result to obtain the mean, variance, and mode.*
 
-For teaching, it is useful to read a beta distribution as a soft belief about an
-unknown probability $\mu$. The three most useful summary numbers are:
+A beta distribution can be summarized as a belief about an unknown probability
+$\mu$. The three most useful summary numbers are:
 
 $$
 \mathbb{E}[\mu]=\frac{a}{a+b},
@@ -569,7 +703,21 @@ not have to be identical because the beta distribution can be asymmetric.
 
 ## 1.5 Conjugacy（共轭性）: Beta Prior plus Binomial Likelihood
 
-### Plain-Language Idea（通俗理解）
+### Plain-Language Idea
+
+The beta distribution is conjugate to the binomial likelihood. This means that
+if the prior is beta and the data are Bernoulli or binomial observations, then
+the posterior is also beta.
+
+In plain language:
+
+$$
+\text{beta prior}
+\quad+\quad
+\text{success/failure data}
+\quad=\quad
+\text{beta posterior}.
+$$
 
 Imagine that $\mu$ is the unknown probability that a coin lands heads. Before flipping the coin, we describe our belief about $\mu$ with a beta distribution. After observing some flips, we want to update that belief.
 
@@ -632,6 +780,11 @@ $$
 p(\mathcal{D}\mid\mu)\propto \mu^m(1-\mu)^{N-m}.
 $$
 
+This likelihood has a simple meaning:
+
+- each success contributes one factor of $\mu$;
+- each failure contributes one factor of $(1-\mu)$.
+
 Bayes' rule multiplies the prior and likelihood. When powers with the same base are multiplied, their exponents add:
 
 $$
@@ -664,6 +817,113 @@ $$
 
 It lies between the prior mean $a/(a+b)$ and the observed success rate $m/N$. When the dataset is small, the prior has a visible effect. As $N$ grows, the data gradually dominate.
 
+### Example: Three Heads and One Tail
+
+Start with a uniform prior:
+
+$$
+p(\mu)=\operatorname{Beta}(1,1).
+$$
+
+Now toss the coin four times and observe
+
+$$
+H,H,H,T.
+$$
+
+There are $m=3$ successes and $N-m=1$ failure. The posterior is
+
+$$
+\operatorname{Beta}(1+3,1+1)
+=
+\operatorname{Beta}(4,2).
+$$
+
+The posterior mean is
+
+$$
+\mathbb{E}[\mu\mid\mathcal{D}]
+=
+\frac{4}{4+2}
+=
+\frac{2}{3}.
+$$
+
+Notice the difference from maximum likelihood. The maximum likelihood estimate
+would be
+
+$$
+\mu_{\mathrm{ML}}=\frac{3}{4}=0.75.
+$$
+
+The Bayesian posterior mean is smaller, $2/3$, because the prior still keeps a
+little uncertainty. After only four tosses, Bayesian inference avoids becoming
+too confident.
+
+### Example: Why the Prior Matters More for Small Data
+
+Suppose two teachers observe the same data:
+
+$$
+3\text{ heads},\quad 1\text{ tail}.
+$$
+
+Teacher A starts with a weak prior:
+
+$$
+\operatorname{Beta}(1,1)
+\longrightarrow
+\operatorname{Beta}(4,2),
+\qquad
+\mathbb{E}[\mu\mid\mathcal{D}]=\frac{4}{6}\approx0.667.
+$$
+
+Teacher B starts with a stronger prior that the coin is fair:
+
+$$
+\operatorname{Beta}(20,20)
+\longrightarrow
+\operatorname{Beta}(23,21),
+\qquad
+\mathbb{E}[\mu\mid\mathcal{D}]=\frac{23}{44}\approx0.523.
+$$
+
+The same data produce different posteriors because the two teachers started
+with different prior beliefs. This is not a bug; it is the Bayesian model making
+the prior assumptions explicit.
+
+If we observe many more tosses, the influence of the prior becomes smaller. For
+example, after $750$ heads in $1000$ tosses:
+
+$$
+\operatorname{Beta}(1,1)
+\longrightarrow
+\operatorname{Beta}(751,251),
+\qquad
+\mathbb{E}[\mu\mid\mathcal{D}]\approx0.749.
+$$
+
+The posterior mean is now very close to the empirical fraction $750/1000=0.75$.
+With enough data, the likelihood dominates the prior.
+
+### Classroom Summary
+
+The beta-binomial update can be taught as a three-line rule:
+
+1. Start with $\operatorname{Beta}(a,b)$.
+2. Count successes and failures.
+3. Add successes to $a$ and failures to $b$.
+
+The conceptual message is:
+
+$$
+\text{prior belief}
+\quad\longrightarrow\quad
+\text{data update}
+\quad\longrightarrow\quad
+\text{posterior belief}.
+$$
+
 ## 1.6 Sequential Bayesian Updating
 
 ### What Does “Sequential” Mean?（什么是逐次更新？）
@@ -679,6 +939,14 @@ $$
 $$
 
 For a binary observation, there are only two update rules:
+
+> **Key idea: prior versus posterior.** A prior is our belief about the
+> unknown parameter before seeing the current data. A posterior is our updated
+> belief after seeing the current data. The posterior is not the data itself; it
+> is the new distribution over the unknown parameter after the data have been
+> used. Therefore, in sequential learning, the same distribution can play two
+> roles: it is the posterior for the observation just processed, and it becomes
+> the prior for the next observation.
 
 $$
 \operatorname{Beta}(a,b)

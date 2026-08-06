@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lectures 6-8
+---
+
 # Pattern Recognition and Machine Learning
 ## Lectures 6-8: Kernels, Support Vector Machines, and Graphical Models
 

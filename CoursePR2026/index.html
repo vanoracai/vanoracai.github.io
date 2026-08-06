@@ -382,8 +382,12 @@
       return `<table>${thead}${tbody}</table>`;
     }
 
+    function stripFrontMatter(markdown) {
+      return markdown.replace(/^---\s*\n[\s\S]*?\n---\s*\n?/, '');
+    }
+
     function renderMarkdown(markdown) {
-      const lines = markdown.replace(/\r\n/g, '\n').split('\n');
+      const lines = stripFrontMatter(markdown.replace(/\r\n/g, '\n')).split('\n');
       const html = [];
       let paragraph = [];
       let list = [];

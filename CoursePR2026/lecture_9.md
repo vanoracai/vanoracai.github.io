@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 9
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 9: Mixture Models and Expectation-Maximization
 

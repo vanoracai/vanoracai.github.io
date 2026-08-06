@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 11
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 11: Sampling Methods and Monte Carlo Inference
 

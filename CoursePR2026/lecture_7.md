@@ -1,3 +1,8 @@
+---
+layout: course
+title: PRML Lecture 7
+---
+
 # Pattern Recognition and Machine Learning
 ## Chapter 7: Sparse Kernel Machines
 
