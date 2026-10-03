@@ -25,8 +25,8 @@ linkedin: https://www.linkedin.com/in/yujuncai/
 
 # Images 
 avatar: ./photo.png
-favicon: ./assets/img/450.png
-favicon_dark: ./assets/img/450.png
+favicon: /assets/img/whale-favicon.png
+favicon_dark: /assets/img/whale-favicon.png
 
 # The following files will be removed from the generated website.
 exclude:
