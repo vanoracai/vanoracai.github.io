@@ -3,4 +3,5 @@
 ## Awards
 
 - **Amazon Research Award** — 2026
-- **National Scholarship** — Ministry of Education of the People’s Republic of China · 2014, 2016
+- **National Scholarship** — Ministry of Education of the People’s Republic of China · 2014
+- **National Scholarship** — Ministry of Education of the People’s Republic of China · 2016

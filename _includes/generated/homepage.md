@@ -19,7 +19,7 @@
 </li>
 <li class="experience-row">
 <div class="experience-main">
-<span class="experience-name">昆士兰大学 (澳大利亚 Go8)</span>，<span class="experience-detail">讲师/助理教授</span> — <span class="experience-date">2024年 - 2026年</span>
+<span class="experience-name">昆士兰大学 (澳大利亚 Go8, QS #42)</span>，<span class="experience-detail">讲师/助理教授</span> — <span class="experience-date">2024年 - 2026年</span>
 </div>
 </li>
 <li class="experience-row">
