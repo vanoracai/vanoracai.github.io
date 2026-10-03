@@ -1,85 +1,11 @@
+from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_arxiv
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import homogenize_latex_encoding
 
 # Dictionary to map venue keywords to abbreviations (CCF Recommended Conferences and more specific examples)
-VENUE_ABBREVIATIONS = {
-    'ACM SIGKDD': 'KDD',
-    'Computer Vision and Pattern Recognition': 'CVPR',
-    'arXiv preprint': 'Preprint',
-    'International Conference on Learning Representations': 'ICLR',
-    'International Conference on Machine Learning': 'ICML',
-    'Advances in Neural Information Processing Systems': 'NeurIPS',
-    'International Conference on Data Mining': 'ICDM',
-    'International Joint Conference on Artificial Intelligence': 'IJCAI',
-    'Conference on Computer Vision and Pattern Recognition': 'CVPR',
-    'International Conference on Computer Vision': 'ICCV',
-    'International Conference on Database Systems for Advanced Applications': 'DASFAA',
-    'Symposium on Theory of Computing': 'STOC',
-    'International Symposium on Computer Architecture': 'ISCA',
-    'ACM Conference on Information and Knowledge Management': 'CIKM',
-    'International Conference on Web Search and Data Mining': 'WSDM',
-    'International Conference on Very Large Data Bases': 'VLDB',
-    'NAACL':'NAACL',
-    'ACL': 'ACL',
-    'International Conference on Automated Planning and Scheduling': 'ICAPS',
-    'International Symposium on Information Theory': 'ISIT',
-    'IEEE International Conference on Robotics and Automation': 'ICRA',
-    'European Conference on Computer Vision': 'ECCV',
-    'International Symposium on Software Testing and Analysis': 'ISSTA',
-    'International Symposium on Theoretical Aspects of Software Engineering': 'TASE',
-    'International Conference on Artificial Intelligence and Statistics': 'AISTATS',
-    'IEEE International Conference on Data Engineering': 'ICDE',
-    'International Conference on Principles of Knowledge Representation and Reasoning': 'KR',
-    'Conference on Uncertainty in Artificial Intelligence': 'UAI',
-    'International Conference on Knowledge Capture': 'K-CAP',
-    'IEEE International Conference on Computer Communications': 'INFOCOM',
-    'IEEE Transactions on Signal Processing': 'TSP',
-    'Proceedings of the Web Conference': 'WWW',
-    'Machine Learning and Knowledge Discovery in Databases: European': 'ECML',
-    'Learning on Graph': 'LOG',
-    'AAAI': 'AAAI',
-    'Transactions on Knowledge and Data Engineering': 'TKDE',
-    'European Conference on Machine Learning': 'ECML',
-    'CONLL': 'CONLL',
-    'EMNLP': 'EMNLP',
-    'Empirical Methods': 'EMNLP',
-    'CHI Conference on Human Factors in Computing Systems': 'CHI',
-    'European Conference on Computer Vision': 'ECCV',
-    'pattern analysis and machine intelligence':'TPAMI',
-    'Conference on Computational Linguistics':'COLING',
-    'NAACL':'NAACL',
-    # Add more mappings for common conferences/journals
-}
 
 # 定义会议时间顺序
-CONFERENCE_TIME_ORDER = [
-    'NeurIPS',
-    'EMNLP',
-    'ECCV',
-    'CVPR',
-    'ICML',
-    'ACL',
-    'COLM',
-    'NAACL',
-    'COLING',
-    'ICCV',
-    'ACL',
-    'ICLR',
-    'EMNLP',
-    'AAAI',
-    'CHI',
-    'CONLL',
-    # 你可以根据需要添加更多的会议
-]
-
-# 函数：根据缩写表替换venue，不区分大小写
-def abbreviate_venue(venue):
-    venue_lower = venue.lower()  # 将输入venue转换为小写
-    for key, abbreviation in VENUE_ABBREVIATIONS.items():
-        if key.lower() in venue_lower:  # 对字典中的key也转换为小写进行匹配
-            return abbreviation
-    return venue
 
 # 函数：将作者名字从 "Last Name, First Name" 改为 "First Name Last Name"
 def format_author_names(authors_str):
@@ -104,7 +30,7 @@ def get_conference_order(venue):
 # 函数：将.bib转换为LaTeX格式的论文列表，使用enumerate环境
 def bib_to_paper_list(bib_file):
     # 读取.bib文件并使用BibTexParser
-    with open(bib_file) as bibtex_file:
+    with open(bib_file, encoding='utf-8') as bibtex_file:
         parser = BibTexParser(common_strings=True)  # 保留特殊字符并禁用多余的转义
         bib_database = bibtexparser.load(bibtex_file, parser=parser)
     
@@ -112,7 +38,7 @@ def bib_to_paper_list(bib_file):
 
     for entry in bib_database.entries:
         # 跳过arXiv论文
-        if 'arxiv' in entry.get('journal', '').lower():
+        if is_arxiv(entry):
             continue
 
         authors_str = entry.get('author', 'Unknown')
@@ -124,6 +50,9 @@ def bib_to_paper_list(bib_file):
 
         # 生成格式化条目，去除页码，保持特殊字符和LaTeX格式
         formatted_entry = f"{authors[0]}, {', '.join(authors[1:])}. {title}, \\textit{{{venue} {year}}}.".strip()
+        labels = [rf'\textcolor{{red}}{{({label})}}' for label in publication_ratings(entry)]
+        if labels:
+            formatted_entry += ' ' + ' '.join(labels)
 
         # 存储年份、venue和条目，用于排序
         paper_list.append((int(year), venue, formatted_entry))
@@ -137,10 +66,6 @@ def bib_to_paper_list(bib_file):
     # 返回带有 \begin{enumerate} 和 \end{enumerate} 的论文列表
     return "\\begin{enumerate}\n" + "\n\n".join(numbered_papers) + "\n\\end{enumerate}"
 
-# 示例用法
-bib_file = "citations.bib"
-output_file = "paper_list.tex"  # 生成的 LaTeX 文件
-
-# 将结果写入到 LaTeX 文件
-with open(output_file, "w") as f:
-    f.write(bib_to_paper_list(bib_file))
+if __name__ == '__main__':
+    with open('paper_list.tex', 'w', encoding='utf-8') as handle:
+        handle.write(bib_to_paper_list('citations.bib'))

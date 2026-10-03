@@ -1,0 +1,28 @@
+{
+  "title": "教育背景",
+  "title_en": "Education",
+  "sections": [
+    {
+      "title": "",
+      "items": [
+        {
+          "name": "南洋理工大学",
+          "name_en": "Nanyang Technological University",
+          "details": "博士",
+          "details_en": "Doctor of Philosophy in Computer Science",
+          "date": "2017-2021",
+          "date_en": "Aug. 2017 - Dec. 2021"
+        },
+        {
+          "name": "东南大学",
+          "name_en": "Southeast University",
+          "details": "本科",
+          "details_en": "Bachelor of Science in Information Technology",
+          "date": "2013-2017",
+          "date_en": "Aug. 2013 - Jun. 2017",
+          "note_en": "GPA: 4.341/4.8; Rank: 1/229"
+        }
+      ]
+    }
+  ]
+}

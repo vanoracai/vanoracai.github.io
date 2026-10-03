@@ -1,0 +1,79 @@
+{
+  "title": "教学",
+  "title_en": "Teaching",
+  "sections": [
+    {
+      "title": "学术会议中主办Tutorial",
+      "title_en": "Tutorial in Academic Conferences",
+      "items": [
+        {
+          "name": "From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning",
+          "name_en": "From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning",
+          "date": "ECCV 2026",
+          "url": "https://wangywust.github.io/eccv-tutorial-world-model/"
+        },
+        {
+          "name": "From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning",
+          "name_en": "From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning",
+          "date": "CVPR 2026",
+          "url": "https://wangywust.github.io/cvpr-tutorial-world-model/"
+        },
+        {
+          "name": "Towards Comprehensive Reasoning in Vision-Language Models",
+          "name_en": "Towards Comprehensive Reasoning in Vision-Language Models",
+          "date": "ICCV 2025",
+          "url": "https://wangywust.github.io/iccv-tutorial-reasoning-vlm/"
+        }
+      ]
+    },
+    {
+      "title": "课程教学与协调",
+      "title_en": "Teaching and Coordination",
+      "items": [
+        {
+          "name": "ELEC4630 Deep Learning and Computer Vision",
+          "name_en": "ELEC4630 Deep Learning and Computer Vision",
+          "details": "昆士兰大学",
+          "details_en": "UQ",
+          "date": "2025 年第 1 学期",
+          "date_en": "2025 Semester 1"
+        },
+        {
+          "name": "COMP1100/7110 Introduction to Software Innovation",
+          "name_en": "COMP1100/7110 Introduction to Software Innovation",
+          "details": "昆士兰大学",
+          "details_en": "UQ",
+          "date": "2025 年第 2 学期",
+          "date_en": "2025 Semester 2"
+        }
+      ]
+    },
+    {
+      "title": "助教经历",
+      "title_en": "Teaching Assistant",
+      "items": [
+        {
+          "name": "Recent Advance on Image Segmentation and Its Applications",
+          "details": "南洋理工大学",
+          "details_en": "NTU",
+          "date": "2018–2019",
+          "name_en": "DM6190: Recent Advances in Image Segmentation and Its Applications"
+        },
+        {
+          "name": "Digital Image Processing",
+          "details": "南洋理工大学",
+          "details_en": "NTU",
+          "date": "2019–2020",
+          "name_en": "CE7491: Digital Image Processing"
+        }
+      ],
+      "cv_extra_items_en": [
+        {
+          "name": "Engineering Mathematics II",
+          "details": "NTU",
+          "date": "2018"
+        }
+      ]
+    }
+  ]
+}

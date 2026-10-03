@@ -1,0 +1,278 @@
+% 自动生成：修改 _data/*.json 或 citations.bib 后运行 .\generate.ps1。
+% 版式参考 reference-wangywust/Latex/中文简历/main.tex。
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[left=1.5cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\setCJKmainfont{FandolKai-Regular.otf}[BoldFont=FandolKai-Regular.otf]
+\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]
+\hypersetup{hidelinks,pdftitle={蔡雨君中文简历},pdfauthor={Yujun Cai}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+\titleformat{\section}{\large\normalfont}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{16pt}{5pt}
+\newcommand{\rSection}[1]{\section*{#1}}
+\setlist[itemize]{leftmargin=1.5em,noitemsep,topsep=2pt}
+\setlist[itemize,1]{label=\textbullet}
+\newlist{experience}{itemize}{1}
+\setlist[experience]{label=\textbullet,leftmargin=1.6em,itemsep=3pt,topsep=0pt,parsep=0pt}
+\newcommand{\cvDateRange}[2]{\makebox[4.4em][l]{#1}\makebox[1.4em][c]{-}\makebox[4.4em][l]{#2}}
+\newcommand{\cvExperience}[3]{\item\begin{tabularx}{\linewidth}[t]{@{}Xr@{}}#1 & #2\end{tabularx}\if\relax\detokenize{#3}\relax\else\\[-1pt]#3\fi}
+\setlist[enumerate]{leftmargin=2.3em,label={[\arabic*]},itemsep=5pt,topsep=3pt}
+\emergencystretch=3em
+\begin{document}
+\begin{center}
+{\LARGE\bfseries 蔡雨君}\\[6pt]
+\href{mailto:vanora.caiyj@gmail.com}{vanora.caiyj@gmail.com}
+\quad\href{https://vanoracai.github.io/}{个人主页}
+\end{center}
+\rSection{工作经历}
+\begin{experience}
+\cvExperience{东南大学，教授}{\cvDateRange{2026 年}{至今}}{}
+\cvExperience{昆士兰大学 (澳大利亚 Go8)，讲师/助理教授}{\cvDateRange{2024 年}{2026 年}}{}
+\cvExperience{Meta (西雅图)，研究科学家}{\cvDateRange{2022 年}{2024 年}}{}
+\end{experience}
+\rSection{教育背景}
+\begin{experience}
+\cvExperience{南洋理工大学，博士}{\cvDateRange{2017 年}{2021 年}}{}
+\cvExperience{东南大学，本科}{\cvDateRange{2013 年}{2017 年}}{}
+\end{experience}
+\rSection{研究方向}
+海洋信息处理、计算机视觉、多模态信息处理
+\rSection{研究论文发表}
+\begin{enumerate}
+\item Honghao Fu, Jiacheng Chen, Manxi Lin, Junjun Zheng, Xiangheng Kong, Yiwei Wang, Xin Yu, Miao Xu, Yuning Jiang, \textbf{Yujun Cai}. AdaM-Rec: Adaptive Modality Routing for Multimodal Recommendation, \textit{NeurIPS 2026}. \textcolor{red}{(CCF-A)}
+
+\item Haonan Ge, Yiwei Wang, Hang Wu, \textbf{Yujun Cai}. What Should a Streaming Video Model Remember?, \textit{NeurIPS 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zehao Li, Hao Jiang, \textbf{Yujun Cai}, Jianing Chen, Baolong Bi, Shuqin Gao, Honglong Zhao, Yiwei Wang, Tianlu Mao, Zhaoqi Wang. STDR: Spatio-Temporal Decoupling for Real-Time Dynamic Scene Rendering, \textit{ACM MM 2026}. \textcolor{red}{(CCF-A)}
+
+\item Puwei Lian, \textbf{Yujun Cai}, Songze Li, Bingkun Bao. Noise as a Probe: Membership Inference Attacks on Diffusion Models Leveraging Initial Noise, \textit{ACM MM 2026}. \textcolor{red}{(CCF-A)}
+
+\item Xingjian Tao, Yiwei Wang, \textbf{Yujun Cai}, Yifan Song, Jing Tang. ViewFusion: Structured Spatial Thinking Chains for Multi-View Reasoning, \textit{ECCV 2026}. \textcolor{red}{(ICORE A*)}
+
+\item Lexin Wang, Shenghua Liu, Yiwei Wang, \textbf{Yujun Cai}, Yuyao Ge, Jiayu Yao, Jiafeng Guo, Xueqi Cheng. HighlightBench: Benchmarking and Diagnosing Markup-Driven Table Reasoning in Scientific Documents, \textit{ECCV 2026}. \textcolor{red}{(ICORE A*)}
+
+\item Yu Li, \textbf{Yujun Cai}, Chi Zhang. CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Xiangyan Qu, Zhenlong Yuan, Jing Tang, Rui Chen, Datao Tang, Meng Yu, Lei Sun, Yancheng Bai, Xiangxiang Chu, Gaopeng Gou, Gang Xiong, \textbf{Yujun Cai}. From Scale to Speed: Adaptive Test-Time Scaling for Image Editing, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Samyak Rawlekar, Amitabh Swain, \textbf{Yujun Cai}, Yiwei Wang, Ming-Hsuan Yang, Narendra Ahuja. Finding Distributed Object-Centric Properties in Self-Supervised Transformers, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Bowen Sun, \textbf{Yujun Cai}, Ming-Hsuan Yang, Hang Wu, Yiwei Wang. PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Qianxun Xu, Chenxi Song, \textbf{Yujun Cai}, Chi Zhang. SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Yiying Yang, Wei Cheng, Sijin Chen, Honghao Fu, Xianfang Zeng, \textbf{Yujun Cai}, Gang Yu, Xingjun Ma. OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens, \textit{CVPR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Tong Guan, Sheng Pan, Johan Barthelemy, Zhao Li, \textbf{Yujun Cai}, Cesare Alippi, Ming Jin, Shirui Pan. TimeOmni-VL: Unified Models for Time Series Understanding and Generation, \textit{ICML 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zehao Li, Hongwei Yu, Hao Jiang, Qiang Sheng, Yilong Xu, Baolong Bi, Yang Li, Zhenlong Yuan, \textbf{Yujun Cai}, Zhaoqi Wang. FactGuard: Agentic Video Misinformation Detection via Reinforcement Learning, \textit{ICML 2026}. \textcolor{red}{(CCF-A)}
+
+\item Puwei Lian, \textbf{Yujun Cai}, Songze Li, Bingkun Bao. Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective, \textit{ICML 2026}. \textcolor{red}{(CCF-A)}
+
+\item Yixin Song, Guangchi Liu, Xiangyu Xu, Shaofeng Li, Zhen Ling, Yiwei Wang, \textbf{Yujun Cai}. MIMO-LP: A Multi-Input Multi-Output Framework for Subgraph-based Link Prediction, \textit{ICML 2026}. \textcolor{red}{(CCF-A)}
+
+\item Siqian Tong, Li Xuan, Yiwei Wang, Baolong Bi, \textbf{Yujun Cai}, Shenghua Liu, Yuchen He, Hao Chengpeng. AuTAgent: A Reinforcement Learning Framework for Tool-Augmented Audio Reasoning, \textit{ICML 2026}. \textcolor{red}{(CCF-A)}
+
+\item Honghao Fu, Miao Xu, Yiwei Wang, Dailing Zhang, Jun Liu, \textbf{Yujun Cai}. VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG, \textit{ACL 2026}. \textcolor{red}{(CCF-A)}
+
+\item Boyan Han, Yiwei Wang, Yi Song, \textbf{Yujun Cai}, Chi Zhang. Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models, \textit{ACL 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zheng He, Yiwei Wang, Hongxing Wang, \textbf{Yujun Cai}. ReCon: Active Defense against Large Vision-Language Model Jailbreaks via Reverse Safety Concept Injection, \textit{ACL 2026}.
+
+\item Nan Sun, Jing Tang, Lei Sun, Rui Chen, Yuxing Lu, Xiangxiang Chu, Hefei Ling, \textbf{Yujun Cai}. Beyond Query Bias: Candidate-Aware Iterative Refinement for Zero-Shot Composed Image Retrieval, \textit{ACL 2026}.
+
+\item Xingjian Tao, Yiwei Wang, \textbf{Yujun Cai}, Yihong Luo, Kai Han, Jing Tang. Rectifying Coordinate Drift in MLLMs via Counterfactual Positional Guidance, \textit{ACL 2026}.
+
+\item Zhetong Zhang, Honghao Fu, Miao Xu, Yiwei Wang, \textbf{Yujun Cai}. V-DEAL: Diagnosing Video Safety De-Calibration as an Understanding--Refusal Coupling Failure, \textit{COLM 2026}.
+
+\item Jianing Chen, Zehao Li, \textbf{Yujun Cai}, Hao Jiang, Shuqin Gao, Honglong Zhao, Tianlu Mao, Yucheng Zhang. From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Honghao Fu, Yuan Ouyang, Kai-Wei Chang, Yiwei Wang, Zi Huang, \textbf{Yujun Cai}. ContextNav: Towards Agentic Multimodal In-Context Learning, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Xingjian Tao, Yiwei Wang, \textbf{Yujun Cai}, Zhicheng Yang, Jing Tang. Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Yike Wu, Yiwei Wang, \textbf{Yujun Cai}. ChainMPQ: Interleaved Text-Image Reasoning Chains for Mitigating Relation Hallucinations, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zhen Xiong, \textbf{Yujun Cai}, Zhecheng Li, Yiwei Wang. Unveiling the Potential of Diffusion Large Language Model in Controllable Generation, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Haojin Yang, Rui Hu, Zequn Sun, Rui Zhou, \textbf{Yujun Cai}, Yiwei Wang. WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zhenlong Yuan, Chengxuan Qian, Jing Tang, Rui Chen, Zijian Song, Lei Sun, Xiangxiang Chu, \textbf{Yujun Cai}, Dapeng Zhang, Shuo Li. AutoDrive-R²: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Zhenlong Yuan, Xiangyan Qu, Chengxuan Qian, Rui Chen, Jing Tang, Lei Sun, Xiangxiang Chu, Dapeng Zhang, Yiwei Wang, \textbf{Yujun Cai}, Shuo Li. Video-STAR: Reinforcing Open-Vocabulary Action Recognition with Tools, \textit{ICLR 2026}. \textcolor{red}{(CCF-A)}
+
+\item Haodong Xie, \textbf{Yujun Cai}, Rahul Singh Maharjan, Yiwei Wang, Federico Tavella, Angelo Cangelosi. Hierarchical, Interpretable, Label-Free Concept Bottleneck Model, \textit{BMVC 2026}.
+
+\item Litian Liang, Jingxi Xu, Xinda Qi, \textbf{Yujun Cai}, Houzhu Ding, Luqi Wang, Zhixin Sun, Jyh-Herng Chow, Ming Yang, Mark Cutkosky. Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback, \textit{CoRL 2026}.
+
+\item Baolong Bi, Yuyao Ge, Shenghua Liu, Yuchen He, Siqian Tong, Lizhe Chen, Lingrui Mei, Zehao Li, Yiwei Wang, \textbf{Yujun Cai}, Ming-Hsuan Yang, Xueqi Cheng. PromptCD: Test-Time Behavior Enhancement via Polarity-Prompt Contrastive Decoding, \textit{TPAMI 2026}. \textcolor{red}{(CCF-A)} \textcolor{red}{(JCR Q1)}
+
+\item Jianing Chen, Zehao Li, \textbf{Yujun Cai}, Hao Jiang, Chengxuan Qian, Juyuan Kang, Shuqin Gao, Honglong Zhao, Tianlu Mao, Yucheng Zhang. HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene, \textit{NeurIPS 2025}. \textcolor{red}{(CCF-A)}
+
+\item Honghao Fu, Junlong Ren, Qi Chai, Deheng Ye, \textbf{Yujun Cai}, Hao Wang. VistaWise: Building Cost-Effective Agent with Cross-Modal Knowledge Graph for Minecraft, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Haonan Ge, Yiwei Wang, Ming-Hsuan Yang, \textbf{Yujun Cai}. MRFD: Multi-Region Fusion Decoding with Self-Consistency for Mitigating Hallucinations in LVLMs, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Shuyang Hao, Yiwei Wang, Bryan Hooi, Jun Liu, Muhao Chen, Zi Huang, \textbf{Yujun Cai}. Making every step effective: Jailbreaking large vision-language models through hierarchical kv equalization, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Sifan Li, \textbf{Yujun Cai}, Yiwei Wang. SemVink: Advancing VLMs' Semantic Understanding of Optical Illusions via Visual Global Thinking, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Xingjian Tao, Yiwei Wang, \textbf{Yujun Cai}, Zhicheng Yang, Jing Tang. Understanding GUI Agent Localization Biases through Logit Sharpness, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Hang Wu, Hongkai Chen, \textbf{Yujun Cai}, Chang Liu, Qingwen Ye, Ming-Hsuan Yang, Yiwei Wang. DiMo-GUI: Advancing Test-time Scaling in GUI Grounding via Modality-Aware Visual Reasoning, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Zhen Xiong, \textbf{Yujun Cai}, Zhecheng Li, Yiwei Wang. Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLM, \textit{EMNLP 2025}. \textcolor{red}{(ICORE A*)}
+
+\item Shuyang Hao, Bryan Hooi, Jun Liu, Kai-Wei Chang, Zi Huang, \textbf{Yujun Cai}. Exploring Visual Vulnerabilities via Multi-Loss Adversarial Search for Jailbreaking Vision-Language Models, \textit{CVPR 2025}. \textcolor{red}{(CCF-A)}
+
+\item Muchen Li, Sammy Christen, Chengde Wan, \textbf{Yujun Cai}, Renjie  Liao, Leonid Sigal, Shugao Ma. LatentHOI: On the Generalizable Hand Object Motion Generation with Latent Hand Diffusion, \textit{CVPR 2025}. \textcolor{red}{(CCF-A)}
+
+\item Zhecheng Li, Yiwei Wang, Bryan Hooi, \textbf{Yujun Cai}, Nanyun Peng, Kai-Wei Chang. DRS: Deep Question Reformulation With Structured Output, \textit{ACL 2025}. \textcolor{red}{(CCF-A)}
+
+\item Zhecheng Li, Yiwei Wang, Bryan Hooi, \textbf{Yujun Cai}, Zhen Xiong, Nanyun Peng, Kai-wei Chang. Vulnerability of LLMs to Vertically Aligned Text Manipulations, \textit{ACL 2025}. \textcolor{red}{(CCF-A)}
+
+\item Zhecheng Li, Guoxian Song, \textbf{Yujun Cai}, Zhen Xiong, Junsong Yuan, Yiwei Wang. Texture or Semantics? Vision-Language Models Get Lost in Font Recognition, \textit{COLM 2025}.
+
+\item Zhaochen Wang, Bryan Hooi, Yiwei Wang, Ming-Hsuan Yang, Zi Huang, \textbf{Yujun Cai}. Text Speaks Louder than Vision: ASCII Art Reveals Textual Biases in Vision-Language Models, \textit{COLM 2025}.
+
+\item Chunxue Xu, Yiwei Wang, Bryan Hooi, \textbf{Yujun Cai}, Songze Li. How does Watermarking Affect Visual Language Models in Document Understanding?, \textit{COLM 2025}.
+
+\item Cheng Wang, Yiwei Wang, \textbf{Yujun Cai}, Bryan Hooi. Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack, \textit{NAACL 2025}.
+
+\item Cheng Wang, Yiwei Wang, Bryan Hooi, \textbf{Yujun Cai}, Nanyun Peng, Kai-Wei Chang. Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding, \textit{COLING 2025}.
+
+\item Haoxuan Qu, Zhuoling Li, Hossein Rahmani, \textbf{Yujun Cai}, Jun Liu. DisC-GS: Discontinuity-aware Gaussian Splatting, \textit{NeurIPS 2024}. \textcolor{red}{(CCF-A)}
+
+\item Sasha Salter, Richard Warren, Collin Schlager, Adrian Spurr, Shangchen Han, Rohin Bhasin, \textbf{Yujun Cai}, Peter Walkington, Anuoluwapo Bolarinwa, Robert Wang, others. emg2pose: A Large and Diverse Benchmark for Surface Electromyographic Hand Pose Estimation, \textit{NeurIPS 2024}. \textcolor{red}{(CCF-A)}
+
+\item Yihong Luo, Siya Qiu, Xingjian Tao, \textbf{Yujun Cai}, Jing Tang. Energy-Calibrated VAE with Test Time Free Lunch, \textit{ECCV 2024}. \textcolor{red}{(ICORE A*)}
+
+\item Haoxuan Qu, \textbf{Yujun Cai}, Jun Liu. Llms are good action recognizers, \textit{CVPR 2024}. \textcolor{red}{(CCF-A)}
+
+\item Li Xu, Haoxuan Qu, \textbf{Yujun Cai}, Jun Liu. 6d-diff: A keypoint diffusion framework for 6d object pose estimation, \textit{CVPR 2024}. \textcolor{red}{(CCF-A)}
+
+\item Zhecheng Li, Yiwei Wang, Bryan Hooi, \textbf{Yujun Cai}, Zhen Xiong, Nanyun Peng, Kai-Wei Chang. Vulnerability of LLMs to Vertically Aligned Text Manipulations, \textit{ACL 2024}. \textcolor{red}{(CCF-A)}
+
+\item Kenrick Kin, Chengde Wan, Ken Koh, Andrei Marin, Necati Cihan Camgoz, Yubo Zhang, \textbf{Yujun Cai}, Fedor Kovalev, Moshe Ben-Zacharia, Shannon Hoople, others. STMG: A Machine Learning Microgesture Recognition System for Supporting Thumb-Based VR/AR Input, \textit{CHI 2024}. \textcolor{red}{(CCF-A)}
+
+\item Yiwei Wang, \textbf{Yujun Cai}, Muhao Chen, Yuxuan Liang, Bryan Hooi. Primacy effect of chatgpt, \textit{EMNLP 2023}. \textcolor{red}{(ICORE A*)}
+
+\item Haoxuan Qu, \textbf{Yujun Cai}, Lin Geng Foo, Ajay Kumar, Jun Liu. A Characteristic Function-Based Method for Bottom-Up Human Pose Estimation, \textit{CVPR 2023}. \textcolor{red}{(CCF-A)}
+
+\item Julian Tanke, Linguang Zhang, Amy Zhao, Chengcheng Tang, \textbf{Yujun Cai}, Lezi Wang, Po-Chen Wu, Juergen Gall, Cem Keskin. Social diffusion: Long-term multiple human motion anticipation, \textit{ICCV 2023}. \textcolor{red}{(CCF-A)}
+
+\item Yiwei Wang, Bryan Hooi, Fei Wang, \textbf{Yujun Cai}, Yuxuan Liang, Wenxuan Zhou, Jing Tang, Manjuan Duan, Muhao Chen. How Fragile is Relation Extraction under Entity Replacements?, \textit{CONLL 2023}.
+
+\item Haoxuan Qu, Li Xu, \textbf{Yujun Cai}, Lin Geng Foo, Jun Liu. Heatmap distribution matching for human pose estimation, \textit{NeurIPS 2022}. \textcolor{red}{(CCF-A)}
+
+\item Mingfei Chen, Jianfeng Zhang, Xiangyu Xu, Lijuan Liu, \textbf{Yujun Cai}, Jiashi Feng, Shuicheng Yan. Geometry-guided progressive nerf for generalizable and efficient neural human rendering, \textit{ECCV 2022}. \textcolor{red}{(ICORE A*)}
+
+\item Yiwei Wang, Muhao Chen, Wenxuan Zhou, \textbf{Yujun Cai}, Yuxuan Liang, Bryan Hooi. Graphcache: Message passing as caching for sentence-level relation extraction, \textit{NAACL 2022}.
+
+\item Yiwei Wang, Muhao Chen, Wenxuan Zhou, \textbf{Yujun Cai}, Yuxuan Liang, Dayiheng Liu, Baosong Yang, Juncheng Liu, Bryan Hooi. Should we rely on entity mentions for relation extraction? debiasing relation extraction with counterfactual analysis, \textit{NAACL 2022}.
+
+\item Yiwei Wang, \textbf{Yujun Cai}, Yuxuan Liang, Henghui Ding, Changhu Wang, Bryan Hooi. Time-Aware Neighbor Sampling on Temporal Graphs, \textit{2022 International Joint Conference on Neural Networks (IJCNN) 2022}.
+
+\item Ziyin Xin, \textbf{Yujun Cai}, Louis T Dang, Hannah MS Burke, Jerico Revote, Natalie Charitakis, Denis Bienroth, Hieu T Nim, Yuan-Fang Li, Mirana Ramialison. MonaGO: a novel gene ontology enrichment analysis visualisation system, \textit{BMC Bioinformatics 2022}. \textcolor{red}{(JCR Q1)}
+
+\item Shangchen Han, Po-chen Wu, Yubo Zhang, Beibei Liu, Linguang Zhang, Zheng Wang, Weiguang Si, Peizhao Zhang, \textbf{Yujun Cai}, Tomas Hodan, others. UmeTrack: Unified multi-view end-to-end hand tracking for VR, \textit{SIGGRAPH Asia 2022}. \textcolor{red}{(ICORE A*)}
+
+\item Chi Zhang, \textbf{Yujun Cai}, Guosheng Lin, Chunhua Shen. Deepemd: Differentiable earth mover's distance for few-shot learning, \textit{TPAMI 2022}. \textcolor{red}{(CCF-A)} \textcolor{red}{(JCR Q1)}
+
+\item Yiwei Wang, \textbf{Yujun Cai}, Yuxuan Liang, Henghui Ding, Changhu Wang, Siddharth Bhatia, Bryan Hooi. Adaptive data augmentation on temporal graphs, \textit{NeurIPS 2021}. \textcolor{red}{(CCF-A)}
+
+\item Jianfeng Zhang, \textbf{Yujun Cai}, Shuicheng Yan, Jiashi Feng, others. Direct multi-view multi-person 3d pose estimation, \textit{NeurIPS 2021}. \textcolor{red}{(CCF-A)}
+
+\item \textbf{Yujun Cai}, Yiwei Wang, Yiheng Zhu, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Chuanxia Zheng, Sijie Yan, Henghui Ding, others. A unified 3d human motion synthesis model via conditional variational auto-encoder, \textit{ICCV 2021}. \textcolor{red}{(CCF-A)}
+
+\item Yiwei Wang, Wei Wang, Yuxuan Liang, \textbf{Yujun Cai}, Bryan Hooi. Progressive supervision for node classification, \textit{ECML 2021}.
+
+\item Yiwei Wang, \textbf{Yujun Cai}, Yuxuan Liang, Henghui Ding, Changhu Wang, Bryan Hooi. Time-aware neighbor sampling for temporal graph networks, \textit{The 2022 International Joint Conference on Neural Networks (IJCNN) 2021}.
+
+\item Yiwei Wang, Wei Wang, Yuxuan Liang, \textbf{Yujun Cai}, Bryan Hooi. Curgraph: Curriculum learning for graph classification, \textit{WWW 2021}. \textcolor{red}{(CCF-A)}
+
+\item Yiwei Wang, Wei Wang, Yuxuan Liang, \textbf{Yujun Cai}, Bryan Hooi. Mixup for node and graph classification, \textit{WWW 2021}. \textcolor{red}{(CCF-A)}
+
+\item \textbf{Yujun Cai}, Lin Huang, Yiwei Wang, Tat-Jen Cham, Jianfei Cai, Junsong Yuan, Jun Liu, Xu Yang, Yiheng Zhu, Xiaohui Shen, others. Learning progressive joint propagation for human motion prediction, \textit{ECCV 2020}. \textcolor{red}{(ICORE A*)}
+
+\item Chi Zhang, \textbf{Yujun Cai}, Guosheng Lin, Chunhua Shen. Deepemd: Few-shot image classification with differentiable earth mover's distance and structured classifiers, \textit{CVPR 2020}. \textcolor{red}{(CCF-A)}
+
+\item Yiwei Wang, Wei Wang, Yujun Ca, Bryan Hooi, Beng Chin Ooi. Detecting implementation bugs in graph convolutional network based node classifiers, \textit{ISSRE 2020}.
+
+\item Yiwei Wang, Wei Wang, Yuxuan Liang, \textbf{Yujun Cai}, Juncheng Liu, Bryan Hooi. Nodeaug: Semi-supervised node classification with data augmentation, \textit{KDD 2020}. \textcolor{red}{(CCF-A)}
+
+\item \textbf{Yujun Cai}, Liuhao Ge, Jianfei Cai, Nadia Magnenat Thalmann, Junsong Yuan. 3D hand pose estimation using synthetic data and weakly labeled RGB images, \textit{TPAMI 2020}. \textcolor{red}{(CCF-A)} \textcolor{red}{(JCR Q1)}
+
+\item \textbf{Yujun Cai}, Liuhao Ge, Jun Liu, Jianfei Cai, Tat-Jen Cham, Junsong Yuan, Nadia Magnenat Thalmann. Exploiting spatial-temporal relationships for 3d pose estimation via graph convolutional networks, \textit{ICCV 2019}. \textcolor{red}{(CCF-A)}
+
+\item \textbf{Yujun Cai}, Liuhao Ge, Jianfei Cai, Junsong Yuan. Weakly-supervised 3d hand pose estimation from monocular rgb images, \textit{ECCV 2018}. \textcolor{red}{(ICORE A*)}
+
+\item Liuhao Ge, \textbf{Yujun Cai}, Junwu Weng, Junsong Yuan. Hand pointnet: 3d hand pose estimation using point sets, \textit{CVPR 2018}. \textcolor{red}{(CCF-A)}
+\end{enumerate}
+
+\rSection{期刊编辑}
+\begin{itemize}
+\item Neurocomputing
+\item Pattern Recognition (PR)
+\end{itemize}
+\rSection{领域主席与高级程序委员会}
+\begin{itemize}
+\item International Conference on Learning Representations (ICLR)
+\item IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+\item Conference on Neural Information Processing Systems (NeurIPS)
+\item Conference on Empirical Methods in Natural Language Processing (EMNLP)
+\item ACM Multimedia
+\item The AAAI Conference on Artificial Intelligence (AAAI)
+\item International Conference on Computer Vision (ICCV)
+\item International Conference on Machine Learning (ICML)
+\item International Joint Conferences on Artificial Intelligence(IJCAI)   (SPC)
+\item The Web Conference (WWW)  (SPC)
+\item CIKM (SPC)
+\item Conference on Language Modeling (COLM)
+\item IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+\item International Joint Conference on Neural Network (IJCNN)
+\end{itemize}
+\rSection{审稿服务}
+\begin{itemize}
+\item ACM SIGGRAPH
+\item IEEE International Conference on Multimedia and Expo (ICME)
+\item IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+\item International Journal of Computer Vision (IJCV)
+\item IEEE Transactions on Image Processing（TIP)
+\item IEEE Transactions on Multimedia (TMM)
+\item IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
+\item ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)
+\end{itemize}
+\rSection{学术会议教程}
+\begin{itemize}
+\item From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning，ECCV 2026
+\item From Perception to Simulation: The Emergence of World Models in Multi-modal Reasoning，CVPR 2026
+\item Towards Comprehensive Reasoning in Vision-Language Models，ICCV 2025
+\end{itemize}
+\rSection{课程教学与协调}
+\begin{itemize}
+\item Deep Learning and Computer Vision（ELEC4630），昆士兰大学，2025 年第 1 学期
+\item Introduction to Software Innovation（COMP1100/7110），昆士兰大学，2025 年第 2 学期
+\end{itemize}
+\rSection{助教经历}
+\begin{itemize}
+\item Recent Advance on Image Segmentation and Its Applications，南洋理工大学，2018–2019
+\item Digital Image Processing，南洋理工大学，2019–2020
+\end{itemize}
+\rSection{曾获荣誉}
+\begin{itemize}
+\item Amazon Research Award，2026 年
+\item 国家奖学金，2014、2016 年
+\end{itemize}
+\end{document}

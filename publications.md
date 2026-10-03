@@ -1,6 +1,6 @@
 ---
 layout: homepage
-title: Publications
+title: 论文发表
 ---
 
 {% include output_file.md %}

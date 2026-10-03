@@ -1,0 +1,70 @@
+{
+  "title": "Alumni",
+  "title_en": "Alumni",
+  "sections": [
+    {
+      "items": [
+        {
+          "name": "Bowen Sun",
+          "details": "Undergrad@Tsinghua -> PhD student@JHU, first-author oral paper at CVPR 2026",
+          "details_en": "Undergrad@Tsinghua -> PhD student@JHU, first-author oral paper at CVPR 2026"
+        },
+        {
+          "name": "Samyak Rawlekar",
+          "details": "PhD student@UIUC, first-author paper at CVPR 2026",
+          "details_en": "PhD student@UIUC, first-author paper at CVPR 2026"
+        },
+        {
+          "name": "Zhen He",
+          "details": "Master@Chongqing University, first-author paper at ACL 2026",
+          "details_en": "Master@Chongqing University, first-author paper at ACL 2026"
+        },
+        {
+          "name": "Jianing Chen",
+          "details": "Master@CAS -> PhD student@The Hong Kong Polytechnic University, first-author papers at ICLR 2026 and NeurIPS 2025",
+          "details_en": "Master@CAS -> PhD student@The Hong Kong Polytechnic University, first-author papers at ICLR 2026 and NeurIPS 2025"
+        },
+        {
+          "name": "Yike Wu",
+          "details": "Undergrad@SEU -> PhD student@NTU, first-author paper at ICLR 2026",
+          "details_en": "Undergrad@SEU -> PhD student@NTU, first-author paper at ICLR 2026"
+        },
+        {
+          "name": "Zhen Xiong",
+          "details": "Master@USC -> PhD student@NYU, first-author papers at ICLR 2026 and EMNLP 2025",
+          "details_en": "Master@USC -> PhD student@NYU, first-author papers at ICLR 2026 and EMNLP 2025"
+        },
+        {
+          "name": "Zhenlong Yuan",
+          "details": "PhD@CAS, two first-author papers at ICLR 2026",
+          "details_en": "PhD@CAS, two first-author papers at ICLR 2026"
+        },
+        {
+          "name": "Haonan Ge",
+          "details": "Undergrad@SEU -> PhD student@UCSB, first-author paper at EMNLP 2025",
+          "details_en": "Undergrad@SEU -> PhD student@UCSB, first-author paper at EMNLP 2025"
+        },
+        {
+          "name": "Sifan Li",
+          "details": "Master@Liaoning University -> PhD student@CAS, first-author oral paper at EMNLP 2025",
+          "details_en": "Master@Liaoning University -> PhD student@CAS, first-author oral paper at EMNLP 2025"
+        },
+        {
+          "name": "Zhecheng Li",
+          "details": "Master@UCSD -> TikTok US, first-author papers at ACL 2025 (x2), COLM 2025, and ACL 2024",
+          "details_en": "Master@UCSD -> TikTok US, first-author papers at ACL 2025 (x2), COLM 2025, and ACL 2024"
+        },
+        {
+          "name": "Shuyang Hao",
+          "details": "Undergrad@SEU -> PhD student@Lancaster, first-author papers at CVPR 2025 and EMNLP 2025",
+          "details_en": "Undergrad@SEU -> PhD student@Lancaster, first-author papers at CVPR 2025 and EMNLP 2025"
+        },
+        {
+          "name": "Cheng Wang",
+          "details": "Undergrad@NUS, first-author papers at COLING 2025 and NAACL 2025",
+          "details_en": "Undergrad@NUS, first-author papers at COLING 2025 and NAACL 2025"
+        }
+      ]
+    }
+  ]
+}

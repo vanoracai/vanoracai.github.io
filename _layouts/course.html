@@ -205,19 +205,10 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="{{ '/assets/css/navigation.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body>
-    <nav class="topnav" aria-label="Site navigation">
-      <div class="topnav-inner">
-        <a class="brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-        <div class="links">
-          <a href="{{ "/" | relative_url }}">Homepage</a>
-          <a href="{{ "/publications.html" | relative_url }}">Publications</a>
-          <a href="{{ "/services.html" | relative_url }}">Services</a>
-          <a href="{{ "/teaching.html" | relative_url }}">Teaching</a>
-        </div>
-      </div>
-    </nav>
+    {% include site-navigation.html %}
     <main>
       {{ content }}
     </main>

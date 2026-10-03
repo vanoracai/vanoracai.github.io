@@ -1,0 +1,155 @@
+{
+  "title": "学术服务",
+  "title_en": "Academic Services",
+  "sections": [
+    {
+      "title": "期刊编辑",
+      "title_en": "Serving as Journal Associate Editor (AE)",
+      "items": [
+        {
+          "name": "Neurocomputing"
+        },
+        {
+          "name": "Pattern Recognition (PR)"
+        }
+      ],
+      "cv_title_en": "Associate Editor"
+    },
+    {
+      "title": "领域主席与高级程序委员会",
+      "title_en": "Serving as (Senior) Area Chair / Program Committee",
+      "items": [
+        {
+          "name": "International Conference on Learning Representations (ICLR) ",
+          "date_en": "2025"
+        },
+        {
+          "name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) ",
+          "date_en": "2026"
+        },
+        {
+          "name": "Conference on Neural Information Processing Systems (NeurIPS)",
+          "date_en": "2025"
+        },
+        {
+          "name": "Conference on Empirical Methods in Natural Language Processing (EMNLP) "
+        },
+        {
+          "name": "ACM Multimedia ",
+          "date_en": "2025"
+        },
+        {
+          "name": "The AAAI Conference on Artificial Intelligence (AAAI) ",
+          "date_en": "2025"
+        },
+        {
+          "name": "International Conference on Computer Vision (ICCV) ",
+          "date_en": "2025"
+        },
+        {
+          "name": "International Conference on Machine Learning (ICML) ",
+          "date_en": "2025"
+        },
+        {
+          "name": "International Joint Conferences on Artificial Intelligence(IJCAI)   (SPC)"
+        },
+        {
+          "name": "The Web Conference (WWW)  (SPC)",
+          "date_en": "2025"
+        },
+        {
+          "name": "CIKM (SPC)",
+          "date_en": "2025"
+        },
+        {
+          "name": "Conference on Language Modeling (COLM)",
+          "date_en": "2025"
+        },
+        {
+          "name": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) ",
+          "date_en": "2024, 2025"
+        },
+        {
+          "name": "International Joint Conference on Neural Network (IJCNN) ",
+          "date_en": "2025"
+        }
+      ],
+      "cv_title_en": "Area Chair and Senior Program Committee"
+    },
+    {
+      "title": "审稿服务",
+      "title_en": "Serving as Reviewer",
+      "items": [
+        {
+          "name": "ACM SIGGRAPH"
+        },
+        {
+          "name": "IEEE International Conference on Multimedia and Expo (ICME)",
+          "date_en": "2022-2024"
+        },
+        {
+          "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
+        },
+        {
+          "name": "International Journal of Computer Vision (IJCV)",
+          "name_en": "IEEE Transactions on Image Processing (TIP)"
+        },
+        {
+          "name": "IEEE Transactions on Image Processing（TIP)"
+        },
+        {
+          "name": "IEEE Transactions on Multimedia (TMM)"
+        },
+        {
+          "name": "IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)"
+        },
+        {
+          "name": "ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)"
+        }
+      ],
+      "cv_title_en": "Reviewing",
+      "cv_extra_items_en": [
+        {
+          "name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+          "date": "2018-2025"
+        },
+        {
+          "name": "International Conference on Computer Vision (ICCV)",
+          "date": "2019-2024"
+        },
+        {
+          "name": "European Conference on Computer Vision (ECCV)",
+          "date": "2018-2024"
+        },
+        {
+          "name": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+          "date": "2024, 2025"
+        },
+        {
+          "name": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+          "date": "2024, 2025"
+        },
+        {
+          "name": "North American Chapter of the Association for Computational Linguistics (NAACL)",
+          "date": "2024, 2025"
+        },
+        {
+          "name": "International Conference on Learning Representations (ICLR)",
+          "date": "2023, 2024"
+        },
+        {
+          "name": "Conference on Neural Information Processing Systems (NeurIPS)",
+          "date": "2022-2024"
+        },
+        {
+          "name": "The AAAI Conference on Artificial Intelligence (AAAI)",
+          "date": "2021-2024"
+        },
+        {
+          "name": "International Joint Conference on Artificial Intelligence (IJCAI)",
+          "date": "2019-2024"
+        }
+      ]
+    }
+  ]
+}

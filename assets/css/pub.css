@@ -28,6 +28,16 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications { margin-top: 2rem; }
 
+.publications .publication-rating {
+    color: #c62828;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+    .publications .publication-rating { color: #ff8a80; }
+}
+
 .publications h1 { color: var(--global-theme-color); font-size: 2rem; text-align: center; margin-top: 1em; margin-bottom: 1em; }
 
 .publications h2 { margin-bottom: 1rem; }

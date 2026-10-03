@@ -1,0 +1,49 @@
+{
+  "title": "工作经历",
+  "title_en": "Work Experience",
+  "sections": [
+    {
+      "title": "",
+      "items": [
+        {
+          "name": "东南大学",
+          "name_en": "Southeast University",
+          "details": "教授",
+          "details_en": "Professor",
+          "date": "2026-至今",
+          "date_en": "2026 - Present",
+          "department_en": "School of Information Science and Engineering"
+        },
+        {
+          "name": "昆士兰大学 (澳大利亚 Go8)",
+          "name_en": "The University of Queensland",
+          "details": "讲师/助理教授",
+          "details_en": "Lecturer (Assistant Professor)",
+          "cv_title_en": "Lecturer at The University of Queensland (QS #42)",
+          "date": "2024-2026",
+          "date_en": "Nov. 2024 - 2026",
+          "department_en": "School of Electrical Engineering and Computer Science",
+          "description_en": "Research and teaching on multimodal large language models"
+        },
+        {
+          "name": "Meta (西雅图)",
+          "details": "研究科学家",
+          "details_en": "Senior Research Scientist",
+          "cv_title_en": "Research Scientist at Meta Reality Labs (Seattle)",
+          "cv_date_en": "Mar. 2022 - Nov. 2024",
+          "date": "2022-2024",
+          "name_en": "Meta Reality Labs (Seattle)",
+          "date_en": "Dec. 2023 - Nov. 2024",
+          "description_en": "Research and system development on embodied AI and multimodal large language models",
+          "previous_roles_en": [
+            {
+              "role": "Research Scientist",
+              "date": "Mar. 2022 - Dec. 2023",
+              "description": "Research and system development on embodied AI, virtual reality, and model acceleration."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

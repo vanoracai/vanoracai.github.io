@@ -165,3 +165,13 @@ Always run `bundle exec jekyll serve` and check http://localhost:4000 before pus
 - Pages render correctly
 - Links work
 - No Jekyll build errors
+
+## CV compilation and preview workflow
+
+- Shared data in `_data/*.json` and `citations.bib` generates the website and both standalone CV sources. `generate.ps1` now generates content and compiles both PDFs; `-Build` also builds Jekyll. `-Check` only validates data; `-SkipCV` explicitly skips compilation.
+- The open English source is `Latex/英文简历/main.tex`. Keep follow-up edits in this same source. Update its generator/data when appropriate so later regeneration preserves approved changes.
+- Try the built-in LaTeX compiler after source edits. If it fails with `Unable to find standard directories for platform`, continue within the user's authorized CV task using `compile_cv.ps1 -Language en` (or `zh`/`all`). This uses the already-installed Codex compiler; do not install a second desktop TeX distribution.
+- Compilation normally publishes to `Latex/英文简历/main.pdf` and `Latex/中文简历/main.pdf`. If a PDF is locked by a viewer, automatically publish `main-<content hash>.pdf` and update its link in `_data/profile.json`; subsequent builds use the configured current file. Validate the built links with `python scripts/check_site.py`. English work/education dates display years only; preserve the original month data.
+- After compilation, open the **Preview snapshot** path printed by the compiler with `open_in_codex`. Keep the source editor open. Snapshots avoid locking the canonical website PDF; use a new snapshot after each content change. Always inspect the new PDF before reporting success.
+- `generate.ps1 -Watch` regenerates and compiles metadata changes. Saving either `Latex/*/main.tex` compiles the saved source without regeneration, preserving manual editor changes. It does not watch generated PDFs, preventing update loops.
+- Failed compilation must leave the last successful PDF intact and report the failure. Locked output triggers a new version and automatic link update, preserving the open old file. GitHub Actions compiles both PDFs before building and validating the published site. Do not claim remote deployment until a push/deployment is authorized and verified.

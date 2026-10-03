@@ -1,7 +1,8 @@
 ---
 layout: homepage
-title: Services
+title: 学术服务
+page_class: services-page
 permalink: /services.html
 ---
 
-{% include services.md %}
+{% include generated/services.md %}

@@ -1,0 +1,21 @@
+{
+  "name": "Yujun Cai （蔡雨君）",
+  "name_en": "Yujun Cai",
+  "position": "教授",
+  "position_en": "Professor",
+  "affiliation": "东南大学 信息科学与工程学院 信号处理学科",
+  "affiliation_en": "Southeast University",
+  "affiliation_link": "https://www.seu.edu.cn/",
+  "department": "",
+  "address": "",
+  "email": "vanora.caiyj@gmail.com",
+  "avatar": "/photo.png",
+  "school_logo": "/assets/img/seu_logo.png",
+  "school_logo_alt": "东南大学 Southeast University",
+  "google_scholar": "https://scholar.google.com.sg/citations?user=TE7lbQwAAAAJ&hl=en",
+  "dblp": "https://dblp.org/pid/227/4399.html",
+  "cv_link": "/Latex/英文简历/main-ef4a77782b14.pdf",
+  "cv_zh_link": "/Latex/中文简历/main.pdf",
+  "department_en": "School of Information Science and Engineering",
+  "linkedin": "https://www.linkedin.com/in/yujuncai/"
+}

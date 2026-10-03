@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "海洋信息处理",
+      "name_en": "Marine Information Processing",
+      "details": "",
+      "details_en": ""
+    },
+    {
+      "name": "计算机视觉",
+      "name_en": "Computer Vision",
+      "details": "",
+      "details_en": ""
+    },
+    {
+      "name": "多模态信息处理",
+      "name_en": "Multimodal Understanding and Trustworthy Large Models",
+      "details": "",
+      "details_en": "Vision-language models, multimodal reasoning, model alignment, robustness, and fairness."
+    }
+  ]
+}

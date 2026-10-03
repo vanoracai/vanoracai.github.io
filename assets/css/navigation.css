@@ -1,0 +1,104 @@
+/* One navigation component for the homepage, sections, and course pages. */
+.site-nav {
+  background: #ece3f6;
+  isolation: isolate;
+}
+
+.site-nav .site-nav-inner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+
+.site-brand {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.site-brand img {
+  display: block;
+  width: 180px;
+  height: auto;
+  max-width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.site-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.site-nav-links a {
+  color: #222;
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.site-nav-links a:hover,
+.site-nav-links a[aria-current="page"] {
+  color: #002d72;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.site-nav a:focus-visible {
+  outline: 2px solid #002d72;
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 1100px) {
+  .site-nav .site-nav-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .site-nav-links {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .site-nav .site-nav-inner {
+    padding: 14px 20px;
+  }
+
+  .site-nav-links {
+    gap: 12px 18px;
+  }
+
+  .site-nav-links a {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-nav {
+    background: #ece3f6;
+  }
+
+  .site-nav-links a {
+    color: #222;
+  }
+
+  .site-nav-links a:hover,
+  .site-nav-links a[aria-current="page"] {
+    color: #002d72;
+  }
+
+  .site-nav a:focus-visible {
+    outline-color: #3eb7f0;
+  }
+}

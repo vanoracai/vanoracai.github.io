@@ -1,7 +1,7 @@
 ---
 layout: homepage
-title: Teaching
+title: 教学
 permalink: /teaching.html
 ---
 
-{% include teaching.md %}
+{% include generated/teaching.md %}

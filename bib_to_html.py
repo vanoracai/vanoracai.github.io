@@ -1,62 +1,11 @@
+from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_arxiv
+import html
 import os
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import homogenize_latex_encoding
 
 # Dictionary to map venue keywords to abbreviations (CCF Recommended Conferences and more specific examples)
-VENUE_ABBREVIATIONS = {
-    'ACM SIGKDD': 'KDD',
-    'Computer Vision and Pattern Recognition': 'CVPR',
-    'arXiv preprint': 'Preprint',
-    'NAACL': 'NAACL',
-    'International Conference on Machine Learning': 'ICML',
-    'International Conference on Learning Representations': 'ICLR',
-    'Advances in Neural Information Processing Systems': 'NeurIPS',
-    'Association for Computational Linguistics': 'ACL',
-    'International Conference on Data Mining': 'ICDM',
-    'International Joint Conference on Artificial Intelligence': 'IJCAI',
-    'Conference on Computer Vision and Pattern Recognition': 'CVPR',
-    'International Conference on Computer Vision': 'ICCV',
-    'International Conference on Database Systems for Advanced Applications': 'DASFAA',
-    'Symposium on Theory of Computing': 'STOC',
-    'International Symposium on Computer Architecture': 'ISCA',
-    'ACM Conference on Information and Knowledge Management': 'CIKM',
-    'International Conference on Web Search and Data Mining': 'WSDM',
-    'International Conference on Very Large Data Bases': 'VLDB',
-    'Annual Meeting of the Association for Computational Linguistics': 'ACL',
-    'International Conference on Automated Planning and Scheduling': 'ICAPS',
-    'International Symposium on Information Theory': 'ISIT',
-    'IEEE International Conference on Robotics and Automation': 'ICRA',
-    'European Conference on Computer Vision': 'ECCV',
-    'International Symposium on Software Testing and Analysis': 'ISSTA',
-    'International Symposium on Theoretical Aspects of Software Engineering': 'TASE',
-    'International Conference on Artificial Intelligence and Statistics': 'AISTATS',
-    'IEEE International Conference on Data Engineering': 'ICDE',
-    'International Conference on Principles of Knowledge Representation and Reasoning': 'KR',
-    'Conference on Uncertainty in Artificial Intelligence': 'UAI',
-    'International Conference on Knowledge Capture': 'K-CAP',
-    'IEEE International Conference on Computer Communications': 'INFOCOM',
-    'IEEE Transactions on Signal Processing': 'TSP',
-    'Proceedings of the 2017 ACM on Conference on Information and Knowledge Management': 'CIKM',
-    'Proceedings of the Web Conference': 'WWW',
-    'International Symposium on Software Reliability Engineering': 'ISSRE',
-    'ECCV': 'ECCV',
-    'Machine Learning and Knowledge Discovery in Databases: European': 'ECML',
-    'Learning on Graph': 'LOG',
-    'AAAI': 'AAAI',
-    'Transactions on Knowledge and Data Engineering': 'TKDE',
-    'European Conference on Machine Learning': 'ECML',
-    'CONLL': 'CONLL',
-    'EMNLP': 'EMNLP',
-    'Empirical Methods': 'EMNLP',
-    ' CHI Conference on Human Factors in Computing Systems': 'CHI',
-    'European Conference on Computer Vision': 'ECCV',
-    'pattern analysis and machine intelligence':'TPAMI',
-    'Conference on Computational Linguistics':'COLING',
-    'COLING':'COLING',
-    'COLM':'COLM',
-    # Add more mappings for common conferences/journals
-}
 
 # Function to convert 'Last, First' to 'First Last'
 def convert_author_format(author_name):
@@ -64,17 +13,6 @@ def convert_author_format(author_name):
         parts = author_name.split(',')
         return f"{parts[1].strip()} {parts[0].strip()}"
     return author_name  # If no comma, return as is
-
-# Function to clean and abbreviate the venue for the image badge using keyword matching
-def abbreviate_venue(venue):
-    # Clean venue by removing backslashes and special characters
-    venue_cleaned = venue.replace("\\", "").replace("&", "and")
-    
-    # Match based on keywords in the venue name
-    for keyword, short_name in VENUE_ABBREVIATIONS.items():
-        if keyword in venue_cleaned:
-            return short_name
-    return venue_cleaned  # Return cleaned venue if no abbreviation is found
 
 # Function to clean venue for full name (without abbreviating)
 def clean_full_venue(venue):
@@ -101,11 +39,6 @@ def is_preprint(entry):
     # Preprint is defined as having no 'journal' or 'booktitle' field
     return 'journal' not in entry and 'booktitle' not in entry
 
-# Function to check if the paper is specifically an ArXiv preprint
-def is_arxiv(entry):
-    # ArXiv is identified by 'journal' field containing 'arXiv'
-    return 'journal' in entry and 'arxiv' in entry['journal'].lower()
-
 # Function to sort papers by the abbreviation of their venue
 def get_venue_abbreviation(entry):
     venue = entry.get('journal', entry.get('booktitle', ''))
@@ -124,6 +57,8 @@ def generate_html(entry):
     full_venue = entry.get('journal', entry.get('booktitle', 'Preprint'))
     abbreviated_venue = abbreviate_venue(full_venue)
     cleaned_full_venue = clean_full_venue(full_venue)  # Cleaned full venue without abbreviations
+    rating_html = ' '.join(f'<span class="publication-rating">({label})</span>'
+                           for label in publication_ratings(entry))
 
     # Use the entry's ID to generate the image filename
     img_src = generate_image_filename(entry)
@@ -152,7 +87,7 @@ def generate_html(entry):
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
       <div class="author"><strong>{formatted_authors}</strong>.</div>
-      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em></div>
+      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em> {rating_html}</div>
       <div class="links" style="margin-top: 10px;">
         <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -169,7 +104,7 @@ def generate_html(entry):
   <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
       <div class="author"><strong>{formatted_authors}</strong>.</div>
-      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em></div>
+      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em> {rating_html}</div>
       <div class="links" style="margin-top: 10px;">
         <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
         <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -188,25 +123,6 @@ def load_bib_file(file_path):
     return bib_database.entries
 
 # 会议时间排序列表，基于缩写
-CONFERENCE_TIME_ORDER = [
-    'NeurIPS',
-    'EMNLP',
-    'ECCV',
-    'CVPR',
-    'ICML',
-    'ACL',
-    'COLM',
-    'NAACL',
-    'COLING',
-    'ICCV',
-    'ACL',
-    'ICLR',
-    'EMNLP',
-    'AAAI',
-    'CHI',
-    'CONLL',
-    # 你可以根据需要添加更多的会议
-]
 
 # 获取会议时间的排序
 def get_conference_time_rank(venue):
@@ -260,15 +176,21 @@ def sort_entries_by_year(entries):
     return sorted_entries
 
 # Generate HTML for all entries in the bib file, adding a divider for each year
-def generate_bibliography_html(entries):
-    # Sort entries by year from newest to oldest, grouped by venue, with Preprints/arXiv at the bottom for each year
-    sorted_entries = sort_entries_by_year(entries)
+def generate_bibliography_html(entries, profile=None):
+    # Hide arXiv-only records before grouping so empty year headings are omitted.
+    sorted_entries = sort_entries_by_year([entry for entry in entries if not is_arxiv(entry)])
 
     html_content = '''<h2 id="publications" style="margin: 2px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?hl=en&user=TE7lbQwAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/227/4399.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>
 
 <div class="publications">
 <ol class="bibliography">
 '''
+    if profile is not None:
+        links = []
+        for key, name in (('google_scholar', 'Google Scholar'), ('dblp', 'DBLP')):
+            if profile.get(key):
+                links.append(f'<a href="{html.escape(profile[key], quote=True)}">{name}</a>')
+        html_content = '<h2 id="publications">Publications <span class="publication-links">' + ' · '.join(links) + '</span></h2>\n<div class="publications">\n<ol class="bibliography">\n'
     last_year = None
     for entry in sorted_entries:
         current_year = entry.get('year', 'Unknown')
@@ -281,9 +203,9 @@ def generate_bibliography_html(entries):
     return html_content
 
 # Main function to execute the conversion
-def convert_bib_to_html(bib_file_path, output_html_path):
+def convert_bib_to_html(bib_file_path, output_html_path, profile=None):
     entries = load_bib_file(bib_file_path)
-    html_content = generate_bibliography_html(entries)
+    html_content = generate_bibliography_html(entries, profile)
     
     # Write the HTML to the output file
     with open(output_html_path, 'w', encoding='utf-8') as html_file:
@@ -291,5 +213,5 @@ def convert_bib_to_html(bib_file_path, output_html_path):
     
     print(f"HTML file successfully written to {output_html_path}")
 
-# Example usage:
-convert_bib_to_html('citations.bib', '_includes/output_file.md')
+if __name__ == '__main__':
+    convert_bib_to_html('citations.bib', '_includes/output_file.md')

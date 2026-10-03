@@ -1,0 +1,22 @@
+{
+  "title": "曾获荣誉",
+  "title_en": "Awards",
+  "sections": [
+    {
+      "title": "",
+      "title_en": "",
+      "items": [
+        {
+          "name": "Amazon Research Award",
+          "date": "2026"
+        },
+        {
+          "name": "国家奖学金",
+          "name_en": "National Scholarship",
+          "details_en": "Ministry of Education of the People’s Republic of China",
+          "date": "2014, 2016"
+        }
+      ]
+    }
+  ]
+}
