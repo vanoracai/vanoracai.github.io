@@ -172,6 +172,7 @@ Always run `bundle exec jekyll serve` and check http://localhost:4000 before pus
 - `scripts/enrich_publications.py --download` explicitly searches public academic sources and verifies PDFs. Never run network enrichment implicitly during builds or CI. Preserve existing abstracts, summaries, original PDF files and unrelated BibTeX fields.
 - `abstract` is source text with `abstract_source`; `summary` is separate with `summary_source` and `summary_method`. Never store an AI paraphrase as an original abstract. Missing evidence stays missing.
 - Abstracts, summaries and their provenance are local records only: preserve them in BibTeX/catalog data, never render them in website HTML or CVs. Exclude citations.bib from the published site.
+- Do not render a Paper button. Keep paper-page URLs in BibTeX; show PDF links and available Code links only.
 - Status is `published`, `accepted`, `preprint`, or `unknown`; venue-based migration uses `status_source=existing_metadata`. Only published/accepted canonical records appear in website/CVs. Potential duplicates are audited, not deleted automatically.
 - PDF files use `pdfs/{citekey}.pdf`; use existing local PDF, external PDF, then paper page. Hide unavailable/placeholder buttons. See `publications-guide.md`.
 

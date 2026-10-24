@@ -33,6 +33,10 @@ class PublicationCatalogTests(unittest.TestCase):
             rendered = generate_html(self.entry(code_url=link))
             self.assertNotIn('>Code</a>', rendered)
         self.assertNotIn('>PDF</a>', generate_html(self.entry()))
+        rendered = generate_html(self.entry(pdf_url='https://example.org/paper.pdf',
+                                           paper_url='https://example.org/paper'))
+        self.assertIn('>PDF</a>', rendered)
+        self.assertNotIn('>Paper</a>', rendered)
 
     def test_missing_local_pdf_falls_back_to_publisher_page(self):
         with tempfile.TemporaryDirectory() as directory:
