@@ -64,9 +64,10 @@ def generate_html(entry):
                      f'<span class="publication-venue">{esc(abbreviate_venue(venue))}</span></div>')
     buttons = []
     for key, label in [('pdf', 'PDF'), ('code', 'Code')]:
-        if links[key]:
-            buttons.append(f'<a href="{esc(links[key])}" class="publication-link" '
-                           f'target="_blank" rel="noopener noreferrer">{label}</a>')
+        button_url = links[key] or (f'/publications.html#{entry["ID"]}' if key == 'code' else '')
+        if button_url:
+            target = ' target="_blank" rel="noopener noreferrer"' if links[key] else ''
+            buttons.append(f'<a href="{esc(button_url)}" class="publication-link"{target}>{label}</a>')
     status = ' <span class="publication-status">Accepted</span>' if publication_status(entry) == 'accepted' else ''
     return (f'<li id="{esc(entry["ID"])}"><div class="pub-row">{thumbnail}'
             f'<div class="publication-text"><div class="title">{title}</div>'

@@ -27,11 +27,15 @@ class PublicationCatalogTests(unittest.TestCase):
         self.assertFalse(is_visible(self.entry(status='preprint')))
         self.assertFalse(is_visible(self.entry(duplicate_of='other')))
 
-    def test_placeholder_and_unsafe_links_are_never_rendered(self):
+    def test_code_button_uses_current_page_when_code_is_missing_or_invalid(self):
         for link in ('#', 'https://example.org/publications#', 'javascript:alert(1)'):
             self.assertEqual(clean_link(link), '')
             rendered = generate_html(self.entry(code_url=link))
-            self.assertNotIn('>Code</a>', rendered)
+            self.assertIn('href="/publications.html#paper" class="publication-link">Code</a>', rendered)
+            self.assertNotIn(f'href="{link}"', rendered)
+        rendered = generate_html(self.entry(code_url='https://github.com/example/project'))
+        self.assertIn('href="https://github.com/example/project" class="publication-link" target="_blank"', rendered)
+        self.assertIn('>Code</a>', rendered)
         self.assertNotIn('>PDF</a>', generate_html(self.entry()))
         rendered = generate_html(self.entry(pdf_url='https://example.org/paper.pdf',
                                            paper_url='https://example.org/paper'))
