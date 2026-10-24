@@ -12,6 +12,7 @@ def snapshot(root):
     paths = list((root / '_data').glob('*.json'))
     paths += list((root / '_data').glob('*.yml'))
     paths.append(root / 'citations.bib')
+    paths += list((root / 'pdfs').glob('*.pdf'))
     result = {}
     for path in sorted(paths):
         try:

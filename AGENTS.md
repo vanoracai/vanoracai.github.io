@@ -166,6 +166,15 @@ Always run `bundle exec jekyll serve` and check http://localhost:4000 before pus
 - Links work
 - No Jekyll build errors
 
+## Publication catalog workflow
+
+- `citations.bib` remains canonical. `scripts/publication_catalog.py` validates metadata and generates `pdfs/paper_pdf_manifest.csv`, `_generated/publications.json`, and `_generated/publication_audit.md` offline as part of normal generation.
+- `scripts/enrich_publications.py --download` explicitly searches public academic sources and verifies PDFs. Never run network enrichment implicitly during builds or CI. Preserve existing abstracts, summaries, original PDF files and unrelated BibTeX fields.
+- `abstract` is source text with `abstract_source`; `summary` is separate with `summary_source` and `summary_method`. Never store an AI paraphrase as an original abstract. Missing evidence stays missing.
+- Abstracts, summaries and their provenance are local records only: preserve them in BibTeX/catalog data, never render them in website HTML or CVs. Exclude citations.bib from the published site.
+- Status is `published`, `accepted`, `preprint`, or `unknown`; venue-based migration uses `status_source=existing_metadata`. Only published/accepted canonical records appear in website/CVs. Potential duplicates are audited, not deleted automatically.
+- PDF files use `pdfs/{citekey}.pdf`; use existing local PDF, external PDF, then paper page. Hide unavailable/placeholder buttons. See `publications-guide.md`.
+
 ## CV compilation and preview workflow
 
 - Shared data in `_data/*.json` and `citations.bib` generates the website and both standalone CV sources. `generate.ps1` now generates content and compiles both PDFs; `-Build` also builds Jekyll. `-Check` only validates data; `-SkipCV` explicitly skips compilation.

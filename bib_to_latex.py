@@ -1,4 +1,4 @@
-from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_arxiv
+from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_visible, publication_sort_key
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import homogenize_latex_encoding
@@ -36,9 +36,9 @@ def bib_to_paper_list(bib_file):
     
     paper_list = []
 
-    for entry in bib_database.entries:
+    for entry in sorted(bib_database.entries, key=publication_sort_key):
         # 跳过arXiv论文
-        if is_arxiv(entry):
+        if not is_visible(entry):
             continue
 
         authors_str = entry.get('author', 'Unknown')

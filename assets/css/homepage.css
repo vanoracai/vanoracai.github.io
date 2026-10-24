@@ -443,3 +443,14 @@
     outline-color: #3eb7f0;
   }
 }
+.publications .pub-row { display: flex; align-items: flex-start; gap: 20px; }
+.publications .publication-text { flex: 1; min-width: 0; }
+.publications .publication-image { position: relative; flex: 0 0 140px; }
+.publications .publication-image img { width: 140px; max-height: 160px; object-fit: contain; }
+.publications .publication-venue { display: block; font-size: 0.8rem; color: #2563eb; }
+.publications .publication-link { display: inline-block; margin: 7px 14px 4px 0; font-size: 0.9rem; }
+.publications .publication-status { font-size: 0.85rem; color: #64748b; }
+@media (max-width: 600px) {
+  .publications .pub-row { flex-direction: column; gap: 10px; }
+  .publications .publication-image { flex-basis: auto; }
+}

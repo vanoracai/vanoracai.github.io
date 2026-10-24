@@ -27,6 +27,9 @@ exclude:
   - bib_to_html.py
   - bib_to_latex.py
   - fill_bib_url.py
+  - citations.bib
+  - pdfs/paper_pdf_manifest.csv
+  - publications-guide.md
   - tests
   - reference-wangywust
   - vendor

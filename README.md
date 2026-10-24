@@ -2,6 +2,8 @@
 
 日常更新步骤见 [主页更新指南](主页更新指南.md)，涵盖资料编辑、自动编译、本地检查和发布。
 
+论文摘要、状态、开放 PDF 归档和自动补缺见 [论文资料维护](publications-guide.md)。统一源文件仍为 `citations.bib`；生成时同步更新完整论文档案、PDF 对账清单和缺失信息报告。
+
 以后主要编辑 `_data/` 下的资料文件和 `citations.bib`。根目录各页面只是入口，`_includes/generated/`、`_includes/output_file.md`、`paper_list.tex` 和 `_generated/` 是自动生成内容。
 
 ## 信息在哪里修改

@@ -1,9 +1,8 @@
-from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_arxiv
+from bibliography_common import CONFERENCE_TIME_ORDER, abbreviate_venue, publication_ratings, is_visible, publication_links, publication_status, publication_sort_key
 import html
 import os
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
-from bibtexparser.customization import homogenize_latex_encoding
 
 # Dictionary to map venue keywords to abbreviations (CCF Recommended Conferences and more specific examples)
 
@@ -22,6 +21,7 @@ def clean_full_venue(venue):
 # Function to clean and remove special characters from title, including replacing \textquotesingle and \ast
 def clean_title(title):
     return title.replace("{", "").replace("}", "").replace("\\textquotesingle", "\u0027").replace("\\ast", "*")
+
 
 # Function to clean LaTeX-related artifacts in URLs, especially for escaping sequences like \_
 def clean_url_latex_artifacts(url):
@@ -46,80 +46,38 @@ def get_venue_abbreviation(entry):
 
 # Function to generate HTML from bib entry, adjusting image size and center-aligning content
 def generate_html(entry):
-    # Handling multiple authors by splitting and formatting them
-    authors = entry.get('author', 'Unknown Author').split(" and ")
-    formatted_authors = ', '.join([convert_author_format(author) for author in authors])
-
-    # Clean the title to remove special characters
-    clean_title_text = clean_title(entry.get('title', 'Untitled'))
-
-    # Get the full venue (journal or booktitle) and its abbreviation for the image badge
-    full_venue = entry.get('journal', entry.get('booktitle', 'Preprint'))
-    abbreviated_venue = abbreviate_venue(full_venue)
-    cleaned_full_venue = clean_full_venue(full_venue)  # Cleaned full venue without abbreviations
-    rating_html = ' '.join(f'<span class="publication-rating">({label})</span>'
-                           for label in publication_ratings(entry))
-
-    # Use the entry's ID to generate the image filename
-    img_src = generate_image_filename(entry)
-    
-    # Check if the image file exists
-    image_exists = os.path.exists(img_src)
-    
-    # Get code URL or default code link (if 'code_url' field is present in the bib file, use it)
-    code_url = entry.get('code_url', entry.get('code', '#'))
-
-    # Clean the URL to remove LaTeX artifacts (e.g., \_ to _)
-    pdf_url = clean_url_latex_artifacts(entry.get('url', '#'))
-    
-    # Define the image style to make it slightly longer and adjust layout
-    image_style = "width: 110px; height: 130px; object-fit: cover; margin-bottom: 0;"  # Slightly taller image
-    
-    # If the image exists, include the image and layout using flexbox
-    if image_exists:
-        html = f'''
-<li>
-<div class="pub-row" style="display: flex; align-items: center;"> <!-- Center-align the content -->
-  <div class="image-container" style="flex: 0 0 auto; margin-right: 15px; position: relative;">
-    <img src="{img_src}" class="teaser img-fluid z-depth-1" style="{image_style}">
-    <abbr class="badge" style="position: absolute; top: 5px; left: 5px; background-color: #007bff; color: white; padding: 5px;">{abbreviated_venue}</abbr>
-  </div>
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
-      <div class="author"><strong>{formatted_authors}</strong>.</div>
-      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em> {rating_html}</div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-'''
-    else:
-        # If the image doesn't exist, remove the image section and extend the text
-        html = f'''
-<li>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="text-container" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="title"><a href="{pdf_url}">{clean_title_text}</a></div>
-      <div class="author"><strong>{formatted_authors}</strong>.</div>
-      <div class="periodical"><em>{cleaned_full_venue}, {entry.get('year', '2024')}.</em> {rating_html}</div>
-      <div class="links" style="margin-top: 10px;">
-        <a href="{pdf_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-        <a href="{code_url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      </div>
-  </div>
-</div>
-</li>
-'''
-
-    return html
+    esc = lambda value: html.escape(str(value), quote=True)
+    authors = ', '.join(convert_author_format(author) for author in entry.get('author', '').split(' and '))
+    venue = entry.get('booktitle', entry.get('journal', ''))
+    links = publication_links(entry)
+    title = esc(clean_title(entry.get('title', 'Untitled')))
+    destination = links['paper'] or links['pdf']
+    if destination:
+        title = f'<a href="{esc(destination)}">{title}</a>'
+    badges = ' '.join(f'<span class="publication-rating">({esc(label)})</span>'
+                      for label in publication_ratings(entry))
+    image = generate_image_filename(entry)
+    thumbnail = ''
+    if os.path.exists(image):
+        thumbnail = (f'<div class="publication-image"><img src="/{esc(image)}" '
+                     f'alt="Figure for {esc(clean_title(entry.get("title", "")))}" loading="lazy">'
+                     f'<span class="publication-venue">{esc(abbreviate_venue(venue))}</span></div>')
+    buttons = []
+    for key, label in [('pdf', 'PDF'), ('paper', 'Paper'), ('code', 'Code')]:
+        if links[key] and (key != 'paper' or links[key] != links['pdf']):
+            buttons.append(f'<a href="{esc(links[key])}" class="publication-link" '
+                           f'target="_blank" rel="noopener noreferrer">{label}</a>')
+    status = ' <span class="publication-status">Accepted</span>' if publication_status(entry) == 'accepted' else ''
+    return (f'<li id="{esc(entry["ID"])}"><div class="pub-row">{thumbnail}'
+            f'<div class="publication-text"><div class="title">{title}</div>'
+            f'<div class="author">{esc(authors)}.</div>'
+            f'<div class="periodical"><em>{esc(clean_full_venue(venue))}, {esc(entry.get("year", ""))}.</em> {badges}{status}</div>'
+            f'<div class="links">{" ".join(buttons)}</div></div></div></li>\n')
 
 # Load the .bib file
 def load_bib_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as bib_file:
-        bib_database = bibtexparser.load(bib_file, parser=BibTexParser(customization=homogenize_latex_encoding))
+        bib_database = bibtexparser.load(bib_file, parser=BibTexParser(common_strings=True))
     return bib_database.entries
 
 # 会议时间排序列表，基于缩写
@@ -155,30 +113,12 @@ def sort_entries_by_conference_time(entries):
 
 # 按年份和会议时间排序
 def sort_entries_by_year(entries):
-    # 按年份分组
-    entries_by_year = {}
-
-    for entry in entries:
-        year = int(entry.get('year', 0))
-        if year not in entries_by_year:
-            entries_by_year[year] = []
-        entries_by_year[year].append(entry)
-
-    # 在每个年份内按会议时间排序
-    for year, year_entries in entries_by_year.items():
-        entries_by_year[year] = sort_entries_by_conference_time(year_entries)
-
-    # 按年份从新到旧返回所有的条目
-    sorted_entries = []
-    for year in sorted(entries_by_year.keys(), reverse=True):
-        sorted_entries.extend(entries_by_year[year])
-
-    return sorted_entries
+    return sorted(entries, key=publication_sort_key)
 
 # Generate HTML for all entries in the bib file, adding a divider for each year
 def generate_bibliography_html(entries, profile=None):
     # Hide arXiv-only records before grouping so empty year headings are omitted.
-    sorted_entries = sort_entries_by_year([entry for entry in entries if not is_arxiv(entry)])
+    sorted_entries = sort_entries_by_year([entry for entry in entries if is_visible(entry)])
 
     html_content = '''<h2 id="publications" style="margin: 2px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?hl=en&user=TE7lbQwAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/227/4399.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>
 

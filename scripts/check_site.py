@@ -19,10 +19,16 @@ class Page(HTMLParser):
         self.nav_depth = 0
         self.nav_links = []
         self.cv_links = {}
+        self.publication_depth = 0
+        self.publication_links = []
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         classes = attrs.get('class', '').split()
+        if tag == 'ol' and ('bibliography' in classes or self.publication_depth):
+            self.publication_depth += 1
+        if tag == 'a' and self.publication_depth:
+            self.publication_links.append(attrs.get('href', ''))
         if 'profile-section' in classes:
             self.profile = True
         if tag == 'img':
@@ -36,6 +42,8 @@ class Page(HTMLParser):
             self.cv_links[attrs['data-cv-language']] = attrs.get('href', '')
 
     def handle_endtag(self, tag):
+        if tag == 'ol' and self.publication_depth:
+            self.publication_depth -= 1
         if tag == 'nav' and self.nav_depth:
             self.nav_depth -= 1
 
@@ -49,6 +57,8 @@ def main():
     for filename in PAGES:
         page = Page()
         page.feed((SITE / filename).read_text(encoding='utf-8'))
+        if filename == 'publications.html' and 'publication-details' in (SITE / filename).read_text(encoding='utf-8'):
+            raise ValueError('Publication abstracts/summaries must remain local records')
         if page.profile != (filename == 'index.html'):
             raise ValueError(f'{filename}: incorrect profile visibility')
         if len(page.nav_links) != 7:  # Brand link plus the six visible section links.
@@ -62,6 +72,14 @@ def main():
         for image in page.images:
             if not image:
                 raise ValueError(f'{filename}: empty image URL')
+        for link in page.publication_links:
+            parsed = urlsplit(link)
+            if not link or link == '#' or link.endswith('#') or parsed.scheme not in ('', 'http', 'https'):
+                raise ValueError(f'{filename}: invalid publication link {link}')
+            if not parsed.scheme and not parsed.netloc:
+                target = (SITE / unquote(parsed.path).lstrip('/')).resolve()
+                if not target.is_relative_to(SITE) or not target.is_file():
+                    raise ValueError(f'{filename}: missing publication target {link}')
         if filename == 'index.html':
             for language, key in [('en', 'cv_link'), ('zh', 'cv_zh_link')]:
                 link = page.cv_links.get(language, '')
@@ -79,7 +97,7 @@ def main():
         print(f'{filename}: navigation, logo and profile OK')
     if not (SITE / profile['school_logo'].lstrip('/')).is_file():
         raise ValueError('Built school logo file is missing')
-    for forbidden in ('reference-wangywust', '.venv', 'scripts', 'tests'):
+    for forbidden in ('reference-wangywust', '.venv', 'scripts', 'tests', 'citations.bib'):
         if (SITE / forbidden).exists():
             raise ValueError(f'Build contains development directory {forbidden}')
 

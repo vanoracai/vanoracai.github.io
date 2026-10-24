@@ -153,6 +153,8 @@ def validate():
         ids.add(entry['ID'])
         if not entry.get('title') or not entry.get('author') or not entry.get('year', '').isdigit():
             raise ValueError(f'Publication {entry["ID"]} needs title, author, and numeric year')
+    from scripts.publication_catalog import validate_entries
+    validate_entries(entries)
     return profile, research, news, recruitment, len(entries)
 
 
@@ -490,6 +492,8 @@ def english_cv_document(profile, research):
 
 def generate():
     profile, research, news, recruitment, paper_count = validate()
+    from scripts.publication_catalog import build_catalog
+    build_catalog(ROOT)
     from bib_to_html import convert_bib_to_html
     from bib_to_latex import bib_to_paper_list
     convert_bib_to_html(ROOT / 'citations.bib', ROOT / '_includes' / 'output_file.md', profile)
