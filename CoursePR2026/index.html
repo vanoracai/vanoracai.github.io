@@ -245,6 +245,190 @@
       color: #991b1b;
     }
 
+    /* Lecture 1 uses the same heading-driven card rhythm as the reference
+       course, while keeping the Markdown itself easy to maintain. */
+    .content.lecture-deck {
+      max-width: 1180px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .lecture-deck .status {
+      margin: 0 0 12px;
+      padding: 0 4px;
+    }
+
+    .lecture-pager {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 10px 12px;
+      border: 1px solid rgba(203, 213, 225, 0.92);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .lecture-pager[hidden] {
+      display: none;
+    }
+
+    .pager-count {
+      min-width: 74px;
+      color: #64748b;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pager-title {
+      overflow: hidden;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pager-button {
+      width: 38px;
+      height: 34px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #fff;
+      color: #1e3a8a;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .pager-button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+
+    .pager-button:disabled {
+      cursor: default;
+      opacity: 0.35;
+    }
+
+    .paged-lecture {
+      counter-reset: lecture-page;
+    }
+
+    .lecture-page {
+      counter-increment: lecture-page;
+      position: relative;
+      overflow: hidden;
+      margin: 18px 0;
+      padding: clamp(24px, 3vw, 42px) clamp(24px, 4vw, 52px) 46px;
+      border: 1px solid #e1e6ec;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.055);
+      scroll-margin-top: 82px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 480ms ease, transform 480ms cubic-bezier(.2,.7,.2,1), box-shadow 220ms ease;
+    }
+
+    .lecture-page.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lecture-page:hover {
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.085);
+    }
+
+    .lecture-page::after {
+      content: counter(lecture-page, decimal-leading-zero);
+      position: absolute;
+      right: 20px;
+      bottom: 14px;
+      color: #9aa5b5;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .lecture-page > h1:first-child,
+    .lecture-page > h2:first-child,
+    .lecture-page > h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+      border-bottom: 1px solid #e5e7eb;
+      scroll-margin-top: 94px;
+    }
+
+    .lecture-page.level-1 {
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-color: #d8e3f4;
+    }
+
+    .lecture-page.level-1 > h1:first-child {
+      max-width: 940px;
+      padding-bottom: 18px;
+      color: #102a56;
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: -0.025em;
+    }
+
+    .lecture-page.level-2 > h2:first-child {
+      padding-bottom: 12px;
+      color: #1e3a5f;
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    .lecture-page.level-3 > h3:first-child {
+      padding-bottom: 10px;
+      color: #243b53;
+      font-size: clamp(20px, 2.4vw, 27px);
+    }
+
+    .lecture-page > .reveal-item {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 360ms ease var(--reveal-delay, 80ms),
+                  transform 360ms ease var(--reveal-delay, 80ms);
+    }
+
+    .lecture-page.is-visible > .reveal-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lecture-page img,
+    .lecture-page table {
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .lecture-page img:hover {
+      transform: scale(1.008);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+    }
+
+    .lecture-page tbody tr {
+      transition: background-color 150ms ease;
+    }
+
+    .lecture-page tbody tr:hover {
+      background: #f0f7ff;
+    }
+
     @media (max-width: 860px) {
       .app {
         grid-template-columns: 1fr;
@@ -263,6 +447,37 @@
 
       .content {
         padding: 24px 18px;
+      }
+
+      .content.lecture-deck {
+        padding: 0;
+      }
+
+      .lecture-pager {
+        top: 8px;
+        grid-template-columns: auto minmax(0, 1fr) auto auto;
+      }
+
+      .lecture-page {
+        margin: 14px 0;
+        padding: 24px 18px 40px;
+        scroll-margin-top: 76px;
+      }
+
+      .lecture-page.level-1 {
+        min-height: 150px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lecture-page,
+      .lecture-page > .reveal-item,
+      .pager-button,
+      .lecture-page img,
+      .lecture-page table {
+        opacity: 1;
+        transform: none;
+        transition: none;
       }
     }
   </style>
@@ -294,6 +509,12 @@
     <main>
       <div class="content">
         <p class="status" id="status">Loading...</p>
+        <nav class="lecture-pager" id="lecturePager" aria-label="Lecture page navigation" hidden>
+          <span class="pager-count" id="pagerCount">01 / 01</span>
+          <span class="pager-title" id="pagerTitle"></span>
+          <button class="pager-button" id="previousPage" type="button" aria-label="Previous page">&#8592;</button>
+          <button class="pager-button" id="nextPage" type="button" aria-label="Next page">&#8594;</button>
+        </nav>
         <article id="article"></article>
       </div>
     </main>
@@ -322,7 +543,16 @@
     const statusEl = document.getElementById('status');
     const lectureList = document.getElementById('lectureList');
     const packageLink = document.getElementById('packageLink');
+    const contentPanel = document.querySelector('.content');
+    const lecturePager = document.getElementById('lecturePager');
+    const pagerCount = document.getElementById('pagerCount');
+    const pagerTitle = document.getElementById('pagerTitle');
+    const previousPage = document.getElementById('previousPage');
+    const nextPage = document.getElementById('nextPage');
     let currentFile = new URLSearchParams(location.search).get('file') || 'lecture_1.md';
+    let lecturePages = [];
+    let activePageIndex = 0;
+    let pageObserver = null;
 
     function escapeHtml(text) {
       return text
@@ -355,6 +585,10 @@
 
     function inlineMarkdown(text) {
       let output = escapeHtml(text);
+      /* Markdown hard breaks are two trailing spaces (or a trailing backslash).
+         Preserve them, while ordinary source line wrapping remains a space. */
+      output = output.replace(/(?: {2,}|\\)\n/g, '<br>');
+      output = output.replace(/\n/g, ' ');
       output = output.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
         return `<img src="${cacheBustAsset(fixPath(src))}" alt="${escapeHtml(alt)}">`;
       });
@@ -391,6 +625,7 @@
       const html = [];
       let paragraph = [];
       let list = [];
+      let listType = 'ul';
       let blockquote = [];
       let inCode = false;
       let codeFence = [];
@@ -399,14 +634,14 @@
 
       function flushParagraph() {
         if (paragraph.length) {
-          html.push(`<p>${inlineMarkdown(paragraph.join(' '))}</p>`);
+          html.push(`<p>${inlineMarkdown(paragraph.join('\n'))}</p>`);
           paragraph = [];
         }
       }
 
       function flushList() {
         if (list.length) {
-          html.push(`<ul>${list.map(item => `<li>${inlineMarkdown(item)}</li>`).join('')}</ul>`);
+          html.push(`<${listType}>${list.map(item => `<li>${inlineMarkdown(item)}</li>`).join('')}</${listType}>`);
           list = [];
         }
       }
@@ -507,15 +742,19 @@
           continue;
         }
 
-        const item = /^\s*[-*]\s+(.+)$/.exec(line);
+        const item = /^\s*([-*]|\d+\.)\s+(.+)$/.exec(line);
         if (item) {
           flushParagraph();
           flushBlockquote();
-          list.push(item[1]);
+          const nextListType = /^\d/.test(item[1]) ? 'ol' : 'ul';
+          if (list.length && listType !== nextListType) flushList();
+          listType = nextListType;
+          list.push(item[2]);
           continue;
         }
 
-        paragraph.push(line.trim());
+        flushList();
+        paragraph.push(line.trimStart());
       }
 
       flushParagraph();
@@ -544,8 +783,165 @@
       }
     }
 
+    function updatePager(index) {
+      if (!lecturePages.length) return;
+      activePageIndex = Math.max(0, Math.min(index, lecturePages.length - 1));
+      const page = lecturePages[activePageIndex];
+      const heading = page.querySelector('h1, h2, h3');
+      pagerCount.textContent = `${String(activePageIndex + 1).padStart(2, '0')} / ${String(lecturePages.length).padStart(2, '0')}`;
+      pagerTitle.textContent = heading ? heading.textContent.trim() : 'Lecture overview';
+      previousPage.disabled = activePageIndex === 0;
+      nextPage.disabled = activePageIndex === lecturePages.length - 1;
+    }
+
+    function goToPage(index) {
+      const target = lecturePages[Math.max(0, Math.min(index, lecturePages.length - 1))];
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function clearLectureDeck() {
+      if (pageObserver) {
+        pageObserver.disconnect();
+        pageObserver = null;
+      }
+      lecturePages = [];
+      activePageIndex = 0;
+      article.classList.remove('paged-lecture');
+      contentPanel.classList.remove('lecture-deck');
+      lecturePager.hidden = true;
+    }
+
+    function enhanceLectureOne() {
+      const nodes = Array.from(article.childNodes);
+      const fragment = document.createDocumentFragment();
+      const units = [];
+      const maxPageScore = 3600;
+      const maxTitlePageScore = 3800;
+      let unit = null;
+      let page = null;
+      let pageScore = 0;
+      let pageLevels = [];
+
+      function startPage(level = 3) {
+        page = document.createElement('section');
+        page.className = `lecture-page level-${level}`;
+        fragment.appendChild(page);
+        pageScore = 0;
+        pageLevels = [];
+        return page;
+      }
+
+      function finishUnit() {
+        if (unit && unit.nodes.length) units.push(unit);
+        unit = null;
+      }
+
+      function scoreUnit(sectionUnit) {
+        let score = 0;
+        sectionUnit.nodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            score += node.textContent.trim().length;
+            return;
+          }
+          if (node.nodeType !== Node.ELEMENT_NODE) return;
+          score += (node.textContent || '').trim().length;
+          score += node.querySelectorAll('img').length * 1400;
+          score += node.querySelectorAll('.math-block').length * 260;
+          score += node.querySelectorAll('pre').length * 500;
+          score += node.querySelectorAll('table tr').length * 190;
+        });
+        return score;
+      }
+
+      nodes.forEach(node => {
+        const isHeading = node.nodeType === Node.ELEMENT_NODE && /^(H1|H2|H3)$/.test(node.tagName);
+        const isDivider = node.nodeType === Node.ELEMENT_NODE && node.tagName === 'HR';
+
+        if (isHeading) {
+          finishUnit();
+          const level = Number(node.tagName.slice(1));
+          unit = { level, nodes: [node] };
+        } else if (isDivider) {
+          finishUnit();
+          units.push({ divider: true, nodes: [] });
+        } else if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) {
+          return;
+        } else {
+          if (!unit) unit = { level: 3, nodes: [] };
+          unit.nodes.push(node);
+        }
+      });
+      finishUnit();
+
+      units.forEach(sectionUnit => {
+        if (sectionUnit.divider) {
+          page = null;
+          pageScore = 0;
+          pageLevels = [];
+          return;
+        }
+
+        const unitScore = scoreUnit(sectionUnit);
+        const canJoinTitlePage = page &&
+          sectionUnit.level === 2 &&
+          pageLevels.length === 1 &&
+          pageLevels[0] === 1 &&
+          pageScore + unitScore <= maxTitlePageScore;
+
+        if (sectionUnit.level === 1) {
+          startPage(1);
+        } else if (sectionUnit.level === 2 && !canJoinTitlePage) {
+          startPage(2);
+        } else if (sectionUnit.level === 3 && (!page || pageScore + unitScore > maxPageScore)) {
+          startPage(3);
+        } else if (!page) {
+          startPage(sectionUnit.level);
+        }
+
+        sectionUnit.nodes.forEach(node => page.appendChild(node));
+        pageScore += unitScore;
+        pageLevels.push(sectionUnit.level);
+      });
+
+      article.replaceChildren(fragment);
+      article.classList.add('paged-lecture');
+      contentPanel.classList.add('lecture-deck');
+      lecturePager.hidden = false;
+      lecturePages = Array.from(article.querySelectorAll('.lecture-page'));
+
+      lecturePages.forEach((lecturePage, pageIndex) => {
+        lecturePage.dataset.page = String(pageIndex + 1);
+        const heading = lecturePage.querySelector(':scope > h1, :scope > h2, :scope > h3');
+        if (heading && heading.id) {
+          lecturePage.id = `page-${heading.id}`;
+        }
+
+        Array.from(lecturePage.children).forEach((child, childIndex) => {
+          if (!/^H[1-3]$/.test(child.tagName)) {
+            child.classList.add('reveal-item');
+            child.style.setProperty('--reveal-delay', `${Math.min(70 + childIndex * 45, 360)}ms`);
+          }
+        });
+      });
+
+      pageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          const index = lecturePages.indexOf(entry.target);
+          if (index >= 0 && entry.intersectionRatio >= 0.2) updatePager(index);
+        });
+      }, { rootMargin: '-12% 0px -48% 0px', threshold: [0.08, 0.2, 0.45] });
+
+      lecturePages.forEach(lecturePage => pageObserver.observe(lecturePage));
+      if (lecturePages[0]) lecturePages[0].classList.add('is-visible');
+      updatePager(0);
+    }
+
     async function loadLecture(file) {
       currentFile = file;
+      clearLectureDeck();
       renderNav();
       updatePackageLink();
       statusEl.textContent = `Loading ${file}...`;
@@ -558,6 +954,9 @@
         }
         const markdown = await response.text();
         article.innerHTML = renderMarkdown(markdown);
+        if (file === 'lecture_1.md') {
+          enhanceLectureOne();
+        }
         statusEl.textContent = `Showing ${file}. Edit the markdown, then click Reload.`;
         history.replaceState(null, '', `?file=${encodeURIComponent(file)}`);
         if (window.MathJax && window.MathJax.typesetPromise) {
@@ -578,6 +977,13 @@
 
     document.getElementById('reloadButton').addEventListener('click', () => loadLecture(currentFile));
     document.getElementById('topButton').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    previousPage.addEventListener('click', () => goToPage(activePageIndex - 1));
+    nextPage.addEventListener('click', () => goToPage(activePageIndex + 1));
+    document.addEventListener('keydown', event => {
+      if (currentFile !== 'lecture_1.md' || !event.altKey) return;
+      if (event.key === 'ArrowLeft') goToPage(activePageIndex - 1);
+      if (event.key === 'ArrowRight') goToPage(activePageIndex + 1);
+    });
 
     renderNav();
     loadLecture(currentFile);

@@ -1191,11 +1191,21 @@ $$
 \sum_{k=1}^K m_k\ln\mu_k.
 $$
 
-We want to maximize this quantity, but the probabilities cannot be chosen independently: they must satisfy $\sum_k\mu_k=1$. For example, we cannot increase every $\mu_k$ to 1, because the result would no longer be a valid probability distribution.
+We want to solve the **constrained optimization problem**
+
+$$
+\max_{\boldsymbol{\mu}}\ \sum_{k=1}^K m_k\ln\mu_k
+\qquad\text{subject to}\qquad
+\mu_k\geq 0,
+\quad
+\sum_{k=1}^K\mu_k=1.
+$$
+
+The probabilities cannot be chosen independently. For example, we cannot increase every $\mu_k$ to 1, because the result would no longer be a valid probability distribution. The equality constraint is why an ordinary unconstrained derivative is not enough and why a Lagrange multiplier is introduced next.
 
 ### Optional Derivation: Why a Lagrange Multiplier Appears（可选推导）
 
-A **Lagrange multiplier** is a bookkeeping device for optimizing a function while enforcing a constraint. We introduce one extra unknown number, $\lambda$, and combine the log likelihood with the sum-to-one constraint:
+A **Lagrange multiplier** is a bookkeeping device for optimizing a function while enforcing an equality constraint. We introduce one extra **unknown** number, $\lambda$, and combine the log likelihood with the sum-to-one constraint:
 
 $$
 \mathcal{L}(\boldsymbol{\mu},\lambda)
@@ -1203,9 +1213,20 @@ $$
 +\lambda\left(1-\sum_{k=1}^K\mu_k\right).
 $$
 
-The first term says “fit the observed data,” while the second term enforces “all probabilities must sum to 1.” The value of $\lambda$ is not a model probability; it is an auxiliary number that will be determined during the calculation.
+The first term says “fit the observed data,” while the second term represents the constraint. Crucially, $\lambda$ is **not a fixed penalty weight**. It is an additional variable that is solved jointly with all the $\mu_k$ values.
 
-At the maximum, differentiating with respect to each $\mu_k$ and setting the result to zero gives
+At a stationary point, we differentiate with respect to **every** unknown, including $\lambda$. Differentiating with respect to $\lambda$ gives
+
+$$
+\frac{\partial\mathcal{L}}{\partial\lambda}
+=1-\sum_{k=1}^K\mu_k=0
+\quad\Longrightarrow\quad
+\sum_{k=1}^K\mu_k=1.
+$$
+
+Thus the sum-to-one condition is satisfied exactly; it is not merely encouraged. If $\lambda$ were chosen in advance and held fixed, this linear term would only bias the objective toward a larger or smaller sum (depending on the sign of $\lambda$); it would not guarantee equality.
+
+Differentiating with respect to each $\mu_k$ gives the remaining stationary equations:
 
 $$
 \frac{\partial\mathcal{L}}{\partial\mu_k}
@@ -1214,7 +1235,7 @@ $$
 \mu_k=\frac{m_k}{\lambda}.
 $$
 
-Now use the constraint that all $\mu_k$ sum to 1:
+Now combine these equations with the constraint obtained from $\partial\mathcal{L}/\partial\lambda=0$:
 
 $$
 1=\sum_{k=1}^K\mu_k
