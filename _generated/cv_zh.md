@@ -76,6 +76,7 @@ vanora.caiyj@gmail.com
 
 ## 曾获荣誉
 
+- **2026 CVPR Outstanding Area Chair**
 - **Amazon Research Award** — 2026
 - **国家奖学金** — 2014
 - **国家奖学金** — 2016

@@ -2,6 +2,7 @@
 
 ## Awards
 
+- **2026 CVPR Outstanding Area Chair**
 - **Amazon Research Award** — 2026
 - **National Scholarship** — Ministry of Education of the People’s Republic of China · 2014
 - **National Scholarship** — Ministry of Education of the People’s Republic of China · 2016
